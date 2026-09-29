@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regresión Lineal Simple — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <span class="kicker">Facultad de Contaduría y Administración</span>
+      <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../PLAN.md">Plan del proyecto</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Comercio Exterior y Aduanas</a><span class="sep">/</span>
+    <a href="../index.html">Econometría</a><span class="sep">/</span>
+    Regresión Lineal Simple
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Regresión Lineal Simple</h2>
+      <div class="badges">
+        <span class="badge">Comercio Exterior y Aduanas</span>
+        <span class="badge">Econometría</span>
+        <span class="badge">Introductorio</span>
+        <span class="badge">50 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+    <p>Al terminar este ejercicio, el alumno podrá estimar los parámetros de un modelo de regresión lineal simple por Mínimos Cuadrados Ordinarios (MCO), interpretar la pendiente y el intercepto en el contexto de un problema de comercio exterior, calcular el coeficiente de determinación (R²), y usar el modelo para hacer una predicción.</p>
+
+    <h3 class="section">Teoría</h3>
+    <div class="ai-note">⚠️ Nota de transparencia: esta sección se redactó con apoyo de IA a partir del lineamiento temático del profesor. Revisar y ajustar antes de usar en clase.</div>
+
+    <p>La <strong>regresión lineal simple</strong> es el modelo econométrico más básico para describir la relación entre dos variables: una variable dependiente <strong>Y</strong> (la que se quiere explicar o predecir) y una variable independiente <strong>X</strong> (la que se usa para explicarla). El modelo poblacional se escribe como:</p>
+
+    <div class="formula">Y<sub>i</sub> = β₀ + β₁ X<sub>i</sub> + ε<sub>i</sub></div>
+
+    <p>Donde:</p>
+    <ul>
+      <li><strong>β₀</strong> (intercepto) = el valor esperado de Y cuando X = 0.</li>
+      <li><strong>β₁</strong> (pendiente) = el cambio esperado en Y ante un incremento de una unidad en X.</li>
+      <li><strong>ε_i</strong> (término de error) = la parte de Y que el modelo no explica.</li>
+    </ul>
+
+    <p>Como no observamos los verdaderos β₀ y β₁, se <strong>estiman</strong> a partir de los datos usando el método de <strong>Mínimos Cuadrados Ordinarios (MCO)</strong>, que encuentra la línea recta que minimiza la suma de los errores al cuadrado entre los valores observados y los predichos por el modelo:</p>
+
+    <div class="formula">β̂₁&nbsp; = &nbsp;Σ(Xᵢ − X̄)(Yᵢ − Ȳ) &nbsp;/&nbsp; Σ(Xᵢ − X̄)²</div>
+    <div class="formula">β̂₀&nbsp; = &nbsp;Ȳ − β̂₁ X̄</div>
+
+    <p>Una vez estimados los coeficientes, el modelo ajustado permite calcular valores predichos (Ŷ) y evaluar qué tan bien se ajusta a los datos mediante el <strong>coeficiente de determinación (R²)</strong>, que va de 0 a 1 e indica qué proporción de la variación de Y es explicada por X:</p>
+
+    <div class="formula">R²&nbsp; = &nbsp;[ Σ(Xᵢ−X̄)(Yᵢ−Ȳ) ]² &nbsp;/&nbsp; [ Σ(Xᵢ−X̄)² &nbsp;×&nbsp; Σ(Yᵢ−Ȳ)² ]</div>
+
+    <p><strong>Interpretación práctica:</strong></p>
+    <ul>
+      <li>Un <strong>R² cercano a 1</strong> indica que el modelo explica casi toda la variación de Y a partir de X (buen ajuste).</li>
+      <li>La <strong>pendiente (β₁)</strong> dice cuánto cambia, en promedio, la variable dependiente por cada unidad que aumenta la variable independiente — es la cifra que más interesa interpretar en un contexto de negocio o de política económica.</li>
+      <li>El intercepto (β₀) no siempre tiene una interpretación económica razonable (por ejemplo, un tipo de cambio de cero no existe en la realidad), por lo que a veces solo se reporta como parte del ajuste matemático.</li>
+    </ul>
+
+    <h3 class="section">Ejercicio / caso práctico</h3>
+    <p>Una empresa exportadora de Comercio Exterior en Torreón, Coahuila, quiere entender si existe una relación entre el <strong>tipo de cambio MXN/USD</strong> y el valor de sus <strong>exportaciones mensuales</strong> (en miles de USD). Se recopiló la siguiente información de los últimos 8 meses:</p>
+
+    <table class="data">
+      <thead>
+        <tr><th>Mes</th><th class="num">Tipo de cambio (X, MXN/USD)</th><th class="num">Exportaciones (Y, miles USD)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="num">18.20</td><td class="num">150</td></tr>
+        <tr><td>2</td><td class="num">18.50</td><td class="num">158</td></tr>
+        <tr><td>3</td><td class="num">18.90</td><td class="num">165</td></tr>
+        <tr><td>4</td><td class="num">19.30</td><td class="num">172</td></tr>
+        <tr><td>5</td><td class="num">19.60</td><td class="num">180</td></tr>
+        <tr><td>6</td><td class="num">20.10</td><td class="num">188</td></tr>
+        <tr><td>7</td><td class="num">20.40</td><td class="num">193</td></tr>
+        <tr><td>8</td><td class="num">20.80</td><td class="num">200</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Se pide:</strong></p>
+    <ol>
+      <li>Estimar la pendiente (β̂₁) y el intercepto (β̂₀) del modelo de regresión lineal simple <em>Exportaciones = β₀ + β₁ · Tipo de cambio + ε</em> por Mínimos Cuadrados Ordinarios.</li>
+      <li>Escribir la ecuación del modelo ajustado e interpretar el significado de la pendiente en el contexto del negocio.</li>
+      <li>Calcular el coeficiente de determinación (R²) e interpretar qué tan bien se ajusta el modelo a los datos.</li>
+      <li>Usar el modelo para predecir las exportaciones esperadas si el tipo de cambio promedio del próximo mes fuera de <strong>21.00 MXN/USD</strong>.</li>
+      <li>Mencionar una limitación de este análisis (por ejemplo, ¿es razonable asumir que la relación es causal, o solo correlacional?).</li>
+    </ol>
+
+    <h3 class="section">Solución / guía de solución</h3>
+    <details class="solution">
+      <summary>Mostrar solución</summary>
+      <div class="inner">
+        <p><strong>1. Cálculos previos (n = 8):</strong></p>
+        <ul>
+          <li>X̄ = 19.475, Ȳ = 175.75</li>
+          <li>Σ(X−X̄)(Y−Ȳ) = 113.25</li>
+          <li>Σ(X−X̄)² = 5.955</li>
+          <li>Σ(Y−Ȳ)² = 2,161.5</li>
+        </ul>
+
+        <p><strong>2. Estimación de los coeficientes:</strong></p>
+        <div class="formula">β̂₁ = 113.25 / 5.955 ≈ <strong>19.02</strong></div>
+        <div class="formula">β̂₀ = 175.75 − (19.02 × 19.475) ≈ <strong>−194.62</strong></div>
+
+        <p><strong>Modelo ajustado:</strong></p>
+        <div class="formula">Exportaciones = −194.62 + 19.02 × Tipo de cambio</div>
+
+        <p><strong>Interpretación de la pendiente:</strong> por cada peso que sube el tipo de cambio MXN/USD, las exportaciones mensuales de la empresa aumentan, en promedio, <strong>19.02 miles de USD</strong> (≈ $19,020 USD), manteniendo todo lo demás constante.</p>
+
+        <p><strong>3. Coeficiente de determinación:</strong></p>
+        <div class="formula">R² = (113.25)² / (5.955 × 2,161.5) ≈ <strong>0.996</strong></div>
+        <p>El modelo explica aproximadamente el <strong>99.6%</strong> de la variación de las exportaciones mensuales a partir del tipo de cambio — un ajuste muy alto para este conjunto de datos.</p>
+
+        <p><strong>4. Predicción para X = 21.00:</strong></p>
+        <div class="formula">Exportaciones = −194.62 + 19.02 × 21.00 ≈ <strong>204.75 miles de USD</strong></div>
+
+        <p><strong>5. Limitación:</strong> el modelo muestra una <strong>asociación estadística</strong>, no necesariamente una relación de <strong>causalidad</strong>. Otros factores (demanda del socio comercial, precios internacionales, capacidad de producción) pueden estar moviéndose junto con el tipo de cambio y explicar parte de la relación observada; además, con solo 8 observaciones mensuales el resultado es sensible a datos atípicos o a cambios de tendencia.</p>
+      </div>
+    </details>
+
+    <h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+    <div class="prompt-box">
+      <span class="label">🤖 Prompt sugerido</span>Actúa como un profesor de econometría explicando un ejercicio de regresión lineal simple.
+Tengo los siguientes datos mensuales de una empresa exportadora:
+
+Mes | Tipo de cambio (X, MXN/USD) | Exportaciones (Y, miles de USD)
+1   | 18.20 | 150
+2   | 18.50 | 158
+3   | 18.90 | 165
+4   | 19.30 | 172
+5   | 19.60 | 180
+6   | 20.10 | 188
+7   | 20.40 | 193
+8   | 20.80 | 200
+
+1. Estima por Mínimos Cuadrados Ordinarios (MCO) la pendiente y el intercepto
+   del modelo Exportaciones = β0 + β1 * Tipo de cambio + error, mostrando las
+   sumas intermedias (Sxy, Sxx, Syy).
+2. Escribe la ecuación del modelo ajustado e interpreta la pendiente en el
+   contexto del negocio.
+3. Calcula el coeficiente de determinación (R²) e interpreta el ajuste.
+4. Predice las exportaciones esperadas si el tipo de cambio fuera de 21.00.
+5. Señala una limitación de interpretar este resultado como causalidad.
+
+Muestra el desarrollo paso a paso, no solo el resultado final.</div>
+    <div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> ninguno es indispensable, ya que la tabla de datos cabe directamente en el prompt. Si se quiere trabajar con datos reales de una empresa, se sugiere adjuntar un archivo de Excel o CSV con la serie histórica de tipo de cambio y exportaciones mensuales.</div>
+
+    <h3 class="section">Recursos adicionales</h3>
+    <ul>
+      <li>Plantilla de cálculo en Excel: <em>(por agregar)</em></li>
+      <li>Lectura sugerida: capítulo de regresión lineal simple y MCO en el libro de texto del curso de Econometría.</li>
+    </ul>
+
+    <div class="doc-footer">
+      Autor: Carmen Borrego-Salcido · Actualizado: 2026-09-10 · Asistencia de IA: redacción de teoría y caso práctico, pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Prototipo local · <a href="../../../../PLAN.md">ver plan del proyecto</a>
+</footer>
+
+</body>
+</html>

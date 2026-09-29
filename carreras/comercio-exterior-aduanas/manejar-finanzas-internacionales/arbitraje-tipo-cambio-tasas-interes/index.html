@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arbitraje con Tipo de Cambio y Diferencial de Tasas de Interés — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <span class="kicker">Facultad de Contaduría y Administración</span>
+      <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../PLAN.md">Plan del proyecto</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Comercio Exterior y Aduanas</a><span class="sep">/</span>
+    <a href="../index.html">Manejar Finanzas Internacionales</a><span class="sep">/</span>
+    Arbitraje con Tipo de Cambio y Diferencial de Tasas de Interés
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Arbitraje con Tipo de Cambio y Diferencial de Tasas de Interés</h2>
+      <div class="badges">
+        <span class="badge">Comercio Exterior y Aduanas</span>
+        <span class="badge">Manejar Finanzas Internacionales</span>
+        <span class="badge">Introductorio</span>
+        <span class="badge">40 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+    <p>Al terminar este ejercicio, el alumno podrá calcular el tipo de cambio forward teórico según la paridad de tasas de interés cubierta, comparar el resultado con un tipo de cambio forward de mercado para identificar oportunidades de arbitraje, y calcular la ganancia libre de riesgo de una operación de arbitraje de interés cubierto.</p>
+
+    <h3 class="section">Teoría</h3>
+    <div class="ai-note">⚠️ Nota de transparencia: esta sección se redactó con apoyo de IA a partir del lineamiento temático del profesor. Revisar y ajustar antes de usar en clase.</div>
+
+    <p>Cuando dos países tienen tasas de interés distintas, existe un incentivo para mover capital hacia la moneda que paga más. Sin embargo, ese movimiento implica un riesgo cambiario: el inversionista debe convertir su dinero a la otra moneda hoy y de regreso en el futuro. El <strong>arbitraje de interés cubierto</strong> ("covered interest arbitrage") elimina ese riesgo usando un <strong>contrato forward</strong> que fija hoy el tipo de cambio al que se hará la conversión futura.</p>
+
+    <p>La <strong>Paridad de Tasas de Interés Cubierta</strong> (PTIC) establece que, en un mercado sin fricciones ni oportunidades de arbitraje, el tipo de cambio forward debe reflejar exactamente el diferencial de tasas de interés entre las dos monedas:</p>
+
+    <div class="formula" style="font-size:1.15rem;font-weight:600">F&nbsp; = &nbsp;S &nbsp;×&nbsp; (1 + i<sub>nacional</sub>) / (1 + i<sub>extranjera</sub>)</div>
+
+    <p>Donde:</p>
+    <ul>
+      <li><strong>S</strong> = tipo de cambio spot (al contado), expresado como unidades de moneda nacional por unidad de moneda extranjera.</li>
+      <li><strong>F</strong> = tipo de cambio forward teórico para el mismo par de monedas, al mismo plazo del diferencial de tasas.</li>
+      <li><strong>i_nacional / i_extranjera</strong> = tasas de interés (para el mismo plazo) en cada país.</li>
+    </ul>
+
+    <p><strong>¿Qué pasa si el forward de mercado no coincide con el forward teórico?</strong></p>
+    <p>Si el tipo de cambio forward que cotiza el mercado (F_mercado) es distinto al que predice la fórmula (F_teórico), existe una oportunidad de <strong>arbitraje libre de riesgo</strong>: un inversionista puede pedir prestado en la moneda "cara" (la que ofrece rendimiento efectivo insuficiente frente al forward), convertir al spot, invertir en la moneda que rinde más en términos cubiertos, y usar el forward para fijar la reconversión futura — obteniendo una ganancia garantizada sin exposición cambiaria.</p>
+
+    <p>Los cuatro pasos del arbitraje de interés cubierto son:</p>
+    <ol>
+      <li><strong>Pedir prestado</strong> en la moneda A a su tasa de interés.</li>
+      <li><strong>Convertir</strong> el préstamo a la moneda B al tipo de cambio spot.</li>
+      <li><strong>Invertir</strong> ese monto en la moneda B a su tasa de interés.</li>
+      <li><strong>Cubrir</strong> con un contrato forward la conversión de regreso a la moneda A, y comparar el monto obtenido contra lo que se debe pagar del préstamo original.</li>
+    </ol>
+
+    <p>Si lo obtenido en el paso 4 es mayor a la deuda del paso 1, existe una ganancia de arbitraje libre de riesgo. En la práctica, estas oportunidades tienden a cerrarse muy rápido: en cuanto varios inversionistas las aprovechan, la presión de compra/venta ajusta el spot, el forward y hasta las tasas de interés hasta que la paridad se restablece.</p>
+
+    <h3 class="section">Ejercicio / caso práctico</h3>
+    <p>Un tesorero de una empresa exportadora en Comercio Exterior observa las siguientes condiciones de mercado para el par <strong>MXN/USD</strong> a un plazo de <strong>1 año</strong>:</p>
+
+    <table class="data">
+      <thead>
+        <tr><th>Dato</th><th class="num">Valor</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tipo de cambio spot (S)</td><td class="num">20.00 MXN/USD</td></tr>
+        <tr><td>Tipo de cambio forward a 1 año cotizado por el banco (F mercado)</td><td class="num">20.80 MXN/USD</td></tr>
+        <tr><td>Tasa de interés anual en México (i MXN)</td><td class="num">10.0%</td></tr>
+        <tr><td>Tasa de interés anual en Estados Unidos (i USD)</td><td class="num">4.0%</td></tr>
+        <tr><td>Capital disponible para la operación</td><td class="num">USD $1,000,000</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Se pide:</strong></p>
+    <ol>
+      <li>Calcular el tipo de cambio forward teórico según la Paridad de Tasas de Interés Cubierta.</li>
+      <li>Comparar el forward teórico contra el forward de mercado. ¿Existe oportunidad de arbitraje? ¿En qué moneda conviene pedir prestado y en cuál invertir?</li>
+      <li>Con el capital disponible (USD $1,000,000 o su equivalente en MXN), calcular la ganancia libre de riesgo de la operación de arbitraje.</li>
+      <li>Explicar, en una o dos líneas, por qué esta oportunidad tiende a desaparecer conforme más participantes la detectan.</li>
+    </ol>
+
+    <h3 class="section">Solución / guía de solución</h3>
+    <details class="solution">
+      <summary>Mostrar solución</summary>
+      <div class="inner">
+        <p><strong>1. Forward teórico (PTIC):</strong></p>
+        <div class="formula">F_teórico = 20.00 × (1.10 / 1.04) = 20.00 × 1.057692 ≈ <strong>21.1538 MXN/USD</strong></div>
+
+        <p><strong>2. Comparación y dirección del arbitraje:</strong></p>
+        <p>El forward de mercado (20.80) es <strong>menor</strong> al forward teórico (21.1538). Esto significa que el dólar a futuro está "barato" respecto a lo que justifica el diferencial de tasas: conviene <strong>pedir prestado en USD</strong> (la moneda que, cubierta, rinde menos de lo necesario) e <strong>invertir en MXN</strong> (la moneda de mayor tasa), cubriendo el regreso a dólares con el forward de mercado.</p>
+
+        <p><strong>3. Cálculo de la ganancia</strong> (capital: USD $1,000,000):</p>
+        <table class="data">
+          <thead>
+            <tr><th>Paso</th><th>Operación</th><th class="num">Resultado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1. Pedir prestado</td><td>USD 1,000,000 a 4.0% anual → se debe en 1 año</td><td class="num">USD 1,040,000</td></tr>
+            <tr><td>2. Convertir a spot</td><td>USD 1,000,000 × 20.00 MXN/USD</td><td class="num">MXN 20,000,000</td></tr>
+            <tr><td>3. Invertir en MXN</td><td>MXN 20,000,000 a 10.0% anual → en 1 año</td><td class="num">MXN 22,000,000</td></tr>
+            <tr><td>4. Cubrir con forward</td><td>Comprar USD 1,040,000 (para pagar el préstamo) al forward de 20.80</td><td class="num">Costo: MXN 21,632,000</td></tr>
+            <tr><td colspan="2"><strong>Ganancia neta</strong></td><td class="num"><strong>MXN 368,000</strong></td></tr>
+          </tbody>
+        </table>
+        <p>Esa ganancia de <strong>MXN $368,000</strong> (equivalente a unos <strong>USD $17,692</strong> al tipo de cambio forward) es libre de riesgo: el monto a pagar del préstamo en dólares ya quedó cubierto con el forward desde el día de la operación, sin importar qué pase después con el tipo de cambio.</p>
+
+        <p><strong>4. Por qué desaparece la oportunidad:</strong></p>
+        <p>En cuanto varios participantes del mercado replican esta operación (piden prestado en USD, compran MXN al spot, y compran USD a futuro), aumenta la demanda de MXN al contado y la demanda de USD forward — presionando el spot a la baja, el forward al alza, y/o las tasas de interés a ajustarse — hasta que el forward de mercado vuelve a igualar al forward teórico y la oportunidad de arbitraje se cierra.</p>
+      </div>
+    </details>
+
+    <h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+    <div class="prompt-box">
+      <span class="label">🤖 Prompt sugerido</span>Actúa como un especialista en finanzas internacionales y mercados de divisas.
+Con los siguientes datos de mercado para el par MXN/USD a 1 año:
+
+- Tipo de cambio spot (S): 20.00 MXN/USD
+- Tipo de cambio forward a 1 año cotizado por el banco (F mercado): 20.80 MXN/USD
+- Tasa de interés anual en México: 10.0%
+- Tasa de interés anual en Estados Unidos: 4.0%
+- Capital disponible: USD $1,000,000
+
+1. Calcula el tipo de cambio forward teórico según la Paridad de Tasas de
+   Interés Cubierta (Covered Interest Rate Parity).
+2. Compara el forward teórico contra el forward de mercado y determina si
+   existe una oportunidad de arbitraje de interés cubierto, indicando en qué
+   moneda conviene pedir prestado y en cuál invertir.
+3. Calcula, paso a paso, la ganancia libre de riesgo de la operación usando
+   el capital disponible.
+4. Explica en un par de líneas por qué esta oportunidad tiende a desaparecer
+   conforme más participantes la detectan.
+
+Muestra el desarrollo completo de cada paso, no solo el resultado final.</div>
+    <div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> ninguno es indispensable, ya que los datos de mercado se pueden pegar directamente en el prompt. Si se quiere trabajar con una cotización real, se sugiere adjuntar una captura o tabla con los tipos de cambio y tasas vigentes de una fuente como Banxico, la Reserva Federal (Fed) o un banco comercial.</div>
+
+    <h3 class="section">Recursos adicionales</h3>
+    <ul>
+      <li>Plantilla de cálculo en Excel: <em>(por agregar)</em></li>
+      <li>Lectura sugerida: capítulo de mercados de divisas y paridad de tasas de interés en el libro de texto del curso.</li>
+    </ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-09-10 · Asistencia de IA: redacción de teoría y caso práctico, pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Prototipo local · <a href="../../../../PLAN.md">ver plan del proyecto</a>
+</footer>
+
+</body>
+</html>

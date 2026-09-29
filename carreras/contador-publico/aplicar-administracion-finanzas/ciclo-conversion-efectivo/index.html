@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ciclo de Conversión de Efectivo — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <span class="kicker">Facultad de Contaduría y Administración</span>
+      <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../PLAN.md">Plan del proyecto</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Contador Público</a><span class="sep">/</span>
+    <a href="../index.html">Aplicar Administración de las Finanzas</a><span class="sep">/</span>
+    Ciclo de Conversión de Efectivo
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Ciclo de Conversión de Efectivo</h2>
+      <div class="badges">
+        <span class="badge">Contador Público</span>
+        <span class="badge">Aplicar Administración de las Finanzas</span>
+        <span class="badge">Intermedio</span>
+        <span class="badge">50 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+    <p>Al terminar este ejercicio, el alumno podrá calcular el Ciclo de Conversión de Efectivo (CCE) de una empresa a partir de su información financiera, interpretar qué significa el resultado para la liquidez del negocio, y proponer acciones concretas para acortarlo.</p>
+
+    <h3 class="section">Teoría</h3>
+    <div class="ai-note">⚠️ Nota de transparencia: esta sección se redactó con apoyo de IA a partir del lineamiento temático del profesor. Revisar y ajustar antes de usar en clase.</div>
+
+    <p>El <strong>Ciclo de Conversión de Efectivo</strong> (CCE), también llamado ciclo de caja, mide el tiempo (en días) que transcurre desde que una empresa paga por sus insumos o inventario hasta que cobra el efectivo de la venta de ese inventario a sus clientes. Es uno de los indicadores más usados en la administración del capital de trabajo porque conecta tres áreas operativas clave: inventarios, cuentas por cobrar y cuentas por pagar.</p>
+
+    <p>Se calcula combinando tres periodos:</p>
+
+    <p><strong>1. Días de Inventario (DIO)</strong> — cuántos días, en promedio, permanece el inventario en almacén antes de venderse.</p>
+    <div class="formula">DIO&nbsp; = &nbsp;( Inventario promedio &nbsp;/&nbsp; Costo de ventas ) &nbsp;×&nbsp; 365</div>
+
+    <p><strong>2. Días de Cuentas por Cobrar (DSO)</strong> — cuántos días tarda la empresa en cobrar a sus clientes después de una venta a crédito.</p>
+    <div class="formula">DSO&nbsp; = &nbsp;( Cuentas por cobrar promedio &nbsp;/&nbsp; Ventas a crédito ) &nbsp;×&nbsp; 365</div>
+
+    <p><strong>3. Días de Cuentas por Pagar (DPO)</strong> — cuántos días tarda la empresa en pagar a sus proveedores.</p>
+    <div class="formula">DPO&nbsp; = &nbsp;( Cuentas por pagar promedio &nbsp;/&nbsp; Costo de ventas ) &nbsp;×&nbsp; 365</div>
+
+    <p>La fórmula del ciclo completo es:</p>
+    <div class="formula" style="font-size:1.2rem;font-weight:600">CCE&nbsp; = &nbsp;DIO + DSO − DPO</div>
+
+    <p><strong>Interpretación:</strong></p>
+    <ul>
+      <li>Un <strong>CCE positivo y alto</strong> indica que la empresa tarda mucho en convertir sus inversiones en inventario y cuentas por cobrar de vuelta en efectivo, lo que puede generar presión de liquidez y necesidad de financiamiento externo.</li>
+      <li>Un <strong>CCE bajo o negativo</strong> (común en supermercados o retailers grandes) indica que la empresa cobra a sus clientes antes de tener que pagar a sus proveedores, operando con menos capital de trabajo propio.</li>
+      <li>Acortar el CCE —vendiendo inventario más rápido, cobrando más rápido, o negociando mejores plazos con proveedores— libera efectivo para la operación sin necesidad de deuda adicional.</li>
+    </ul>
+
+    <h3 class="section">Ejercicio / caso práctico</h3>
+    <p>La empresa <strong>Comercial Laguna, S.A. de C.V.</strong>, dedicada a la venta al mayoreo de artículos de ferretería en Torreón, Coahuila, presenta la siguiente información financiera correspondiente al último ejercicio anual:</p>
+
+    <table class="data">
+      <thead>
+        <tr><th>Concepto</th><th class="num">Monto (MXN)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Costo de ventas anual</td><td class="num">$18,250,000</td></tr>
+        <tr><td>Ventas anuales a crédito</td><td class="num">$24,000,000</td></tr>
+        <tr><td>Inventario promedio</td><td class="num">$2,500,000</td></tr>
+        <tr><td>Cuentas por cobrar promedio</td><td class="num">$2,300,000</td></tr>
+        <tr><td>Cuentas por pagar promedio</td><td class="num">$1,900,000</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Se pide:</strong></p>
+    <ol>
+      <li>Calcular el DIO, DSO y DPO de la empresa (usa 365 días).</li>
+      <li>Calcular el Ciclo de Conversión de Efectivo (CCE).</li>
+      <li>Interpretar el resultado: ¿la empresa tiene un ciclo de efectivo sano o representa presión sobre su liquidez?</li>
+      <li>Proponer <strong>dos acciones concretas</strong> que la administración podría tomar para reducir el CCE, indicando sobre cuál de los tres componentes (DIO, DSO o DPO) actuaría cada una.</li>
+    </ol>
+
+    <h3 class="section">Solución / guía de solución</h3>
+    <details class="solution">
+      <summary>Mostrar solución</summary>
+      <div class="inner">
+        <p><strong>1. Cálculo de los tres componentes:</strong></p>
+        <ul>
+          <li>DIO = (2,500,000 / 18,250,000) × 365 ≈ <strong>50.0 días</strong></li>
+          <li>DSO = (2,300,000 / 24,000,000) × 365 ≈ <strong>35.0 días</strong></li>
+          <li>DPO = (1,900,000 / 18,250,000) × 365 ≈ <strong>38.0 días</strong></li>
+        </ul>
+        <p><strong>2. Ciclo de Conversión de Efectivo:</strong></p>
+        <div class="formula">CCE = 50.0 + 35.0 − 38.0 = <strong>47.0 días</strong></div>
+        <p><strong>3. Interpretación:</strong></p>
+        <p>Comercial Laguna tarda, en promedio, 47 días desde que paga sus insumos hasta que recibe el efectivo de sus ventas. Es un ciclo moderado para una empresa de mayoreo, pero significa que la empresa debe financiar casi mes y medio de operación con capital propio o líneas de crédito de corto plazo antes de recuperar el efectivo invertido en cada ciclo de venta.</p>
+        <p><strong>4. Ejemplos de acciones</strong> (respuesta abierta, guía para el profesor):</p>
+        <ul>
+          <li><em>Sobre DIO:</em> mejorar la rotación de inventario con un sistema de reabastecimiento más frecuente y en menores cantidades.</li>
+          <li><em>Sobre DSO:</em> ofrecer descuentos por pronto pago a clientes mayoristas o reforzar la gestión de cobranza.</li>
+          <li><em>Sobre DPO:</em> renegociar plazos de pago más largos con proveedores clave, cuidando no dañar la relación comercial ni perder descuentos por pronto pago.</li>
+        </ul>
+      </div>
+    </details>
+
+    <h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+    <div class="prompt-box">
+      <span class="label">🤖 Prompt sugerido</span>Actúa como un asesor financiero especializado en administración del capital de trabajo.
+Con los siguientes datos anuales de una empresa:
+
+- Costo de ventas: $18,250,000
+- Ventas a crédito: $24,000,000
+- Inventario promedio: $2,500,000
+- Cuentas por cobrar promedio: $2,300,000
+- Cuentas por pagar promedio: $1,900,000
+
+1. Calcula los Días de Inventario (DIO), Días de Cuentas por Cobrar (DSO) y
+   Días de Cuentas por Pagar (DPO), usando 365 días.
+2. Calcula el Ciclo de Conversión de Efectivo (CCE).
+3. Interpreta el resultado: ¿qué tan sano es el ciclo de efectivo de esta empresa?
+4. Propón dos acciones concretas para reducir el CCE, indicando sobre cuál de
+   los tres componentes (DIO, DSO o DPO) actuaría cada una.
+
+Muestra el desarrollo paso a paso, no solo el resultado final.</div>
+    <div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> se sugiere agregar el Estado de Resultados y el Balance General (o al menos el detalle de inventarios, cuentas por cobrar y cuentas por pagar) de la empresa a analizar, para que la IA calcule los promedios y el CCE a partir de cifras reales.</div>
+
+    <h3 class="section">Recursos adicionales</h3>
+    <ul>
+      <li>Plantilla de cálculo en Excel: <em>(por agregar)</em></li>
+      <li>Lectura sugerida: capítulo de administración del capital de trabajo en el libro de texto del curso.</li>
+    </ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-09-10 · Asistencia de IA: redacción de teoría y caso práctico, pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Prototipo local · <a href="../../../../PLAN.md">ver plan del proyecto</a>
+</footer>
+
+</body>
+</html>

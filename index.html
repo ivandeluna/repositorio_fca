@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repositorio de Métodos y Ejercicios — FCA</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <span class="kicker">Facultad de Contaduría y Administración</span>
+      <h1><a href="index.html">Repositorio de Métodos y Ejercicios</a></h1>
+    </div>
+    <nav class="top-nav">
+      <a href="index.html">Inicio</a>
+      <a href="PLAN.md">Plan del proyecto</a>
+      <a href="_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <h2>Catálogo de métodos y ejercicios de clase</h2>
+    <p class="lead">Inspirado en el <a href="https://archive.ics.uci.edu/" target="_blank" rel="noopener">UC Irvine Machine Learning Repository</a> — pero en lugar de catalogar datasets, aquí se catalogan formas de dar clase, con y sin apoyo de IA, organizadas por carrera y materia.</p>
+  </div>
+
+  <div class="search-box">
+    <span class="icon">🔎</span>
+    <input type="text" id="filter" placeholder="Buscar carrera..." onkeyup="filterCards()">
+  </div>
+
+  <div class="section-title">Carreras</div>
+  <div class="card-grid" id="card-grid">
+    <a class="card" href="carreras/contador-publico/index.html">
+      <h3>Contador Público</h3>
+      <p>Administración financiera, costos, auditoría y más.</p>
+      <div class="meta">
+        <span class="badge count">1 materia</span>
+        <span class="badge count">1 ejercicio</span>
+      </div>
+    </a>
+    <a class="card" href="carreras/comercio-exterior-aduanas/index.html">
+      <h3>Comercio Exterior y Aduanas</h3>
+      <p>Logística internacional, aduanas y tratados comerciales.</p>
+      <div class="meta">
+        <span class="badge count">2 materias</span>
+        <span class="badge count">2 ejercicios</span>
+      </div>
+    </a>
+    <a class="card" href="carreras/administracion-empresas/index.html">
+      <h3>Administración de Empresas</h3>
+      <p>Gestión estratégica, operaciones y liderazgo organizacional.</p>
+      <div class="meta">
+        <span class="badge soon">próximamente</span>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Prototipo local · <a href="PLAN.md">ver plan del proyecto</a>
+</footer>
+
+</body>
+</html>
+
+<script>
+function filterCards(){
+  var q = document.getElementById('filter').value.toLowerCase();
+  document.querySelectorAll('#card-grid .card').forEach(function(c){
+    var text = c.innerText.toLowerCase();
+    c.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+  });
+}
+</script>

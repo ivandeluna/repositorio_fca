@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.swp
+
+# R (por si se usa para análisis de datos en algún ejercicio)
+.Rhistory
+.RData
+.Rproj.user/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Archivos temporales
+*.tmp
+~$*
+
+# Borradores sueltos (no forman parte de la estructura del repositorio)
+IA_en_Clase_6_Ejemplos.docx
+REPOSITORIO DE CASOS IA.docx
+Repositorio de Casos IA*.pptx
