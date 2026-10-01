@@ -40,9 +40,20 @@ Repositorio/
     │       └── regresion-lineal-simple/
     │           ├── README.md
     │           └── metadata.yml
-    └── administracion-empresas/
-        └── README.md
+    ├── administracion-empresas/
+    │   └── README.md
+    └── materias-comunes/
+        ├── README.md
+        ├── _info.yml
+        └── estadistica-basica/
+            ├── README.md
+            ├── _info.yml
+            └── medidas-de-tendencia-central/
+                ├── README.md
+                └── metadata.yml
 ```
+
+> **Nota sobre materias compartidas:** cuando una materia (como Estadística Básica) la cursan las tres carreras por igual, no se duplica dentro de cada una — vive una sola vez bajo la "carrera" especial `materias-comunes`, que aparece como una cuarta tarjeta más en el catálogo raíz. El generador de índices la trata igual que cualquier otra carrera, así que no requirió cambios al script.
 
 Jerarquía: **Carrera → Materia → Ejercicio/Método**. Cada nivel es una carpeta con su propio `README.md` que actúa como índice de lo que contiene — el mismo patrón de "categoría → subcategoría → dataset" de UCI.
 
@@ -96,6 +107,7 @@ Esto es opcional de llenar al 100% desde el día uno, pero tenerlo desde el ejem
   - Contador Público → Aplicar Administración de las Finanzas → **Ciclo de Conversión de Efectivo**
   - Comercio Exterior y Aduanas → Manejar Finanzas Internacionales → **Arbitraje con Tipo de Cambio y Diferencial de Tasas de Interés**
   - Comercio Exterior y Aduanas → Econometría → **Regresión Lineal Simple**
+  - Materias Comunes → Estadística Básica → **Medidas de Tendencia Central** (el caso práctico y su solución los agregó la IA; el borrador original solo traía teoría y prompts)
 - Un **prototipo navegable en HTML** (paleta azul/blanco de la FCA) que refleja la misma estructura de carpetas, con página de inicio, páginas de carrera, de materia y de ejercicio — incluyendo una sección de **"Prompt sugerido para hacerlo con Claude o ChatGPT"** en cada ejercicio, con el prompt listo para copiar y una nota de qué documentos conviene adjuntar (o si no se requiere ninguno).
 - Índices de cada nivel y la plantilla para nuevos ejercicios, ya actualizada con la sección de prompt sugerido.
 
