@@ -207,7 +207,6 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
     </div>
     <nav class="top-nav">
       <a href="../../../../index.html">Inicio</a>
-      <a href="../../../../PLAN.md">Plan del proyecto</a>
       <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
     </nav>
   </div>

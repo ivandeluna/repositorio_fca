@@ -116,7 +116,6 @@ HTML_HEAD = """<!doctype html>
     </div>
     <nav class="top-nav">
       <a href="{home_path}">Inicio</a>
-      <a href="{plan_path}">Plan del proyecto</a>
       <a href="{contrib_path}">Cómo contribuir</a>
     </nav>
   </div>
