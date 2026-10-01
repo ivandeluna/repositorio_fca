@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administración de Inventario — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <span class="kicker">Facultad de Contaduría y Administración</span>
+      <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../PLAN.md">Plan del proyecto</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Contador Público</a><span class="sep">/</span>
+    <a href="../index.html">Aplicar Administración de las Finanzas</a><span class="sep">/</span>
+    Administración de Inventario
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Administración de Inventario</h2>
+      <div class="badges">
+        <span class="badge">Contador Público</span>
+        <span class="badge">Aplicar Administración de las Finanzas</span>
+        <span class="badge">Intermedio</span>
+        <span class="badge">50 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+    <p>Al terminar este ejercicio, el alumno podrá calcular el <strong>lote económico de pedido (EOQ)</strong>, el <strong>punto de reorden</strong> (con y sin inventario de seguridad) para una política de inventario, e interpretar la relación de ambos conceptos con el enfoque <strong>Justo a Tiempo (JIT)</strong> como filosofía de reducción de inventarios.</p>
+
+    <h3 class="section">Teoría</h3>
+    <div class="ai-note">⚠️ Nota de transparencia: la explicación teórica fue redactada por el profesor y ampliada/pulida con apoyo de IA; el planteamiento del caso y los criterios de decisión son responsabilidad del profesor.</div>
+
+    <p>La administración de inventarios busca equilibrar dos costos que se mueven en direcciones opuestas: el <strong>costo de ordenar</strong> (hacer más pedidos implica más costos administrativos y de flete, pero pedidos más pequeños) y el <strong>costo de mantener inventario</strong> (almacenaje, seguros, obsolescencia, costo de oportunidad del capital invertido en inventario).</p>
+
+    <p><strong>Cantidad Económica de Pedido (EOQ — Economic Order Quantity):</strong></p>
+    <div class="formula">EOQ &nbsp;=&nbsp; √(2 · D · S / H)</div>
+    <p>Donde:</p>
+    <ul>
+      <li><strong>D</strong> = demanda anual (unidades)</li>
+      <li><strong>S</strong> = costo de ordenar por pedido</li>
+      <li><strong>H</strong> = costo de mantener una unidad en inventario durante un año</li>
+    </ul>
+    <p>El EOQ determina el tamaño de pedido que <strong>minimiza la suma del costo total de ordenar y de mantener inventario</strong>.</p>
+
+    <p><strong>Número de pedidos al año y frecuencia entre pedidos:</strong></p>
+    <div class="formula">Número de pedidos por año = D / EOQ &nbsp;·&nbsp; Días entre pedidos = 365 / Número de pedidos por año</div>
+
+    <p><strong>Punto de reorden (ROP — Reorder Point):</strong> es el nivel de inventario en el cual se debe colocar un nuevo pedido, considerando el tiempo que tarda en llegar (tiempo de entrega o <em>lead time</em>):</p>
+    <div class="formula">ROP &nbsp;=&nbsp; d · L</div>
+    <p>Donde <em>d</em> es la demanda diaria promedio (D / 365) y <em>L</em> es el tiempo de entrega en días. Si la empresa quiere protegerse contra variaciones en la demanda o retrasos del proveedor, se añade un <strong>inventario de seguridad (SS — Safety Stock)</strong>:</p>
+    <div class="formula">ROP con inventario de seguridad &nbsp;=&nbsp; (d · L) + SS</div>
+
+    <p><strong>Justo a Tiempo (JIT):</strong> es una filosofía de administración de inventarios que busca reducir al mínimo posible (idealmente a cero) el inventario mantenido, recibiendo materiales justo cuando se necesitan en el proceso productivo. JIT no sustituye el cálculo del EOQ o el punto de reorden, sino que busca <strong>reducir drásticamente el costo de ordenar</strong> (mediante relaciones de largo plazo con proveedores, pedidos frecuentes y pequeños, y entregas muy confiables), lo cual —de acuerdo con la propia fórmula del EOQ— reduce el tamaño óptimo de pedido y, por tanto, el inventario promedio que la empresa necesita mantener.</p>
+
+    <h3 class="section">Ejercicio / caso práctico</h3>
+    <p>Una empresa comercializadora tiene una demanda anual de <strong>7,200 unidades</strong> de un producto. El costo de colocar cada pedido (administrativo, flete, recepción) es de <strong>$150 por pedido</strong>, y el costo de mantener una unidad en inventario durante un año es de <strong>$4 por unidad</strong>.</p>
+
+    <p>El tiempo de entrega (<em>lead time</em>) del proveedor es de <strong>6 días</strong>, y la empresa quiere mantener un inventario de seguridad de <strong>20 unidades</strong> para protegerse de variaciones en la demanda.</p>
+
+    <p><strong>Se pide:</strong></p>
+    <ol>
+      <li>Calcular el EOQ (lote económico de pedido).</li>
+      <li>Calcular cuántos pedidos al año se colocarían con ese EOQ, y cada cuántos días (en promedio) se haría un pedido.</li>
+      <li>Calcular el punto de reorden sin inventario de seguridad.</li>
+      <li>Calcular el punto de reorden incluyendo el inventario de seguridad.</li>
+      <li>Explicar, en el contexto de este caso, cómo cambiaría el EOQ si la empresa migrara hacia una filosofía JIT y lograra reducir su costo de ordenar S.</li>
+    </ol>
+
+    <h3 class="section">Solución / guía de solución</h3>
+    <details class="solution">
+      <summary>Mostrar solución</summary>
+      <div class="inner">
+        <p><strong>1. EOQ</strong></p>
+        <div class="formula">EOQ = √(2 × 7,200 × 150 / 4) = √540,000 ≈ <strong>734.85 unidades</strong></div>
+        <p>Se redondea a <strong>735 unidades</strong> por pedido (en la práctica se redondea al entero conveniente según la unidad de empaque del producto).</p>
+
+        <p><strong>2. Número de pedidos al año y días entre pedidos</strong></p>
+        <div class="formula">Número de pedidos = 7,200 / 734.85 ≈ 9.80 pedidos al año &nbsp;·&nbsp; Días entre pedidos = 365 / 9.80 ≈ 37.25 días</div>
+        <p>Es decir, la empresa colocaría un pedido aproximadamente cada <strong>37 días</strong>, unas <strong>10 veces al año</strong>.</p>
+
+        <p><strong>3. Punto de reorden sin inventario de seguridad</strong></p>
+        <div class="formula">d = 7,200 / 365 ≈ 19.73 unidades/día &nbsp;·&nbsp; ROP = d × L = 19.73 × 6 ≈ <strong>118.36 unidades</strong></div>
+        <p>La empresa debería colocar un nuevo pedido cuando el inventario disponible llegue a aproximadamente <strong>118 unidades</strong>.</p>
+
+        <p><strong>4. Punto de reorden con inventario de seguridad</strong></p>
+        <div class="formula">ROP con SS = 118.36 + 20 = <strong>138.36 unidades</strong></div>
+        <p>Considerando el inventario de seguridad, el punto de reorden sube a aproximadamente <strong>138 unidades</strong>.</p>
+
+        <p><strong>5. Efecto de migrar hacia JIT</strong></p>
+        <p>La fórmula del EOQ muestra que EOQ es directamente proporcional a la raíz cuadrada de S (el costo de ordenar). Si la empresa adopta una filosofía JIT y, mediante acuerdos de largo plazo con proveedores, sistemas electrónicos de pedido y mayor confiabilidad logística, logra <strong>reducir su costo de ordenar</strong> (por ejemplo, de $150 a $20 por pedido), el nuevo EOQ sería:</p>
+        <div class="formula">EOQ_JIT = √(2 × 7,200 × 20 / 4) = √72,000 ≈ <strong>268.33 unidades</strong></div>
+        <p>Un EOQ mucho menor (de ~735 a ~268 unidades) implica pedidos más pequeños y frecuentes, lo que reduce el inventario promedio que la empresa mantiene y, con ello, el costo de mantenimiento total — justo el objetivo de JIT. Sin embargo, esta reducción solo es sostenible si la empresa también logra mantener <strong>lead times cortos y confiables</strong>, pues de lo contrario el riesgo de quedarse sin inventario (y su costo asociado) aumentaría.</p>
+      </div>
+    </details>
+
+    <h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+    <div class="prompt-box">
+      <span class="label">🤖 Prompt sugerido</span>Actúa como un asesor en administración de operaciones e inventarios. Tengo una empresa con demanda anual de 7,200 unidades de un producto, costo de ordenar de $150 por pedido, y costo de mantener inventario de $4 por unidad al año. El tiempo de entrega del proveedor es de 6 días, y quiero mantener un inventario de seguridad de 20 unidades.
+
+1. Calcula el EOQ (lote económico de pedido).
+2. Calcula cuántos pedidos al año se harían y cada cuántos días, en promedio.
+3. Calcula el punto de reorden sin inventario de seguridad y con inventario de seguridad.
+4. Explica cómo cambiaría el EOQ si, al adoptar una filosofía Justo a Tiempo (JIT), lograra reducir el costo de ordenar a $20 por pedido, y qué implicaciones tiene esto para el inventario promedio de la empresa.
+
+Muestra el procedimiento y las fórmulas utilizadas, no solo el resultado final.</div>
+    <div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> Ninguno — todos los datos del caso (demanda anual, costo de ordenar, costo de mantener, lead time e inventario de seguridad) caben en el prompt.</div>
+
+    <h3 class="section">Recursos adicionales</h3>
+    <ul>
+      <li>Plantilla de Excel para calcular EOQ, número de pedidos, punto de reorden e inventario de seguridad ante distintos escenarios de demanda y lead time.</li>
+      <li>Lectura sugerida: modelos de inventario determinísticos (EOQ) frente a filosofías de administración esbelta de inventarios (JIT, Kanban).</li>
+    </ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-10-01 · Asistencia de IA: redacción de teoría y caso práctico con apoyo de IA a partir del lineamiento temático del profesor; cálculos verificados numéricamente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Prototipo local · <a href="../../../../PLAN.md">ver plan del proyecto</a>
+</footer>
+
+</body>
+</html>

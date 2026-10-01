@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amortización de Préstamos — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <span class="kicker">Facultad de Contaduría y Administración</span>
+      <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../PLAN.md">Plan del proyecto</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Comercio Exterior y Aduanas</a><span class="sep">/</span>
+    <a href="../index.html">Manejar Finanzas Internacionales</a><span class="sep">/</span>
+    Amortización de Préstamos
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Amortización de Préstamos</h2>
+      <div class="badges">
+        <span class="badge">Comercio Exterior y Aduanas</span>
+        <span class="badge">Manejar Finanzas Internacionales</span>
+        <span class="badge">Intermedio</span>
+        <span class="badge">55 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+    <p>Al terminar este ejercicio, el alumno podrá construir una tabla de amortización con el sistema francés (pago constante), calcular el saldo insoluto, el interés y el capital correspondientes a un mes específico del crédito, y evaluar el efecto financiero de un pago anticipado a capital (ahorro en intereses y reducción del plazo).</p>
+
+    <h3 class="section">Teoría</h3>
+    <div class="ai-note">⚠️ Nota de transparencia: la explicación teórica fue redactada por el profesor y ampliada/pulida con apoyo de IA; las fórmulas y la interpretación financiera son responsabilidad del profesor.</div>
+
+    <p>En comercio exterior es común financiar inventario, maquinaria o capital de trabajo en moneda extranjera mediante créditos que se liquidan en pagos periódicos iguales — el llamado <strong>sistema de amortización francés</strong>. Este sistema calcula un pago fijo que combina capital e interés, de modo que al inicio del crédito el pago se compone principalmente de interés, y conforme avanza el plazo, de más capital.</p>
+
+    <p><strong>Fórmula del pago constante (anualidad):</strong></p>
+    <div class="formula">A &nbsp;=&nbsp; P · i / (1 − (1 + i)<sup>−n</sup>)</div>
+
+    <p>Donde:</p>
+    <ul>
+      <li><strong>A</strong> = pago periódico constante</li>
+      <li><strong>P</strong> = monto principal del préstamo</li>
+      <li><strong>i</strong> = tasa de interés periódica (tasa anual ÷ número de periodos por año)</li>
+      <li><strong>n</strong> = número total de periodos</li>
+    </ul>
+
+    <p><strong>Para cada periodo, la tabla de amortización se construye así:</strong></p>
+    <ul>
+      <li>Interés del periodo = saldo insoluto inicial × <em>i</em></li>
+      <li>Capital del periodo = A − interés del periodo</li>
+      <li>Saldo insoluto final = saldo insoluto inicial − capital del periodo</li>
+    </ul>
+
+    <p><strong>Pago anticipado a capital (prepayment):</strong> cuando el acreditado abona una cantidad extra directamente a capital (sin que cuente como pago regular), el saldo insoluto baja de inmediato. Esto tiene dos efectos posibles que el acreditado puede elegir:</p>
+    <ol>
+      <li><strong>Mantener el mismo pago mensual y reducir el plazo</strong> (el crédito se liquida en menos periodos).</li>
+      <li><strong>Mantener el mismo plazo y reducir el pago mensual</strong> (se recalcula un pago menor para los periodos restantes).</li>
+    </ol>
+    <p>En ambos casos, el abono anticipado reduce el interés total pagado durante la vida del crédito, porque el interés de cada periodo se calcula sobre un saldo insoluto menor.</p>
+
+    <h3 class="section">Ejercicio / caso práctico</h3>
+    <p>Una empresa importadora solicita un préstamo bancario de <strong>$500,000 MXN</strong> para financiar la compra de mercancía de un proveedor en el extranjero. El banco ofrece una tasa de interés anual del <strong>18%</strong>, a pagar en <strong>12 pagos mensuales iguales</strong> bajo el sistema francés.</p>
+
+    <p><strong>Se pide:</strong></p>
+    <ol>
+      <li>Calcular el pago mensual constante (A).</li>
+      <li>Construir la tabla de amortización completa (12 meses): saldo inicial, interés, capital y saldo final de cada mes.</li>
+      <li>Identificar específicamente, para el <strong>mes 6</strong>: el saldo insoluto inicial, el interés y el capital de ese pago, y el saldo final tras ese pago.</li>
+      <li>Suponer que, justo después de realizar el pago normal del mes 6, la empresa hace un <strong>pago anticipado (prepayment) de $50,000</strong> directamente a capital. Si la empresa decide <strong>mantener el mismo pago mensual</strong> (~$45,840) para los meses restantes, ¿en cuántos meses adicionales terminará de liquidar el crédito, y cuánto ahorra en intereses totales respecto al plan original a 12 meses?</li>
+    </ol>
+
+    <h3 class="section">Solución / guía de solución</h3>
+    <details class="solution">
+      <summary>Mostrar solución</summary>
+      <div class="inner">
+        <p><strong>1. Pago mensual constante</strong></p>
+        <p>Con P = 500,000, tasa mensual i = 18%/12 = 1.5% y n = 12:</p>
+        <div class="formula">A = 500,000 × 0.015 / (1 − (1.015)<sup>−12</sup>) = <strong>$45,840.00</strong></div>
+
+        <p><strong>2. Tabla de amortización completa</strong></p>
+        <table class="data">
+          <thead>
+            <tr><th>Mes</th><th class="num">Saldo inicial</th><th class="num">Interés</th><th class="num">Capital</th><th class="num">Saldo final</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="num">500,000.00</td><td class="num">7,500.00</td><td class="num">38,340.00</td><td class="num">461,660.00</td></tr>
+            <tr><td>2</td><td class="num">461,660.00</td><td class="num">6,924.90</td><td class="num">38,915.10</td><td class="num">422,744.91</td></tr>
+            <tr><td>3</td><td class="num">422,744.91</td><td class="num">6,341.17</td><td class="num">39,498.82</td><td class="num">383,246.08</td></tr>
+            <tr><td>4</td><td class="num">383,246.08</td><td class="num">5,748.69</td><td class="num">40,091.31</td><td class="num">343,154.78</td></tr>
+            <tr><td>5</td><td class="num">343,154.78</td><td class="num">5,147.32</td><td class="num">40,692.67</td><td class="num">302,462.10</td></tr>
+            <tr><td><strong>6</strong></td><td class="num"><strong>302,462.10</strong></td><td class="num"><strong>4,536.93</strong></td><td class="num"><strong>41,303.06</strong></td><td class="num"><strong>261,159.04</strong></td></tr>
+            <tr><td>7</td><td class="num">261,159.04</td><td class="num">3,917.39</td><td class="num">41,922.61</td><td class="num">219,236.43</td></tr>
+            <tr><td>8</td><td class="num">219,236.43</td><td class="num">3,288.55</td><td class="num">42,551.45</td><td class="num">176,684.98</td></tr>
+            <tr><td>9</td><td class="num">176,684.98</td><td class="num">2,650.27</td><td class="num">43,189.72</td><td class="num">133,495.26</td></tr>
+            <tr><td>10</td><td class="num">133,495.26</td><td class="num">2,002.43</td><td class="num">43,837.57</td><td class="num">89,657.69</td></tr>
+            <tr><td>11</td><td class="num">89,657.69</td><td class="num">1,344.87</td><td class="num">44,495.13</td><td class="num">45,162.56</td></tr>
+            <tr><td>12</td><td class="num">45,162.56</td><td class="num">677.44</td><td class="num">45,162.56</td><td class="num">0.00</td></tr>
+          </tbody>
+        </table>
+        <p>Interés total pagado en el plan original (12 meses, sin pago anticipado): <strong>$50,079.96</strong>.</p>
+
+        <p><strong>3. Mes 6 específicamente</strong></p>
+        <ul>
+          <li>Saldo insoluto inicial: <strong>$302,462.10</strong></li>
+          <li>Interés del mes 6: <strong>$4,536.93</strong></li>
+          <li>Capital del mes 6: <strong>$41,303.06</strong></li>
+          <li>Saldo final tras el pago normal del mes 6: <strong>$261,159.04</strong></li>
+        </ul>
+
+        <p><strong>4. Pago anticipado de $50,000 tras el mes 6</strong></p>
+        <p>Nuevo saldo insoluto inmediatamente después del abono extra:</p>
+        <div class="formula">261,159.04 − 50,000 = <strong>$211,159.04</strong></div>
+
+        <p>Manteniendo el mismo pago mensual (~$45,840.00), la nueva tabla para los meses restantes queda:</p>
+        <table class="data">
+          <thead>
+            <tr><th>Mes adicional</th><th class="num">Saldo inicial</th><th class="num">Interés</th><th class="num">Capital</th><th class="num">Pago</th><th class="num">Saldo final</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="num">211,159.04</td><td class="num">3,167.39</td><td class="num">42,672.61</td><td class="num">45,840.00</td><td class="num">168,486.43</td></tr>
+            <tr><td>2</td><td class="num">168,486.43</td><td class="num">2,527.30</td><td class="num">43,312.70</td><td class="num">45,840.00</td><td class="num">125,173.73</td></tr>
+            <tr><td>3</td><td class="num">125,173.73</td><td class="num">1,877.61</td><td class="num">43,962.39</td><td class="num">45,840.00</td><td class="num">81,211.34</td></tr>
+            <tr><td>4</td><td class="num">81,211.34</td><td class="num">1,218.17</td><td class="num">44,621.83</td><td class="num">45,840.00</td><td class="num">36,589.51</td></tr>
+            <tr><td>5</td><td class="num">36,589.51</td><td class="num">548.84</td><td class="num">36,589.51</td><td class="num">37,138.35</td><td class="num">0.00</td></tr>
+          </tbody>
+        </table>
+        <p>El crédito se liquida en <strong>5 meses adicionales</strong> (en lugar de los 6 meses que faltaban originalmente), con un último pago ajustado de $37,138.35.</p>
+        <p><strong>Interés total pagado con el abono anticipado:</strong> intereses de los meses 1–6 ($36,199.02) + intereses de los 5 meses adicionales ($9,339.30) = <strong>$45,538.32</strong>.</p>
+        <p><strong>Ahorro en intereses frente al plan original:</strong> $50,079.96 − $45,538.32 = <strong>$4,541.64</strong>, además de liquidar el crédito un mes antes.</p>
+      </div>
+    </details>
+
+    <h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+    <div class="prompt-box">
+      <span class="label">🤖 Prompt sugerido</span>Actúa como un asesor financiero especializado en comercio exterior. Tengo un préstamo de $500,000 MXN a 12 meses, con tasa de interés anual del 18%, bajo el sistema de amortización francés (pago mensual constante).
+
+1. Calcula el pago mensual constante.
+2. Construye la tabla de amortización completa (12 meses), mostrando para cada mes: saldo inicial, interés, capital y saldo final.
+3. Indica específicamente el saldo inicial, interés, capital y saldo final del mes 6.
+4. Si justo después del pago del mes 6 hago un pago anticipado de $50,000 directamente a capital y decido mantener el mismo pago mensual para los meses restantes, ¿en cuántos meses adicionales termino de pagar el crédito? ¿Cuánto ahorro en intereses totales comparado con el plan original a 12 meses?
+
+Muestra el procedimiento y las fórmulas utilizadas, no solo el resultado final.</div>
+    <div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> Ninguno — todos los datos del caso (monto, tasa, plazo, monto del pago anticipado) caben en el prompt.</div>
+
+    <h3 class="section">Recursos adicionales</h3>
+    <ul>
+      <li>Plantilla de Excel para tabla de amortización con función PAGO/PMT y fórmulas de interés/capital por periodo.</li>
+      <li>Lectura sugerida: conceptos de valor del dinero en el tiempo y anualidades ordinarias aplicadas a financiamiento de comercio internacional.</li>
+    </ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-10-01 · Asistencia de IA: redacción de teoría y caso práctico con apoyo de IA a partir del lineamiento temático del profesor; cálculos verificados numéricamente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Prototipo local · <a href="../../../../PLAN.md">ver plan del proyecto</a>
+</footer>
+
+</body>
+</html>

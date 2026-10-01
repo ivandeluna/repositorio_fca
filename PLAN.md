@@ -25,14 +25,23 @@ Repositorio/
     │   ├── README.md                  ← índice de materias de la carrera
     │   └── aplicar-administracion-finanzas/
     │       ├── README.md              ← índice de ejercicios de la materia
-    │       └── ciclo-conversion-efectivo/
-    │           ├── README.md          ← teoría + ejercicio (el contenido real)
-    │           └── metadata.yml       ← metadatos estructurados (para catalogar/filtrar después)
+    │       ├── ciclo-conversion-efectivo/
+    │       │   ├── README.md          ← teoría + ejercicio (el contenido real)
+    │       │   └── metadata.yml       ← metadatos estructurados (para catalogar/filtrar después)
+    │       ├── administracion-de-cuentas-por-cobrar/
+    │       │   ├── README.md
+    │       │   └── metadata.yml
+    │       └── administracion-de-inventario/
+    │           ├── README.md
+    │           └── metadata.yml
     ├── comercio-exterior-aduanas/
     │   ├── README.md
     │   ├── manejar-finanzas-internacionales/
     │   │   ├── README.md
-    │   │   └── arbitraje-tipo-cambio-tasas-interes/
+    │   │   ├── arbitraje-tipo-cambio-tasas-interes/
+    │   │   │   ├── README.md
+    │   │   │   └── metadata.yml
+    │   │   └── amortizacion-de-prestamos/
     │   │       ├── README.md
     │   │       └── metadata.yml
     │   └── econometria/
@@ -105,7 +114,10 @@ Esto es opcional de llenar al 100% desde el día uno, pero tenerlo desde el ejem
 
 - Estructura completa de carpetas, con `README.md` de teoría + ejercicio y `metadata.yml` para:
   - Contador Público → Aplicar Administración de las Finanzas → **Ciclo de Conversión de Efectivo**
+  - Contador Público → Aplicar Administración de las Finanzas → **Administración de Cuentas por Cobrar** (evaluación de una propuesta de descuento por pronto pago vs. costo de oportunidad de CxC)
+  - Contador Público → Aplicar Administración de las Finanzas → **Administración de Inventario** (EOQ, punto de reorden con/sin inventario de seguridad, y su relación con JIT)
   - Comercio Exterior y Aduanas → Manejar Finanzas Internacionales → **Arbitraje con Tipo de Cambio y Diferencial de Tasas de Interés**
+  - Comercio Exterior y Aduanas → Manejar Finanzas Internacionales → **Amortización de Préstamos** (sistema francés, cálculo de un mes específico y efecto de un pago anticipado a capital)
   - Comercio Exterior y Aduanas → Econometría → **Regresión Lineal Simple**
   - Materias Comunes → Estadística Básica → **Medidas de Tendencia Central** (el caso práctico y su solución los agregó la IA; el borrador original solo traía teoría y prompts)
 - Un **prototipo navegable en HTML** (paleta azul/blanco de la FCA) que refleja la misma estructura de carpetas, con página de inicio, páginas de carrera, de materia y de ejercicio — incluyendo una sección de **"Prompt sugerido para hacerlo con Claude o ChatGPT"** en cada ejercicio, con el prompt listo para copiar y una nota de qué documentos conviene adjuntar (o si no se requiere ninguno).
