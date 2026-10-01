@@ -127,8 +127,7 @@ HTML_HEAD = """<!doctype html>
 HTML_FOOT = """</main>
 
 <footer class="site-footer">
-  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón<br>
-  Prototipo local · <a href="{plan_path}">ver plan del proyecto</a>
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
 </footer>
 
 </body>

@@ -267,8 +267,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
 </main>
 
 <footer class="site-footer">
-  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón<br>
-  Prototipo local · <a href="../../../../PLAN.md">ver plan del proyecto</a>
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
 </footer>
 
 </body>

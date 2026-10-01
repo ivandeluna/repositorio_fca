@@ -43,12 +43,11 @@ a:hover{color:var(--brand)}
   gap:14px;
 }
 .brand-logo{
-  height:50px;
-  width:50px;
+  height:68px;
+  width:68px;
   border-radius:50%;
-  background:#ffffff;
-  padding:4px;
   flex:none;
+  display:block;
 }
 .brand-text{
   display:flex;
