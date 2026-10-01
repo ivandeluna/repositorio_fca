@@ -1,8 +1,6 @@
 # Repositorio de Métodos y Ejercicios — FCA
 
-Catálogo de métodos, dinámicas y ejercicios de clase usados por profesores de la Facultad de Contaduría y Administración (FCA), organizados por carrera y materia — inspirado en el formato de catálogo del [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/), pero en lugar de *datasets*, aquí se catalogan **formas de dar clase con y sin apoyo de IA**.
-
-Ver el plan completo del proyecto en [`PLAN.md`](./PLAN.md).
+Catálogo de métodos, dinámicas y ejercicios de clase usados por profesores de la Facultad de Contaduría y Administración (FCA), organizados por carrera y materia — inspirado en el formato de catálogo del [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/). En lugar de *datasets*, aquí se catalogan **formas de dar clase con y sin apoyo de IA**.
 
 ## Carreras
 

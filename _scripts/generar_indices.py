@@ -157,9 +157,7 @@ def gen_root(carreras):
 
     readme = f"""# Repositorio de Métodos y Ejercicios — FCA
 
-Catálogo de métodos, dinámicas y ejercicios de clase usados por profesores de la Facultad de Contaduría y Administración (FCA), organizados por carrera y materia — inspirado en el formato de catálogo del [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/), pero en lugar de *datasets*, aquí se catalogan **formas de dar clase con y sin apoyo de IA**.
-
-Ver el plan completo del proyecto en [`PLAN.md`](./PLAN.md).
+Catálogo de métodos, dinámicas y ejercicios de clase usados por profesores de la Facultad de Contaduría y Administración (FCA), organizados por carrera y materia — inspirado en el formato de catálogo del [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/). En lugar de *datasets*, aquí se catalogan **formas de dar clase con y sin apoyo de IA**.
 
 ## Carreras
 
@@ -205,7 +203,7 @@ Ver la guía en [`_docs/CONTRIBUIR.md`](./_docs/CONTRIBUIR.md) y usar la plantil
     )
     body += """  <div class="hero">
     <h2>Catálogo de métodos y ejercicios de clase</h2>
-    <p class="lead">Inspirado en el <a href="https://archive.ics.uci.edu/" target="_blank" rel="noopener">UC Irvine Machine Learning Repository</a> — pero en lugar de catalogar datasets, aquí se catalogan formas de dar clase, con y sin apoyo de IA, organizadas por carrera y materia.</p>
+    <p class="lead">Catálogo de métodos, dinámicas y ejercicios de clase usados por profesores de la Facultad de Contaduría y Administración (FCA), organizados por carrera y materia — inspirado en el formato de catálogo del <a href="https://archive.ics.uci.edu/" target="_blank" rel="noopener">UC Irvine Machine Learning Repository</a>. En lugar de <em>datasets</em>, aquí se catalogan <strong>formas de dar clase con y sin apoyo de IA</strong>.</p>
   </div>
 
   <div class="search-box">
