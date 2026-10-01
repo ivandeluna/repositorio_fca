@@ -108,8 +108,11 @@ HTML_HEAD = """<!doctype html>
 <header class="site-header">
   <div class="top">
     <div class="brand">
-      <span class="kicker">Facultad de Contaduría y Administración</span>
-      <h1><a href="{home_path}">Repositorio de Métodos y Ejercicios</a></h1>
+      <img src="{logo_path}" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="{home_path}">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
     </div>
     <nav class="top-nav">
       <a href="{home_path}">Inicio</a>
@@ -125,6 +128,7 @@ HTML_HEAD = """<!doctype html>
 HTML_FOOT = """</main>
 
 <footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón<br>
   Prototipo local · <a href="{plan_path}">ver plan del proyecto</a>
 </footer>
 
@@ -196,6 +200,7 @@ Ver la guía en [`_docs/CONTRIBUIR.md`](./_docs/CONTRIBUIR.md) y usar la plantil
     body = HTML_HEAD.format(
         title="Repositorio de Métodos y Ejercicios — FCA",
         css_path="assets/style.css",
+        logo_path="assets/img/uadec-logo.png",
         home_path="index.html",
         plan_path="PLAN.md",
         contrib_path="_docs/CONTRIBUIR.md",
@@ -262,6 +267,7 @@ Materias con ejercicios/métodos registrados en este repositorio.
     body = HTML_HEAD.format(
         title=f"{c['nombre']} — Repositorio FCA",
         css_path=up(2) + "assets/style.css",
+        logo_path=up(2) + "assets/img/uadec-logo.png",
         home_path=up(2) + "index.html",
         plan_path=up(2) + "PLAN.md",
         contrib_path=up(2) + "_docs/CONTRIBUIR.md",
@@ -331,6 +337,7 @@ Materia de la carrera de {c['nombre']}.
     body = HTML_HEAD.format(
         title=f"{m['nombre']} — Repositorio FCA",
         css_path=up(3) + "assets/style.css",
+        logo_path=up(3) + "assets/img/uadec-logo.png",
         home_path=up(3) + "index.html",
         plan_path=up(3) + "PLAN.md",
         contrib_path=up(3) + "_docs/CONTRIBUIR.md",

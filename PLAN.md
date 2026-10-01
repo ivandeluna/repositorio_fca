@@ -110,7 +110,11 @@ Esto es opcional de llenar al 100% desde el día uno, pero tenerlo desde el ejem
 - Un ejercicio = una carpeta. Si un ejercicio tiene archivos de apoyo (Excel, datos, imágenes), van dentro de esa misma carpeta.
 - El texto visible (títulos, contenido) sí lleva acentos y formato normal en español.
 
-## 6. Qué se construyó ya como prototipo
+## 6. Identidad institucional
+
+El sitio incluye el logo de la **Universidad Autónoma de Coahuila (UAdeC)** en el encabezado y pie de página de todas las vistas, junto con el texto "Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón". El archivo vive en `assets/img/uadec-logo.png` y se referencia desde las plantillas de `_scripts/generar_indices.py` y `_scripts/nuevo_ejercicio.py`, por lo que aparece automáticamente en cualquier página nueva que se genere.
+
+## 7. Qué se construyó ya como prototipo
 
 - Estructura completa de carpetas, con `README.md` de teoría + ejercicio y `metadata.yml` para:
   - Contador Público → Aplicar Administración de las Finanzas → **Ciclo de Conversión de Efectivo**
@@ -125,7 +129,7 @@ Esto es opcional de llenar al 100% desde el día uno, pero tenerlo desde el ejem
 
 Revísalo directamente en tu carpeta `FCA/Repositorio` (abre `index.html` para la versión navegable).
 
-## 7. Publicar en GitHub y flujo de trabajo hacia adelante
+## 8. Publicar en GitHub y flujo de trabajo hacia adelante
 
 **Estado actual:** el repositorio ya es un repositorio git local (`git init` hecho, primer commit hecho, rama `main`). Falta únicamente conectarlo a GitHub:
 

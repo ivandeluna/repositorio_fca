@@ -38,13 +38,27 @@ a:hover{color:var(--brand)}
 }
 .brand{
   display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:14px;
+}
+.brand-logo{
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  background:#ffffff;
+  padding:4px;
+  flex:none;
+}
+.brand-text{
+  display:flex;
   flex-direction:column;
   gap:2px;
 }
 .brand .kicker{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-size:11px;
-  letter-spacing:.14em;
+  letter-spacing:.08em;
   text-transform:uppercase;
   color:#bcd9f5;
 }

@@ -199,8 +199,11 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
 <header class="site-header">
   <div class="top">
     <div class="brand">
-      <span class="kicker">Facultad de Contaduría y Administración</span>
-      <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
     </div>
     <nav class="top-nav">
       <a href="../../../../index.html">Inicio</a>
@@ -265,6 +268,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
 </main>
 
 <footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón<br>
   Prototipo local · <a href="../../../../PLAN.md">ver plan del proyecto</a>
 </footer>
 
