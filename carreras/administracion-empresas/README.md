@@ -1,7 +1,9 @@
 # Administración de Empresas
 
-Aún no hay materias registradas para esta carrera.
+Materias con ejercicios/métodos registrados en este repositorio.
 
-Para agregar la primera, usa la plantilla en [`_plantillas/plantilla-ejercicio.md`](../../_plantillas/plantilla-ejercicio.md) y sigue la estructura descrita en [`PLAN.md`](../../PLAN.md).
+| Materia | Ejercicios |
+|---|---|
+| [Planeación Estratégica](./planeacion-estrategica/README.md) | 1 |
 
 ⬅ [Volver al catálogo general](../../README.md)
