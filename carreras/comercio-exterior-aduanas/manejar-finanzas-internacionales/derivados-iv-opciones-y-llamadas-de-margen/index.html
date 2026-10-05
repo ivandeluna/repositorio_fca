@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Derivados IV: opciones y llamadas de margen — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Comercio Exterior y Aduanas</a><span class="sep">/</span>
+    <a href="../index.html">Manejar Finanzas Internacionales</a><span class="sep">/</span>
+    Derivados IV: opciones y llamadas de margen
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Derivados IV: opciones y llamadas de margen</h2>
+      <div class="badges">
+        <span class="badge">Comercio Exterior y Aduanas</span>
+        <span class="badge">Manejar Finanzas Internacionales</span>
+        <span class="badge">Intermedio</span>
+        <span class="badge">45 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podrá armar una cobertura de "costo cero" (collar) con opciones sobre el dólar, explicar por qué quien vende una opción debe depositar garantías y quien la compra no, llevar la cuenta de margen de una posición vendida día por día identificando las llamadas de margen, y evaluar el riesgo de liquidez que implica para una empresa exportadora.</p>
+
+<h3 class="section">Teoría</h3>
+<div class="ai-note">⚠️ <em>Nota de transparencia: redactado con apoyo de IA a partir del lineamiento temático del profesor; los cálculos se verificaron con código. Revisar antes de usar en clase.</em></div>
+<p><strong>Comprar vs. vender una opción.</strong> En el ejercicio de opciones, Nogalera <em>compraba</em> opciones: pagaba la prima y, como mucho, perdía esa prima. Quien está del otro lado, el que <em>vende</em> (o "emite") la opción, cobra la prima, pero se obliga a cumplir si el comprador la ejerce. Su pérdida puede ser muy grande.</p>
+<table class="data">
+<thead>
+<tr>
+<th></th>
+<th>Comprador de la opción</th>
+<th>Vendedor de la opción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prima</td>
+<td>La paga</td>
+<td>La cobra</td>
+</tr>
+<tr>
+<td>Derecho u obligación</td>
+<td>Derecho</td>
+<td><strong>Obligación</strong></td>
+</tr>
+<tr>
+<td>Pérdida máxima</td>
+<td>La prima</td>
+<td>Muy grande (en un call vendido, sin límite)</td>
+</tr>
+<tr>
+<td>¿Deposita garantías?</td>
+<td>No</td>
+<td><strong>Sí</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Collar o cobertura de "costo cero".</strong> Una empresa exportadora que quiere un piso para su tipo de cambio puede comprar un <strong>put</strong>. Para no pagar la prima, vende al mismo tiempo un <strong>call</strong> con un precio de ejercicio más alto y usa la prima que cobra para pagar la del put. El resultado es un <strong>rango</strong>: el tipo de cambio efectivo nunca queda abajo del piso (el put) ni arriba del techo (el call). A cambio de no pagar prima, renuncia a la ganancia si el dólar sube mucho.</p>
+<p><strong>Garantías y llamadas de margen.</strong> En los mercados organizados, como MexDer, una <strong>cámara de compensación</strong> se pone en medio de cada operación y garantiza que todos cumplan. Para protegerse, a quien tiene una posición con riesgo de pérdida (por ejemplo, un call vendido) le exige:</p>
+<ul>
+<li><strong>Margen inicial</strong> (aportación inicial mínima): un depósito al abrir la posición.</li>
+<li><strong>Valuación diaria:</strong> cada día la posición se valúa a precio de mercado. Si el precio de la opción vendida sube, la pérdida del día se descuenta de la cuenta de margen; si baja, la ganancia se abona.</li>
+<li><strong>Margen de mantenimiento:</strong> el saldo mínimo que debe tener la cuenta.</li>
+<li><strong>Llamada de margen:</strong> si el saldo cae por debajo del mantenimiento, la cámara exige depositar, normalmente al día siguiente, lo necesario para regresar al margen inicial. Si no se deposita, <strong>cierra la posición</strong> y la pérdida se vuelve definitiva.</li>
+</ul>
+<p>En los contratos con bancos (fuera de bolsa) pasa algo parecido: el banco puede pedir garantías adicionales cuando la posición pierde valor.</p>
+<p><strong>El riesgo de liquidez.</strong> Para un exportador, la pérdida del call vendido cuando sube el dólar se compensa con más pesos por sus ventas. El problema es el <strong>momento</strong>: las llamadas de margen se pagan <em>hoy</em>, en efectivo, y los dólares del cliente llegan <em>después</em>. Una cobertura correcta en el papel puede llevar a una empresa a quedarse sin efectivo. En octubre de 2008, cuando el peso se depreció bruscamente, varias empresas mexicanas sufrieron pérdidas muy grandes con derivados cambiarios. El caso más conocido es el de Controladora Comercial Mexicana, que terminó en concurso mercantil.</p>
+
+<h3 class="section">Ejercicio / caso práctico</h3>
+<p><strong>Nogalera del Nazas, S.A. de C.V.</strong> cobrará <strong>USD 200,000 dentro de 90 días</strong> por una exportación de nuez. Quiere protegerse de que el dólar baje, pero no quiere pagar prima, así que arma un collar con opciones listadas en bolsa (contratos de 10,000 USD):</p>
+<p><strong>Datos (ilustrativos, no son cotizaciones reales):</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th>Dato</th>
+<th class="num">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo de cambio spot hoy</td>
+<td class="num">18.50 MXN/USD</td>
+</tr>
+<tr>
+<td><strong>Compra</strong> put a 90 días: precio de ejercicio / prima</td>
+<td class="num">18.30 / 0.25 MXN por dólar</td>
+</tr>
+<tr>
+<td><strong>Vende</strong> call a 90 días: precio de ejercicio / prima</td>
+<td class="num">19.20 / 0.25 MXN por dólar</td>
+</tr>
+<tr>
+<td>Número de contratos de cada opción</td>
+<td class="num">20 (20 × 10,000 = USD 200,000)</td>
+</tr>
+<tr>
+<td>Margen inicial por el call vendido</td>
+<td class="num">$6,000 por contrato</td>
+</tr>
+<tr>
+<td>Margen de mantenimiento</td>
+<td class="num">$4,800 por contrato</td>
+</tr>
+<tr>
+<td>Regla de llamada de margen</td>
+<td class="num">Si el saldo baja del mantenimiento, se deposita lo necesario para volver al margen inicial</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Evolución de los primeros 5 días hábiles:</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Día</th>
+<th class="num">Tipo de cambio spot</th>
+<th class="num">Precio (prima) del call 19.20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">0 (apertura)</td>
+<td class="num">18.50</td>
+<td class="num">0.25</td>
+</tr>
+<tr>
+<td class="num">1</td>
+<td class="num">18.55</td>
+<td class="num">0.32</td>
+</tr>
+<tr>
+<td class="num">2</td>
+<td class="num">18.75</td>
+<td class="num">0.45</td>
+</tr>
+<tr>
+<td class="num">3</td>
+<td class="num">19.00</td>
+<td class="num">0.70</td>
+</tr>
+<tr>
+<td class="num">4</td>
+<td class="num">18.85</td>
+<td class="num">0.55</td>
+</tr>
+<tr>
+<td class="num">5</td>
+<td class="num">19.30</td>
+<td class="num">0.95</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide:</strong></p>
+<ol>
+<li><strong>El collar.</strong> ¿Cuánto paga Nogalera de prima neta? Calcula el tipo de cambio efectivo y los pesos que recibe al vencimiento si el dólar termina en 17.50, 18.30, 18.80, 19.20, 19.80 o 20.50. Compara con no cubrirse.</li>
+<li><strong>¿Quién deposita?</strong> Explica por qué Nogalera debe depositar margen por el call vendido pero no por el put comprado.</li>
+<li><strong>Cuenta de margen.</strong> Calcula el margen inicial y el de mantenimiento de la posición. Después, día por día, calcula la pérdida o ganancia del call vendido, el saldo de la cuenta y si hay llamada de margen y de cuánto.</li>
+<li><strong>Liquidez.</strong> ¿Cuánto efectivo en total tuvo que depositar Nogalera en estos 5 días? ¿De dónde lo saca si los dólares del cliente llegan hasta el día 90? ¿Qué pasaría si no deposita?</li>
+<li><strong>¿Fue mala la cobertura?</strong> Si al día 90 el dólar está en 19.80, ¿cuánto recibe Nogalera en total contando el collar? ¿La pérdida en el call significa que la cobertura falló?</li>
+<li><strong>Caso real con IA.</strong> Pide a la IA que te explique qué le pasó a Controladora Comercial Mexicana con sus derivados en 2008 y verifica los datos principales en al menos una fuente periodística o en los reportes de la empresa a la BMV.</li>
+</ol>
+
+<h3 class="section">Solución / guía de solución</h3>
+<details class="solution">
+<summary>Mostrar guía de solución</summary>
+<div class="inner">
+<p><strong>1. El collar</strong></p>
+<ul>
+<li>Prima neta = prima del put pagada − prima del call cobrada = (0.25 − 0.25) × 200,000 = <strong>$0</strong>: costo cero.</li>
+<li>Tipo de cambio efectivo = el spot, pero nunca menor a 18.30 ni mayor a 19.20.</li>
+</ul>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Dólar al día 90</th>
+<th>Put (comprado)</th>
+<th>Call (vendido)</th>
+<th class="num">TC efectivo</th>
+<th class="num">Pesos con collar</th>
+<th class="num">Pesos sin cobertura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">17.50</td>
+<td>Nogalera lo ejerce</td>
+<td>No se ejerce</td>
+<td class="num">18.30</td>
+<td class="num">3,660,000</td>
+<td class="num">3,500,000</td>
+</tr>
+<tr>
+<td class="num">18.30</td>
+<td>Indiferente</td>
+<td>No se ejerce</td>
+<td class="num">18.30</td>
+<td class="num">3,660,000</td>
+<td class="num">3,660,000</td>
+</tr>
+<tr>
+<td class="num">18.80</td>
+<td>No se ejerce</td>
+<td>No se ejerce</td>
+<td class="num">18.80</td>
+<td class="num">3,760,000</td>
+<td class="num">3,760,000</td>
+</tr>
+<tr>
+<td class="num">19.20</td>
+<td>No se ejerce</td>
+<td>Indiferente</td>
+<td class="num">19.20</td>
+<td class="num">3,840,000</td>
+<td class="num">3,840,000</td>
+</tr>
+<tr>
+<td class="num">19.80</td>
+<td>No se ejerce</td>
+<td>Se lo ejercen</td>
+<td class="num">19.20</td>
+<td class="num">3,840,000</td>
+<td class="num">3,960,000</td>
+</tr>
+<tr>
+<td class="num">20.50</td>
+<td>No se ejerce</td>
+<td>Se lo ejercen</td>
+<td class="num">19.20</td>
+<td class="num">3,840,000</td>
+<td class="num">4,100,000</td>
+</tr>
+</tbody>
+</table>
+<p>Nogalera queda asegurada entre <strong>$3,660,000 y $3,840,000</strong>.</p>
+<p><strong>2. ¿Quién deposita?</strong></p>
+<p>Con el put comprado, Nogalera ya pagó todo lo que podía perder (la prima) y solo tiene derechos. Con el call vendido tiene una <strong>obligación</strong>: si el dólar sube, debe vender dólares a 19.20 aunque valgan más. La cámara de compensación le pide garantías para asegurarse de que cumpla.</p>
+<p><strong>3. Cuenta de margen</strong></p>
+<ul>
+<li>Margen inicial = 6,000 × 20 = <strong>$120,000</strong>. Mantenimiento = 4,800 × 20 = <strong>$96,000</strong>.</li>
+<li>Pérdida o ganancia diaria del call vendido = −(prima de hoy − prima de ayer) × 200,000. Si la prima sube, el vendedor pierde.</li>
+</ul>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Día</th>
+<th class="num">Prima del call</th>
+<th class="num">Pérdida o ganancia</th>
+<th class="num">Saldo antes de la llamada</th>
+<th>¿Llamada de margen?</th>
+<th class="num">Depósito</th>
+<th class="num">Saldo final</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">0</td>
+<td class="num">0.25</td>
+<td class="num">—</td>
+<td class="num">—</td>
+<td>—</td>
+<td class="num">120,000 (inicial)</td>
+<td class="num">120,000</td>
+</tr>
+<tr>
+<td class="num">1</td>
+<td class="num">0.32</td>
+<td class="num">−14,000</td>
+<td class="num">106,000</td>
+<td>No (arriba de 96,000)</td>
+<td class="num">—</td>
+<td class="num">106,000</td>
+</tr>
+<tr>
+<td class="num">2</td>
+<td class="num">0.45</td>
+<td class="num">−26,000</td>
+<td class="num">80,000</td>
+<td><strong>Sí</strong></td>
+<td class="num">40,000</td>
+<td class="num">120,000</td>
+</tr>
+<tr>
+<td class="num">3</td>
+<td class="num">0.70</td>
+<td class="num">−50,000</td>
+<td class="num">70,000</td>
+<td><strong>Sí</strong></td>
+<td class="num">50,000</td>
+<td class="num">120,000</td>
+</tr>
+<tr>
+<td class="num">4</td>
+<td class="num">0.55</td>
+<td class="num">+30,000</td>
+<td class="num">150,000</td>
+<td>No</td>
+<td class="num">—</td>
+<td class="num">150,000</td>
+</tr>
+<tr>
+<td class="num">5</td>
+<td class="num">0.95</td>
+<td class="num">−80,000</td>
+<td class="num">70,000</td>
+<td><strong>Sí</strong></td>
+<td class="num">50,000</td>
+<td class="num">120,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4. Liquidez</strong></p>
+<ul>
+<li>En 5 días Nogalera aportó <strong>$260,000</strong> en efectivo: $120,000 de margen inicial y $140,000 en tres llamadas de margen. Eso es cerca del 7 % de lo que espera recibir por la exportación, y los dólares todavía no llegan.</li>
+<li>Tiene que salir de su caja o de una línea de crédito. Si no deposita, la cámara cierra el call a 0.95 y la pérdida de $140,000 se vuelve definitiva, pero Nogalera <strong>se queda con el put y sin el call</strong>: ya no tiene un collar.</li>
+<li>Lección: antes de vender opciones o contratar derivados con garantías, la empresa debe calcular cuánta liquidez necesitaría en un escenario adverso y tener esos recursos disponibles.</li>
+</ul>
+<p><strong>5. ¿Fue mala la cobertura?</strong></p>
+<p>Con el dólar en 19.80, el call se ejerce: Nogalera pierde (19.80 − 19.20) × 200,000 = $120,000 en el call, pero vende sus dólares a 19.80 y recibe $3,960,000. Neto: 3,960,000 − 120,000 = <strong>$3,840,000</strong>, exactamente el techo del collar. La cobertura funcionó como se diseñó. Lo que "pierde" es la ganancia a la que renunció a cambio de no pagar prima. Las llamadas de margen fueron adelantos de esa misma pérdida, no un costo adicional (sin contar el costo financiero de adelantar el efectivo).</p>
+<p><strong>6. Caso real (respuesta abierta)</strong></p>
+<p>Puntos que el alumno debería encontrar y verificar: en 2008 la empresa tenía contratos de derivados cambiarios de un monto mucho mayor que su exposición real en dólares; la fuerte depreciación del peso en octubre de 2008 generó pérdidas y exigencias de garantías que no pudo cubrir; terminó en concurso mercantil y en una reestructura de su deuda. La diferencia con Nogalera: <strong>cubrir una exposición real</strong> frente a <strong>especular con montos mayores</strong> que esa exposición.</p>
+</div>
+</details>
+
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<p>Copia y pega el siguiente prompt en Claude o ChatGPT.</p>
+<div class="prompt-box"><span class="label">🤖 Prompt sugerido</span>Actúa como especialista en derivados y gestión de riesgos para empresas de
+comercio exterior. Explica de forma sencilla, para un estudiante de
+licenciatura.
+
+Una empresa exportadora mexicana cobrará USD 200,000 en 90 días. Arma un
+collar de costo cero con opciones listadas (contratos de 10,000 USD):
+compra 20 puts con precio de ejercicio 18.30 (prima 0.25 MXN por USD) y
+vende 20 calls con precio de ejercicio 19.20 (prima 0.25 MXN por USD).
+Spot actual: 18.50 MXN/USD.
+
+Por el call vendido, la cámara de compensación exige un margen inicial de
+$6,000 por contrato y un margen de mantenimiento de $4,800 por contrato.
+Si el saldo baja del mantenimiento, se deposita lo necesario para volver al
+margen inicial.
+
+La prima del call vendido evoluciona así: día 1 = 0.32, día 2 = 0.45,
+día 3 = 0.70, día 4 = 0.55, día 5 = 0.95.
+
+1. Calcula la prima neta del collar y una tabla con el tipo de cambio
+   efectivo y los pesos recibidos si el dólar termina en 17.50, 18.30,
+   18.80, 19.20, 19.80 y 20.50.
+2. Explica por qué el vendedor de una opción deposita garantías y el
+   comprador no.
+3. Haz una tabla día por día de la cuenta de margen: pérdida o ganancia,
+   saldo, si hay llamada de margen y el monto a depositar.
+4. Calcula el efectivo total aportado y explica el riesgo de liquidez para
+   la empresa.
+5. Explica brevemente qué le pasó a Controladora Comercial Mexicana con sus
+   derivados cambiarios en 2008 y cita tus fuentes.
+
+Muestra cada cálculo con los números sustituidos.</div>
+
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> ninguno.</div>
+
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>MexDer (mexder.com.mx): reglas de aportaciones iniciales mínimas y de la cámara de compensación (Asigna).</li>
+<li>Ejercicios relacionados: <em>Derivados I: forwards y futuros</em> (liquidación diaria) y <em>Derivados II: opciones</em>.</li>
+</ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-10-05 · Asistencia de IA: teoría, caso y guía de solución redactados con apoyo de IA a partir del lineamiento del profesor; cálculos verificados con código; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>
