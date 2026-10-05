@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Derivados I: forwards y futuros de tipo de cambio — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Comercio Exterior y Aduanas</a><span class="sep">/</span>
+    <a href="../index.html">Manejar Finanzas Internacionales</a><span class="sep">/</span>
+    Derivados I: forwards y futuros de tipo de cambio
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Derivados I: forwards y futuros de tipo de cambio</h2>
+      <div class="badges">
+        <span class="badge">Comercio Exterior y Aduanas</span>
+        <span class="badge">Manejar Finanzas Internacionales</span>
+        <span class="badge">Introductorio</span>
+        <span class="badge">40 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podrá calcular un tipo de cambio forward a partir de las tasas de interés de México y de EE. UU., comparar el resultado de un exportador con y sin cobertura, y explicar las diferencias entre un forward bancario y un futuro del dólar en MexDer, incluida la liquidación diaria de pérdidas y ganancias.</p>
+
+<h3 class="section">Teoría</h3>
+<div class="ai-note">⚠️ <em>Nota de transparencia: redactado con apoyo de IA a partir del lineamiento temático del profesor; los cálculos se verificaron con código. Revisar antes de usar en clase.</em></div>
+<p>Un <strong>derivado</strong> es un contrato cuyo valor depende de otra cosa, llamada <strong>subyacente</strong>: el tipo de cambio, una tasa de interés, una acción o una materia prima. En comercio exterior se usan sobre todo para <strong>cubrirse</strong> (protegerse) del riesgo de que el tipo de cambio se mueva en contra.</p>
+<p><strong>Forward.</strong> Es un acuerdo privado, normalmente con un banco, para comprar o vender una cantidad de dólares en una fecha futura a un precio que se fija <strong>hoy</strong>. Se hace a la medida (monto y fecha exactos), no cuesta nada al firmarlo y se liquida al vencimiento.</p>
+<p><strong>Futuro.</strong> Es lo mismo en esencia, pero se negocia en una bolsa de derivados, que en México es <strong>MexDer</strong>. Sus diferencias:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Característica</th>
+<th>Forward</th>
+<th>Futuro (MexDer)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dónde se negocia</td>
+<td>Directo con un banco</td>
+<td>En bolsa (MexDer)</td>
+</tr>
+<tr>
+<td>Monto</td>
+<td>A la medida</td>
+<td>Estandarizado: 10,000 USD por contrato (también hay un "mini" de 1,000 USD)</td>
+</tr>
+<tr>
+<td>Fecha</td>
+<td>Cualquiera</td>
+<td>Fechas fijas de vencimiento</td>
+</tr>
+<tr>
+<td>Garantía</td>
+<td>Línea de crédito con el banco</td>
+<td><strong>Aportación inicial mínima</strong> (margen) en una cámara de compensación</td>
+</tr>
+<tr>
+<td>Pérdidas y ganancias</td>
+<td>Solo al vencimiento</td>
+<td><strong>Todos los días</strong> (liquidación diaria)</td>
+</tr>
+<tr>
+<td>Riesgo de que la otra parte no pague</td>
+<td>Sí</td>
+<td>Casi nulo: la cámara de compensación garantiza</td>
+</tr>
+</tbody>
+</table>
+<p><strong>¿Cómo se calcula el tipo de cambio forward?</strong> Por la <strong>paridad de tasas de interés</strong>: el forward compensa la diferencia de tasas entre México y EE. UU. Como en México la tasa es más alta, el dólar a futuro cuesta más que hoy.</p>
+<p>F = S × (1 + i_MXN × t / 360) / (1 + i_USD × t / 360)</p>
+<p><strong>¿Quién compra y quién vende?</strong></p>
+<ul>
+<li>El <strong>exportador</strong> va a <strong>recibir</strong> dólares y teme que el dólar baje: <strong>vende</strong> dólares a futuro.</li>
+<li>El <strong>importador</strong> va a <strong>pagar</strong> dólares y teme que el dólar suba: <strong>compra</strong> dólares a futuro.</li>
+</ul>
+<p>Cubrirse elimina el riesgo pero también la posible ganancia: si el dólar sube, el exportador cubierto no aprovecha el alza. El objetivo de la cobertura es <strong>tener certeza</strong>, no ganar.</p>
+<p><strong>Derivados de tasa de interés.</strong> Con la misma lógica existen forwards y futuros sobre tasas de interés (MexDer también lista futuros de tasas), que permiten fijar hoy la tasa de un crédito o una inversión futura.</p>
+
+<h3 class="section">Ejercicio / caso práctico</h3>
+<p><strong>Nogalera del Nazas, S.A. de C.V.</strong> vendió nuez a un cliente de Texas y cobrará <strong>USD 200,000 dentro de 90 días</strong>. Sus costos están en pesos, y el director de finanzas quiere saber hoy cuántos pesos recibirá.</p>
+<p><strong>Datos de mercado (ilustrativos, no son cotizaciones reales):</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th>Dato</th>
+<th class="num">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo de cambio spot hoy</td>
+<td class="num">18.50 MXN/USD</td>
+</tr>
+<tr>
+<td>Tasa en pesos a 90 días</td>
+<td class="num">7.50 % anual</td>
+</tr>
+<tr>
+<td>Tasa en dólares a 90 días</td>
+<td class="num">4.00 % anual</td>
+</tr>
+<tr>
+<td>Contrato de futuro del dólar en MexDer</td>
+<td class="num">10,000 USD</td>
+</tr>
+<tr>
+<td>Precio del futuro en los siguientes 3 días</td>
+<td class="num">18.70, 18.55, 18.80</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide:</strong></p>
+<ol>
+<li><strong>Forward.</strong> Calcula el tipo de cambio forward a 90 días. ¿Nogalera debe comprar o vender dólares a futuro?</li>
+<li><strong>Escenarios.</strong> Calcula cuántos pesos recibe con y sin forward si en 90 días el dólar está en 17.50, 18.50 o 19.50. ¿En qué escenario se "arrepiente" de haberse cubierto? ¿Fue mala decisión?</li>
+<li><strong>Futuros.</strong> Si en lugar del forward usa futuros de MexDer, ¿cuántos contratos necesita? Suponiendo que los vende al precio del forward, calcula la pérdida o ganancia diaria de los primeros 3 días y la acumulada.</li>
+<li><strong>Comparación.</strong> Menciona dos ventajas y dos desventajas del futuro frente al forward para una empresa como Nogalera.</li>
+<li><strong>Datos reales con IA.</strong> Pide a la IA que calcule el forward a 90 días con el tipo de cambio FIX y las tasas actuales, y compáralo con la cotización de un banco o de MexDer.</li>
+</ol>
+
+<h3 class="section">Solución / guía de solución</h3>
+<details class="solution">
+<summary>Mostrar guía de solución</summary>
+<div class="inner">
+<p><strong>1. Forward a 90 días</strong></p>
+<p>F = 18.50 × (1 + 0.075 × 90 / 360) / (1 + 0.04 × 90 / 360) = 18.50 × 1.01875 / 1.01 = <strong>18.6603 MXN/USD</strong></p>
+<p>Nogalera va a recibir dólares, así que <strong>vende dólares a futuro</strong> a 18.6603.</p>
+<p><strong>2. Escenarios a 90 días (USD 200,000)</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Dólar en 90 días</th>
+<th class="num">Sin cobertura</th>
+<th class="num">Con forward</th>
+<th class="num">Diferencia a favor del forward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">17.50</td>
+<td class="num">3,500,000</td>
+<td class="num">3,732,060</td>
+<td class="num">+232,060</td>
+</tr>
+<tr>
+<td class="num">18.50</td>
+<td class="num">3,700,000</td>
+<td class="num">3,732,060</td>
+<td class="num">+32,060</td>
+</tr>
+<tr>
+<td class="num">19.50</td>
+<td class="num">3,900,000</td>
+<td class="num">3,732,060</td>
+<td class="num">−167,940</td>
+</tr>
+</tbody>
+</table>
+<p>Con el forward, Nogalera sabe desde hoy que recibirá <strong>$3,732,060</strong> pase lo que pase. Si el dólar sube a 19.50 "deja de ganar" $167,940, pero no fue una mala decisión: cuando firmó el contrato no sabía qué iba a pasar y eligió certeza, que es justo para lo que sirve la cobertura.</p>
+<p><strong>3. Futuros en MexDer</strong></p>
+<ul>
+<li>Contratos: 200,000 / 10,000 = <strong>20 contratos</strong>, en posición <strong>corta</strong> (vendedora).</li>
+<li>Una posición corta gana cuando el precio baja y pierde cuando sube. Por día: (precio anterior − precio nuevo) × 10,000 × 20.</li>
+</ul>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Día</th>
+<th class="num">Precio del futuro</th>
+<th class="num">Pérdida o ganancia del día</th>
+<th class="num">Acumulado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">0 (venta)</td>
+<td class="num">18.6603</td>
+<td class="num">—</td>
+<td class="num">—</td>
+</tr>
+<tr>
+<td class="num">1</td>
+<td class="num">18.70</td>
+<td class="num">−7,940</td>
+<td class="num">−7,940</td>
+</tr>
+<tr>
+<td class="num">2</td>
+<td class="num">18.55</td>
+<td class="num">+30,000</td>
+<td class="num">+22,060</td>
+</tr>
+<tr>
+<td class="num">3</td>
+<td class="num">18.80</td>
+<td class="num">−50,000</td>
+<td class="num">−27,940</td>
+</tr>
+</tbody>
+</table>
+<p>Las pérdidas se cargan cada día a la cuenta de margen. Si el saldo baja del mínimo, la empresa debe depositar más dinero (<strong>llamada de margen</strong>). Al vencimiento, la suma de todas las liquidaciones más la venta de los dólares al spot da el mismo resultado que el forward. La diferencia está en el <strong>flujo de efectivo</strong> durante el camino.</p>
+<p><strong>4. Comparación (respuesta abierta)</strong></p>
+<ul>
+<li>Ventajas del futuro: casi no hay riesgo de que la contraparte incumpla; precios públicos y transparentes; se puede cerrar la posición antes del vencimiento.</li>
+<li>Desventajas: montos y fechas fijos (USD 200,000 cuadra exacto, pero USD 205,000 no); exige depositar margen y aguantar pérdidas diarias en efectivo; requiere abrir cuenta con un operador de MexDer.</li>
+</ul>
+</div>
+</details>
+
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<p>Copia y pega el siguiente prompt en Claude o ChatGPT. Cambia los datos por los actuales si quieres trabajar con el mercado real.</p>
+<div class="prompt-box"><span class="label">🤖 Prompt sugerido</span>Actúa como especialista en coberturas cambiarias para empresas de comercio
+exterior. Explica de forma sencilla, para un estudiante de licenciatura.
+
+Una empresa exportadora mexicana cobrará USD 200,000 dentro de 90 días.
+Datos (si puedes, consulta los valores actuales y cita la fuente; si no,
+usa estos):
+- Tipo de cambio spot: [18.50] MXN/USD
+- Tasa en pesos a 90 días: [7.50 %] anual
+- Tasa en dólares a 90 días: [4.00 %] anual
+
+1. Calcula el tipo de cambio forward a 90 días con la paridad de tasas de
+   interés (año de 360 días) e indica si la empresa debe comprar o vender
+   dólares a futuro.
+2. Haz una tabla con los pesos recibidos con y sin forward si en 90 días el
+   dólar está en 17.50, 18.50 y 19.50.
+3. Explica cuántos contratos de futuro del dólar de MexDer (10,000 USD cada
+   uno) necesitaría y simula la liquidación diaria de una posición corta si
+   el precio del futuro va a 18.70, 18.55 y 18.80 en tres días.
+4. Compara forward y futuro en una tabla de ventajas y desventajas.
+
+Muestra cada fórmula con los números sustituidos.</div>
+
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> ninguno.</div>
+
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>MexDer, Mercado Mexicano de Derivados (mexder.com.mx): especificaciones del contrato de futuro del dólar y del mini futuro del dólar.</li>
+<li>Banco de México: tipo de cambio FIX y tasas de interés de referencia.</li>
+</ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-10-05 · Asistencia de IA: teoría, caso y guía de solución redactados con apoyo de IA a partir del lineamiento del profesor; cálculos verificados con código; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>

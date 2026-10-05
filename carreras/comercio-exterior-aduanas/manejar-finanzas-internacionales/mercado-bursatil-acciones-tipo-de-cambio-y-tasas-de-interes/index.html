@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mercado bursátil: acciones, tipo de cambio y tasas de interés — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Comercio Exterior y Aduanas</a><span class="sep">/</span>
+    <a href="../index.html">Manejar Finanzas Internacionales</a><span class="sep">/</span>
+    Mercado bursátil: acciones, tipo de cambio y tasas de interés
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Mercado bursátil: acciones, tipo de cambio y tasas de interés</h2>
+      <div class="badges">
+        <span class="badge">Comercio Exterior y Aduanas</span>
+        <span class="badge">Manejar Finanzas Internacionales</span>
+        <span class="badge">Introductorio</span>
+        <span class="badge">40 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podrá calcular el rendimiento de una acción (dividendos más ganancia de capital), calcular el rendimiento en pesos de una acción extranjera considerando el tipo de cambio, y explicar por qué el precio de las acciones tiende a bajar cuando suben las tasas de interés.</p>
+
+<h3 class="section">Teoría</h3>
+<div class="ai-note">⚠️ <em>Nota de transparencia: redactado con apoyo de IA a partir del lineamiento temático del profesor; los cálculos se verificaron con código. Revisar antes de usar en clase.</em></div>
+<p>Una <strong>acción</strong> es una parte de la propiedad de una empresa. Quien compra acciones se vuelve socio y gana de dos formas: con los <strong>dividendos</strong> (la parte de las utilidades que reparte la empresa) y con la <strong>ganancia de capital</strong> (vender la acción más cara de lo que se compró). A diferencia de la deuda, la acción no promete un pago fijo: puede ganar mucho o perder.</p>
+<p><strong>¿Dónde se compran?</strong> En México hay dos bolsas de valores: la <strong>Bolsa Mexicana de Valores (BMV)</strong> y la <strong>Bolsa Institucional de Valores (BIVA)</strong>. Su indicador principal es el <strong>S&amp;P/BMV IPC</strong>, que sigue a las empresas más negociadas. Las acciones de empresas extranjeras, como las de Estados Unidos, se pueden comprar desde México en pesos a través del <strong>Sistema Internacional de Cotizaciones (SIC)</strong>, con una casa de bolsa.</p>
+<p><strong>Rendimiento de una acción:</strong></p>
+<p>Rendimiento = (precio final − precio inicial + dividendos) / precio inicial</p>
+<p><strong>Acciones extranjeras y tipo de cambio.</strong> Si un mexicano compra una acción de EE. UU., su rendimiento en pesos combina dos efectos: lo que gana la acción en dólares y lo que cambia el precio del dólar.</p>
+<p>(1 + rendimiento en pesos) = (1 + rendimiento en dólares) × (1 + variación del tipo de cambio)</p>
+<p>Si el peso se deprecia (el dólar sube), el inversionista gana más en pesos. Si el peso se aprecia, gana menos y hasta puede perder.</p>
+<p><strong>Acciones y tasas de interés.</strong> Una forma sencilla de valuar una acción es el <strong>modelo de Gordon</strong>, que supone que el dividendo crece siempre a una tasa constante <em>g</em>:</p>
+<p>Precio = dividendo del próximo año / (k − g)</p>
+<p>donde <em>k</em> es el rendimiento que exige el inversionista. Cuando el Banco de México o la Reserva Federal <strong>suben las tasas</strong>, los Cetes y los bonos pagan más, y el inversionista le exige más a las acciones (<em>k</em> sube). Con <em>k</em> más alto, el precio <strong>baja</strong>. Por eso las bolsas suelen caer cuando suben las tasas.</p>
+
+<h3 class="section">Ejercicio / caso práctico</h3>
+<p>La familia dueña de <strong>Nogalera del Nazas, S.A. de C.V.</strong> (exportadora de nuez de Torreón) quiere invertir parte de sus ahorros personales en la bolsa y compara tres situaciones.</p>
+<p><strong>Datos (ilustrativos, no son cotizaciones reales):</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th>Situación</th>
+<th>Datos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Acción mexicana en la BMV</td>
+<td>Compra 1,000 acciones a $50.00. En un año la empresa paga un dividendo de $1.50 por acción y el precio sube a $54.00.</td>
+</tr>
+<tr>
+<td>B. Acción de EE. UU. por el SIC</td>
+<td>Compra 100 acciones a USD 120.00 con el dólar a 18.50. En un año la acción vale USD 126.00. El dólar puede terminar en 17.60, 18.50 o 19.40.</td>
+</tr>
+<tr>
+<td>C. Efecto de las tasas</td>
+<td>Una empresa pagará un dividendo de $2.00 el próximo año, que crecerá 4 % anual. Los inversionistas exigen 10 %, pero el banco central sube las tasas y ahora exigen 11 %.</td>
+</tr>
+<tr>
+<td>Referencia</td>
+<td>Cetes a un año: 7.50 % anual</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide:</strong></p>
+<ol>
+<li><strong>Acción mexicana.</strong> Calcula el rendimiento total y sepáralo en rendimiento por dividendo y ganancia de capital. ¿Rindió más o menos que los Cetes?</li>
+<li><strong>Acción extranjera.</strong> Calcula cuántos pesos invirtió, cuántos pesos tiene al final y el rendimiento en pesos en cada escenario del tipo de cambio.</li>
+<li><strong>Tasas de interés.</strong> Con el modelo de Gordon, calcula el precio de la acción con <em>k</em> = 10 % y con <em>k</em> = 11 %. ¿Cuánto cambió el precio?</li>
+<li><strong>Reflexión.</strong> Nogalera vende en dólares. ¿Qué le pasa a sus ingresos en pesos cuando el peso se deprecia? ¿Por qué eso puede hacer que suban las acciones de las empresas exportadoras?</li>
+<li><strong>Datos reales con IA.</strong> Pide a la IA el rendimiento del último año del S&amp;P/BMV IPC y del S&amp;P 500 medido en pesos, y verifica las cifras en una fuente confiable.</li>
+</ol>
+
+<h3 class="section">Solución / guía de solución</h3>
+<details class="solution">
+<summary>Mostrar guía de solución</summary>
+<div class="inner">
+<p><strong>1. Acción mexicana</strong></p>
+<ul>
+<li>Inversión: 1,000 × $50 = $50,000. Al final: 1,000 × ($54 + $1.50) = $55,500.</li>
+<li>Rendimiento total = (54 − 50 + 1.50) / 50 = <strong>11.00 %</strong>, del cual 3.00 % es dividendo (1.50 / 50) y 8.00 % es ganancia de capital (4 / 50).</li>
+<li>Rindió 3.5 puntos más que los Cetes (7.50 %). Esa diferencia es el premio por el riesgo de invertir en acciones: el precio también pudo haber bajado.</li>
+</ul>
+<p><strong>2. Acción extranjera</strong></p>
+<ul>
+<li>Inversión: 100 × USD 120 × 18.50 = <strong>$222,000</strong>. En dólares la acción rinde (126 − 120) / 120 = 5 %.</li>
+</ul>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Dólar al final</th>
+<th class="num">Variación del TC</th>
+<th class="num">Valor final en pesos</th>
+<th class="num">Rendimiento en pesos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">17.60</td>
+<td class="num">−4.86 %</td>
+<td class="num">221,760</td>
+<td class="num"><strong>−0.11 %</strong></td>
+</tr>
+<tr>
+<td class="num">18.50</td>
+<td class="num">0.00 %</td>
+<td class="num">233,100</td>
+<td class="num"><strong>5.00 %</strong></td>
+</tr>
+<tr>
+<td class="num">19.40</td>
+<td class="num">+4.86 %</td>
+<td class="num">244,440</td>
+<td class="num"><strong>10.11 %</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Con el mismo 5 % de la acción, el resultado en pesos va de una pequeña pérdida a una ganancia de 10 %. Al comprar acciones extranjeras también se compra <strong>riesgo cambiario</strong>. Comprobación: 1.05 × 1.0486 − 1 = 10.11 %.</p>
+<p><strong>3. Tasas de interés</strong></p>
+<ul>
+<li>Con k = 10 %: Precio = 2.00 / (0.10 − 0.04) = <strong>$33.33</strong></li>
+<li>Con k = 11 %: Precio = 2.00 / (0.11 − 0.04) = <strong>$28.57</strong></li>
+<li>El precio cae <strong>14.3 %</strong> solo porque subió en un punto el rendimiento exigido, sin que la empresa cambiara nada.</li>
+</ul>
+<p><strong>4. Reflexión (respuesta abierta)</strong></p>
+<p>Si el peso se deprecia, cada dólar que vende Nogalera se convierte en más pesos, así que sus ingresos y utilidades en pesos suben. Por eso, cuando el peso se debilita, el mercado suele premiar a las empresas exportadoras y castigar a las que tienen deudas o costos en dólares.</p>
+</div>
+</details>
+
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<p>Copia y pega el siguiente prompt en Claude o ChatGPT. Puedes cambiar los datos por los de una acción real.</p>
+<div class="prompt-box"><span class="label">🤖 Prompt sugerido</span>Actúa como asesor financiero y explica de forma sencilla, para un estudiante
+de licenciatura en Comercio Exterior.
+
+Un inversionista mexicano compara:
+A) 1,000 acciones mexicanas compradas a $50.00; en un año pagan un
+   dividendo de $1.50 por acción y el precio sube a $54.00.
+B) 100 acciones de EE. UU. compradas por el SIC a USD 120.00 con el dólar a
+   18.50; en un año valen USD 126.00. El dólar puede terminar en 17.60,
+   18.50 o 19.40.
+C) Una acción que pagará un dividendo de $2.00 el próximo año, con
+   crecimiento de 4 % anual; el rendimiento exigido sube de 10 % a 11 %.
+
+1. Calcula el rendimiento total de A y sepáralo en dividendo y ganancia de
+   capital; compáralo con Cetes a 7.50 %.
+2. Calcula para B la inversión en pesos, el valor final en pesos y el
+   rendimiento en pesos en cada escenario; explica el efecto del tipo de
+   cambio.
+3. Usa el modelo de Gordon para valuar C con 10 % y 11 % y explica por qué
+   suben o bajan las bolsas cuando cambian las tasas de interés.
+
+Presenta los resultados en tablas y muestra cada fórmula con los números
+sustituidos.</div>
+
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> ninguno.</div>
+
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>Bolsa Mexicana de Valores (bmv.com.mx) y Bolsa Institucional de Valores (biva.mx): información de emisoras e índices.</li>
+<li>Banco de México: tipo de cambio FIX histórico, para medir el rendimiento de una acción extranjera en pesos.</li>
+</ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-10-05 · Asistencia de IA: teoría, caso y guía de solución redactados con apoyo de IA a partir del lineamiento del profesor; cálculos verificados con código; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>

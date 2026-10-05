@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Derivados II: opciones de tipo de cambio — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Comercio Exterior y Aduanas</a><span class="sep">/</span>
+    <a href="../index.html">Manejar Finanzas Internacionales</a><span class="sep">/</span>
+    Derivados II: opciones de tipo de cambio
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Derivados II: opciones de tipo de cambio</h2>
+      <div class="badges">
+        <span class="badge">Comercio Exterior y Aduanas</span>
+        <span class="badge">Manejar Finanzas Internacionales</span>
+        <span class="badge">Introductorio</span>
+        <span class="badge">40 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podrá explicar qué es una opción de compra (call) y una opción de venta (put) sobre el dólar, calcular el resultado de un importador que se cubre con un call y de un exportador que se cubre con un put, y comparar la cobertura con opciones contra la cobertura con forward.</p>
+
+<h3 class="section">Teoría</h3>
+<div class="ai-note">⚠️ <em>Nota de transparencia: redactado con apoyo de IA a partir del lineamiento temático del profesor; los cálculos se verificaron con código. Revisar antes de usar en clase.</em></div>
+<p>Una <strong>opción</strong> da a quien la compra el <strong>derecho, pero no la obligación</strong>, de comprar o vender algo a un precio fijado hoy, llamado <strong>precio de ejercicio</strong> (<em>strike</em>), en una fecha futura. Por ese derecho se paga hoy un precio llamado <strong>prima</strong>.</p>
+<table class="data">
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Derecho que da</th>
+<th>¿Quién la usa en comercio exterior?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Call</strong> (opción de compra)</td>
+<td>Comprar dólares al precio de ejercicio</td>
+<td>El <strong>importador</strong>, que teme que el dólar suba</td>
+</tr>
+<tr>
+<td><strong>Put</strong> (opción de venta)</td>
+<td>Vender dólares al precio de ejercicio</td>
+<td>El <strong>exportador</strong>, que teme que el dólar baje</td>
+</tr>
+</tbody>
+</table>
+<p><strong>La lógica del seguro.</strong> Una opción funciona como un seguro de auto: se paga la prima por adelantado. Si pasa lo malo (el dólar se mueve en contra), la opción se ejerce y protege. Si no pasa (el dólar se mueve a favor), no se ejerce, se pierde la prima y se aprovecha el mejor tipo de cambio.</p>
+<p><strong>Fórmulas para un call de importador:</strong></p>
+<ul>
+<li>Si al vencimiento el dólar está <strong>arriba</strong> del precio de ejercicio: se ejerce y se compra al precio de ejercicio.</li>
+<li>Si está <strong>abajo</strong>: no se ejerce y se compra en el mercado.</li>
+<li>Tipo de cambio efectivo = mínimo(spot al vencimiento, precio de ejercicio) + prima</li>
+<li><strong>Punto de equilibrio</strong> = precio de ejercicio + prima</li>
+</ul>
+<p><strong>Fórmula para un put de exportador:</strong> tipo de cambio efectivo = máximo(spot al vencimiento, precio de ejercicio) − prima</p>
+<p><strong>Opción vs. forward:</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th></th>
+<th>Forward</th>
+<th>Opción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Cuesta al contratarlo?</td>
+<td>No</td>
+<td>Sí, la prima</td>
+</tr>
+<tr>
+<td>¿Protege si el dólar se mueve en contra?</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>¿Aprovecha si el dólar se mueve a favor?</td>
+<td>No</td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>¿Obliga a operar?</td>
+<td>Sí</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Opciones sobre tasas de interés.</strong> La misma idea se usa en créditos: un <strong>cap</strong> es una opción que pone un techo a la tasa variable de un crédito. Si la TIIE de Fondeo sube por encima del techo, la opción paga la diferencia.</p>
+
+<h3 class="section">Ejercicio / caso práctico</h3>
+<p><strong>Nogalera del Nazas, S.A. de C.V.</strong> necesita comprar en Estados Unidos una máquina descascaradora de nuez por <strong>USD 150,000, que pagará en 90 días</strong>. Al mismo tiempo, cobrará <strong>USD 200,000</strong> por una exportación en la misma fecha.</p>
+<p><strong>Datos de mercado (ilustrativos, no son cotizaciones reales):</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th>Dato</th>
+<th class="num">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo de cambio spot hoy</td>
+<td class="num">18.50 MXN/USD</td>
+</tr>
+<tr>
+<td>Forward a 90 días (ver el ejercicio de forwards)</td>
+<td class="num">18.6603 MXN/USD</td>
+</tr>
+<tr>
+<td><strong>Call</strong> USD/MXN a 90 días: precio de ejercicio / prima</td>
+<td class="num">18.80 / 0.30 MXN por dólar</td>
+</tr>
+<tr>
+<td><strong>Put</strong> USD/MXN a 90 días: precio de ejercicio / prima</td>
+<td class="num">18.30 / 0.25 MXN por dólar</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide:</strong></p>
+<ol>
+<li><strong>Call para la importación.</strong> ¿Cuánto paga Nogalera de prima por cubrir los USD 150,000? ¿Cuál es su punto de equilibrio?</li>
+<li><strong>Escenarios.</strong> Calcula cuántos pesos le cuesta la máquina sin cobertura, con el call y con el forward si en 90 días el dólar está en 17.50, 18.50, 19.10, 19.50 o 20.50. ¿En qué casos ejerce la opción?</li>
+<li><strong>Put para la exportación.</strong> Calcula el tipo de cambio efectivo y los pesos que recibe por los USD 200,000 si en 90 días el dólar está en 17.50, 18.30, 19.00 o 19.50.</li>
+<li><strong>Decisión.</strong> Si el director de finanzas cree que el dólar bajará pero no está seguro, ¿qué le conviene más para la importación, el forward o el call? Justifica.</li>
+<li><strong>Pregunta para pensar.</strong> Nogalera paga y cobra dólares en la misma fecha. ¿Necesita cubrir las dos operaciones completas? (Pista: cobertura natural.)</li>
+</ol>
+
+<h3 class="section">Solución / guía de solución</h3>
+<details class="solution">
+<summary>Mostrar guía de solución</summary>
+<div class="inner">
+<p><strong>1. Prima y punto de equilibrio</strong></p>
+<ul>
+<li>Prima total = 150,000 × 0.30 = <strong>$45,000</strong> (se paga hoy y no se recupera).</li>
+<li>Punto de equilibrio = 18.80 + 0.30 = <strong>19.10</strong>. Por encima de ese nivel, el call ya salió mejor que no cubrirse.</li>
+</ul>
+<p><strong>2. Escenarios de la importación (USD 150,000)</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Dólar en 90 días</th>
+<th>¿Ejerce el call?</th>
+<th class="num">Sin cobertura</th>
+<th class="num">Con call (incluye prima)</th>
+<th class="num">Con forward</th>
+<th class="num">TC efectivo con call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">17.50</td>
+<td>No</td>
+<td class="num">2,625,000</td>
+<td class="num">2,670,000</td>
+<td class="num">2,799,045</td>
+<td class="num">17.80</td>
+</tr>
+<tr>
+<td class="num">18.50</td>
+<td>No</td>
+<td class="num">2,775,000</td>
+<td class="num">2,820,000</td>
+<td class="num">2,799,045</td>
+<td class="num">18.80</td>
+</tr>
+<tr>
+<td class="num">19.10</td>
+<td>Sí</td>
+<td class="num">2,865,000</td>
+<td class="num">2,865,000</td>
+<td class="num">2,799,045</td>
+<td class="num">19.10</td>
+</tr>
+<tr>
+<td class="num">19.50</td>
+<td>Sí</td>
+<td class="num">2,925,000</td>
+<td class="num">2,865,000</td>
+<td class="num">2,799,045</td>
+<td class="num">19.10</td>
+</tr>
+<tr>
+<td class="num">20.50</td>
+<td>Sí</td>
+<td class="num">3,075,000</td>
+<td class="num">2,865,000</td>
+<td class="num">2,799,045</td>
+<td class="num">19.10</td>
+</tr>
+</tbody>
+</table>
+<p>Con el call, la máquina <strong>nunca cuesta más de $2,865,000</strong>, y si el dólar baja Nogalera aprovecha el precio más bajo (solo pierde la prima). El forward fija $2,799,045 en todos los casos: es más barato si el dólar sube, pero no deja aprovechar una baja.</p>
+<p><strong>3. Put para la exportación (USD 200,000)</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Dólar en 90 días</th>
+<th>¿Ejerce el put?</th>
+<th class="num">TC efectivo (neto de prima)</th>
+<th class="num">Pesos recibidos</th>
+<th class="num">Sin cobertura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">17.50</td>
+<td>Sí</td>
+<td class="num">18.05</td>
+<td class="num">3,610,000</td>
+<td class="num">3,500,000</td>
+</tr>
+<tr>
+<td class="num">18.30</td>
+<td>Indiferente</td>
+<td class="num">18.05</td>
+<td class="num">3,610,000</td>
+<td class="num">3,660,000</td>
+</tr>
+<tr>
+<td class="num">19.00</td>
+<td>No</td>
+<td class="num">18.75</td>
+<td class="num">3,750,000</td>
+<td class="num">3,800,000</td>
+</tr>
+<tr>
+<td class="num">19.50</td>
+<td>No</td>
+<td class="num">19.25</td>
+<td class="num">3,850,000</td>
+<td class="num">3,900,000</td>
+</tr>
+</tbody>
+</table>
+<p>El put garantiza un <strong>piso</strong> de 18.05 pesos por dólar y deja abierta la ganancia si el dólar sube.</p>
+<p><strong>4. Decisión (respuesta abierta)</strong></p>
+<p>Si cree que el dólar bajará, el call le conviene más: lo protege por si se equivoca y le permite aprovechar la baja si acierta. El precio de esa flexibilidad es la prima de $45,000. Si lo único que importa es la certeza al menor costo, el forward es mejor.</p>
+<p><strong>5. Cobertura natural</strong></p>
+<p>Como paga USD 150,000 y cobra USD 200,000 el mismo día, puede usar los dólares que cobra para pagar la máquina. Su exposición real es solo de <strong>USD 50,000</strong> (lo que le sobra). Cubrir ambas operaciones completas sería pagar primas de más. Antes de contratar derivados, una empresa siempre debe calcular su <strong>posición neta</strong> en dólares.</p>
+</div>
+</details>
+
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<p>Copia y pega el siguiente prompt en Claude o ChatGPT.</p>
+<div class="prompt-box"><span class="label">🤖 Prompt sugerido</span>Actúa como especialista en coberturas cambiarias y explica de forma sencilla,
+para un estudiante de licenciatura en Comercio Exterior.
+
+Una empresa mexicana pagará USD 150,000 por una importación dentro de 90
+días y cobrará USD 200,000 por una exportación en la misma fecha.
+Datos de mercado (ilustrativos):
+- Spot: 18.50 MXN/USD; forward a 90 días: 18.6603
+- Call USD/MXN a 90 días: precio de ejercicio 18.80, prima 0.30 MXN por USD
+- Put USD/MXN a 90 días: precio de ejercicio 18.30, prima 0.25 MXN por USD
+
+1. Calcula la prima total del call para la importación y su punto de
+   equilibrio.
+2. Haz una tabla con el costo en pesos de la importación sin cobertura, con
+   call y con forward si el dólar termina en 17.50, 18.50, 19.10, 19.50 y
+   20.50, e indica cuándo se ejerce el call.
+3. Haz la tabla equivalente para la exportación cubierta con el put, con
+   el dólar en 17.50, 18.30, 19.00 y 19.50.
+4. Explica qué es la cobertura natural y cuál es la posición neta en
+   dólares de la empresa.
+
+Muestra cada fórmula con los números sustituidos y usa lenguaje claro.</div>
+
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> ninguno.</div>
+
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>MexDer (mexder.com.mx): especificaciones de los contratos de opciones listadas.</li>
+<li>Lectura sugerida: capítulo de opciones sobre divisas en el libro de texto de finanzas internacionales del curso.</li>
+</ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-10-05 · Asistencia de IA: teoría, caso y guía de solución redactados con apoyo de IA a partir del lineamiento del profesor; cálculos verificados con código; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>

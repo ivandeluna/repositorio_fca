@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instrumentos de deuda: Cetes, bonos y tasas de interés — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Comercio Exterior y Aduanas</a><span class="sep">/</span>
+    <a href="../index.html">Manejar Finanzas Internacionales</a><span class="sep">/</span>
+    Instrumentos de deuda: Cetes, bonos y tasas de interés
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Instrumentos de deuda: Cetes, bonos y tasas de interés</h2>
+      <div class="badges">
+        <span class="badge">Comercio Exterior y Aduanas</span>
+        <span class="badge">Manejar Finanzas Internacionales</span>
+        <span class="badge">Introductorio</span>
+        <span class="badge">40 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+    <h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podrá calcular el precio y el rendimiento de un Cete, comparar una inversión en pesos con una en dólares considerando el tipo de cambio, y explicar por qué el precio de un bono baja cuando suben las tasas de interés.</p>
+
+<h3 class="section">Teoría</h3>
+<div class="ai-note">⚠️ <em>Nota de transparencia: redactado con apoyo de IA a partir del lineamiento temático del profesor; los cálculos se verificaron con código. Revisar antes de usar en clase.</em></div>
+<p>Un <strong>instrumento de deuda</strong> es un préstamo que el inversionista le hace a un gobierno o a una empresa. A cambio, el emisor promete devolver el dinero en una fecha (el <strong>vencimiento</strong>) y pagar un interés. Los más conocidos en México los emite el Gobierno Federal:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Instrumento</th>
+<th>Moneda</th>
+<th>Cómo paga</th>
+<th>Plazo típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cetes</strong> (Certificados de la Tesorería)</td>
+<td>Pesos</td>
+<td>Se compran "a descuento" (por debajo de $10) y al vencimiento pagan $10</td>
+<td>28, 91, 182 y 364 días, y 2 años</td>
+</tr>
+<tr>
+<td><strong>Bonos M</strong></td>
+<td>Pesos</td>
+<td>Tasa fija; pagan un cupón cada 6 meses</td>
+<td>3 a 30 años</td>
+</tr>
+<tr>
+<td><strong>Udibonos</strong></td>
+<td>UDIS (se ajustan por inflación)</td>
+<td>Tasa real fija; protegen contra la inflación</td>
+<td>3 a 30 años</td>
+</tr>
+<tr>
+<td><strong>T-Bills / Treasuries</strong> (EE. UU.)</td>
+<td>Dólares</td>
+<td>Equivalentes a los Cetes y a los bonos en EE. UU.</td>
+<td>Semanas a 30 años</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Precio de un Cete.</strong> Valor nominal de $10, tasa de rendimiento anual <em>r</em> y <em>t</em> días por vencer (año de 360 días):</p>
+<p>Precio = 10 / (1 + r × t / 360)</p>
+<p><strong>Invertir en otra moneda.</strong> Si un inversionista mexicano convierte sus pesos a dólares para invertir en EE. UU., su rendimiento en pesos depende de dos cosas: la tasa en dólares y lo que pase con el tipo de cambio. El <strong>tipo de cambio de equilibrio</strong> es el que hace que ambas inversiones rindan lo mismo:</p>
+<p>TC de equilibrio = TC hoy × (1 + i_MXN × t / 360) / (1 + i_USD × t / 360)</p>
+<p>Si al vencimiento el dólar cuesta más que ese valor, convino invertir en dólares; si cuesta menos, convino quedarse en pesos.</p>
+<p><strong>Precio de un bono y tasas de interés.</strong> Un bono a tasa fija paga cupones fijos. Su precio es el valor presente de esos pagos:</p>
+<p>Precio = Σ cupón / (1 + r)^t + valor nominal / (1 + r)^n</p>
+<p>Si las tasas de mercado <strong>suben</strong>, los cupones fijos del bono valen menos en comparación y su precio <strong>baja</strong>. Si las tasas <strong>bajan</strong>, el precio <strong>sube</strong>. Esta es la regla más importante del mercado de deuda.</p>
+
+<h3 class="section">Ejercicio / caso práctico</h3>
+<p><strong>Nogalera del Nazas, S.A. de C.V.</strong> exporta nuez pecanera desde Torreón a Estados Unidos. Después de la cosecha tiene <strong>$1,000,000 de pesos</strong> que no necesitará durante 91 días y quiere invertirlos sin arriesgarse mucho.</p>
+<p><strong>Datos de mercado (ilustrativos, no son cotizaciones reales):</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th>Dato</th>
+<th class="num">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo de cambio hoy</td>
+<td class="num">18.50 MXN/USD</td>
+</tr>
+<tr>
+<td>Tasa de Cetes a 91 días</td>
+<td class="num">7.50 % anual</td>
+</tr>
+<tr>
+<td>Tasa de T-Bills a 91 días (EE. UU.)</td>
+<td class="num">4.00 % anual</td>
+</tr>
+<tr>
+<td>Bono a tasa fija: valor nominal $100, cupón anual 8 %, plazo 3 años</td>
+<td class="num">—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide:</strong></p>
+<ol>
+<li><strong>Cetes.</strong> Calcula el precio de un Cete a 91 días, cuántos títulos puede comprar la empresa con $1,000,000 y cuánto gana al vencimiento.</li>
+<li><strong>Pesos o dólares.</strong> Si en lugar de eso convierte el dinero a dólares e invierte en T-Bills, ¿cuántos dólares tendrá al vencimiento? Calcula el tipo de cambio de equilibrio y el resultado en pesos si al vencimiento el dólar está en 18.00, 18.50 o 19.00.</li>
+<li><strong>Bonos y tasas.</strong> Calcula el precio del bono si la tasa de mercado es de 7 %, 8 % y 9 %. ¿Qué le pasa al precio cuando la tasa sube?</li>
+<li><strong>Datos reales con IA.</strong> Usa el prompt sugerido para repetir los incisos 1 y 2 con la tasa de Cetes y el tipo de cambio FIX actuales. Verifica en la página del Banco de México que la IA haya usado los valores correctos.</li>
+</ol>
+
+<h3 class="section">Solución / guía de solución</h3>
+<details class="solution">
+<summary>Mostrar guía de solución</summary>
+<div class="inner">
+<p><strong>1. Cetes</strong></p>
+<ul>
+<li>Precio = 10 / (1 + 0.075 × 91 / 360) = 10 / 1.018958 = <strong>$9.813944</strong></li>
+<li>Títulos = 1,000,000 / 9.813944 = <strong>101,895 Cetes</strong> (inversión de $999,991.82)</li>
+<li>Al vencimiento recibe 101,895 × $10 = <strong>$1,018,950.00</strong>, es decir, una ganancia de <strong>$18,958.18</strong> (1.90 % en 91 días, equivalente a 7.50 % anual).</li>
+</ul>
+<p><strong>2. Pesos o dólares</strong></p>
+<ul>
+<li>Dólares iniciales: 1,000,000 / 18.50 = USD 54,054.05</li>
+<li>Al vencimiento: 54,054.05 × (1 + 0.04 × 91 / 360) = <strong>USD 54,600.60</strong></li>
+<li>TC de equilibrio = 18.50 × 1.018958 / 1.010111 = <strong>18.6620 MXN/USD</strong></li>
+</ul>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Dólar al vencimiento</th>
+<th class="num">Pesos recibidos</th>
+<th class="num">Ganancia</th>
+<th class="num">Rendimiento anualizado</th>
+<th>¿Convino?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">18.00</td>
+<td class="num">982,810.81</td>
+<td class="num">−17,189.19</td>
+<td class="num">−6.80 %</td>
+<td>No, perdió</td>
+</tr>
+<tr>
+<td class="num">18.50</td>
+<td class="num">1,010,111.11</td>
+<td class="num">10,111.11</td>
+<td class="num">4.00 %</td>
+<td>Menos que Cetes</td>
+</tr>
+<tr>
+<td class="num">18.6620 (equilibrio)</td>
+<td class="num">1,018,958.33</td>
+<td class="num">18,958.33</td>
+<td class="num">7.50 %</td>
+<td>Igual que Cetes</td>
+</tr>
+<tr>
+<td class="num">19.00</td>
+<td class="num">1,037,411.41</td>
+<td class="num">37,411.41</td>
+<td class="num">14.80 %</td>
+<td>Sí, más que Cetes</td>
+</tr>
+</tbody>
+</table>
+<p>La tasa en pesos es más alta, así que para que la inversión en dólares convenga, el peso se tiene que depreciar más de 18.6620. Invertir en dólares sin cobertura es <strong>apostar al tipo de cambio</strong>.</p>
+<p><strong>3. Bonos y tasas</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th class="num">Tasa de mercado</th>
+<th class="num">Precio del bono</th>
+<th>Lectura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">7 %</td>
+<td class="num">$102.62</td>
+<td>La tasa bajó: el cupón de 8 % es atractivo y el bono vale más</td>
+</tr>
+<tr>
+<td class="num">8 %</td>
+<td class="num">$100.00</td>
+<td>Tasa igual al cupón: se vende "a la par"</td>
+</tr>
+<tr>
+<td class="num">9 %</td>
+<td class="num">$97.47</td>
+<td>La tasa subió: el bono vale menos</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<p>Copia y pega el siguiente prompt en Claude o ChatGPT. Si la IA puede buscar en internet, pídele los datos actuales; si no, búscalos tú en Banxico y pégalos en los corchetes.</p>
+<div class="prompt-box"><span class="label">🤖 Prompt sugerido</span>Actúa como asesor de inversiones de tesorería para una empresa exportadora
+mexicana. Explica todo de forma sencilla, como para un estudiante de
+licenciatura que ve el tema por primera vez.
+
+La empresa tiene $1,000,000 de pesos disponibles durante 91 días.
+
+Datos (búscalos en fuentes oficiales y cita la fuente y la fecha; si no
+puedes consultarlos, usa los que te doy):
+- Tipo de cambio FIX de hoy: [18.50] MXN/USD (Banco de México)
+- Tasa de Cetes a 91 días de la última subasta: [7.50 %] (Banco de México)
+- Tasa de T-Bills a 13 semanas: [4.00 %] (Tesoro de EE. UU.)
+
+1. Calcula el precio de un Cete a 91 días (valor nominal $10, año de 360
+   días), cuántos títulos se pueden comprar y la ganancia al vencimiento.
+2. Calcula cuántos dólares tendría si invierte en T-Bills y el tipo de
+   cambio de equilibrio que iguala ambas inversiones.
+3. Muestra en una tabla el resultado en pesos si al vencimiento el dólar
+   está 3 % abajo, igual y 3 % arriba del tipo de cambio de hoy.
+4. Explica en dos líneas por qué el precio de un bono a tasa fija baja
+   cuando suben las tasas de interés.
+
+Muestra cada fórmula con los números sustituidos.</div>
+
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> ninguno. Si la IA no puede navegar, copia los valores del día de la página de Banxico y pégalos en el prompt.</div>
+
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>Banco de México, Sistema de Información Económica (SIE): tipo de cambio FIX y resultados de la subasta de valores gubernamentales.</li>
+<li>cetesdirecto.com: plataforma del gobierno para invertir en Cetes, Bonos y Udibonos desde $100.</li>
+</ul>
+
+    <div class="doc-footer">
+      Autor: Iván de Luna-Aldape · Actualizado: 2026-10-05 · Asistencia de IA: teoría, caso y guía de solución redactados con apoyo de IA a partir del lineamiento del profesor; cálculos verificados con código; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>
