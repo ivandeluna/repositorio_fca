@@ -1,0 +1,14 @@
+titulo: "El proveedor más barato que puede parar la planta"
+carrera: "Administración de Empresas"
+materia: "Administración de Compras y Abastecimiento"
+tema: "Clasificación de proveedores y riesgo de suministro"
+nivel: "Intermedio"
+duracion_estimada: "50 min"
+tipo: "Ejercicio práctico"
+modalidad: "Equipos"
+entregable_alumno: "Tablero HTML funcional + propuesta escrita"
+asistencia_ia: "Construcción del caso, cálculos verificados con código, prompts, tabla de errores típicos del asistente y rúbrica. Pendiente de revisión docente."
+autor: "Norma P. Rodríguez-Cándido"
+fecha: "2026-10-13"
+tags: ["análisis ABC", "matriz de Kraljic", "riesgo de suministro", "compras", "abastecimiento", "pensamiento crítico con IA"]
+revisado_por_docente: false

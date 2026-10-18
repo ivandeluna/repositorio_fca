@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El margen cae y nadie sabe por qué — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Administración de Empresas</a><span class="sep">/</span>
+    <a href="../index.html">Administración Estratégica</a><span class="sep">/</span>
+    El margen cae y nadie sabe por qué
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>El margen cae y nadie sabe por qué</h2>
+      <div class="badges">
+        <span class="badge">Administración de Empresas</span>
+        <span class="badge">Administración Estratégica</span>
+        <span class="badge">Intermedio</span>
+        <span class="badge">50 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+<div class="hook">
+<p class="hook-title">🎯 El gancho</p>
+<p><strong>Las ventas crecieron 11.2 % y el margen operativo cay&oacute; de 11.4 % a 9.8 %.</strong> La direcci&oacute;n reforz&oacute; cobranza, negoci&oacute; el precio de la l&aacute;mina y recort&oacute; capacitaci&oacute;n. Nada funcion&oacute;, porque el problema nace tres eslabones antes de donde lo estaban buscando.</p>
+<p>Nueve de cada diez equipos van a empezar por la cartera. El asistente de IA tambi&eacute;n.</p>
+</div>
+<h3 class="section">C&oacute;mo usar este ejercicio en clase</h3>
+<p>La gu&iacute;a para el profesor &mdash;preparaci&oacute;n, cronograma minuto a minuto, frases sugeridas y qu&eacute; hacer si se acorta el tiempo o no hay IA en el sal&oacute;n&mdash; est&aacute; en <a href="GUIA-DOCENTE.md"><code>GUIA-DOCENTE.md</code></a>. Materiales listos para usar en clase:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Qu&eacute; es</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="GUIA-DOCENTE.md"><code>GUIA-DOCENTE.md</code></a></td>
+<td>Gu&iacute;a completa del profesor, con la soluci&oacute;n</td>
+<td><strong>Solo el profesor</strong></td>
+</tr>
+<tr>
+<td><a href="materiales/01-caso-alumno.md"><code>materiales/01-caso-alumno.md</code></a></td>
+<td>Caso para el alumno, sin soluci&oacute;n</td>
+<td>Se imprime y se reparte</td>
+</tr>
+<tr>
+<td><a href="materiales/02-hoja-de-trabajo.md"><code>materiales/02-hoja-de-trabajo.md</code></a></td>
+<td>Hoja de trabajo con las tablas por llenar</td>
+<td>Se imprime, una por equipo</td>
+</tr>
+<tr>
+<td><a href="materiales/03-prompts.md"><code>materiales/03-prompts.md</code></a></td>
+<td>Prompts listos para copiar y pegar</td>
+<td>Se comparte en digital</td>
+</tr>
+<tr>
+<td><a href="materiales/04-rubrica.md"><code>materiales/04-rubrica.md</code></a></td>
+<td>R&uacute;brica de evaluaci&oacute;n</td>
+<td>Se comparte con los alumnos al inicio</td>
+</tr>
+<tr>
+<td><a href="materiales/datos.csv"><code>materiales/datos.csv</code></a></td>
+<td>Datos del caso, para pegar en la IA o abrir en Excel</td>
+<td>Se comparte en digital</td>
+</tr>
+<tr>
+<td><a href="materiales/tablero-bsc.html"><code>materiales/tablero-bsc.html</code></a></td>
+<td>Tablero de referencia ya funcionando (HTML)</td>
+<td>Profesor, para la plenaria</td>
+</tr>
+</tbody>
+</table>
+<h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podr&aacute; distinguir un indicador de resultado de un inductor de actuaci&oacute;n dentro de un Balanced Scorecard; trazar la cadena causa-efecto que conecta las cuatro perspectivas hasta un deterioro financiero; verificar cr&iacute;ticamente si el asistente de IA ubic&oacute; el origen en la perspectiva donde solo se manifiesta el s&iacute;ntoma; y proponer una acci&oacute;n correctiva sobre la causa, con su costo comparado contra el da&ntilde;o que evita.</p>
+<h3 class="section">Teor&iacute;a</h3>
+<div class="ai-note">
+<p>⚠️ <strong>Nota de transparencia:</strong> redacci&oacute;n base del profesor; construcci&oacute;n del tablero, cadena causal y gu&iacute;a de soluci&oacute;n con apoyo de IA. Pendiente de revisi&oacute;n docente.</p>
+</div>
+<h4>Las cuatro perspectivas y su orden</h4>
+<p>El Balanced Scorecard organiza los indicadores en cuatro perspectivas que <strong>no est&aacute;n al mismo nivel</strong>: se encadenan.</p>
+<div class="formula">Aprendizaje y crecimiento &rarr; Procesos internos &rarr; Cliente &rarr; Financiera</div>
+<p>La perspectiva financiera es la <strong>&uacute;ltima</strong> de la cadena. Todo lo que aparece ah&iacute; es consecuencia de algo que ocurri&oacute; antes, en alguna de las otras tres. Por eso un estado financiero siempre llega tarde: informa de un da&ntilde;o que se produjo meses atr&aacute;s.</p>
+<h4>Indicador de resultado contra inductor de actuaci&oacute;n</h4>
+<ul>
+<li>Un <strong>indicador de resultado</strong> mide qu&eacute; pas&oacute;. Llega tarde y no se puede accionar directamente: margen, rentabilidad, d&iacute;as de cartera, participaci&oacute;n de mercado.</li>
+<li>Un <strong>inductor de actuaci&oacute;n</strong> mide algo que, si cambia hoy, modifica el resultado ma&ntilde;ana: horas de capacitaci&oacute;n, n&uacute;mero de preparaciones, costo de no calidad, rotaci&oacute;n de personal.</li>
+</ul>
+<p>El error cl&aacute;sico de gesti&oacute;n es <strong>actuar sobre el indicador de resultado</strong>. Reforzar cobranza cuando los d&iacute;as de cartera suben es el ejemplo perfecto: si el cliente paga tarde porque le entregaron tarde, meter dos cobradores no cambia nada.</p>
+<h4>C&oacute;mo se lee un tablero</h4>
+<p>No se lee indicador por indicador. Se lee buscando <strong>si los que est&aacute;n en rojo forman una cadena</strong>. Cuatro indicadores en rojo repartidos al azar son cuatro problemas; cuatro indicadores en rojo encadenados son <strong>un solo problema</strong> visto en cuatro momentos distintos.</p>
+<h3 class="section">Ejercicio / caso pr&aacute;ctico</h3>
+<p><strong>Industrias del Nazas, S.A. de C.V.</strong>, metalmec&aacute;nica de Torre&oacute;n, 340 empleados, ventas de $218,000,000. Implant&oacute; un Balanced Scorecard hace un a&ntilde;o.</p>
+<p>Las ventas crecieron 11.2 %, por encima de la meta de 8 %. El margen operativo cay&oacute; de 11.4 % a 9.8 % en seis meses. El director general no entiende por qu&eacute;.</p>
+<p><strong>Lo que la direcci&oacute;n ya intent&oacute;:</strong></p>
+<ul>
+<li>Reforzar cobranza con dos personas. Los d&iacute;as de cartera siguieron subiendo.</li>
+<li>Negociar precio con los proveedores de l&aacute;mina. Se logr&oacute; 3 %, sin efecto visible.</li>
+<li>Congelar contrataciones y <strong>recortar a la mitad el presupuesto de capacitaci&oacute;n</strong>.</li>
+</ul>
+<h4>Tablero al cierre del semestre</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Perspectiva</th>
+<th>Indicador</th>
+<th>Meta</th>
+<th>Real</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Financiera</strong></td>
+<td>Margen operativo</td>
+<td>12.0 %</td>
+<td>9.8 %</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td></td>
+<td>Rendimiento sobre capital</td>
+<td>18.0 %</td>
+<td>16.4 %</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td></td>
+<td>D&iacute;as de cartera</td>
+<td>45 d</td>
+<td>62 d</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td></td>
+<td>Crecimiento en ventas</td>
+<td>8.0 %</td>
+<td>11.2 %</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>Cliente</strong></td>
+<td>&Iacute;ndice de satisfacci&oacute;n</td>
+<td>90 pts</td>
+<td>87 pts</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td></td>
+<td>Retenci&oacute;n de clientes</td>
+<td>92.0 %</td>
+<td>94.1 %</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td></td>
+<td>Entregas completas y a tiempo</td>
+<td>95.0 %</td>
+<td>88.6 %</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td></td>
+<td>Participaci&oacute;n de mercado</td>
+<td>14.0 %</td>
+<td>13.2 %</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td><strong>Procesos internos</strong></td>
+<td>Ciclo de pedido</td>
+<td>5.0 d</td>
+<td>7.4 d</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td></td>
+<td>Merma de producci&oacute;n</td>
+<td>2.0 %</td>
+<td>2.6 %</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td></td>
+<td>Rotaci&oacute;n de inventario</td>
+<td>8.0 x</td>
+<td>6.9 x</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td></td>
+<td>Costo de no calidad</td>
+<td>1.5 %</td>
+<td>2.9 %</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td><strong>Aprendizaje</strong></td>
+<td>Horas de capacitaci&oacute;n por empleado</td>
+<td>24 h</td>
+<td>17 h</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td></td>
+<td>Rotaci&oacute;n de personal</td>
+<td>12.0 %</td>
+<td>15.8 %</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td></td>
+<td>Puestos clave cubiertos</td>
+<td>90.0 %</td>
+<td>92.0 %</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td></td>
+<td>&Iacute;ndice de clima laboral</td>
+<td>80 pts</td>
+<td>78 pts</td>
+<td>🟡</td>
+</tr>
+</tbody>
+</table>
+<h4>Datos complementarios del periodo</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Hace 6 meses</th>
+<th>Actual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ventas anualizadas</td>
+<td>$196,000,000</td>
+<td>$218,000,000</td>
+</tr>
+<tr>
+<td>Utilidad de operaci&oacute;n</td>
+<td>$22,344,000</td>
+<td>$21,364,000</td>
+</tr>
+<tr>
+<td>Reprocesos y garant&iacute;as</td>
+<td>$3,920,000</td>
+<td>$6,322,000</td>
+</tr>
+<tr>
+<td>Fletes urgentes por retraso</td>
+<td>$840,000</td>
+<td>$2,180,000</td>
+</tr>
+<tr>
+<td>Presupuesto de capacitaci&oacute;n</td>
+<td>$1,600,000</td>
+<td>$800,000</td>
+</tr>
+<tr>
+<td>Personal con menos de 1 a&ntilde;o de antig&uuml;edad</td>
+<td>18 %</td>
+<td>31 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide (cinco pasos):</strong></p>
+
+<h4>Paso 1 &middot; Diagnosticar con la IA &middot; 10 min</h4>
+<p><strong>Entregable:</strong> la respuesta de la IA, copiada.</p>
+<p>Usa el <strong>prompt 1</strong>. P&eacute;gale el tablero completo pero <strong>no los datos complementarios</strong>. P&iacute;dele que explique por qu&eacute; cae el margen y que proponga dos acciones correctivas.</p>
+
+<h4>Paso 2 &middot; Clasificar los indicadores &middot; 5 min</h4>
+<p><strong>Entregable:</strong> una tabla de cinco renglones.</p>
+<p>Toma estos <strong>cinco indicadores en rojo</strong> y clasif&iacute;calos:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Indicador en rojo</th>
+<th>&iquest;Resultado o inductor?</th>
+<th>&iquest;Por qu&eacute;?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Margen operativo</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D&iacute;as de cartera</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Entregas completas y a tiempo</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Costo de no calidad</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Horas de capacitaci&oacute;n</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pregunta:</strong> si solo uno de estos se puede accionar hoy, &iquest;cu&aacute;l es?</p>
+
+<h4>Paso 3 &middot; Trazar la cadena y confrontar &middot; 10 min</h4>
+<p><strong>Entregable:</strong> la cadena de cuatro eslabones, dibujada.</p>
+<p>El profesor entrega ahora los <strong>datos complementarios</strong>. Usa el <strong>prompt 2</strong> para devolv&eacute;rselos a la IA.</p>
+<p>Dibuja la cadena causa-efecto con flechas, empezando <strong>en la perspectiva donde se origina</strong>:</p>
+<pre><code>[            ] &rarr; [            ] &rarr; [            ] &rarr; [            ]
+</code></pre>
+<p>Y cuantif&iacute;cala: suma el aumento de reprocesos y el de fletes urgentes. Comp&aacute;ralo contra la ca&iacute;da de la utilidad de operaci&oacute;n.</p>
+<p><strong>Responde por escrito:</strong> &iquest;en qu&eacute; perspectiva empez&oacute; el diagn&oacute;stico de la IA? &iquest;Por qu&eacute; ah&iacute;?</p>
+
+<h4>Paso 4 &middot; Construir el tablero &middot; 15 min</h4>
+<p><strong>Entregable:</strong> un archivo HTML que funcione.</p>
+<p>Usa el <strong>prompt 3</strong> para generar un tablero interactivo con las cuatro perspectivas, sus sem&aacute;foros y la cadena causal resaltada. Debe permitir <strong>simular</strong>:</p>
+<ol>
+<li>Restituir el presupuesto de capacitaci&oacute;n a $1,600,000. &iquest;Qu&eacute; indicadores se mueven y en qu&eacute; orden temporal?</li>
+<li>Contratar dos cobradores m&aacute;s. &iquest;Qu&eacute; se mueve?</li>
+<li>&iquest;Cu&aacute;l de las dos acciones cambia el margen en doce meses?</li>
+</ol>
+<div class="note">
+<p>Referencia en <a href="materiales/tablero-bsc.html"><code>materiales/tablero-bsc.html</code></a>.</p>
+</div>
+
+<h4>Paso 5 &middot; Decidir y presentar &middot; 10 min</h4>
+<p><strong>Entregable:</strong> 6&ndash;8 l&iacute;neas.</p>
+<p>Prop&oacute;n una acci&oacute;n sobre la <strong>causa</strong> y otra sobre el <strong>s&iacute;ntoma</strong>. Para cada una: costo, tiempo hasta ver efecto, y qu&eacute; indicador del tablero avisar&iacute;a si est&aacute; funcionando.</p>
+<p><strong>Plenaria.</strong> Pregunta de cierre: <strong>la direcci&oacute;n recort&oacute; capacitaci&oacute;n para proteger el margen. &iquest;Qu&eacute; efecto tuvo esa decisi&oacute;n sobre el margen?</strong></p>
+
+<h3 class="section">Soluci&oacute;n / gu&iacute;a de soluci&oacute;n</h3>
+<details class="solution"><summary><strong>Mostrar gu&iacute;a para el profesor</strong></summary><div class="inner">
+
+<div class="ai-note">
+<p>⚠️ <strong>Nota de transparencia:</strong> esta gu&iacute;a de soluci&oacute;n se redact&oacute; con apoyo de IA al integrar el ejercicio al repositorio; las cifras se verificaron con c&oacute;digo contra los datos del caso. Pendiente de revisi&oacute;n docente.</p>
+</div>
+<h4>Paso 2 &middot; Resultado o inductor</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Indicador en rojo</th>
+<th>Perspectiva</th>
+<th>Clasificaci&oacute;n</th>
+<th>Por qu&eacute;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Margen operativo</td>
+<td>Financiera</td>
+<td><strong>Resultado</strong></td>
+<td>Es el &uacute;ltimo eslab&oacute;n: registra un da&ntilde;o que ya ocurri&oacute; y no se puede mover directamente.</td>
+</tr>
+<tr>
+<td>D&iacute;as de cartera</td>
+<td>Financiera</td>
+<td><strong>Resultado</strong></td>
+<td>El cliente paga tarde porque recibi&oacute; tarde o incompleto. Por eso los dos cobradores no cambiaron nada.</td>
+</tr>
+<tr>
+<td>Entregas completas y a tiempo</td>
+<td>Cliente</td>
+<td><strong>Resultado</strong> de procesos (e inductor de la cartera)</td>
+<td>Depende del ciclo de pedido y de los reprocesos; no se corrige por decreto.</td>
+</tr>
+<tr>
+<td>Costo de no calidad</td>
+<td>Procesos internos</td>
+<td><strong>Inductor</strong></td>
+<td>Mide reprocesos y garant&iacute;as; se reduce actuando sobre c&oacute;mo se trabaja.</td>
+</tr>
+<tr>
+<td>Horas de capacitaci&oacute;n por empleado</td>
+<td>Aprendizaje</td>
+<td><strong>Inductor</strong></td>
+<td>Es una decisi&oacute;n presupuestal de la direcci&oacute;n.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>El &uacute;nico que se puede accionar hoy:</strong> horas de capacitaci&oacute;n. Las dem&aacute;s cifras se mueven como consecuencia.</p>
+<div class="note">
+<p>Nota: el tablero tiene un sexto indicador en rojo, <strong>ciclo de pedido</strong> (7.4 d contra 5.0 d), que pertenece al mismo eslab&oacute;n de procesos internos. Si alg&uacute;n equipo lo agrega a la tabla, es un acierto.</p>
+</div>
+<h4>Paso 3 &middot; La cadena causa-efecto</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Aprendizaje &rarr;</th>
+<th>Procesos internos &rarr;</th>
+<th>Cliente &rarr;</th>
+<th>Financiera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capacitaci&oacute;n: 24 &rarr; 17 h por empleado</td>
+<td>Costo de no calidad: 2.9 % (meta 1.5 %)</td>
+<td>Entregas completas y a tiempo: 88.6 %</td>
+<td>D&iacute;as de cartera: 62 d</td>
+</tr>
+<tr>
+<td>Personal con menos de 1 a&ntilde;o: 18 % &rarr; 31 %</td>
+<td>Ciclo de pedido: 7.4 d (meta 5.0 d)</td>
+<td>Satisfacci&oacute;n: 87 pts</td>
+<td>Margen operativo: 9.8 %</td>
+</tr>
+<tr>
+<td>Rotaci&oacute;n de personal: 15.8 %</td>
+<td>Merma: 2.6 %</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Personal con menos experiencia y menos capacitaci&oacute;n produce m&aacute;s reprocesos y garant&iacute;as; los reprocesos alargan el ciclo de pedido y obligan a fletes urgentes; las entregas llegan tarde o incompletas; el cliente paga tarde y el sobrecosto se come el margen.</p>
+<p><strong>Cuantificaci&oacute;n:</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th>Concepto</th>
+<th style="text-align: right;">Hace 6 meses</th>
+<th style="text-align: right;">Actual</th>
+<th style="text-align: right;">Aumento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reprocesos y garant&iacute;as</td>
+<td style="text-align: right;">$3,920,000</td>
+<td style="text-align: right;">$6,322,000</td>
+<td style="text-align: right;">$2,402,000</td>
+</tr>
+<tr>
+<td>Fletes urgentes por retraso</td>
+<td style="text-align: right;">$840,000</td>
+<td style="text-align: right;">$2,180,000</td>
+<td style="text-align: right;">$1,340,000</td>
+</tr>
+<tr>
+<td><strong>Sobrecosto total</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>$3,742,000</strong></td>
+</tr>
+<tr>
+<td>Utilidad de operaci&oacute;n</td>
+<td style="text-align: right;">$22,344,000</td>
+<td style="text-align: right;">$21,364,000</td>
+<td style="text-align: right;">&minus;$980,000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>El sobrecosto ($3,742,000) es <strong>3.8 veces</strong> la ca&iacute;da visible de la utilidad ($980,000). El crecimiento de las ventas escondi&oacute; la mayor parte del da&ntilde;o.</li>
+<li>Si el margen se hubiera sostenido en 11.4 %, con ventas de $218,000,000 la utilidad ser&iacute;a de $24,852,000: <strong>$3,488,000 m&aacute;s</strong> que la real, una cifra del mismo orden que el sobrecosto.</li>
+<li>Los reprocesos y garant&iacute;as actuales ($6,322,000) equivalen al 2.9 % de las ventas: es exactamente el costo de no calidad del tablero. Hace seis meses eran 2.0 %.</li>
+<li>El recorte de capacitaci&oacute;n ahorr&oacute; <strong>$800,000</strong>; el sobrecosto que coincide con &eacute;l es <strong>4.7 veces</strong> mayor.</li>
+</ul>
+<p><strong>&iquest;Por qu&eacute; la IA empieza en la perspectiva financiera?</strong> Porque es donde est&aacute; el s&iacute;ntoma que se le pide explicar (&laquo;por qu&eacute; cae el margen&raquo;) y porque, sin los datos complementarios, los indicadores aparecen como una lista y no como una cadena. Lo esperable es que proponga cobranza, cr&eacute;dito o precios.</p>
+<h4>Paso 4 &middot; Simulaci&oacute;n (proyecci&oacute;n, no dato)</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Acci&oacute;n</th>
+<th>Qu&eacute; se mueve y cu&aacute;ndo</th>
+<th>&iquest;Cambia el margen en 12 meses?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Restituir capacitaci&oacute;n a $1,600,000</td>
+<td>3 meses: horas de capacitaci&oacute;n. 6 meses: costo de no calidad, merma y ciclo de pedido. 12 meses: entregas a tiempo, d&iacute;as de cartera y margen.</td>
+<td><strong>S&iacute;</strong>, si se confirma la cadena.</td>
+</tr>
+<tr>
+<td>Contratar dos cobradores m&aacute;s</td>
+<td>D&iacute;as de cartera, marginalmente; agrega costo fijo.</td>
+<td><strong>No</strong>: ataca el s&iacute;ntoma y adem&aacute;s cuesta.</td>
+</tr>
+</tbody>
+</table>
+<h4>Paso 5 &middot; Respuesta a la pregunta de cierre</h4>
+<p>La direcci&oacute;n recort&oacute; capacitaci&oacute;n para proteger el margen y obtuvo el efecto contrario: ahorr&oacute; $800,000 y el margen sigui&oacute; cayendo, porque el recorte aliment&oacute; el eslab&oacute;n donde se origina el problema. Una acci&oacute;n razonable sobre la causa es restituir el presupuesto con prioridad en el 31 % de personal con menos de un a&ntilde;o (inducci&oacute;n, certificaci&oacute;n por puesto, acompa&ntilde;amiento de un operario experimentado), con el costo de no calidad como indicador de alerta temprana. Sobre el s&iacute;ntoma, se acepta una medida temporal para contener fletes urgentes o cartera, siempre que se declare como tal.</p>
+<p><strong>Matiz que conviene premiar:</strong> el caso est&aacute; construido para que la cadena sea coherente, pero coincidencia en el tiempo no es demostraci&oacute;n. Un equipo que diga qu&eacute; dato adicional confirmar&iacute;a la causalidad (por ejemplo, reprocesos por antig&uuml;edad del operario) merece la mejor nota en el criterio de justificaci&oacute;n.</p>
+<h4>Errores frecuentes del asistente de IA</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Lo que suele hacer la IA</th>
+<th>Por qu&eacute; est&aacute; mal</th>
+<th>Qu&eacute; debe responder el alumno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Empieza por d&iacute;as de cartera y recomienda endurecer cobranza, factoraje o pol&iacute;ticas de cr&eacute;dito</td>
+<td>Act&uacute;a sobre un indicador de resultado; la direcci&oacute;n ya lo intent&oacute; y no funcion&oacute;</td>
+<td>Se&ntilde;alar que la cartera es el &uacute;ltimo s&iacute;ntoma de la cadena</td>
+</tr>
+<tr>
+<td>Atribuye la ca&iacute;da a materia prima, mezcla de productos o precios</td>
+<td>No hay datos de eso en el tablero; es un supuesto</td>
+<td>Marcar la cifra o la causa como no sustentada</td>
+</tr>
+<tr>
+<td>Lee los 16 indicadores como una lista</td>
+<td>No busca si los rojos se encadenan</td>
+<td>Trazar la cadena de aprendizaje a financiera</td>
+</tr>
+<tr>
+<td>Avala el recorte de capacitaci&oacute;n como &laquo;medida de austeridad&raquo;</td>
+<td>Trata un inductor como gasto prescindible</td>
+<td>Mostrar que el ahorro es menor que el sobrecosto que coincide con &eacute;l</td>
+</tr>
+<tr>
+<td>Con los datos complementarios, suma los reprocesos totales ($6.3 M) en lugar del aumento</td>
+<td>Confunde nivel con variaci&oacute;n</td>
+<td>Usar solo el aumento: $2,402,000 + $1,340,000</td>
+</tr>
+<tr>
+<td>Afirma la causalidad sin matices</td>
+<td>Dos series que se mueven juntas no prueban causa</td>
+<td>Declarar el supuesto y qu&eacute; dato lo confirmar&iacute;a</td>
+</tr>
+</tbody>
+</table>
+<h4>R&uacute;brica</h4>
+<p>Ver <a href="materiales/04-rubrica.md"><code>materiales/04-rubrica.md</code></a>.</p>
+</div></details>
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<div class="note">
+<p>Copiar y pegar en Claude o ChatGPT, <strong>en orden</strong>. No adelantes el prompt 2.</p>
+</div>
+
+<div class="prompt-box"><span class="label">🤖 Prompt 1 &mdash; primera respuesta (paso 1)</span>Act&uacute;a como consultor de gesti&oacute;n.
+
+Industrias del Nazas, metalmec&aacute;nica de Torre&oacute;n, 340 empleados,
+ventas de $218,000,000. Las ventas crecieron 11.2 % y el margen
+operativo cay&oacute; de 11.4 % a 9.8 % en seis meses.
+
+La direcci&oacute;n ya intent&oacute;: reforzar cobranza con dos personas,
+negociar el precio de la l&aacute;mina (logr&oacute; 3 %) y recortar a la mitad
+el presupuesto de capacitaci&oacute;n.
+
+[pega aqu&iacute; el contenido de datos.csv: el tablero de 16 indicadores]
+
+1. Identifica los indicadores fuera de meta.
+2. Explica por qu&eacute; cae el margen operativo aunque las ventas crezcan.
+3. Prop&oacute;n dos acciones correctivas.
+
+Usa &uacute;nicamente los datos del tablero. Si necesitas informaci&oacute;n que no
+te di, dilo en lugar de suponerla.</div>
+
+<div class="prompt-box"><span class="label">🤖 Prompt 2 &mdash; confrontaci&oacute;n (paso 3)</span>Te entrego datos complementarios que antes no ten&iacute;as:
+
+Concepto | Hace 6 meses | Actual
+Ventas anualizadas | $196,000,000 | $218,000,000
+Utilidad de operaci&oacute;n | $22,344,000 | $21,364,000
+Reprocesos y garant&iacute;as | $3,920,000 | $6,322,000
+Fletes urgentes por retraso | $840,000 | $2,180,000
+Presupuesto de capacitaci&oacute;n | $1,600,000 | $800,000
+Personal con menos de 1 a&ntilde;o | 18 % | 31 %
+
+1. &iquest;En qu&eacute; perspectiva del Balanced Scorecard empez&oacute; tu diagn&oacute;stico
+   anterior? &iquest;Por qu&eacute; ah&iacute;?
+2. Traza la cadena causa-efecto completa, de cuatro eslabones,
+   empezando por la perspectiva donde se ORIGINA el problema.
+3. Clasifica cada indicador en rojo como indicador de resultado o
+   inductor de actuaci&oacute;n, y justifica.
+4. Cuantifica: suma el aumento de reprocesos y el de fletes urgentes,
+   y comp&aacute;ralo contra la ca&iacute;da de la utilidad de operaci&oacute;n.
+
+Despu&eacute;s responde: la direcci&oacute;n recort&oacute; capacitaci&oacute;n para proteger el
+margen. &iquest;Qu&eacute; efecto tuvo esa decisi&oacute;n sobre el margen?</div>
+
+<div class="prompt-box"><span class="label">🤖 Prompt 3 &mdash; construir el tablero (paso 4)</span>Genera un tablero en UN SOLO archivo HTML, autocontenido, sin librer&iacute;as
+externas ni conexi&oacute;n a internet. Debe abrirse en cualquier navegador y
+poderse imprimir.
+
+Datos:
+[pega aqu&iacute; el contenido de datos.csv]
+Ca&iacute;da de la utilidad de operaci&oacute;n: de $22,344,000 a $21,364,000.
+
+El tablero debe tener:
+1. Las cuatro perspectivas con sus 16 indicadores, meta contra real,
+   y sem&aacute;foro verde/&aacute;mbar/rojo.
+2. La CADENA CAUSA-EFECTO dibujada arriba, con los cuatro eslabones
+   conectados por flechas, resaltando los indicadores que la forman.
+3. Cuatro indicadores: n&uacute;mero de rojos, n&uacute;mero de &aacute;mbares, ca&iacute;da del
+   margen en puntos, y el sobrecosto de reprocesos m&aacute;s fletes.
+4. Un SIMULADOR: al restituir el presupuesto de capacitaci&oacute;n, mostrar
+   qu&eacute; indicadores se mover&iacute;an y en qu&eacute; orden temporal (3, 6, 12 meses),
+   marcando claramente que es una proyecci&oacute;n y no un dato.
+5. Tabla de datos complementarios comparando los dos periodos.
+
+Reglas:
+- No inventes ning&uacute;n dato: todos los n&uacute;meros salen de los datos que te di.
+- Dibuja los gr&aacute;ficos en SVG generado por ti. No uses librer&iacute;as ni im&aacute;genes.
+- Los controles deben recalcular TODO al instante, sin recargar la p&aacute;gina.</div>
+
+<p><strong>Nota para el alumno:</strong> si la IA te pide datos que no tienes, dilo en la hoja de trabajo. Que los pida es buena se&ntilde;al; que los invente, no.</p>
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> Ninguno. Si el equipo trabaja con una empresa real, se sugiere adjuntar su tablero de indicadores del &uacute;ltimo semestre y el estado de resultados comparativo.</div>
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>Kaplan, R. S. y Norton, D. P. (1996). <em>The Balanced Scorecard: Translating Strategy into Action</em>. Harvard Business School Press.</li>
+<li>Kaplan, R. S. y Norton, D. P. (2004). <em>Strategy Maps: Converting Intangible Assets into Tangible Outcomes</em>. Harvard Business School Press.</li>
+<li>Kaplan, R. S. y Norton, D. P. (1992). The Balanced Scorecard: Measures That Drive Performance. <em>Harvard Business Review</em>, 70(1), 71&ndash;79.</li>
+<li>Materiales del ejercicio (caso, hoja de trabajo, prompts, r&uacute;brica, datos y tablero de referencia): ver la tabla en <em>C&oacute;mo usar este ejercicio en clase</em>.</li>
+</ul>
+    <div class="doc-footer">
+      Autor: Norma P. Rodríguez-Cándido · Actualizado: 2026-10-13 · Asistencia de IA: construcción del tablero de 16 indicadores, cadena causal, datos complementarios, prompts y rúbrica; guía de solución redactada con apoyo de IA al integrar el ejercicio al repositorio; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>

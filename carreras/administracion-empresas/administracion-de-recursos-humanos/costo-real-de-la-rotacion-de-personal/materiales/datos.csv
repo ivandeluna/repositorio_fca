@@ -1,0 +1,7 @@
+# Datos ficticios construidos para ejercicio docente. Norma P. Rodríguez-Cándido · Facultad de Contaduría y Administración, Universidad Autónoma de Coahuila, Unidad Torreón · Octubre de 2026
+empresa,sector,plantilla,separaciones,salario_mensual,dias_curva,productividad_curva_pct,costo_reclutamiento,costo_capacitacion,horas_supervision,costo_hora_supervision
+Lácteos La Comarca,Alimentos,180,47,9800,75,45,6200,8500,22,320
+Mezclilla Lagunera,Manufactura textil,240,96,7400,45,55,3800,4200,14,260
+Autopartes Gómez,Metalmecánica,320,58,11200,90,40,9400,14000,30,410
+Distribuidora Laguna,Distribución,95,29,10500,60,50,5600,6800,18,340
+Clínica Cerro de las Noas,Servicios de salud,130,21,16800,120,35,12500,19000,26,520

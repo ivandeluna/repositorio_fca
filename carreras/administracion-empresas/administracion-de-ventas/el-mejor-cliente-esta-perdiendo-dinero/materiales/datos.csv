@@ -1,0 +1,14 @@
+# Datos ficticios construidos para ejercicio docente. Norma P. Rodríguez-Cándido · Facultad de Contaduría y Administración, Universidad Autónoma de Coahuila, Unidad Torreón · Octubre de 2026
+cliente,ventas,margen_bruto_pct,pedidos,lineas_por_pedido,entregas,visitas,devoluciones,dias_credito
+Autoservicios del Norte,8400000,18.5,96,42,96,24,14,75
+Cadena Hogar Express,6900000,15.2,186,44,186,22,41,105
+Grupo Constructor Nazas,5600000,21.2,18,6,18,9,1,60
+Industrial Torreón,4300000,24.1,24,8,24,11,2,45
+Súper Abastos Lerdo,3700000,19.8,92,29,92,16,17,75
+Ferretera La Laguna,3200000,26.8,28,11,28,12,2,45
+Mayoreo del Bravo,2400000,25.5,31,12,31,13,4,45
+Materiales Gómez,2100000,29.5,22,9,22,10,3,30
+Distribuidora Cerro,1800000,31.2,14,7,14,6,1,30
+Constructora Peñoles,1500000,28.8,12,5,12,7,1,60
+Comercial Matamoros,1250000,33.5,11,5,11,5,0,30
+Talleres Unidos,950000,34.8,9,4,9,4,1,30

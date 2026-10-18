@@ -35,6 +35,30 @@ El script:
 4. Corre `python3 _scripts/generar_indices.py` para que los índices y el HTML de listados se regeneren solos.
 5. Para el `index.html` del ejercicio en sí (el contenido, no los índices) sí hay que crearlo/editarlo a mano — usa cualquier `index.html` de ejercicio existente como referencia de la estructura.
 
+## Ejercicios con materiales de clase (opcional)
+
+Un ejercicio puede traer, además de `README.md`, `metadata.yml` e `index.html`:
+
+```
+<ejercicio>/
+├── GUIA-DOCENTE.md        ← guía del profesor: preparación, cronograma, frases, qué hacer sin IA
+└── materiales/
+    ├── 01-caso-alumno.md  ← caso para repartir, sin solución
+    ├── 02-hoja-de-trabajo.md
+    ├── 03-prompts.md      ← los prompts, listos para copiar
+    ├── 04-rubrica.md
+    ├── datos.csv
+    └── tablero-*.html     ← tablero de referencia autocontenido
+```
+
+En ese caso, el `README.md` sigue siendo el documento principal (con la solución en un bloque `<details markdown="1">` y los prompts escritos en la sección «Prompt sugerido para hacerlo con Claude o ChatGPT») y enlaza a esos archivos en una sección «Cómo usar este ejercicio en clase». Ver como ejemplo los ejercicios de Administración Estratégica, Ventas, Compras y Recursos Humanos.
+
+Para generar el `index.html` del ejercicio a partir de su `README.md`:
+
+```
+python3 _scripts/readme_a_html.py carreras/<carrera>/<materia>/<ejercicio>/
+```
+
 ## Sobre el uso de IA
 
 Este repositorio permite y documenta el uso de IA para redactar o ampliar la parte teórica de los ejercicios. La única regla es la transparencia: cada ejercicio debe indicar, en su sección de teoría y en `metadata.yml` (campo `asistencia_ia`), qué tanto se apoyó en IA.

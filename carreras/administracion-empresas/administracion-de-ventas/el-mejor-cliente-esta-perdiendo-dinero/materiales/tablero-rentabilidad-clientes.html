@@ -1,0 +1,157 @@
+<!doctype html><html lang="es"><meta charset="utf-8">
+<meta name="author" content="Norma P. Rodríguez-Cándido">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rentabilidad por cliente — Distribuidora Industrial Laguna</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14304D;--body:#3D4A56;--muted:#6C7883;--line:#E2E7EC;--rojo:#B3261E;--verde:#2E7D4F;--azul:#1F5FA8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Libre Franklin",Arial,sans-serif;background:#EEF1F4;color:var(--body);font-size:14px}
+.wrap{max-width:1180px;margin:0 auto;padding:18px}
+.hd{background:var(--ink);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.hd h1{font-size:21px;font-weight:700}.hd p{font-size:12.5px;color:#9FC4E8;margin-top:3px}
+.hd .al{background:var(--rojo);padding:9px 16px;text-align:center}
+.hd .al b{display:block;font-size:14px}.hd .al span{font-size:10.5px;color:#F3D0CC}
+.ctl{background:#fff;border:1px solid var(--line);padding:13px 16px;margin-top:12px;
+ display:grid;grid-template-columns:repeat(6,1fr);gap:11px}
+.ctl label{display:block;font-size:10px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.ctl input{width:100%;padding:5px 7px;border:1px solid var(--line);border-radius:4px;font-family:inherit;font-size:12.5px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.k{background:#fff;border:1px solid var(--line);padding:14px 16px}
+.k .n{font-size:24px;font-weight:700;color:var(--ink);line-height:1}
+.k .l{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.35}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.card{background:#fff;border:1px solid var(--line)}
+.card h2{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);padding:11px 16px;border-bottom:1px solid var(--line)}
+.card .b{padding:14px 16px}
+svg{display:block;width:100%;height:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:right;font-size:9.5px;color:var(--muted);font-weight:700;padding:0 7px 6px;border-bottom:1.5px solid var(--ink)}
+th:first-child{text-align:left}
+td{padding:6px 7px;border-bottom:1px solid #F1F4F7;text-align:right}
+td:first-child{text-align:left;color:var(--ink);font-weight:600}
+tr.neg td{background:#FBEEEC}
+.ft{font-size:11px;color:var(--muted);text-align:center;padding:16px 0 4px;line-height:1.6}
+@media(max-width:900px){.ctl{grid-template-columns:repeat(3,1fr)}.kpis{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}}
+@media print{body{background:#fff}.ctl{display:none}}
+</style>
+<div class="wrap">
+ <div class="hd"><div><h1>Rentabilidad por cliente y costo de servir</h1>
+  <p>Distribuidora Industrial Laguna, S.A. de C.V. · 12 clientes · ejercicio 2026</p></div>
+  <div class="al"><b id="ver">—</b><span id="sub">—</span></div></div>
+
+ <div class="ctl">
+  <div><label>Pedido $</label><input id="cPed" type="number" value="840" step="20"></div>
+  <div><label>Línea $</label><input id="cLin" type="number" value="65" step="5"></div>
+  <div><label>Entrega $</label><input id="cEnt" type="number" value="1250" step="50"></div>
+  <div><label>Visita $</label><input id="cVis" type="number" value="1900" step="100"></div>
+  <div><label>Devolución $</label><input id="cDev" type="number" value="3200" step="100"></div>
+  <div><label>Tasa anual %</label><input id="cTas" type="number" value="18" step="1"></div>
+ </div>
+
+ <div class="kpis">
+  <div class="k"><div class="n" id="kV">—</div><div class="l">ventas<br>totales</div></div>
+  <div class="k"><div class="n" id="kB">—</div><div class="l">margen bruto<br>total</div></div>
+  <div class="k"><div class="n" id="kN" style="color:var(--verde)">—</div><div class="l">margen neto<br>total</div></div>
+  <div class="k"><div class="n" id="kD" style="color:var(--rojo)">—</div><div class="l">clientes que<br>destruyen valor</div></div>
+ </div>
+
+ <div class="row">
+  <div class="card"><h2>CURVA DE BALLENA · UTILIDAD ACUMULADA</h2><div class="b"><svg id="whale" viewBox="0 0 560 320"></svg></div></div>
+  <div class="card"><h2>RANKING POR MARGEN BRUTO → POR MARGEN NETO</h2><div class="b"><svg id="rank" viewBox="0 0 560 480"></svg></div></div>
+ </div>
+
+ <div class="card" style="margin-top:12px"><h2>DESCOMPOSICIÓN POR CLIENTE</h2><div class="b"><svg id="desc" viewBox="0 0 1120 340"></svg></div></div>
+
+ <div class="card" style="margin-top:12px"><h2>LOS DOCE CLIENTES</h2><div class="b">
+  <table><thead><tr><th>Cliente</th><th>Ventas</th><th>MB %</th><th>Margen bruto</th><th>Costo de servir</th><th>% de ventas</th><th>Costo financiero</th><th>Margen neto</th><th>MN %</th></tr></thead>
+  <tbody id="tb"></tbody></table></div></div>
+
+ <div class="cred" style="background:#14304D;color:#fff;padding:13px 24px;margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div style="font-size:12.5px;font-weight:700">Norma P. Rodríguez-Cándido</div><div style="font-size:11px;color:#9FC4E8;text-align:right">Facultad de Contaduría y Administración · Universidad Autónoma de Coahuila, Unidad Torreón<br>Repositorio de Métodos y Ejercicios · Octubre de 2026</div></div><div class="ft">Generado por el equipo con asistencia de IA · los costos unitarios los define el usuario<br>
+ Ejercicio «El mejor cliente de la empresa está perdiendo dinero» · FCA UAdeC Unidad Torreón</div>
+</div>
+<script>
+const D=[["Autoservicios del Norte",8400000,18.5,96,42,96,24,14,75],
+["Cadena Hogar Express",6900000,15.2,186,44,186,22,41,105],
+["Grupo Constructor Nazas",5600000,21.2,18,6,18,9,1,60],
+["Industrial Torreón",4300000,24.1,24,8,24,11,2,45],
+["Súper Abastos Lerdo",3700000,19.8,92,29,92,16,17,75],
+["Ferretera La Laguna",3200000,26.8,28,11,28,12,2,45],
+["Mayoreo del Bravo",2400000,25.5,31,12,31,13,4,45],
+["Materiales Gómez",2100000,29.5,22,9,22,10,3,30],
+["Distribuidora Cerro",1800000,31.2,14,7,14,6,1,30],
+["Constructora Peñoles",1500000,28.8,12,5,12,7,1,60],
+["Comercial Matamoros",1250000,33.5,11,5,11,5,0,30],
+["Talleres Unidos",950000,34.8,9,4,9,4,1,30]];
+const el=i=>document.getElementById(i), M=n=>"$"+Math.round(n).toLocaleString("es-MX");
+const K=n=>(n/1e6).toFixed(2)+" M";
+function calc(){
+ const p=+el("cPed").value,l=+el("cLin").value,e=+el("cEnt").value,v=+el("cVis").value,
+       d=+el("cDev").value,t=(+el("cTas").value)/100/365;
+ return D.map(x=>{const[n,ven,mb,ped,lin,ent,vis,dev,dias]=x;
+  const b=ven*mb/100, cs=ped*p+ped*lin*l+ent*e+vis*v+dev*d, f=ven*dias*t;
+  return{n,ven,mb,b,cs,f,net:b-cs-f,mn:(b-cs-f)/ven*100,csp:cs/ven*100};});
+}
+function pinta(){
+ const R=calc(), T=k=>R.reduce((a,r)=>a+r[k],0);
+ const neg=R.filter(r=>r.net<0);
+ el("kV").textContent=M(T("ven")); el("kB").textContent=M(T("b"));
+ el("kN").textContent=M(T("net")); el("kD").textContent=neg.length;
+ el("ver").textContent=neg.length?"HAY DESTRUCCIÓN DE VALOR":"TODOS RENTABLES";
+ el("sub").textContent=neg.length?neg.length+" cliente(s) con margen neto negativo":"ningún cliente en negativo";
+ document.querySelector(".hd .al").style.background=neg.length?"#B3261E":"#2E7D4F";
+
+ // curva de ballena
+ const S=[...R].sort((a,b)=>b.net-a.net); let ac=0; const cum=S.map(r=>ac+=r.net);
+ const mx=Math.max(...cum), W=560,H=320,L=56,B2=62,T2=22,pw=W-L-16,ph=H-T2-B2;
+ const Y=x=>T2+ph-(x/mx)*ph*0.92, X=i=>L+(i+0.5)*(pw/S.length);
+ let s=`<line x1="${L}" y1="${Y(0)}" x2="${L+pw}" y2="${Y(0)}" stroke="#14304D"/>`;
+ s+=`<text x="${L-6}" y="${Y(mx)+4}" text-anchor="end" font-size="9.5" fill="#6C7883">${K(mx)}</text>`;
+ s+=`<text x="${L-6}" y="${Y(T("net"))+4}" text-anchor="end" font-size="9.5" fill="#2E7D4F">${K(T("net"))}</text>`;
+ s+=`<line x1="${L}" y1="${Y(T("net"))}" x2="${L+pw}" y2="${Y(T("net"))}" stroke="#2E7D4F" stroke-dasharray="4 3"/>`;
+ S.forEach((r,i)=>{const y=Y(cum[i]),h=Y(0)-y;
+  s+=`<rect x="${X(i)-11}" y="${h>=0?y:Y(0)}" width="22" height="${Math.abs(h)}" fill="${r.net<0?"#B3261E":"#A9BFD4"}"><title>${r.n}</title></rect>`;});
+ s+=`<polyline points="${S.map((r,i)=>`${X(i)},${Y(cum[i])}`).join(" ")}" fill="none" stroke="#14304D" stroke-width="2.2"/>`;
+ const pk=cum.indexOf(mx);
+ s+=`<circle cx="${X(pk)}" cy="${Y(mx)}" r="4.5" fill="#14304D"/>
+  <text x="${X(pk)}" y="${Y(mx)-11}" text-anchor="middle" font-size="10" font-weight="700" fill="#14304D">máximo</text>`;
+ S.forEach((r,i)=>{s+=`<text x="${X(i)}" y="${H-44}" transform="rotate(-50 ${X(i)} ${H-44})" text-anchor="end" font-size="8.2" fill="${r.net<0?"#B3261E":"#6C7883"}">${r.n.slice(0,20)}</text>`;});
+ s+=`<text x="${L}" y="14" font-size="9.5" fill="#6C7883">la línea verde es la utilidad total de la empresa · la curva la supera y luego cae</text>`;
+ el("whale").innerHTML=s;
+
+ // ranking doble
+ const gb=[...R].sort((a,b)=>b.b-a.b), gn=[...R].sort((a,b)=>b.net-a.net);
+ let s2=`<text x="60" y="14" font-size="10" font-weight="700" fill="#6C7883">MARGEN BRUTO</text>
+  <text x="500" y="14" text-anchor="end" font-size="10" font-weight="700" fill="#6C7883">MARGEN NETO</text>`;
+ gb.forEach((r,i)=>{const j=gn.indexOf(r), y1=36+i*36, y2=36+j*36;
+  const mov=Math.abs(i-j), col=r.net<0?"#B3261E":(mov>=3?"#C08A1E":"#C8D3DC");
+  s2+=`<path d="M190 ${y1} C280 ${y1}, 300 ${y2}, 390 ${y2}" fill="none" stroke="${col}" stroke-width="${mov>=3?2.2:1.2}" opacity="${mov>=3?1:.6}"/>`;
+  s2+=`<text x="184" y="${y1+3.5}" text-anchor="end" font-size="10" fill="#3D4A56">${i+1}. ${r.n.slice(0,22)}</text>`;
+  s2+=`<text x="396" y="${y2+3.5}" font-size="10" font-weight="${r.net<0?700:400}" fill="${r.net<0?"#B3261E":"#3D4A56"}">${j+1}. ${r.n.slice(0,22)}</text>`;});
+ el("rank").innerHTML=s2;
+
+ // descomposición
+ const O=[...R].sort((a,b)=>b.ven-a.ven), bw=1120/O.length;
+ const amp=Math.max(...O.map(r=>Math.max(r.b,r.cs+r.f)));
+ let s3=`<line x1="0" y1="200" x2="1120" y2="200" stroke="#14304D"/>
+  <text x="4" y="16" font-size="10" fill="#6C7883">azul: margen bruto · naranja: costo de servir · gris: costo financiero · barra inferior: margen neto</text>`;
+ O.forEach((r,i)=>{const x=i*bw+8,w=bw-16;
+  const hb=r.b/amp*160, hc=r.cs/amp*160, hf=r.f/amp*160;
+  s3+=`<rect x="${x}" y="${200-hb}" width="${w*0.45}" height="${hb}" fill="#1F5FA8"/>`;
+  s3+=`<rect x="${x+w*0.5}" y="${200-hc}" width="${w*0.25}" height="${hc}" fill="#CF6A1A"/>`;
+  s3+=`<rect x="${x+w*0.78}" y="${200-hf}" width="${w*0.22}" height="${hf}" fill="#9AA7B2"/>`;
+  const hn=Math.abs(r.net)/amp*90;
+  s3+=`<rect x="${x}" y="${r.net>=0?210:210}" width="${w}" height="${hn}" fill="${r.net<0?"#B3261E":"#2E7D4F"}" opacity=".85"/>`;
+  s3+=`<text x="${x+w/2}" y="${215+hn}" text-anchor="middle" font-size="9" font-weight="700" fill="${r.net<0?"#B3261E":"#2E7D4F"}">${K(r.net)}</text>`;
+  s3+=`<text x="${x+w/2}" y="330" text-anchor="middle" font-size="8.4" fill="#6C7883">${r.n.slice(0,16)}</text>`;});
+ el("desc").innerHTML=s3;
+
+ el("tb").innerHTML=[...R].sort((a,b)=>b.ven-a.ven).map(r=>
+  `<tr class="${r.net<0?"neg":""}"><td>${r.n}</td><td>${M(r.ven)}</td><td>${r.mb.toFixed(1)} %</td>
+   <td>${M(r.b)}</td><td>${M(r.cs)}</td><td>${r.csp.toFixed(1)} %</td><td>${M(r.f)}</td>
+   <td style="font-weight:700;color:${r.net<0?"#B3261E":"#14304D"}">${M(r.net)}</td>
+   <td style="color:${r.net<0?"#B3261E":"#6C7883"}">${r.mn.toFixed(1)} %</td></tr>`).join("");
+}
+["cPed","cLin","cEnt","cVis","cDev","cTas"].forEach(i=>el(i).addEventListener("input",pinta));
+pinta();
+</script>

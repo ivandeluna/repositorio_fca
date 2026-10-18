@@ -1,0 +1,18 @@
+# Datos ficticios construidos para ejercicio docente. Norma P. Rodríguez-Cándido · Facultad de Contaduría y Administración, Universidad Autónoma de Coahuila, Unidad Torreón · Octubre de 2026
+perspectiva,indicador,meta,real,unidad
+Financiera,Margen operativo,12.0,9.8,%
+Financiera,Rendimiento sobre capital,18.0,16.4,%
+Financiera,Días de cartera,45,62,días
+Financiera,Crecimiento en ventas,8.0,11.2,%
+Cliente,Índice de satisfacción,90,87,puntos
+Cliente,Retención de clientes,92.0,94.1,%
+Cliente,Entregas completas y a tiempo,95.0,88.6,%
+Cliente,Participación de mercado,14.0,13.2,%
+Procesos internos,Ciclo de pedido,5.0,7.4,días
+Procesos internos,Merma de producción,2.0,2.6,%
+Procesos internos,Rotación de inventario,8.0,6.9,veces
+Procesos internos,Costo de no calidad,1.5,2.9,%
+Aprendizaje,Horas de capacitación por empleado,24,17,horas
+Aprendizaje,Rotación de personal,12.0,15.8,%
+Aprendizaje,Puestos clave cubiertos,90.0,92.0,%
+Aprendizaje,Índice de clima laboral,80,78,puntos

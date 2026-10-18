@@ -1,0 +1,209 @@
+<!doctype html><html lang="es"><meta charset="utf-8">
+<meta name="author" content="Norma P. Rodríguez-Cándido">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tablero de riesgo de proveedores — Industrias del Nazas</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14304D;--body:#3D4A56;--muted:#6C7883;--line:#E2E7EC;--wash:#F6F8FA;
+ --rojo:#B3261E;--ambar:#C08A1E;--verde:#2E7D4F;--azul:#1F5FA8;--morado:#6B5B95}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Libre Franklin",Arial,sans-serif;background:#EEF1F4;color:var(--body);font-size:14px}
+.wrap{max-width:1180px;margin:0 auto;padding:18px}
+.hd{background:var(--ink);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;
+ align-items:center;flex-wrap:wrap;gap:14px}
+.hd h1{font-size:21px;font-weight:700}
+.hd p{font-size:12.5px;color:#9FC4E8;margin-top:3px}
+.hd .al{background:var(--rojo);padding:9px 16px;text-align:center}
+.hd .al b{display:block;font-size:14px}
+.hd .al span{font-size:10.5px;color:#F3D0CC}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.k{background:#fff;border:1px solid var(--line);padding:14px 16px}
+.k .n{font-size:26px;font-weight:700;color:var(--ink);line-height:1}
+.k .l{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.35}
+.row{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin-top:12px}
+.card{background:#fff;border:1px solid var(--line)}
+.card h2{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);
+ padding:11px 16px;border-bottom:1px solid var(--line)}
+.card .b{padding:14px 16px}
+svg{display:block;width:100%;height:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:right;font-size:9.5px;letter-spacing:.04em;color:var(--muted);font-weight:700;
+ padding:0 8px 6px;border-bottom:1.5px solid var(--ink)}
+th:first-child{text-align:left}
+td{padding:6px 8px;border-bottom:1px solid #F1F4F7;text-align:right}
+td:first-child{text-align:left;color:var(--ink);font-weight:600}
+tr.hot td{background:#FBEEEC}
+.tag{display:inline-block;padding:2px 8px;border-radius:9px;color:#fff;font-size:10px;font-weight:700}
+.alerts{padding:6px 16px 14px}
+.alert{border-left:4px solid var(--rojo);background:#FBEEEC;padding:9px 13px;margin-top:9px}
+.alert b{display:block;font-size:11.5px;color:#8E1D17;margin-bottom:2px}
+.alert span{font-size:11.5px;line-height:1.4}
+.ctl{background:#fff;border:1px solid var(--line);padding:12px 16px;margin-top:12px;
+ display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:12.5px}
+.ctl label{font-weight:600;color:var(--ink)}
+.ctl input{width:92px;padding:5px 8px;border:1px solid var(--line);border-radius:4px;font-family:inherit}
+.ft{font-size:11px;color:var(--muted);text-align:center;padding:16px 0 4px;line-height:1.6}
+@media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}}
+@media print{body{background:#fff}.wrap{padding:0;max-width:none}.ctl{display:none}}
+</style>
+<div class="wrap">
+ <div class="hd">
+  <div><h1>Tablero de riesgo de proveedores</h1>
+   <p>Industrias del Nazas, S.A. de C.V. · 18 proveedores · ejercicio 2026</p></div>
+  <div class="al"><b id="veredicto">REVISAR</b><span id="subver">—</span></div>
+ </div>
+
+ <div class="ctl">
+  <label>Margen de contribución semanal $</label>
+  <input id="paro" type="number" value="410000" step="10000">
+  <label>Umbral de fuentes (riesgo alto si ≤)</label>
+  <input id="umbfu" type="number" value="2" min="1" max="6">
+  <label>Umbral de semanas (riesgo alto si ≥)</label>
+  <input id="umbsem" type="number" value="8" min="1" max="30">
+  <span style="color:var(--muted)">Cambia un valor y el tablero completo se recalcula.</span>
+ </div>
+
+ <div class="kpis">
+  <div class="k"><div class="n" id="kGasto">—</div><div class="l">gasto anual<br>de compras</div></div>
+  <div class="k"><div class="n" id="kCuello" style="color:var(--rojo)">—</div><div class="l">proveedores en<br>cuello de botella</div></div>
+  <div class="k"><div class="n" id="kExp" style="color:var(--rojo)">—</div><div class="l">exposición total<br>si cada uno falla</div></div>
+  <div class="k"><div class="n" id="kRatio" style="color:var(--rojo)">—</div><div class="l">exposición máxima /<br>gasto de ese proveedor</div></div>
+ </div>
+
+ <div class="row">
+  <div class="card"><h2>MATRIZ DE POSICIONAMIENTO</h2><div class="b"><svg id="matriz" viewBox="0 0 700 460"></svg></div></div>
+  <div class="card"><h2>EXPOSICIÓN POR PROVEEDOR</h2><div class="b"><svg id="barras" viewBox="0 0 420 460"></svg></div></div>
+ </div>
+
+ <div class="row" style="grid-template-columns:1.35fr 1fr">
+  <div class="card"><h2>CONCENTRACIÓN DEL GASTO (CURVA DE PARETO)</h2><div class="b"><svg id="pareto" viewBox="0 0 700 260"></svg></div></div>
+  <div class="card"><h2>ALERTAS ACTIVAS</h2><div class="alerts" id="alertas"></div></div>
+ </div>
+
+ <div class="card" style="margin-top:12px"><h2>LOS 18 PROVEEDORES</h2><div class="b">
+  <table><thead><tr><th>Proveedor</th><th>Gasto</th><th>% acum</th><th>ABC</th><th>Fuentes</th><th>Semanas</th><th>Efecto</th><th>Cuadrante</th><th>Exposición</th></tr></thead>
+  <tbody id="tb"></tbody></table></div></div>
+
+ <div class="cred" style="background:#14304D;color:#fff;padding:13px 24px;margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div style="font-size:12.5px;font-weight:700">Norma P. Rodríguez-Cándido</div><div style="font-size:11px;color:#9FC4E8;text-align:right">Facultad de Contaduría y Administración · Universidad Autónoma de Coahuila, Unidad Torreón<br>Repositorio de Métodos y Ejercicios · Octubre de 2026</div></div><div class="ft">Generado por el equipo con asistencia de IA · los datos y los umbrales los define el usuario<br>
+ Ejercicio «El proveedor más barato que puede parar la planta» · FCA UAdeC Unidad Torreón</div>
+</div>
+
+<script>
+const DATA=[
+ ["Aceros del Norte",4820000,4,2,"menor"],["Resinas Monclova",3650000,2,6,"paro parcial"],
+ ["Empaques Laguna",2940000,5,1,"menor"],["Tornillería Industrial",2180000,6,1,"menor"],
+ ["Pinturas y Recubrimientos",1760000,4,2,"menor"],["Lubricantes del Bajío",1390000,5,1,"menor"],
+ ["Fletes Torreón",1120000,4,1,"menor"],["Cartón Corrugado",940000,6,1,"menor"],
+ ["Herramental Gómez",780000,2,8,"paro parcial"],["Papelería Comercial",640000,9,1,"ninguno"],
+ ["Sellos Técnicos MX",510000,1,16,"paro total"],["Uniformes La Comarca",430000,7,1,"ninguno"],
+ ["Calibración y Metrología",360000,2,10,"paro parcial"],["Gases Industriales",295000,3,2,"paro parcial"],
+ ["Software de Nómina",240000,4,4,"menor"],["Catalizador Especial",185000,1,24,"paro total"],
+ ["Limpieza Industrial",150000,8,1,"ninguno"],["Refacciones Eléctricas",110000,6,1,"menor"]];
+const F={"paro total":1,"paro parcial":.45,"menor":0,"ninguno":0};
+const C={rojo:"#B3261E",azul:"#5B8AB8",ink:"#14304D",mut:"#6C7883",ln:"#D9E0E6"};
+const money=n=>"$"+n.toLocaleString("es-MX",{maximumFractionDigits:0});
+const el=id=>document.getElementById(id);
+
+function calc(){
+ const paro=+el("paro").value||0, uf=+el("umbfu").value, us=+el("umbsem").value;
+ const tot=DATA.reduce((a,d)=>a+d[1],0);
+ const rows=DATA.map(d=>({n:d[0],g:d[1],fu:d[2],sem:d[3],ef:d[4]})).sort((a,b)=>b.g-a.g);
+ let ac=0;
+ rows.forEach(r=>{ac+=r.g; r.pa=ac/tot*100;
+  r.abc = r.pa<=80?"A":(r.pa<=95?"B":"C");
+  r.alto = r.fu<=uf || r.sem>=us || r.ef.startsWith("paro");
+  r.cuad = r.abc==="A" ? (r.alto?"Estratégico":"Apalancado") : (r.alto?"Cuello de botella":"Rutinario");
+  r.exp  = r.alto ? r.sem*paro*F[r.ef] : 0;
+  r.riesgo = Math.min(100,(1/r.fu)*32 + Math.min(r.sem,24)/24*36 + {"ninguno":0,"menor":8,"paro parcial":24,"paro total":34}[r.ef]);
+ });
+ return {rows,tot,paro};
+}
+
+function pinta(){
+ const {rows,tot}=calc();
+ const cuello=rows.filter(r=>r.cuad==="Cuello de botella");
+ const riesgo=rows.filter(r=>r.alto);
+ const expTot=riesgo.reduce((a,r)=>a+r.exp,0);
+ const peor=[...riesgo].sort((a,b)=>b.exp-a.exp)[0];
+ el("kGasto").textContent=money(tot);
+ el("kCuello").textContent=cuello.length;
+ el("kExp").textContent=money(expTot);
+ el("kRatio").textContent=peor?(peor.exp/peor.g).toFixed(0)+" ×":"—";
+ el("veredicto").textContent = cuello.length? "RIESGO DE PARO":"SIN CUELLOS";
+ el("subver").textContent = cuello.length? cuello.length+" proveedores sin respaldo":"todos con alternativa";
+ document.querySelector(".hd .al").style.background = cuello.length? C.rojo:"#2E7D4F";
+
+ // tabla
+ el("tb").innerHTML = rows.map(r=>`<tr class="${r.cuad==="Cuello de botella"?"hot":""}">
+  <td>${r.n}</td><td>${money(r.g)}</td><td>${r.pa.toFixed(1)}%</td>
+  <td><span class="tag" style="background:${r.abc==="A"?C.ink:r.abc==="B"?"#6C7883":"#9AA7B2"}">${r.abc}</span></td>
+  <td>${r.fu}</td><td>${r.sem}</td><td>${r.ef}</td>
+  <td style="color:${r.cuad==="Cuello de botella"?C.rojo:C.mut};font-weight:600">${r.cuad}</td>
+  <td style="font-weight:${r.exp?700:400};color:${r.exp?C.rojo:C.mut}">${r.exp?money(r.exp):"—"}</td></tr>`).join("");
+
+ // matriz
+ const W=700,H=460,L=40,R=16,T=28,B=40,pw=W-L-R,ph=H-T-B,PAD=26;
+ const gm=Math.min(...rows.map(r=>r.g)), gM=Math.max(...rows.map(r=>r.g));
+ const X=r=>L+r/100*pw, Y=g=>T+ph-PAD-(Math.log10(g)-Math.log10(gm))/(Math.log10(gM)-Math.log10(gm))*(ph-2*PAD);
+ const xc=X(46), yc=Y(1000000);
+ let s=`<rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="#FBFCFD" stroke="${C.ln}"/>
+  <rect x="${L}" y="${T}" width="${xc-L}" height="${yc-T}" fill="#EAF1F8"/>
+  <rect x="${xc}" y="${T}" width="${L+pw-xc}" height="${yc-T}" fill="#F3EEF8"/>
+  <rect x="${L}" y="${yc}" width="${xc-L}" height="${T+ph-yc}" fill="#F4F6F7"/>
+  <rect x="${xc}" y="${yc}" width="${L+pw-xc}" height="${T+ph-yc}" fill="#FBEEEC"/>
+  <line x1="${xc}" y1="${T}" x2="${xc}" y2="${T+ph}" stroke="#B9C4CD" stroke-dasharray="5 4"/>
+  <line x1="${L}" y1="${yc}" x2="${L+pw}" y2="${yc}" stroke="#B9C4CD" stroke-dasharray="5 4"/>
+  <text x="${(L+xc)/2}" y="${T+16}" text-anchor="middle" font-size="11" font-weight="700" fill="#1F5FA8" letter-spacing=".7">APALANCADOS</text>
+  <text x="${(xc+L+pw)/2}" y="${T+16}" text-anchor="middle" font-size="11" font-weight="700" fill="#6B5B95" letter-spacing=".7">ESTRATÉGICOS</text>
+  <text x="${(L+xc)/2}" y="${T+ph-7}" text-anchor="middle" font-size="11" font-weight="700" fill="#6C7883" letter-spacing=".7">RUTINARIOS</text>
+  <text x="${(xc+L+pw)/2}" y="${T+ph-7}" text-anchor="middle" font-size="11" font-weight="700" fill="${C.rojo}" letter-spacing=".7">CUELLO DE BOTELLA</text>
+  <text x="${L+pw/2}" y="${H-12}" text-anchor="middle" font-size="11" font-weight="700" fill="${C.ink}">RIESGO DE SUMINISTRO →</text>
+  <text x="14" y="${T+ph/2}" text-anchor="middle" font-size="11" font-weight="700" fill="${C.ink}" transform="rotate(-90 14 ${T+ph/2})">GASTO ANUAL →</text>`;
+ rows.forEach(r=>{
+  const x=X(r.riesgo),y=Y(r.g),rad=4+(r.g/tot)*36, c=r.alto?C.rojo:C.azul;
+  const hot = r.exp===Math.max(...rows.map(q=>q.exp)) && r.exp>0;
+  if(hot) s+=`<circle cx="${x}" cy="${y}" r="${rad+8}" fill="none" stroke="${C.rojo}" stroke-width="2" stroke-dasharray="4 3"/>`;
+  s+=`<circle cx="${x}" cy="${y}" r="${rad}" fill="${c}" fill-opacity="${r.alto?.9:.6}" stroke="#fff" stroke-width="1.1"><title>${r.n} — ${money(r.g)}</title></circle>`;
+  const a = x>L+pw*.6?"end":"start", dx = a==="end"?-(rad+5):rad+5;
+  s+=`<text x="${x+dx}" y="${y+3.3}" text-anchor="${a}" font-size="8.8" font-weight="${hot?700:400}" fill="${hot?"#8E1D17":"#3D4A56"}">${r.n}</text>`;
+ });
+ el("matriz").innerHTML=s;
+
+ // barras de exposición
+ const top=[...riesgo].sort((a,b)=>b.exp-a.exp);
+ const mx=Math.max(...top.map(r=>r.exp),1);
+ let b2=`<text x="0" y="12" font-size="10" fill="${C.mut}">millones de pesos de exposición</text>`;
+ top.forEach((r,i)=>{
+  const y=34+i*62, w=r.exp/mx*250;
+  b2+=`<text x="0" y="${y}" font-size="11" font-weight="600" fill="${C.ink}">${r.n}</text>
+   <rect x="0" y="${y+6}" width="${w}" height="17" fill="${C.rojo}" fill-opacity="${.45+.55*r.exp/mx}"/>
+   <text x="${w+7}" y="${y+19}" font-size="11" font-weight="700" fill="${C.rojo}">${money(r.exp)}</text>
+   <text x="0" y="${y+38}" font-size="9.5" fill="${C.mut}">gasto anual ${money(r.g)} · categoría ${r.abc} · ${(r.exp/r.g).toFixed(0)}× su gasto</text>`;
+ });
+ el("barras").innerHTML=b2;
+
+ // pareto
+ const PW=700,PH=260,pl=46,pb=42,pt=18,pr=16,ipw=PW-pl-pr,iph=PH-pt-pb;
+ let p=`<line x1="${pl}" y1="${pt+iph}" x2="${pl+ipw}" y2="${pt+iph}" stroke="${C.ink}"/>`;
+ const bw=ipw/rows.length;
+ rows.forEach((r,i)=>{
+  const h=r.g/rows[0].g*(iph-30), x=pl+i*bw;
+  p+=`<rect x="${x+2}" y="${pt+iph-h}" width="${bw-4}" height="${h}" fill="${r.alto?C.rojo:"#A9BFD4"}"><title>${r.n}</title></rect>`;
+ });
+ let pts=rows.map((r,i)=>`${pl+i*bw+bw/2},${pt+iph-r.pa/100*(iph-10)}`).join(" ");
+ p+=`<polyline points="${pts}" fill="none" stroke="${C.ink}" stroke-width="2"/>`;
+ const i20=Math.round(rows.length*.2)-1;
+ p+=`<line x1="${pl+(i20+1)*bw}" y1="${pt}" x2="${pl+(i20+1)*bw}" y2="${pt+iph}" stroke="${C.mut}" stroke-dasharray="4 3"/>
+  <text x="${pl+(i20+1)*bw+6}" y="${pt+22}" font-size="11" font-weight="700" fill="${C.ink}">20 % de los proveedores → ${rows[i20].pa.toFixed(1)} % del gasto</text>
+  <text x="${pl+(i20+1)*bw+6}" y="${pt+38}" font-size="10" fill="${C.mut}">(el principio de Pareto supondría 80 %)</text>
+  <text x="${pl}" y="${PH-12}" font-size="10" fill="${C.mut}">proveedores ordenados de mayor a menor gasto · rojo = riesgo de suministro alto</text>`;
+ el("pareto").innerHTML=p;
+
+ // alertas
+ el("alertas").innerHTML = cuello.length ? [...cuello].sort((a,b)=>b.exp-a.exp).map(r=>
+  `<div class="alert"><b>${r.n.toUpperCase()} · CATEGORÍA ${r.abc}</b><span>${r.fu} fuente${r.fu>1?"s":""} alternativa${r.fu>1?"s":""}, ${r.sem} semanas de resustitución, efecto de ${r.ef}. Exposición ${money(r.exp)} contra un gasto anual de ${money(r.g)}.</span></div>`).join("")
+  : `<div style="padding:10px 0;color:var(--muted)">Con estos umbrales no hay proveedores en cuello de botella.</div>`;
+}
+["paro","umbfu","umbsem"].forEach(id=>el(id).addEventListener("input",pinta));
+pinta();
+</script>

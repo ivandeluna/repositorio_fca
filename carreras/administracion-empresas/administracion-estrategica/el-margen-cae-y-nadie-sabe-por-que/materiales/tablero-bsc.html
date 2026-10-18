@@ -1,0 +1,146 @@
+<!doctype html><html lang="es"><meta charset="utf-8">
+<meta name="author" content="Norma P. Rodríguez-Cándido">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balanced Scorecard — Industrias del Nazas</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14304D;--body:#3D4A56;--muted:#6C7883;--line:#E2E7EC;--rojo:#B3261E;--ambar:#C08A1E;--verde:#2E7D4F;
+ --f:#1F5FA8;--c:#2E7D4F;--p:#CF6A1A;--a:#6B5B95}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Libre Franklin",Arial,sans-serif;background:#EEF1F4;color:var(--body);font-size:14px}
+.wrap{max-width:1180px;margin:0 auto;padding:18px}
+.hd{background:var(--ink);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.hd h1{font-size:21px;font-weight:700}.hd p{font-size:12.5px;color:#9FC4E8;margin-top:3px}
+.hd .al{background:var(--rojo);padding:9px 16px;text-align:center}
+.hd .al b{display:block;font-size:14px}.hd .al span{font-size:10.5px;color:#F3D0CC}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.k{background:#fff;border:1px solid var(--line);padding:14px 16px}
+.k .n{font-size:25px;font-weight:700;line-height:1}
+.k .l{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.35}
+.card{background:#fff;border:1px solid var(--line);margin-top:12px}
+.card h2{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);padding:11px 16px;border-bottom:1px solid var(--line)}
+.card .b{padding:14px 16px}
+svg{display:block;width:100%;height:auto}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.per{border:1px solid var(--line)}
+.ph{color:#fff;font-size:12px;font-weight:700;padding:6px 12px;letter-spacing:.04em}
+table.kpi{width:100%;border-collapse:collapse}
+table.kpi td{padding:5px 10px;border-bottom:1px solid #F3F5F7;font-size:11.5px}
+td.n{color:var(--ink);font-weight:600;width:46%}
+td.m{text-align:right;color:var(--muted);font-size:10.5px;width:16%}
+td.r{text-align:right;font-weight:700;font-size:13px;width:18%}
+td.s{text-align:center;width:10%}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%}
+.sim{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sb{border:1px solid var(--line);padding:13px 16px}
+.sb h3{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.sb .q{font-size:11.5px;color:var(--muted);margin-bottom:9px}
+.sb button{width:100%;padding:8px;border:0;border-radius:4px;color:#fff;font-family:inherit;
+ font-size:12.5px;font-weight:700;cursor:pointer}
+.sb .out{margin-top:10px;font-size:11.5px;line-height:1.5;min-height:66px}
+.sb .out b{color:var(--ink)}
+.warn{background:#FEF6E7;border-left:4px solid var(--ambar);padding:9px 13px;margin-top:11px;font-size:11.5px;line-height:1.45}
+.ft{font-size:11px;color:var(--muted);text-align:center;padding:16px 0 4px;line-height:1.6}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.grid,.sim{grid-template-columns:1fr}}
+@media print{body{background:#fff}.sb button{display:none}}
+</style>
+<div class="wrap">
+ <div class="hd"><div><h1>Balanced Scorecard · Industrias del Nazas</h1>
+  <p>Metalmecánica · 340 empleados · ventas $218,000,000 · cierre del semestre</p></div>
+  <div class="al"><b>4 INDICADORES EN ROJO</b><span>y forman una cadena</span></div></div>
+
+ <div class="kpis">
+  <div class="k"><div class="n" style="color:var(--rojo)">−1.6 pp</div><div class="l">caída del margen<br>operativo en 6 meses</div></div>
+  <div class="k"><div class="n" style="color:var(--verde)">+11.2 %</div><div class="l">crecimiento<br>en ventas</div></div>
+  <div class="k"><div class="n" style="color:var(--rojo)">$3.74 M</div><div class="l">sobrecosto de reprocesos<br>y fletes urgentes</div></div>
+  <div class="k"><div class="n" style="color:var(--rojo)">−$980 K</div><div class="l">caída de la utilidad<br>de operación</div></div>
+ </div>
+
+ <div class="card"><h2>LA CADENA CAUSA-EFECTO QUE EL TABLERO REVELA</h2><div class="b">
+  <svg viewBox="0 0 1000 120">
+   <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1.5L8 5L2 8.5" fill="none" stroke="#8FA3B5" stroke-width="1.8" stroke-linecap="round"/></marker></defs>
+   <g id="chain"></g>
+  </svg>
+  <div class="warn">Los cuatro indicadores en rojo no están repartidos al azar: leídos en este orden explican por qué el margen cae mientras las ventas crecen. <b>La perspectiva financiera es la última de la cadena, no la primera.</b></div>
+ </div></div>
+
+ <div class="card"><h2>LAS CUATRO PERSPECTIVAS · 16 INDICADORES</h2><div class="b">
+  <div class="grid" id="pers"></div></div></div>
+
+ <div class="card"><h2>SIMULADOR · QUÉ PASA SI ACTÚO AQUÍ</h2><div class="b">
+  <div class="sim">
+   <div class="sb"><h3>Actuar sobre la CAUSA</h3>
+    <div class="q">Restituir el presupuesto de capacitación de $800,000 a $1,600,000</div>
+    <button style="background:var(--a)" onclick="sim('causa')">Simular</button>
+    <div class="out" id="o1"></div></div>
+   <div class="sb"><h3>Actuar sobre el SÍNTOMA</h3>
+    <div class="q">Contratar dos cobradores más (costo anual $720,000)</div>
+    <button style="background:var(--f)" onclick="sim('sintoma')">Simular</button>
+    <div class="out" id="o2"></div></div>
+  </div>
+  <div class="warn">Las proyecciones del simulador son <b>supuestos del modelo, no datos</b>. Sirven para comparar el orden temporal de los efectos, no para prometer cifras.</div>
+ </div></div>
+
+ <div class="card"><h2>DATOS COMPLEMENTARIOS DEL PERIODO</h2><div class="b">
+  <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+   <tr><th style="text-align:left;padding:0 8px 6px;border-bottom:1.5px solid #14304D;font-size:10px;color:#6C7883">CONCEPTO</th>
+       <th style="text-align:right;padding:0 8px 6px;border-bottom:1.5px solid #14304D;font-size:10px;color:#6C7883">HACE 6 MESES</th>
+       <th style="text-align:right;padding:0 8px 6px;border-bottom:1.5px solid #14304D;font-size:10px;color:#6C7883">ACTUAL</th>
+       <th style="text-align:right;padding:0 8px 6px;border-bottom:1.5px solid #14304D;font-size:10px;color:#6C7883">CAMBIO</th></tr>
+   <tbody id="comp"></tbody></table></div></div>
+
+ <div class="cred" style="background:#14304D;color:#fff;padding:13px 24px;margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div style="font-size:12.5px;font-weight:700">Norma P. Rodríguez-Cándido</div><div style="font-size:11px;color:#9FC4E8;text-align:right">Facultad de Contaduría y Administración · Universidad Autónoma de Coahuila, Unidad Torreón<br>Repositorio de Métodos y Ejercicios · Octubre de 2026</div></div><div class="ft">Generado por el equipo con asistencia de IA · las proyecciones del simulador son supuestos<br>
+ Ejercicio «El margen cae y nadie sabe por qué» · FCA UAdeC Unidad Torreón</div>
+</div>
+<script>
+const P=[["Financiera","var(--f)",[["Margen operativo","12.0 %","9.8 %","r"],["Rendimiento sobre capital","18.0 %","16.4 %","a"],["Días de cartera","45 d","62 d","r"],["Crecimiento en ventas","8.0 %","11.2 %","v"]]],
+["Cliente","var(--c)",[["Índice de satisfacción","90 pts","87 pts","a"],["Retención de clientes","92.0 %","94.1 %","v"],["Entregas completas y a tiempo","95.0 %","88.6 %","r"],["Participación de mercado","14.0 %","13.2 %","a"]]],
+["Procesos internos","var(--p)",[["Ciclo de pedido","5.0 d","7.4 d","r"],["Merma de producción","2.0 %","2.6 %","a"],["Rotación de inventario","8.0 x","6.9 x","a"],["Costo de no calidad","1.5 %","2.9 %","r"]]],
+["Aprendizaje y crecimiento","var(--a)",[["Horas de capacitación por empleado","24 h","17 h","r"],["Rotación de personal","12.0 %","15.8 %","a"],["Puestos clave cubiertos","90.0 %","92.0 %","v"],["Índice de clima laboral","80 pts","78 pts","a"]]]];
+const C={r:"#B3261E",a:"#C08A1E",v:"#2E7D4F"};
+document.getElementById("pers").innerHTML=P.map(([n,col,ind])=>
+ `<div class="per"><div class="ph" style="background:${col}">${n}</div><table class="kpi">${
+  ind.map(([i,m,r,s])=>`<tr><td class="n">${i}</td><td class="m">${m}</td>
+   <td class="r" style="color:${C[s]}">${r}</td><td class="s"><span class="dot" style="background:${C[s]}"></span></td></tr>`).join("")
+ }</table></div>`).join("");
+
+const CH=[["Aprendizaje","Capacitación recortada","17 h contra meta de 24","#6B5B95"],
+ ["Procesos","Costo de no calidad al doble","2.9 % contra meta de 1.5 %","#CF6A1A"],
+ ["Cliente","Entregas fuera de tiempo","88.6 % contra meta de 95 %","#2E7D4F"],
+ ["Financiera","Cartera lenta y margen erosionado","62 días y 9.8 %","#1F5FA8"]];
+document.getElementById("chain").innerHTML=CH.map(([p,t,s,c],i)=>{
+ const x=10+i*250;
+ return `<rect x="${x}" y="22" width="224" height="68" rx="8" fill="${c}"/>
+  <text x="${x+112}" y="40" text-anchor="middle" font-size="9" fill="#fff" opacity=".75" letter-spacing=".6">${p.toUpperCase()}</text>
+  <text x="${x+112}" y="59" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff" textLength="208" lengthAdjust="spacingAndGlyphs">${t}</text>
+  <text x="${x+112}" y="77" text-anchor="middle" font-size="10" fill="#fff" opacity=".85">${s}</text>`
+  + (i<3?`<path d="M${x+228} 56 L${x+244} 56" stroke="#8FA3B5" stroke-width="2.4" marker-end="url(#a)"/>`:"");}).join("");
+
+const CP=[["Ventas anualizadas",196000000,218000000],["Utilidad de operación",22344000,21364000],
+ ["Reprocesos y garantías",3920000,6322000],["Fletes urgentes por retraso",840000,2180000],
+ ["Presupuesto de capacitación",1600000,800000]];
+const M=n=>"$"+n.toLocaleString("es-MX");
+document.getElementById("comp").innerHTML=CP.map(([n,a,b])=>{
+ const d=b-a, mal=(n.includes("Reproceso")||n.includes("Fletes"))?d>0:(n.includes("capacitación")?d<0:d<0);
+ return `<tr><td style="padding:6px 8px;border-bottom:1px solid #F3F5F7;color:#14304D;font-weight:600">${n}</td>
+  <td style="padding:6px 8px;border-bottom:1px solid #F3F5F7;text-align:right">${M(a)}</td>
+  <td style="padding:6px 8px;border-bottom:1px solid #F3F5F7;text-align:right;font-weight:700">${M(b)}</td>
+  <td style="padding:6px 8px;border-bottom:1px solid #F3F5F7;text-align:right;color:${mal?"#B3261E":"#2E7D4F"};font-weight:700">${d>0?"+":""}${M(d)}</td></tr>`;})
+ .join("")+`<tr><td style="padding:6px 8px;color:#14304D;font-weight:600">Personal con menos de 1 año</td>
+  <td style="padding:6px 8px;text-align:right">18 %</td><td style="padding:6px 8px;text-align:right;font-weight:700">31 %</td>
+  <td style="padding:6px 8px;text-align:right;color:#B3261E;font-weight:700">+13 pp</td></tr>`;
+
+function sim(t){
+ if(t==="causa") document.getElementById("o1").innerHTML=
+  `<b>Mes 3:</b> horas de capacitación suben a 24 h; rotación de personal empieza a ceder.<br>
+   <b>Mes 6:</b> costo de no calidad baja de 2.9 % a ~2.0 %; ciclo de pedido se acorta.<br>
+   <b>Mes 9:</b> entregas a tiempo recuperan hacia 93 %; satisfacción sube.<br>
+   <b>Mes 12:</b> cartera cede y el margen recupera. <b>Costo: $800,000. Sobrecosto que ataca: $3.74 M.</b>`;
+ else document.getElementById("o2").innerHTML=
+  `<b>Mes 3:</b> días de cartera bajan 3 o 4 días por mayor presión de cobro.<br>
+   <b>Mes 6:</b> el efecto se estanca: el cliente paga tarde porque le entregaron tarde.<br>
+   <b>Mes 12:</b> ningún otro indicador se mueve. El costo de no calidad sigue en 2.9 %.<br>
+   <b>Costo: $720,000 al año y el margen no recupera.</b> Ya se intentó una vez.`;
+}
+</script>

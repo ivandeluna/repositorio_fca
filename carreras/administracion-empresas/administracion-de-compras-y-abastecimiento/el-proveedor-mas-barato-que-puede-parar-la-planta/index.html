@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El proveedor más barato que puede parar la planta — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Administración de Empresas</a><span class="sep">/</span>
+    <a href="../index.html">Administración de Compras y Abastecimiento</a><span class="sep">/</span>
+    El proveedor más barato que puede parar la planta
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>El proveedor más barato que puede parar la planta</h2>
+      <div class="badges">
+        <span class="badge">Administración de Empresas</span>
+        <span class="badge">Administración de Compras y Abastecimiento</span>
+        <span class="badge">Intermedio</span>
+        <span class="badge">50 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+<div class="hook">
+<p class="hook-title">🎯 El gancho</p>
+<p><strong>El proveedor que ocupa el lugar 16 de 18 en la clasificaci&oacute;n ABC &mdash;0.8 % del gasto, $185,000 al a&ntilde;o&mdash; tiene una exposici&oacute;n de $9,840,000 si falla.</strong> Cincuenta y tres veces lo que se le compra. Es fuente &uacute;nica y tarda veinticuatro semanas en sustituirse.</p>
+<p>Cuatro de cada cinco equipos propondr&aacute;n recortarlo, porque el asistente de IA se los va a sugerir.</p>
+</div>
+<h3 class="section">C&oacute;mo usar este ejercicio en clase</h3>
+<p>La gu&iacute;a para el profesor &mdash;preparaci&oacute;n, cronograma minuto a minuto, frases sugeridas y qu&eacute; hacer si se acorta el tiempo o no hay IA en el sal&oacute;n&mdash; est&aacute; en <a href="GUIA-DOCENTE.md"><code>GUIA-DOCENTE.md</code></a>. Materiales listos para usar en clase:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Qu&eacute; es</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="GUIA-DOCENTE.md"><code>GUIA-DOCENTE.md</code></a></td>
+<td>Gu&iacute;a completa del profesor, con la soluci&oacute;n</td>
+<td><strong>Solo el profesor</strong></td>
+</tr>
+<tr>
+<td><a href="materiales/01-caso-alumno.md"><code>materiales/01-caso-alumno.md</code></a></td>
+<td>Caso para el alumno, sin soluci&oacute;n</td>
+<td>Se imprime y se reparte</td>
+</tr>
+<tr>
+<td><a href="materiales/02-hoja-de-trabajo.md"><code>materiales/02-hoja-de-trabajo.md</code></a></td>
+<td>Hoja de trabajo con las tablas por llenar</td>
+<td>Se imprime, una por equipo</td>
+</tr>
+<tr>
+<td><a href="materiales/03-prompts.md"><code>materiales/03-prompts.md</code></a></td>
+<td>Prompts listos para copiar y pegar</td>
+<td>Se comparte en digital</td>
+</tr>
+<tr>
+<td><a href="materiales/04-rubrica.md"><code>materiales/04-rubrica.md</code></a></td>
+<td>R&uacute;brica de evaluaci&oacute;n</td>
+<td>Se comparte con los alumnos al inicio</td>
+</tr>
+<tr>
+<td><a href="materiales/datos.csv"><code>materiales/datos.csv</code></a></td>
+<td>Datos del caso, para pegar en la IA o abrir en Excel</td>
+<td>Se comparte en digital</td>
+</tr>
+<tr>
+<td><a href="materiales/matriz-vacia.svg"><code>materiales/matriz-vacia.svg</code></a></td>
+<td>Matriz en blanco para trabajar en equipo</td>
+<td>Se imprime, una por equipo</td>
+</tr>
+<tr>
+<td><a href="materiales/matriz-resuelta.svg"><code>materiales/matriz-resuelta.svg</code></a></td>
+<td>Matriz con los proveedores ubicados</td>
+<td>Profesor, para la plenaria</td>
+</tr>
+<tr>
+<td><a href="materiales/tablero-proveedores.html"><code>materiales/tablero-proveedores.html</code></a></td>
+<td>Tablero de referencia ya funcionando (HTML)</td>
+<td>Profesor, para la plenaria</td>
+</tr>
+</tbody>
+</table>
+<h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podr&aacute; construir una clasificaci&oacute;n ABC del gasto por proveedor y contrastarla contra una clasificaci&oacute;n de riesgo de suministro; verificar cr&iacute;ticamente si el asistente de IA confundi&oacute; volumen de compra con importancia estrat&eacute;gica; y fundamentar una decisi&oacute;n de abastecimiento comparando el gasto anual de un proveedor contra la exposici&oacute;n econ&oacute;mica que representa.</p>
+<h3 class="section">Teor&iacute;a</h3>
+<div class="ai-note">
+<p>⚠️ <strong>Nota de transparencia:</strong> redacci&oacute;n base del profesor; desarrollo de la matriz de posicionamiento, construcci&oacute;n del caso y gu&iacute;a de soluci&oacute;n con apoyo de IA. Pendiente de revisi&oacute;n docente.</p>
+</div>
+<h4>El an&aacute;lisis ABC del gasto</h4>
+<p>El <strong>an&aacute;lisis ABC</strong>, derivado del principio de Pareto, ordena a los proveedores de mayor a menor gasto anual y los agrupa en tres categor&iacute;as seg&uacute;n el porcentaje acumulado:</p>
+<ul>
+<li><strong>Categor&iacute;a A:</strong> proveedores que concentran aproximadamente el primer 80 % del gasto.</li>
+<li><strong>Categor&iacute;a B:</strong> los que llevan del 80 % al 95 %.</li>
+<li><strong>Categor&iacute;a C:</strong> el resto.</li>
+</ul>
+<p>Su utilidad es clara: indica d&oacute;nde concentrar el esfuerzo de negociaci&oacute;n, porque un punto porcentual arrancado a un proveedor de categor&iacute;a A vale m&aacute;s que una renegociaci&oacute;n completa con uno de categor&iacute;a C.</p>
+<p><strong>Su limitaci&oacute;n tambi&eacute;n es clara, y es el objeto de este ejercicio: el ABC mide una sola dimensi&oacute;n.</strong> Un proveedor puede representar el 0.5 % del gasto y ser, al mismo tiempo, el &uacute;nico del mercado capaz de surtir una pieza sin la cual la l&iacute;nea se detiene. En la clasificaci&oacute;n por gasto aparecer&aacute; en el &uacute;ltimo lugar.</p>
+<h4>El riesgo de suministro como segundo eje</h4>
+<p>Peter Kraljic propuso en 1983 cruzar el gasto con una segunda dimensi&oacute;n &mdash;el <strong>riesgo de suministro</strong>&mdash; y obtener cuatro cuadrantes con estrategias distintas:</p>
+<table class="data">
+<thead>
+<tr>
+<th></th>
+<th><strong>Riesgo de suministro bajo</strong></th>
+<th><strong>Riesgo de suministro alto</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gasto alto</strong></td>
+<td><strong>Apalancados.</strong> Hay competencia: negociar precio, licitar, consolidar volumen.</td>
+<td><strong>Estrat&eacute;gicos.</strong> Relaci&oacute;n de largo plazo, contratos, desarrollo conjunto, planes de contingencia.</td>
+</tr>
+<tr>
+<td><strong>Gasto bajo</strong></td>
+<td><strong>Rutinarios.</strong> Simplificar: cat&aacute;logos, compra autom&aacute;tica, reducir costo de gesti&oacute;n.</td>
+<td><strong>Cuello de botella.</strong> Asegurar el suministro: inventario de resguardo, segunda fuente, contrato.</td>
+</tr>
+</tbody>
+</table>
+<p>El riesgo de suministro se estima con tres variables observables:</p>
+<ol>
+<li><strong>N&uacute;mero de fuentes alternativas</strong> calificadas que podr&iacute;an surtir lo mismo.</li>
+<li><strong>Semanas de resustituci&oacute;n:</strong> cu&aacute;nto tardar&iacute;a la empresa en homologar y poner a producir a un proveedor alterno.</li>
+<li><strong>Efecto de la interrupci&oacute;n:</strong> ninguno, menor, paro parcial o paro total de la l&iacute;nea.</li>
+</ol>
+<p>El error que este ejercicio busca provocar es el siguiente: <strong>el cuadrante de cuello de botella es invisible para el ABC</strong>, porque est&aacute; formado precisamente por los proveedores de gasto bajo. Quien clasifica solo por monto nunca lo ve, y la recomendaci&oacute;n natural &mdash;"depuremos la cola de proveedores peque&ntilde;os"&mdash; ataca justo ah&iacute;.</p>
+<h3 class="section">Ejercicio / caso pr&aacute;ctico</h3>
+<p><strong>Industrias del Nazas, S.A. de C.V.</strong> es una empresa metalmec&aacute;nica de Torre&oacute;n con 340 empleados. Compra a 18 proveedores por un total de <strong>$22,500,000</strong> al a&ntilde;o. Si la l&iacute;nea se detiene, la empresa deja de generar <strong>$410,000 semanales</strong> de margen de contribuci&oacute;n.</p>
+<table class="data">
+<thead>
+<tr>
+<th>#</th>
+<th>Proveedor</th>
+<th>Gasto anual</th>
+<th>Fuentes alternativas</th>
+<th>Semanas de resustituci&oacute;n</th>
+<th>Efecto si se interrumpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aceros del Norte</td>
+<td>$4,820,000</td>
+<td>4</td>
+<td>2</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Resinas Monclova</td>
+<td>$3,650,000</td>
+<td>2</td>
+<td>6</td>
+<td>Paro parcial</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Empaques Laguna</td>
+<td>$2,940,000</td>
+<td>5</td>
+<td>1</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Torniller&iacute;a Industrial</td>
+<td>$2,180,000</td>
+<td>6</td>
+<td>1</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pinturas y Recubrimientos</td>
+<td>$1,760,000</td>
+<td>4</td>
+<td>2</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Lubricantes del Baj&iacute;o</td>
+<td>$1,390,000</td>
+<td>5</td>
+<td>1</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Fletes Torre&oacute;n</td>
+<td>$1,120,000</td>
+<td>4</td>
+<td>1</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Cart&oacute;n Corrugado</td>
+<td>$940,000</td>
+<td>6</td>
+<td>1</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Herramental G&oacute;mez</td>
+<td>$780,000</td>
+<td>2</td>
+<td>8</td>
+<td>Paro parcial</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Papeler&iacute;a Comercial</td>
+<td>$640,000</td>
+<td>9</td>
+<td>1</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Sellos T&eacute;cnicos MX</td>
+<td>$510,000</td>
+<td>1</td>
+<td>16</td>
+<td>Paro total</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Uniformes La Comarca</td>
+<td>$430,000</td>
+<td>7</td>
+<td>1</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Calibraci&oacute;n y Metrolog&iacute;a</td>
+<td>$360,000</td>
+<td>2</td>
+<td>10</td>
+<td>Paro parcial</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Gases Industriales</td>
+<td>$295,000</td>
+<td>3</td>
+<td>2</td>
+<td>Paro parcial</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Software de N&oacute;mina</td>
+<td>$240,000</td>
+<td>4</td>
+<td>4</td>
+<td>Menor</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Catalizador Especial</td>
+<td>$185,000</td>
+<td>1</td>
+<td>24</td>
+<td>Paro total</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Limpieza Industrial</td>
+<td>$150,000</td>
+<td>8</td>
+<td>1</td>
+<td>Ninguno</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Refacciones El&eacute;ctricas</td>
+<td>$110,000</td>
+<td>6</td>
+<td>1</td>
+<td>Menor</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mandato de la direcci&oacute;n.</strong> A cada equipo se le asigna uno distinto:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Equipo</th>
+<th>Instrucci&oacute;n que recibi&oacute; de la direcci&oacute;n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&laquo;Reduzcan el gasto de compras un 8 % este a&ntilde;o.&raquo;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&laquo;Bajen de 18 a 12 proveedores para simplificar la administraci&oacute;n.&raquo;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&laquo;Concentren las compras para ganar poder de negociaci&oacute;n.&raquo;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&laquo;Prioricen proveedores locales de La Laguna.&raquo;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&laquo;Reduzcan a la mitad el riesgo de paro de l&iacute;nea sin aumentar el gasto m&aacute;s de 3 %.&raquo;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide (cinco pasos):</strong></p>
+
+<h4>Paso 1 &middot; Clasificar con la IA &middot; 10 min</h4>
+<p><strong>Entregable:</strong> la respuesta de la IA, copiada.</p>
+<p>Abre Claude o ChatGPT y usa el <strong>prompt 1</strong>. P&eacute;gale <strong>solo tres columnas</strong>: proveedor, gasto anual y fuentes alternativas. No le des todav&iacute;a las de semanas ni la de efecto.</p>
+<p>P&iacute;dele la clasificaci&oacute;n ABC y un plan para cumplir el mandato de tu equipo. Guarda la respuesta completa: la vas a necesitar en el paso 3.</p>
+
+<h4>Paso 2 &middot; Comprobar el supuesto de Pareto &middot; 5 min</h4>
+<p><strong>Entregable:</strong> una cifra.</p>
+<p>La IA casi siempre afirma que &laquo;el 20 % de los proveedores concentra el 80 % del gasto&raquo;. Calc&uacute;lalo t&uacute; con estos datos:</p>
+<ol>
+<li>Ordena los 18 de mayor a menor gasto.</li>
+<li>Toma los primeros cuatro (el 20 % de 18, redondeado).</li>
+<li>Suma su gasto y div&iacute;delo entre $22,500,000.</li>
+</ol>
+<p><strong>Escribe el porcentaje real y comp&aacute;ralo con lo que afirm&oacute; la IA.</strong></p>
+
+<h4>Paso 3 &middot; Recibir el dato que faltaba &middot; 10 min</h4>
+<p><strong>Entregable:</strong> la tabla de abajo, llena.</p>
+<p>El profesor te entrega ahora las dos columnas que no ten&iacute;as: <strong>semanas de resustituci&oacute;n</strong> y <strong>efecto si se interrumpe</strong>. Usa el <strong>prompt 2</strong> para devolv&eacute;rselas a la IA y confrontar su propio plan.</p>
+<table class="data">
+<thead>
+<tr>
+<th>Proveedor que la IA propuso tocar</th>
+<th>Categor&iacute;a ABC</th>
+<th>Fuentes</th>
+<th>Semanas</th>
+<th>Efecto</th>
+<th>&iquest;Sigue en pie la recomendaci&oacute;n?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responde por escrito:</strong> la IA nunca pidi&oacute; esta informaci&oacute;n. &iquest;Por qu&eacute; no la ech&oacute; de menos?</p>
+
+<h4>Paso 4 &middot; Construir el tablero &middot; 15 min</h4>
+<p><strong>Entregable:</strong> un archivo HTML que funcione.</p>
+<p>Aqu&iacute; no se llena una hoja: <strong>se construye una herramienta</strong>. Usa el <strong>prompt 3</strong> para que la IA genere un tablero en un solo archivo HTML y &aacute;brelo en el navegador.</p>
+<p>El tablero debe permitir <strong>cambiar los umbrales</strong> &mdash;cu&aacute;ntas fuentes y cu&aacute;ntas semanas marcan riesgo alto&mdash; y recalcular todo al instante. Pru&eacute;balo:</p>
+<ol>
+<li>Con el umbral de 8 semanas, &iquest;cu&aacute;ntos proveedores quedan en cuello de botella?</li>
+<li>B&aacute;jalo a 5 semanas. &iquest;Cu&aacute;ntos quedan ahora? &iquest;Qui&eacute;n entr&oacute;?</li>
+<li>S&uacute;belo a 20. &iquest;Qui&eacute;n se queda solo en el cuadrante rojo?</li>
+</ol>
+<p><strong>El umbral no te lo da el enunciado: lo decides t&uacute;.</strong> Anota qu&eacute; umbral propones para esta empresa y con qu&eacute; argumento.</p>
+<div class="note">
+<p>Puedes comparar tu resultado con <a href="materiales/tablero-proveedores.html"><code>materiales/tablero-proveedores.html</code></a>. No es &laquo;la respuesta correcta&raquo;: es una versi&oacute;n de referencia. Si la tuya hace algo distinto y lo justificas, est&aacute; bien.</p>
+</div>
+
+<h4>Paso 5 &middot; Decidir y presentar &middot; 10 min</h4>
+<p><strong>Entregable:</strong> 6&ndash;8 l&iacute;neas y el tablero proyectado.</p>
+<p>Reformula el mandato de tu equipo en una propuesta ejecutable, que incluya:</p>
+<ul>
+<li>Qu&eacute; proveedores s&iacute; se tocan.</li>
+<li>Cu&aacute;les quedan intocables y por qu&eacute;.</li>
+<li>Qu&eacute; medida concreta propones para el cuello de botella m&aacute;s grave, con su costo aproximado.</li>
+<li>Qu&eacute; umbral de riesgo fijaste y con qu&eacute; argumento.</li>
+</ul>
+<p><strong>Plenaria.</strong> Cada equipo presenta su tablero y responde: &iquest;cu&aacute;l de los cinco mandatos era el &uacute;nico que no llevaba a tocar un proveedor cr&iacute;tico?</p>
+
+<h3 class="section">Soluci&oacute;n / gu&iacute;a de soluci&oacute;n</h3>
+<details class="solution"><summary><strong>Mostrar gu&iacute;a para el profesor</strong></summary><div class="inner">
+
+<h4>Clasificaci&oacute;n correcta</h4>
+<p><img alt="Los 18 proveedores ubicados en la matriz" class="figure" src="materiales/matriz-resuelta.svg"></p>
+<table class="data">
+<thead>
+<tr>
+<th>Cuadrante</th>
+<th>Proveedores</th>
+<th>Gasto</th>
+<th>% del gasto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Apalancados</strong></td>
+<td>Aceros del Norte, Empaques Laguna, Torniller&iacute;a Industrial, Pinturas y Recubrimientos, Lubricantes del Baj&iacute;o, Fletes Torre&oacute;n</td>
+<td>$14,210,000</td>
+<td>63.2 %</td>
+</tr>
+<tr>
+<td><strong>Estrat&eacute;gicos</strong></td>
+<td>Resinas Monclova</td>
+<td>$3,650,000</td>
+<td>16.2 %</td>
+</tr>
+<tr>
+<td><strong>Rutinarios</strong></td>
+<td>Cart&oacute;n Corrugado, Papeler&iacute;a Comercial, Uniformes La Comarca, Software de N&oacute;mina, Limpieza Industrial, Refacciones El&eacute;ctricas</td>
+<td>$2,510,000</td>
+<td>11.2 %</td>
+</tr>
+<tr>
+<td><strong>Cuello de botella</strong></td>
+<td>Herramental G&oacute;mez, Sellos T&eacute;cnicos MX, Calibraci&oacute;n y Metrolog&iacute;a, Gases Industriales, Catalizador Especial</td>
+<td>$2,130,000</td>
+<td><strong>9.5 %</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Las categor&iacute;as ABC quedan: <strong>A</strong> = los 7 primeros (79.4 % del gasto), <strong>B</strong> = del 8 al 12, <strong>C</strong> = del 13 al 18.</p>
+<h4>Exposici&oacute;n econ&oacute;mica de los proveedores de riesgo alto</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Proveedor</th>
+<th>ABC</th>
+<th>Gasto anual</th>
+<th>Exposici&oacute;n si se interrumpe</th>
+<th>Raz&oacute;n exposici&oacute;n / gasto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Catalizador Especial</strong></td>
+<td><strong>C</strong></td>
+<td>$185,000</td>
+<td><strong>$9,840,000</strong></td>
+<td><strong>53 &times;</strong></td>
+</tr>
+<tr>
+<td>Sellos T&eacute;cnicos MX</td>
+<td>B</td>
+<td>$510,000</td>
+<td>$6,560,000</td>
+<td>13 &times;</td>
+</tr>
+<tr>
+<td>Calibraci&oacute;n y Metrolog&iacute;a</td>
+<td>C</td>
+<td>$360,000</td>
+<td>$1,845,000</td>
+<td>5 &times;</td>
+</tr>
+<tr>
+<td>Herramental G&oacute;mez</td>
+<td>B</td>
+<td>$780,000</td>
+<td>$1,476,000</td>
+<td>2 &times;</td>
+</tr>
+<tr>
+<td>Resinas Monclova</td>
+<td>A</td>
+<td>$3,650,000</td>
+<td>$1,107,000</td>
+<td>0.3 &times;</td>
+</tr>
+<tr>
+<td>Gases Industriales</td>
+<td>C</td>
+<td>$295,000</td>
+<td>$369,000</td>
+<td>1 &times;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>El hallazgo central del ejercicio:</strong> el proveedor que ocupa el <strong>lugar 16 de 18</strong> en la clasificaci&oacute;n ABC &mdash;Catalizador Especial, 0.8 % del gasto&mdash; tiene la mayor exposici&oacute;n de las dieciocho. Fuente &uacute;nica, veinticuatro semanas para homologar un alterno y paro total de l&iacute;nea. Depurarlo por &laquo;peque&ntilde;o&raquo; expone a la empresa a cincuenta y tres veces lo que se le compra al a&ntilde;o.</p>
+<p>Obs&eacute;rvese tambi&eacute;n el caso inverso: Resinas Monclova es el segundo mayor proveedor, est&aacute; en categor&iacute;a A y su exposici&oacute;n es la menor de los seis de riesgo alto. <strong>El gasto no predice el riesgo en ninguna de las dos direcciones.</strong></p>
+<h4>Errores frecuentes del asistente de IA</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Lo que suele hacer la IA</th>
+<th>Por qu&eacute; est&aacute; mal</th>
+<th>Qu&eacute; debe responder el alumno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entrega el ABC y recomienda &laquo;consolidar o eliminar la cola de proveedores C&raquo;</td>
+<td>Trata el gasto bajo como sin&oacute;nimo de prescindible</td>
+<td>Se&ntilde;alar que tres de los cinco cuellos de botella est&aacute;n en categor&iacute;a C</td>
+</tr>
+<tr>
+<td>Afirma que &laquo;el 20 % de los proveedores concentra el 80 % del gasto&raquo;</td>
+<td>Es el enunciado del principio, no un resultado de estos datos</td>
+<td>En el caso, el 20 % (&asymp;4 proveedores) concentra <strong>60.4 %</strong>, no 80 %</td>
+</tr>
+<tr>
+<td>No pregunta por el riesgo de suministro</td>
+<td>El ABC no lo requiere, as&iacute; que no lo echa de menos</td>
+<td>Marcar la omisi&oacute;n: la IA no pidi&oacute; el dato que cambia la conclusi&oacute;n</td>
+</tr>
+<tr>
+<td>Al construir la matriz de posicionamiento, ubica los proveedores &laquo;por intuici&oacute;n&raquo;</td>
+<td>Sin criterio declarado, la clasificaci&oacute;n no es auditable ni replicable</td>
+<td>Exigir el criterio expl&iacute;cito y aplicarlo de forma uniforme a los 18</td>
+</tr>
+<tr>
+<td>Recomienda &laquo;negociar mejores condiciones&raquo; con el proveedor de fuente &uacute;nica</td>
+<td>En el cuadrante de cuello de botella la empresa no tiene poder de negociaci&oacute;n; la estrategia es asegurar suministro</td>
+<td>Proponer inventario de resguardo, contrato de abasto o desarrollo de segunda fuente</td>
+</tr>
+<tr>
+<td>Confunde este ABC con el ABC de inventarios</td>
+<td>Son clasificaciones distintas: una ordena proveedores por gasto, otra materiales por valor de consumo</td>
+<td>Distinguir expl&iacute;citamente ambos usos del t&eacute;rmino</td>
+</tr>
+<tr>
+<td>Trata &laquo;pocas fuentes&raquo; como sin&oacute;nimo de mal proveedor</td>
+<td>La escasez de fuentes es una condici&oacute;n del mercado, no un juicio sobre el desempe&ntilde;o</td>
+<td>Separar evaluaci&oacute;n de proveedor de riesgo de suministro</td>
+</tr>
+</tbody>
+</table>
+<h4>Respuesta a la pregunta de cierre</h4>
+<p>El &uacute;nico mandato que <strong>no</strong> conduce a tocar un proveedor cr&iacute;tico es el del <strong>equipo 5</strong>, porque es el &uacute;nico formulado en t&eacute;rminos de riesgo y no de gasto o de n&uacute;mero de proveedores. Los otros cuatro llevan, por caminos distintos, a recortar o consolidar precisamente la zona donde est&aacute; el cuello de botella. Vale la pena hacer notar en plenaria que los cuatro mandatos problem&aacute;ticos son los que m&aacute;s se parecen a los que se dan en la pr&aacute;ctica.</p>
+<p>Para el cuello de botella m&aacute;s grave, la medida razonable es inventario de resguardo del catalizador. Si el consumo anual cuesta $185,000, un resguardo de seis meses cuesta cerca de <strong>$92,500</strong> m&aacute;s almacenaje, contra una exposici&oacute;n de $9,840,000. Se acepta cualquier medida bien argumentada: contrato de abasto con penalizaci&oacute;n, desarrollo de una segunda fuente, o redise&ntilde;o del proceso para admitir un catalizador sustituto.</p>
+<h4>R&uacute;brica sugerida</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clasificaci&oacute;n ABC correcta y verificaci&oacute;n del supuesto de Pareto contra los datos</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Criterio de riesgo declarado y aplicado de forma uniforme a los 18 proveedores</td>
+<td>25 %</td>
+</tr>
+<tr>
+<td>Identificaci&oacute;n de los cuellos de botella y c&aacute;lculo de su exposici&oacute;n</td>
+<td>30 %</td>
+</tr>
+<tr>
+<td>Propuesta que cumple el mandato sin exponer a la empresa, con su costo estimado</td>
+<td>25 %</td>
+</tr>
+</tbody>
+</table>
+</div></details>
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<h4>Prompt 1 &mdash; clasificaci&oacute;n (paso 1)</h4>
+<p>Pega <strong>solo</strong> nombre, gasto y fuentes alternativas.</p>
+<div class="prompt-box"><span class="label">🤖 Prompt sugerido</span>Act&uacute;a como analista de compras.
+
+Empresa: Industrias del Nazas, metalmec&aacute;nica, 340 empleados.
+Gasto anual de compras: $22,500,000 entre 18 proveedores.
+
+[pega aqu&iacute;: proveedor | gasto anual | fuentes alternativas]
+
+Mandato de la direcci&oacute;n: [el mandato de tu equipo]
+
+1. Clasifica a los proveedores en categor&iacute;as A, B y C por porcentaje
+   acumulado de gasto (80 % / 95 % / resto). Muestra la tabla ordenada
+   con el porcentaje individual y el acumulado.
+2. Indica qu&eacute; porcentaje del gasto concentra el 20 % de los proveedores,
+   calculado con estos datos y no con el principio general.
+3. Prop&oacute;n un plan para cumplir el mandato: qu&eacute; proveedores tocar&iacute;as
+   y en qu&eacute; orden.
+
+Usa &uacute;nicamente los datos que te entregu&eacute;. Si necesitas informaci&oacute;n que
+no te di, dilo en lugar de suponerla.</div>
+<h4>Prompt 2 &mdash; confrontaci&oacute;n (paso 3)</h4>
+<p>Ahora s&iacute;, pega la tabla completa.</p>
+<div class="prompt-box"><span class="label">🤖 Prompt sugerido</span>Te entrego dos columnas que antes no ten&iacute;as: semanas de resustituci&oacute;n
+y efecto si el suministro se interrumpe.
+
+[pega la tabla completa de los 18]
+
+1. &iquest;Tu plan anterior propon&iacute;a tocar a alg&uacute;n proveedor cuyo suministro
+   provoque paro parcial o total? N&oacute;mbralos uno por uno.
+2. Clasifica a los 18 en la matriz de Kraljic (apalancado, estrat&eacute;gico,
+   rutinario, cuello de botella). Declara el criterio exacto con el que
+   separas riesgo alto de riesgo bajo y apl&iacute;calo igual a todos.
+3. Para cada proveedor de riesgo alto calcula la exposici&oacute;n:
+   semanas de resustituci&oacute;n &times; $410,000 &times; factor de efecto
+   (paro total = 100 %, paro parcial = 45 %).
+4. Ord&eacute;nalos por exposici&oacute;n y comp&aacute;rala contra su gasto anual.
+
+Despu&eacute;s responde: &iquest;en qu&eacute; lugar de la clasificaci&oacute;n ABC qued&oacute; el
+proveedor con mayor exposici&oacute;n? &iquest;Por qu&eacute; no lo detectaste antes?</div>
+
+<div class="prompt-box"><span class="label">🤖 Prompt 3 &mdash; construir el tablero (paso 4)</span>Genera un tablero en UN SOLO archivo HTML, autocontenido, sin librer&iacute;as
+externas ni conexi&oacute;n a internet. Debe abrirse en cualquier navegador y
+poderse imprimir.
+
+Datos (18 proveedores):
+[pega la tabla completa]
+Margen de contribuci&oacute;n que se pierde por semana de paro: $410,000
+
+El tablero debe contener:
+
+1. Encabezado con el nombre de la empresa y un veredicto general
+   (rojo si hay proveedores en cuello de botella).
+2. Cuatro indicadores: gasto anual total, n&uacute;mero de proveedores en
+   cuello de botella, exposici&oacute;n total, y la raz&oacute;n entre la exposici&oacute;n
+   mayor y el gasto de ese proveedor.
+3. CONTROLES EDITABLES para margen semanal de paro, umbral de fuentes
+   y umbral de semanas. Al cambiar cualquiera, TODO se recalcula.
+4. Matriz de Kraljic con los 18 ubicados: eje X riesgo de suministro,
+   eje Y gasto anual en escala logar&iacute;tmica, tama&ntilde;o del punto
+   proporcional al gasto, rojo si el riesgo es alto.
+5. Barras de exposici&oacute;n por proveedor, de mayor a menor, con la raz&oacute;n
+   exposici&oacute;n/gasto de cada uno.
+6. Curva de Pareto del gasto acumulado, marcando d&oacute;nde cae el 20 % de
+   los proveedores y qu&eacute; porcentaje del gasto concentra realmente.
+7. Panel de alertas generado autom&aacute;ticamente para cada cuello de botella.
+8. Tabla de los 18 con ABC, cuadrante y exposici&oacute;n, resaltando los
+   cuellos de botella.
+
+Reglas de c&aacute;lculo:
+- ABC por porcentaje acumulado: A hasta 80 %, B hasta 95 %, C el resto.
+- Riesgo alto si: fuentes &lt;= umbral, O semanas &gt;= umbral, O efecto de paro.
+- Exposici&oacute;n = semanas &times; margen semanal &times; factor de efecto
+  (paro total 1.00, paro parcial 0.45, los dem&aacute;s 0).
+- No inventes ning&uacute;n dato: todos los n&uacute;meros salen de la tabla.
+
+Dibuja los gr&aacute;ficos en SVG generado por ti. No uses librer&iacute;as ni im&aacute;genes.</div>
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> Ninguno: los datos del caso se pueden pegar directamente en el prompt. Si el equipo trabaja con una empresa real, se sugiere adjuntar el reporte de compras por proveedor del &uacute;ltimo ejercicio y, si existe, el padr&oacute;n de proveedores homologados con sus alternativas calificadas.</div>
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>Kraljic, P. (1983). Purchasing Must Become Supply Management. <em>Harvard Business Review</em>, 61(5), 109&ndash;117.</li>
+<li>Monczka, R. M., Handfield, R. B., Giunipero, L. C. y Patterson, J. L. (2021). <em>Purchasing and Supply Chain Management</em> (7.&ordf; ed.). Cengage Learning.</li>
+<li>Chopra, S. y Meindl, P. (2019). <em>Supply Chain Management: Strategy, Planning, and Operation</em> (7.&ordf; ed.). Pearson.</li>
+<li>Materiales del ejercicio (caso, hoja de trabajo, prompts, r&uacute;brica, datos y tablero de referencia): ver la tabla en <em>C&oacute;mo usar este ejercicio en clase</em>.</li>
+</ul>
+    <div class="doc-footer">
+      Autor: Norma P. Rodríguez-Cándido · Actualizado: 2026-10-13 · Asistencia de IA: construcción del caso de 18 proveedores, cálculo de exposiciones, prompts, tabla de errores típicos y rúbrica; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>

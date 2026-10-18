@@ -329,3 +329,46 @@ details.solution .inner{padding:6px 18px 16px}
   padding:10px 14px;
   margin:10px 0 0;
 }
+
+/* Elementos de ejercicios con materiales (gancho, subtítulos, diagramas en texto, figuras) */
+.doc h4{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:1rem;
+  color:var(--brand-ink);
+  margin:22px 0 8px;
+}
+.hook{
+  background:#fff7e6;
+  border:1px solid #f1d9a6;
+  border-left:4px solid #c08a1e;
+  border-radius:8px;
+  padding:12px 18px;
+  margin:0 0 22px;
+}
+.hook .hook-title{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:#8a5d0a;
+  margin:2px 0 6px;
+}
+.note{
+  border-left:3px solid var(--line);
+  padding:2px 14px;
+  margin:12px 0;
+  color:var(--ink-soft);
+}
+.doc pre{
+  background:#eef4fa;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 18px;
+  overflow-x:auto;
+  font-size:.82rem;
+  line-height:1.45;
+}
+.doc img.figure{max-width:100%;height:auto;display:block;margin:14px auto}
+.doc table.data{display:block;overflow-x:auto}
+@media(min-width:760px){.doc table.data{display:table}}

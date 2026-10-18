@@ -1,0 +1,20 @@
+# Datos ficticios construidos para ejercicio docente. Norma P. Rodríguez-Cándido · Facultad de Contaduría y Administración, Universidad Autónoma de Coahuila, Unidad Torreón · Octubre de 2026
+proveedor,gasto_anual,fuentes_alternativas,semanas_resustitucion,efecto_si_se_interrumpe
+Aceros del Norte,4820000,4,2,menor
+Resinas Monclova,3650000,2,6,paro parcial
+Empaques Laguna,2940000,5,1,menor
+Tornillería Industrial,2180000,6,1,menor
+Pinturas y Recubrimientos,1760000,4,2,menor
+Lubricantes del Bajío,1390000,5,1,menor
+Fletes Torreón,1120000,4,1,menor
+Cartón Corrugado,940000,6,1,menor
+Herramental Gómez,780000,2,8,paro parcial
+Papelería Comercial,640000,9,1,ninguno
+Sellos Técnicos MX,510000,1,16,paro total
+Uniformes La Comarca,430000,7,1,ninguno
+Calibración y Metrología,360000,2,10,paro parcial
+Gases Industriales,295000,3,2,paro parcial
+Software de Nómina,240000,4,4,menor
+Catalizador Especial,185000,1,24,paro total
+Limpieza Industrial,150000,8,1,ninguno
+Refacciones Eléctricas,110000,6,1,menor

@@ -8,7 +8,7 @@ Catálogo de métodos, dinámicas y ejercicios de clase usados por profesores de
 |---|---|
 | [Contador Público](./carreras/contador-publico/README.md) | Aplicar Administración de las Finanzas, Fiscal, IVA |
 | [Comercio Exterior y Aduanas](./carreras/comercio-exterior-aduanas/README.md) | Manejar Finanzas Internacionales, Econometría |
-| [Administración de Empresas](./carreras/administracion-empresas/README.md) | Planeación Estratégica |
+| [Administración de Empresas](./carreras/administracion-empresas/README.md) | Planeación Estratégica, Administración Estratégica, Administración de Ventas, Administración de Compras y Abastecimiento, Administración de Recursos Humanos |
 | [Materias Comunes](./carreras/materias-comunes/README.md) | Estadística Básica |
 
 ## ¿Cómo agregar un ejercicio nuevo?

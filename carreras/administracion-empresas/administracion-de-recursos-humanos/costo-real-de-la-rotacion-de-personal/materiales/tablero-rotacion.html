@@ -1,0 +1,136 @@
+<!doctype html><html lang="es"><meta charset="utf-8">
+<meta name="author" content="Norma P. Rodríguez-Cándido">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tablero de costo de rotación</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14304D;--body:#3D4A56;--muted:#6C7883;--line:#E2E7EC;--rojo:#B3261E;--verde:#2E7D4F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Libre Franklin",Arial,sans-serif;background:#EEF1F4;color:var(--body);font-size:14px}
+.wrap{max-width:1120px;margin:0 auto;padding:18px}
+.hd{background:var(--ink);color:#fff;padding:18px 24px}
+.hd h1{font-size:21px;font-weight:700}
+.hd p{font-size:12.5px;color:#9FC4E8;margin-top:3px}
+.ctl{background:#fff;border:1px solid var(--line);padding:14px 18px;margin-top:12px;
+ display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end}
+.ctl label{display:block;font-size:11px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.ctl input,.ctl select{width:100%;padding:6px 9px;border:1px solid var(--line);border-radius:4px;font-family:inherit;font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.k{background:#fff;border:1px solid var(--line);padding:14px 16px}
+.k .n{font-size:25px;font-weight:700;color:var(--ink);line-height:1}
+.k .l{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.35}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.card{background:#fff;border:1px solid var(--line)}
+.card h2{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);padding:11px 16px;border-bottom:1px solid var(--line)}
+.card .b{padding:14px 16px}
+svg{display:block;width:100%;height:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:right;font-size:9.5px;color:var(--muted);font-weight:700;padding:0 8px 6px;border-bottom:1.5px solid var(--ink)}
+th:first-child{text-align:left}
+td{padding:6px 8px;border-bottom:1px solid #F1F4F7;text-align:right}
+td:first-child{text-align:left;color:var(--ink);font-weight:600}
+tr.sel td{background:#EAF1F8}
+.nota{background:#FBEEEC;border-left:4px solid var(--rojo);padding:11px 15px;margin-top:12px;font-size:12.5px;line-height:1.5}
+.nota b{color:#8E1D17}
+.ft{font-size:11px;color:var(--muted);text-align:center;padding:16px 0 4px;line-height:1.6}
+@media(max-width:860px){.ctl,.kpis,.row{grid-template-columns:1fr 1fr}}
+@media print{body{background:#fff}.ctl{display:none}}
+</style>
+<div class="wrap">
+ <div class="hd"><h1>Costo real de la rotación de personal</h1>
+  <p>Cinco empresas de La Laguna · los cuatro componentes, con y sin costos de oportunidad</p></div>
+
+ <div class="ctl">
+  <div><label>Empresa</label><select id="emp"></select></div>
+  <div><label>Días de curva de aprendizaje</label><input id="dias" type="number" min="1" max="365"></div>
+  <div><label>Productividad durante la curva (%)</label><input id="prod" type="number" min="0" max="100"></div>
+  <div><label>Separaciones del año</label><input id="sal" type="number" min="0"></div>
+ </div>
+
+ <div class="kpis">
+  <div class="k"><div class="n" id="kRot">—</div><div class="l">índice de<br>rotación</div></div>
+  <div class="k"><div class="n" id="kTot" style="color:var(--rojo)">—</div><div class="l">costo anual<br>de la rotación</div></div>
+  <div class="k"><div class="n" id="kNom">—</div><div class="l">como % de la<br>nómina del área</div></div>
+  <div class="k"><div class="n" id="kOp" style="color:var(--rojo)">—</div><div class="l">parte sin factura<br>(la que la IA omite)</div></div>
+ </div>
+
+ <div class="row">
+  <div class="card"><h2>LOS CUATRO COMPONENTES</h2><div class="b"><svg id="comp" viewBox="0 0 460 300"></svg></div></div>
+  <div class="card"><h2>LO QUE SE VE EN CONTABILIDAD CONTRA LO QUE CUESTA</h2><div class="b"><svg id="vs" viewBox="0 0 460 300"></svg></div></div>
+ </div>
+
+ <div class="card" style="margin-top:12px"><h2>LAS CINCO EMPRESAS</h2><div class="b">
+  <table><thead><tr><th>Empresa</th><th>Plantilla</th><th>Rotación</th><th>Reclutamiento</th><th>Capacitación</th><th>Productividad perdida</th><th>Supervisión</th><th>Total anual</th><th>% nómina</th></tr></thead>
+  <tbody id="tb"></tbody></table></div></div>
+
+ <div class="nota" id="nota"></div>
+
+ <div class="cred" style="background:#14304D;color:#fff;padding:13px 24px;margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div style="font-size:12.5px;font-weight:700">Norma P. Rodríguez-Cándido</div><div style="font-size:11px;color:#9FC4E8;text-align:right">Facultad de Contaduría y Administración · Universidad Autónoma de Coahuila, Unidad Torreón<br>Repositorio de Métodos y Ejercicios · Octubre de 2026</div></div><div class="ft">Generado por el equipo con asistencia de IA · los datos y los supuestos los define el usuario<br>
+ Ejercicio «Costo real de la rotación de personal» · FCA UAdeC Unidad Torreón</div>
+</div>
+<script>
+const E=[
+ ["Lácteos La Comarca",180,47,9800,75,45,6200,8500,22,320],
+ ["Mezclilla Lagunera",240,96,7400,45,55,3800,4200,14,260],
+ ["Autopartes Gómez",320,58,11200,90,40,9400,14000,30,410],
+ ["Distribuidora Laguna",95,29,10500,60,50,5600,6800,18,340],
+ ["Clínica Cerro de las Noas",130,21,16800,120,35,12500,19000,26,520]];
+const el=i=>document.getElementById(i);
+const money=n=>"$"+Math.round(n).toLocaleString("es-MX");
+let sel=0, ov={};
+el("emp").innerHTML=E.map((e,i)=>`<option value="${i}">${e[0]}</option>`).join("");
+
+function calc(e,o={}){
+ const [n,pl,sal0,s,d0,p0,rec,cap,hs,cs]=e;
+ const salidas=o.sal??sal0, dias=o.dias??d0, prod=(o.prod??p0)/100;
+ const sd=s/30;
+ const c1=salidas*rec, c2=salidas*cap;
+ const c3=salidas*dias*sd*(1-prod), c4=salidas*hs*cs;
+ const tot=c1+c2+c3+c4, nom=pl*s*12;
+ return {n,pl,salidas,rot:salidas/pl*100,c1,c2,c3,c4,tot,nom,pn:tot/nom*100,op:(c3+c4)/tot*100};
+}
+function pinta(){
+ const e=E[sel], r=calc(e,ov);
+ el("kRot").textContent=r.rot.toFixed(1)+" %";
+ el("kTot").textContent=money(r.tot);
+ el("kNom").textContent=r.pn.toFixed(1)+" %";
+ el("kOp").textContent=r.op.toFixed(0)+" %";
+
+ const C=[["Reclutamiento",r.c1,"#5B8AB8"],["Capacitación",r.c2,"#7FA9D0"],
+          ["Productividad perdida",r.c3,"#B3261E"],["Supervisión",r.c4,"#D2691E"]];
+ const mx=Math.max(...C.map(c=>c[1]));
+ let s1=`<text x="0" y="12" font-size="10" fill="#6C7883">azul: tiene factura · rojo: costo de oportunidad</text>`;
+ C.forEach((c,i)=>{const y=38+i*66,w=c[1]/mx*270;
+  s1+=`<text x="0" y="${y}" font-size="11.5" font-weight="600" fill="#14304D">${c[0]}</text>
+  <rect x="0" y="${y+7}" width="${w}" height="20" fill="${c[2]}"/>
+  <text x="${w+8}" y="${y+22}" font-size="11.5" font-weight="700" fill="${c[2]}">${money(c[1])}</text>
+  <text x="0" y="${y+42}" font-size="9.5" fill="#6C7883">${(c[1]/r.tot*100).toFixed(0)} % del costo total</text>`;});
+ el("comp").innerHTML=s1;
+
+ const fac=r.c1+r.c2, opo=r.c3+r.c4;
+ const H=200, mx2=r.tot;
+ let s2=`<text x="0" y="12" font-size="10" fill="#6C7883">en pesos anuales</text>`;
+ [["Lo que la empresa registra",fac,"#5B8AB8"],["Lo que de verdad cuesta",r.tot,"#B3261E"]].forEach((b,i)=>{
+  const h=b[1]/mx2*H, x=70+i*190;
+  s2+=`<rect x="${x}" y="${40+H-h}" width="120" height="${h}" fill="${b[2]}"/>
+   <text x="${x+60}" y="${34+H-h}" text-anchor="middle" font-size="13" font-weight="700" fill="${b[2]}">${money(b[1])}</text>
+   <text x="${x+60}" y="${H+62}" text-anchor="middle" font-size="11" fill="#14304D">${b[0]}</text>`;});
+ s2+=`<text x="230" y="${H+84}" text-anchor="middle" font-size="12" font-weight="700" fill="#B3261E">Diferencia: ${money(opo)} (${r.op.toFixed(0)} % del total)</text>`;
+ el("vs").innerHTML=s2;
+
+ el("tb").innerHTML=E.map((e,i)=>{const x=calc(e, i===sel?ov:{});
+  return `<tr class="${i===sel?'sel':''}"><td>${x.n}</td><td>${x.pl}</td><td>${x.rot.toFixed(1)} %</td>
+  <td>${money(x.c1)}</td><td>${money(x.c2)}</td><td style="color:#B3261E;font-weight:700">${money(x.c3)}</td>
+  <td>${money(x.c4)}</td><td style="font-weight:700">${money(x.tot)}</td><td>${x.pn.toFixed(1)} %</td></tr>`;}).join("");
+
+ const a=calc(E[1]), b=calc(E[2]);
+ el("nota").innerHTML=`<b>El contraste de la plenaria:</b> ${a.n} tiene ${a.rot.toFixed(0)} % de rotación y pierde ${money(a.tot)}.
+ ${b.n} tiene ${b.rot.toFixed(0)} % y pierde ${money(b.tot)} — el doble, con menos de la mitad de rotación.
+ Lo que determina el impacto no es cuánta gente se va, sino cuánto tarda en volverse productiva la que llega.`;
+}
+el("emp").addEventListener("change",ev=>{sel=+ev.target.value;ov={};sync();pinta();});
+["dias","prod","sal"].forEach(id=>el(id).addEventListener("input",()=>{
+ ov={dias:+el("dias").value,prod:+el("prod").value,sal:+el("sal").value};pinta();}));
+function sync(){const e=E[sel];el("dias").value=e[4];el("prod").value=e[5];el("sal").value=e[2];}
+sync();pinta();
+</script>

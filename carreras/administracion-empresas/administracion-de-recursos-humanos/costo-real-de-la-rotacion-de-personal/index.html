@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Costo real de la rotación de personal — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Administración de Empresas</a><span class="sep">/</span>
+    <a href="../index.html">Administración de Recursos Humanos</a><span class="sep">/</span>
+    Costo real de la rotación de personal
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>Costo real de la rotación de personal</h2>
+      <div class="badges">
+        <span class="badge">Administración de Empresas</span>
+        <span class="badge">Administración de Recursos Humanos</span>
+        <span class="badge">Intermedio</span>
+        <span class="badge">50 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+<div class="hook">
+<p class="hook-title">🎯 El gancho</p>
+<p><strong>La productividad perdida durante la curva de aprendizaje pesa entre 30 % y 49 % del costo total de la rotaci&oacute;n. No aparece en ninguna cuenta contable, y el asistente de IA casi nunca la calcula.</strong></p>
+<p>Y el contraste del caso: la empresa con 40 % de rotaci&oacute;n pierde $1.6 millones; la que tiene 18 % pierde $3.2 millones. <strong>El doble, con menos de la mitad de rotaci&oacute;n.</strong></p>
+</div>
+<h3 class="section">C&oacute;mo usar este ejercicio en clase</h3>
+<p>La gu&iacute;a para el profesor &mdash;preparaci&oacute;n, cronograma minuto a minuto, frases sugeridas y qu&eacute; hacer si se acorta el tiempo o no hay IA en el sal&oacute;n&mdash; est&aacute; en <a href="GUIA-DOCENTE.md"><code>GUIA-DOCENTE.md</code></a>. Materiales listos para usar en clase:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Qu&eacute; es</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="GUIA-DOCENTE.md"><code>GUIA-DOCENTE.md</code></a></td>
+<td>Gu&iacute;a completa del profesor, con la soluci&oacute;n</td>
+<td><strong>Solo el profesor</strong></td>
+</tr>
+<tr>
+<td><a href="materiales/01-caso-alumno.md"><code>materiales/01-caso-alumno.md</code></a></td>
+<td>Caso para el alumno, sin soluci&oacute;n</td>
+<td>Se imprime y se reparte</td>
+</tr>
+<tr>
+<td><a href="materiales/02-hoja-de-trabajo.md"><code>materiales/02-hoja-de-trabajo.md</code></a></td>
+<td>Hoja de trabajo con las tablas por llenar</td>
+<td>Se imprime, una por equipo</td>
+</tr>
+<tr>
+<td><a href="materiales/03-prompts.md"><code>materiales/03-prompts.md</code></a></td>
+<td>Prompts listos para copiar y pegar</td>
+<td>Se comparte en digital</td>
+</tr>
+<tr>
+<td><a href="materiales/04-rubrica.md"><code>materiales/04-rubrica.md</code></a></td>
+<td>R&uacute;brica de evaluaci&oacute;n</td>
+<td>Se comparte con los alumnos al inicio</td>
+</tr>
+<tr>
+<td><a href="materiales/datos.csv"><code>materiales/datos.csv</code></a></td>
+<td>Datos del caso, para pegar en la IA o abrir en Excel</td>
+<td>Se comparte en digital</td>
+</tr>
+<tr>
+<td><a href="materiales/tablero-rotacion.html"><code>materiales/tablero-rotacion.html</code></a></td>
+<td>Tablero de referencia ya funcionando (HTML)</td>
+<td>Profesor, para la plenaria</td>
+</tr>
+</tbody>
+</table>
+<h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podr&aacute; calcular el costo total de la rotaci&oacute;n de personal de una empresa descomponi&eacute;ndolo en sus cuatro componentes (reclutamiento, capacitaci&oacute;n, productividad perdida durante la curva de aprendizaje y tiempo de supervisi&oacute;n); verificar cr&iacute;ticamente si el asistente de IA omiti&oacute; o duplic&oacute; alguno de ellos; y fundamentar una recomendaci&oacute;n de inversi&oacute;n en retenci&oacute;n compar&aacute;ndola contra el costo que evita.</p>
+<h3 class="section">Teor&iacute;a</h3>
+<div class="ai-note">
+<p>⚠️ <strong>Nota de transparencia:</strong> redacci&oacute;n base del profesor; desarrollo de la f&oacute;rmula de productividad perdida, casos por sector y gu&iacute;a de soluci&oacute;n con apoyo de IA. Pendiente de revisi&oacute;n docente.</p>
+</div>
+<p>La <strong>rotaci&oacute;n de personal</strong> es la proporci&oacute;n de trabajadores que dejan la organizaci&oacute;n en un periodo respecto a la plantilla promedio:</p>
+<div class="formula">&Iacute;ndice de rotaci&oacute;n = ( Separaciones del periodo ) / ( Plantilla promedio ) &times; 100</div>
+<p>El &iacute;ndice por s&iacute; solo no dice nada sobre el impacto econ&oacute;mico. Una rotaci&oacute;n de 30 % en un puesto que se aprende en una semana cuesta poco; la misma rotaci&oacute;n en un puesto que tarda cuatro meses en alcanzar productividad plena puede comprometer el resultado del ejercicio.</p>
+<p>El costo de una separaci&oacute;n se descompone en cuatro componentes:</p>
+<p><strong>1. Costo de reclutamiento y reemplazo.</strong> Publicaci&oacute;n de vacantes, horas de reclutador, ex&aacute;menes y estudios socioecon&oacute;micos, tr&aacute;mites de alta y baja, finiquito administrativo. Es el componente m&aacute;s visible y el &uacute;nico que casi todas las empresas registran.</p>
+<p><strong>2. Costo de capacitaci&oacute;n e inducci&oacute;n.</strong> Horas de instructor, materiales, certificaciones, equipo de protecci&oacute;n, y el tiempo del propio trabajador en formaci&oacute;n.</p>
+<p><strong>3. Productividad perdida durante la curva de aprendizaje.</strong> Un trabajador nuevo no rinde desde el primer d&iacute;a: alcanza el desempe&ntilde;o pleno despu&eacute;s de un periodo que depende del puesto. Durante ese lapso la empresa paga el salario completo y recibe una fracci&oacute;n del rendimiento:</p>
+<div class="formula">Productividad perdida = Separaciones &times; D&iacute;as de curva &times; Salario diario &times; (1 - Productividad promedio del periodo)</div>
+<p>Donde el <strong>salario diario</strong> = salario mensual / 30.</p>
+<p><strong>4. Tiempo de supervisi&oacute;n adicional.</strong> Horas que el jefe directo y los compa&ntilde;eros experimentados dedican a acompa&ntilde;ar, corregir y repetir instrucciones, en lugar de a su propio trabajo.</p>
+<p><strong>El punto que suele pasarse por alto.</strong> Los componentes 1 y 2 se registran en la contabilidad: hay facturas y recibos. Los componentes 3 y 4 <strong>no aparecen en ninguna cuenta</strong>, porque son costos de oportunidad, no desembolsos. Por eso la mayor&iacute;a de las empresas &mdash;y la mayor&iacute;a de las respuestas de un asistente de IA&mdash; subestiman de forma sistem&aacute;tica el costo de la rotaci&oacute;n.</p>
+<p>El costo total suele expresarse como porcentaje de la n&oacute;mina anual del &aacute;rea, que es la cifra con la que la direcci&oacute;n puede compararlo contra el costo de un programa de retenci&oacute;n.</p>
+<h3 class="section">Ejercicio / caso pr&aacute;ctico</h3>
+<p>En equipos, cada uno trabaja con <strong>una</strong> de las siguientes empresas (ficticias), asignada por el profesor:</p>
+<table class="data">
+<thead>
+<tr>
+<th>#</th>
+<th>Empresa</th>
+<th>Sector</th>
+<th>Plantilla</th>
+<th>Separaciones del a&ntilde;o</th>
+<th>Salario mensual promedio</th>
+<th>D&iacute;as de curva de aprendizaje</th>
+<th>Productividad promedio durante la curva</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>L&aacute;cteos La Comarca</strong></td>
+<td>Alimentos</td>
+<td>180</td>
+<td>47</td>
+<td>$9,800</td>
+<td>75</td>
+<td>45 %</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Mezclilla Lagunera</strong></td>
+<td>Manufactura textil</td>
+<td>240</td>
+<td>96</td>
+<td>$7,400</td>
+<td>45</td>
+<td>55 %</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Autopartes G&oacute;mez</strong></td>
+<td>Metalmec&aacute;nica</td>
+<td>320</td>
+<td>58</td>
+<td>$11,200</td>
+<td>90</td>
+<td>40 %</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Distribuidora Laguna</strong></td>
+<td>Distribuci&oacute;n</td>
+<td>95</td>
+<td>29</td>
+<td>$10,500</td>
+<td>60</td>
+<td>50 %</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Cl&iacute;nica Cerro de las Noas</strong></td>
+<td>Servicios de salud</td>
+<td>130</td>
+<td>21</td>
+<td>$16,800</td>
+<td>120</td>
+<td>35 %</td>
+</tr>
+</tbody>
+</table>
+<p>Costos unitarios por separaci&oacute;n, iguales para todas las empresas salvo donde se indica:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Concepto</th>
+<th>L&aacute;cteos</th>
+<th>Mezclilla</th>
+<th>Autopartes</th>
+<th>Distribuidora</th>
+<th>Cl&iacute;nica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reclutamiento y reemplazo</td>
+<td>$6,200</td>
+<td>$3,800</td>
+<td>$9,400</td>
+<td>$5,600</td>
+<td>$12,500</td>
+</tr>
+<tr>
+<td>Capacitaci&oacute;n e inducci&oacute;n</td>
+<td>$8,500</td>
+<td>$4,200</td>
+<td>$14,000</td>
+<td>$6,800</td>
+<td>$19,000</td>
+</tr>
+<tr>
+<td>Horas de supervisi&oacute;n adicional</td>
+<td>22 h</td>
+<td>14 h</td>
+<td>30 h</td>
+<td>18 h</td>
+<td>26 h</td>
+</tr>
+<tr>
+<td>Costo por hora de supervisi&oacute;n</td>
+<td>$320</td>
+<td>$260</td>
+<td>$410</td>
+<td>$340</td>
+<td>$520</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide:</strong></p>
+<ol>
+<li>
+<p><strong>Calcular con la IA (&asymp;10 min).</strong> Usa el prompt sugerido con los datos de tu empresa. P&iacute;dele el &iacute;ndice de rotaci&oacute;n, el costo por separaci&oacute;n desglosado, el costo anual total y su peso sobre la n&oacute;mina.</p>
+</li>
+<li>
+<p><strong>Verificar a la IA (&asymp;15 min).</strong> Revisa componente por componente y llena la tabla. Marca cualquier componente que la IA haya omitido, duplicado o calculado con la f&oacute;rmula equivocada.</p>
+<table class="data">
+<thead>
+<tr>
+<th>Componente</th>
+<th>&iquest;Lo incluy&oacute; la IA?</th>
+<th>Monto de la IA</th>
+<th>Tu rec&aacute;lculo</th>
+<th>&iquest;Coincide?</th>
+<th>Qu&eacute; pas&oacute;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reclutamiento y reemplazo</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Capacitaci&oacute;n e inducci&oacute;n</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Productividad perdida</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Supervisi&oacute;n adicional</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total anual</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Al terminar, responde: <strong>&iquest;qu&eacute; porcentaje del costo total representa el componente que la IA omiti&oacute; o calcul&oacute; mal?</strong></p>
+</li>
+<li>
+<p><strong>Decidir (&asymp;10 min).</strong> La direcci&oacute;n eval&uacute;a un programa de retenci&oacute;n con un costo anual del 2 % de la n&oacute;mina, que seg&uacute;n el proveedor reducir&iacute;a la rotaci&oacute;n a la mitad. En 5&ndash;6 l&iacute;neas, recomienda si conviene o no, usando tu cifra corregida. Indica al menos un supuesto del proveedor que no est&aacute;s dispuesto a dar por bueno.</p>
+</li>
+<li>
+<p><strong>Plenaria (&asymp;10 min).</strong> Cada equipo presenta su cifra total y el error de la IA m&aacute;s interesante que encontr&oacute;. Se contrasta por qu&eacute; la empresa con la rotaci&oacute;n m&aacute;s alta no es necesariamente la que m&aacute;s pierde.</p>
+</li>
+</ol>
+<h3 class="section">Soluci&oacute;n / gu&iacute;a de soluci&oacute;n</h3>
+<details class="solution"><summary><strong>Mostrar gu&iacute;a para el profesor</strong></summary><div class="inner">
+
+<h4>Resultados correctos</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Empresa</th>
+<th>Rotaci&oacute;n</th>
+<th>Reclutamiento</th>
+<th>Capacitaci&oacute;n</th>
+<th>Productividad perdida</th>
+<th>Supervisi&oacute;n</th>
+<th><strong>Total anual</strong></th>
+<th>% de n&oacute;mina</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L&aacute;cteos La Comarca</td>
+<td>26.1 %</td>
+<td>$291,400</td>
+<td>$399,500</td>
+<td><strong>$633,325</strong></td>
+<td>$330,880</td>
+<td><strong>$1,655,105</strong></td>
+<td>7.8 %</td>
+</tr>
+<tr>
+<td>Mezclilla Lagunera</td>
+<td>40.0 %</td>
+<td>$364,800</td>
+<td>$403,200</td>
+<td><strong>$479,520</strong></td>
+<td>$349,440</td>
+<td><strong>$1,596,960</strong></td>
+<td>7.5 %</td>
+</tr>
+<tr>
+<td>Autopartes G&oacute;mez</td>
+<td>18.1 %</td>
+<td>$545,200</td>
+<td>$812,000</td>
+<td><strong>$1,169,280</strong></td>
+<td>$713,400</td>
+<td><strong>$3,239,880</strong></td>
+<td>7.5 %</td>
+</tr>
+<tr>
+<td>Distribuidora Laguna</td>
+<td>30.5 %</td>
+<td>$162,400</td>
+<td>$197,200</td>
+<td><strong>$304,500</strong></td>
+<td>$177,480</td>
+<td><strong>$841,580</strong></td>
+<td>7.0 %</td>
+</tr>
+<tr>
+<td>Cl&iacute;nica Cerro de las Noas</td>
+<td>16.2 %</td>
+<td>$262,500</td>
+<td>$399,000</td>
+<td><strong>$917,280</strong></td>
+<td>$283,920</td>
+<td><strong>$1,862,700</strong></td>
+<td>7.1 %</td>
+</tr>
+</tbody>
+</table>
+<p>La productividad perdida representa entre <strong>30 % y 49 %</strong> del costo total seg&uacute;n el caso. Es el componente mayor o el segundo mayor en las cinco empresas, y es el que no aparece en ninguna cuenta contable.</p>
+<h4>Errores frecuentes del asistente de IA</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Lo que suele hacer la IA</th>
+<th>Por qu&eacute; est&aacute; mal</th>
+<th>Qu&eacute; debe responder el alumno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calcula solo reclutamiento y capacitaci&oacute;n</td>
+<td>Son los &uacute;nicos con factura; omite los dos costos de oportunidad</td>
+<td>Se&ntilde;alar que falta entre el 45 % y el 65 % del costo real</td>
+</tr>
+<tr>
+<td>Aplica una regla general del tipo &laquo;la rotaci&oacute;n cuesta entre 50 % y 200 % del salario anual&raquo;</td>
+<td>Es un rango de referencia de la literatura, no un c&aacute;lculo con los datos del caso</td>
+<td>Exigir el c&aacute;lculo con los datos entregados, no una regla importada</td>
+</tr>
+<tr>
+<td>Calcula la productividad perdida sobre los d&iacute;as de curva <strong>completos</strong>, sin multiplicar por (1 &minus; productividad)</td>
+<td>Supone que el trabajador nuevo no produce nada durante la curva</td>
+<td>Corregir la f&oacute;rmula; el error llega a duplicar el componente</td>
+</tr>
+<tr>
+<td>Confunde productividad promedio con productividad final</td>
+<td>La curva es un promedio del periodo, no el nivel que alcanza al terminar</td>
+<td>Verificar qu&eacute; est&aacute; midiendo el porcentaje del enunciado</td>
+</tr>
+<tr>
+<td>Suma el finiquito o la liquidaci&oacute;n como costo adicional</td>
+<td>No viene en los datos del caso; es un supuesto propio</td>
+<td>Marcar la cifra como no sustentada, aunque sea razonable</td>
+</tr>
+<tr>
+<td>Concluye que Mezclilla Lagunera es &laquo;el caso m&aacute;s grave&raquo; porque su rotaci&oacute;n es de 40 %</td>
+<td>El &iacute;ndice m&aacute;s alto no implica el costo m&aacute;s alto</td>
+<td>Autopartes G&oacute;mez pierde el doble con una rotaci&oacute;n de 18.1 %</td>
+</tr>
+<tr>
+<td>Al evaluar el programa de retenci&oacute;n, compara el costo del programa contra <strong>todo</strong> el costo de rotaci&oacute;n</td>
+<td>El programa reduce la rotaci&oacute;n a la mitad, no a cero: el beneficio es la mitad del costo</td>
+<td>Comparar el 2 % de n&oacute;mina contra la mitad del costo total</td>
+</tr>
+</tbody>
+</table>
+<h4>Nota para la plenaria</h4>
+<p>El contraste central del ejercicio es Mezclilla Lagunera (rotaci&oacute;n 40 %, costo $1.6 M) contra Autopartes G&oacute;mez (rotaci&oacute;n 18.1 %, costo $3.2 M). Lo que determina el impacto no es cu&aacute;nta gente se va, sino <strong>cu&aacute;nto tarda en volverse productiva la que llega</strong>. Un indicador de recursos humanos le&iacute;do sin su costo asociado puede llevar a priorizar el &aacute;rea equivocada.</p>
+<h4>R&uacute;brica sugerida</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Los cuatro componentes calculados correctamente con los datos del caso</td>
+<td>30 %</td>
+</tr>
+<tr>
+<td>Identificaci&oacute;n y correcci&oacute;n del componente que la IA omiti&oacute; o calcul&oacute; mal, con su peso porcentual</td>
+<td>35 %</td>
+</tr>
+<tr>
+<td>Recomendaci&oacute;n sobre el programa de retenci&oacute;n, comparada contra el beneficio correcto (la mitad)</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Postura cr&iacute;tica: se&ntilde;ala un supuesto propio de la IA o del proveedor que no acepta</td>
+<td>15 %</td>
+</tr>
+</tbody>
+</table>
+</div></details>
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<p>Copia y pega el siguiente prompt, sustituyendo los datos entre corchetes por los de tu empresa.</p>
+<div class="prompt-box"><span class="label">🤖 Prompt sugerido</span>Act&uacute;a como analista de recursos humanos.
+
+Empresa: [nombre]
+Sector: [sector]
+Plantilla promedio: [n] trabajadores
+Separaciones en el a&ntilde;o: [n]
+Salario mensual promedio: $[monto]
+D&iacute;as que tarda un trabajador nuevo en alcanzar productividad plena: [n]
+Productividad promedio durante ese periodo: [%]
+Costo de reclutamiento y reemplazo por separaci&oacute;n: $[monto]
+Costo de capacitaci&oacute;n e inducci&oacute;n por separaci&oacute;n: $[monto]
+Horas de supervisi&oacute;n adicional por trabajador nuevo: [n] h
+Costo por hora de supervisi&oacute;n: $[monto]
+N&oacute;mina anual del &aacute;rea: [plantilla &times; salario mensual &times; 12]
+
+Calcula:
+1. El &iacute;ndice de rotaci&oacute;n del a&ntilde;o.
+2. El costo por separaci&oacute;n, DESGLOSADO en sus cuatro componentes:
+   reclutamiento, capacitaci&oacute;n, productividad perdida durante la curva
+   de aprendizaje, y tiempo de supervisi&oacute;n adicional.
+3. El costo anual total de la rotaci&oacute;n.
+4. Ese costo como porcentaje de la n&oacute;mina anual del &aacute;rea.
+
+Muestra la f&oacute;rmula y la sustituci&oacute;n num&eacute;rica de cada componente.
+Usa &uacute;nicamente los datos que te entregu&eacute;: si falta algo, dilo en lugar
+de suponerlo. No apliques reglas generales de la literatura.
+No me des una recomendaci&oacute;n final: esa decisi&oacute;n la tomar&eacute; yo.</div>
+
+<div class="prompt-box"><span class="label">🔎 Prompt de seguimiento (verificaci&oacute;n)</span>Revisa tu respuesta anterior:
+
+1. &iquest;Incluiste los cuatro componentes? Si omitiste alguno, agr&eacute;galo.
+2. En la productividad perdida, &iquest;multiplicaste por (1 &minus; productividad
+   promedio)? Muestra la operaci&oacute;n completa.
+3. &iquest;Usaste alguna cifra que yo no te haya entregado? Se&ntilde;&aacute;lala.
+4. Calcula qu&eacute; porcentaje del costo total representa cada componente.
+
+Despu&eacute;s responde: si el &iacute;ndice de rotaci&oacute;n de otra empresa fuera el doble
+que el de &eacute;sta, &iquest;su costo de rotaci&oacute;n ser&iacute;a necesariamente mayor?
+Explica de qu&eacute; depende.</div>
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> Ninguno: los datos del caso se pueden pegar directamente en el prompt. Si el equipo trabaja con una empresa real, se sugiere adjuntar el reporte de altas y bajas del periodo y el tabulador de sueldos del &aacute;rea, con los datos personales suprimidos.</div>
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>Cascio, W. F. y Boudreau, J. W. (2011). <em>Investing in People: Financial Impact of Human Resource Initiatives</em> (2.&ordf; ed.). Pearson Education / FT Press.</li>
+<li>Cascio, W. F. (2000). <em>Costing Human Resources: The Financial Impact of Behavior in Organizations</em> (4.&ordf; ed.). South-Western College Publishing.</li>
+<li>Chiavenato, I. (2020). <em>Administraci&oacute;n de recursos humanos: el capital humano de las organizaciones</em> (11.&ordf; ed.). McGraw-Hill.</li>
+<li>Materiales del ejercicio (caso, hoja de trabajo, prompts, r&uacute;brica, datos y tablero de referencia): ver la tabla en <em>C&oacute;mo usar este ejercicio en clase</em>.</li>
+</ul>
+    <div class="doc-footer">
+      Autor: Norma P. Rodríguez-Cándido · Actualizado: 2026-10-13 · Asistencia de IA: desarrollo de la fórmula de productividad perdida, construcción de los cinco casos, prompts, tabla de errores típicos y rúbrica; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>

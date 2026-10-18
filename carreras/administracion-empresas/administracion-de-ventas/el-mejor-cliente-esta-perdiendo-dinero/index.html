@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El mejor cliente de la empresa está perdiendo dinero — Repositorio FCA</title>
+<link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top">
+    <div class="brand">
+      <img src="../../../../assets/img/uadec-logo.png" alt="Universidad Autónoma de Coahuila" class="brand-logo">
+      <div class="brand-text">
+        <span class="kicker">Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón</span>
+        <h1><a href="../../../../index.html">Repositorio de Métodos y Ejercicios</a></h1>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="../../../../index.html">Inicio</a>
+      <a href="../../../../_docs/CONTRIBUIR.md">Cómo contribuir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span class="sep">/</span>
+    <a href="../../index.html">Administración de Empresas</a><span class="sep">/</span>
+    <a href="../index.html">Administración de Ventas</a><span class="sep">/</span>
+    El mejor cliente de la empresa está perdiendo dinero
+  </div>
+
+  <article class="doc">
+    <div class="doc-header">
+      <h2>El mejor cliente de la empresa está perdiendo dinero</h2>
+      <div class="badges">
+        <span class="badge">Administración de Empresas</span>
+        <span class="badge">Administración de Ventas</span>
+        <span class="badge">Intermedio</span>
+        <span class="badge">50 min</span>
+        <span class="badge">Ejercicio práctico</span>
+      </div>
+    </div>
+
+<div class="hook">
+<p class="hook-title">🎯 El gancho</p>
+<p><strong>El segundo cliente en ventas y tercero en margen bruto resulta ser el &uacute;ltimo en margen neto: pierde $402,188 al a&ntilde;o.</strong> Y el cliente m&aacute;s peque&ntilde;o de los doce es el de mayor margen neto en porcentaje.</p>
+<p>Ninguna de las dos cosas se ve en el reporte de ventas. El asistente de IA va a premiar al cliente equivocado, porque solo mira el margen bruto.</p>
+</div>
+<h3 class="section">C&oacute;mo usar este ejercicio en clase</h3>
+<p>La gu&iacute;a para el profesor &mdash;preparaci&oacute;n, cronograma minuto a minuto, frases sugeridas y qu&eacute; hacer si se acorta el tiempo o no hay IA en el sal&oacute;n&mdash; est&aacute; en <a href="GUIA-DOCENTE.md"><code>GUIA-DOCENTE.md</code></a>. Materiales listos para usar en clase:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Qu&eacute; es</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="GUIA-DOCENTE.md"><code>GUIA-DOCENTE.md</code></a></td>
+<td>Gu&iacute;a completa del profesor, con la soluci&oacute;n</td>
+<td><strong>Solo el profesor</strong></td>
+</tr>
+<tr>
+<td><a href="materiales/01-caso-alumno.md"><code>materiales/01-caso-alumno.md</code></a></td>
+<td>Caso para el alumno, sin soluci&oacute;n</td>
+<td>Se imprime y se reparte</td>
+</tr>
+<tr>
+<td><a href="materiales/02-hoja-de-trabajo.md"><code>materiales/02-hoja-de-trabajo.md</code></a></td>
+<td>Hoja de trabajo con las tablas por llenar</td>
+<td>Se imprime, una por equipo</td>
+</tr>
+<tr>
+<td><a href="materiales/03-prompts.md"><code>materiales/03-prompts.md</code></a></td>
+<td>Prompts listos para copiar y pegar</td>
+<td>Se comparte en digital</td>
+</tr>
+<tr>
+<td><a href="materiales/04-rubrica.md"><code>materiales/04-rubrica.md</code></a></td>
+<td>R&uacute;brica de evaluaci&oacute;n</td>
+<td>Se comparte con los alumnos al inicio</td>
+</tr>
+<tr>
+<td><a href="materiales/datos.csv"><code>materiales/datos.csv</code></a></td>
+<td>Datos del caso, para pegar en la IA o abrir en Excel</td>
+<td>Se comparte en digital</td>
+</tr>
+<tr>
+<td><a href="materiales/tablero-rentabilidad-clientes.html"><code>materiales/tablero-rentabilidad-clientes.html</code></a></td>
+<td>Tablero de referencia ya funcionando (HTML)</td>
+<td>Profesor, para la plenaria</td>
+</tr>
+</tbody>
+</table>
+<h3 class="section">Objetivo de aprendizaje</h3>
+<p>Al terminar este ejercicio, el alumno podr&aacute; calcular la rentabilidad neta por cliente incorporando el costo de servir y el costo financiero del cr&eacute;dito; verificar cr&iacute;ticamente si el asistente de IA se qued&oacute; en el margen bruto; y fundamentar una decisi&oacute;n de depuraci&oacute;n o renegociaci&oacute;n de cartera distinguiendo entre clientes que destruyen valor y clientes que solo son peque&ntilde;os.</p>
+<h3 class="section">Teor&iacute;a</h3>
+<div class="ai-note">
+<p>⚠️ <strong>Nota de transparencia:</strong> redacci&oacute;n base del profesor; construcci&oacute;n del caso, c&aacute;lculo de costos de servir y gu&iacute;a de soluci&oacute;n con apoyo de IA. Pendiente de revisi&oacute;n docente.</p>
+</div>
+<h4>Por qu&eacute; el margen bruto miente</h4>
+<p>El reporte de ventas de casi cualquier empresa ordena a los clientes por facturaci&oacute;n o por margen bruto. Ese margen solo resta el costo de lo vendido, y da por supuesto que <strong>atender a un cliente cuesta lo mismo que atender a otro</strong>. No es cierto.</p>
+<p>Un cliente que coloca 186 pedidos al a&ntilde;o, pide 44 l&iacute;neas en cada uno, exige 186 entregas, recibe 22 visitas del vendedor, devuelve 41 veces y paga a 105 d&iacute;as <strong>consume un volumen de recursos radicalmente distinto</strong> de otro que coloca 9 pedidos, recibe 9 entregas y paga a 30 d&iacute;as. Ninguno de esos consumos aparece en el costo de ventas.</p>
+<h4>Los tres niveles de margen</h4>
+<div class="formula">Margen bruto = Ventas - Costo de lo vendido</div>
+<div class="formula">Costo de servir = &Sigma; (transacciones &times; costo unitario de cada actividad)</div>
+<div class="formula">Costo financiero = Ventas &times; d&iacute;as de cr&eacute;dito &times; ( tasa anual ) / ( 365 )</div>
+<div class="formula">Margen neto por cliente = Margen bruto - Costo de servir - Costo financiero</div>
+<p>El costo de servir se construye igual que un costeo por actividades, pero con generadores comerciales: n&uacute;mero de pedidos, l&iacute;neas por pedido, entregas, visitas y devoluciones.</p>
+<h4>La curva de ballena</h4>
+<p>Al ordenar los clientes por margen neto acumulado, suele aparecer una curva que sube, alcanza un m&aacute;ximo y <strong>vuelve a bajar</strong>: la utilidad acumulada llega a superar la utilidad total de la empresa, y los &uacute;ltimos clientes se la comen. Esa forma &mdash;conocida como curva de ballena&mdash; es la evidencia visual de que hay clientes que destruyen valor mientras figuran como importantes en el reporte de ventas.</p>
+<p>La conclusi&oacute;n correcta rara vez es &laquo;despidamos a ese cliente&raquo;. Suele ser renegociar: pedido m&iacute;nimo, frecuencia de entrega, plazo de pago o precio.</p>
+<h3 class="section">Ejercicio / caso pr&aacute;ctico</h3>
+<p><strong>Distribuidora Industrial Laguna, S.A. de C.V.</strong> factura $42,100,000 al a&ntilde;o entre doce clientes. Su tasa de financiamiento es del 18 % anual.</p>
+<table class="data">
+<thead>
+<tr>
+<th>Cliente</th>
+<th>Ventas</th>
+<th>Margen bruto</th>
+<th>Pedidos</th>
+<th>L&iacute;neas por pedido</th>
+<th>Entregas</th>
+<th>Visitas</th>
+<th>Devoluciones</th>
+<th>D&iacute;as de cr&eacute;dito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autoservicios del Norte</td>
+<td>$8,400,000</td>
+<td>18.5 %</td>
+<td>96</td>
+<td>42</td>
+<td>96</td>
+<td>24</td>
+<td>14</td>
+<td>75</td>
+</tr>
+<tr>
+<td>Cadena Hogar Express</td>
+<td>$6,900,000</td>
+<td>15.2 %</td>
+<td>186</td>
+<td>44</td>
+<td>186</td>
+<td>22</td>
+<td>41</td>
+<td>105</td>
+</tr>
+<tr>
+<td>Grupo Constructor Nazas</td>
+<td>$5,600,000</td>
+<td>21.2 %</td>
+<td>18</td>
+<td>6</td>
+<td>18</td>
+<td>9</td>
+<td>1</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Industrial Torre&oacute;n</td>
+<td>$4,300,000</td>
+<td>24.1 %</td>
+<td>24</td>
+<td>8</td>
+<td>24</td>
+<td>11</td>
+<td>2</td>
+<td>45</td>
+</tr>
+<tr>
+<td>S&uacute;per Abastos Lerdo</td>
+<td>$3,700,000</td>
+<td>19.8 %</td>
+<td>92</td>
+<td>29</td>
+<td>92</td>
+<td>16</td>
+<td>17</td>
+<td>75</td>
+</tr>
+<tr>
+<td>Ferretera La Laguna</td>
+<td>$3,200,000</td>
+<td>26.8 %</td>
+<td>28</td>
+<td>11</td>
+<td>28</td>
+<td>12</td>
+<td>2</td>
+<td>45</td>
+</tr>
+<tr>
+<td>Mayoreo del Bravo</td>
+<td>$2,400,000</td>
+<td>25.5 %</td>
+<td>31</td>
+<td>12</td>
+<td>31</td>
+<td>13</td>
+<td>4</td>
+<td>45</td>
+</tr>
+<tr>
+<td>Materiales G&oacute;mez</td>
+<td>$2,100,000</td>
+<td>29.5 %</td>
+<td>22</td>
+<td>9</td>
+<td>22</td>
+<td>10</td>
+<td>3</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Distribuidora Cerro</td>
+<td>$1,800,000</td>
+<td>31.2 %</td>
+<td>14</td>
+<td>7</td>
+<td>14</td>
+<td>6</td>
+<td>1</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Constructora Pe&ntilde;oles</td>
+<td>$1,500,000</td>
+<td>28.8 %</td>
+<td>12</td>
+<td>5</td>
+<td>12</td>
+<td>7</td>
+<td>1</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Comercial Matamoros</td>
+<td>$1,250,000</td>
+<td>33.5 %</td>
+<td>11</td>
+<td>5</td>
+<td>11</td>
+<td>5</td>
+<td>0</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Talleres Unidos</td>
+<td>$950,000</td>
+<td>34.8 %</td>
+<td>9</td>
+<td>4</td>
+<td>9</td>
+<td>4</td>
+<td>1</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Costos unitarios de las actividades comerciales:</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th>Actividad</th>
+<th>Generador</th>
+<th>Costo unitario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Procesamiento de pedido</td>
+<td>pedido</td>
+<td>$840</td>
+</tr>
+<tr>
+<td>Captura y surtido de l&iacute;nea</td>
+<td>l&iacute;nea de pedido</td>
+<td>$65</td>
+</tr>
+<tr>
+<td>Entrega</td>
+<td>entrega</td>
+<td>$1,250</td>
+</tr>
+<tr>
+<td>Visita del vendedor</td>
+<td>visita</td>
+<td>$1,900</td>
+</tr>
+<tr>
+<td>Gesti&oacute;n de devoluci&oacute;n</td>
+<td>devoluci&oacute;n</td>
+<td>$3,200</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mandato de la direcci&oacute;n.</strong> Uno distinto por equipo:</p>
+<table class="data">
+<thead>
+<tr>
+<th>Equipo</th>
+<th>Instrucci&oacute;n que recibi&oacute;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&laquo;Suban las ventas 10 % sin aumentar la fuerza de ventas.&raquo;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&laquo;Depuren la cartera: queremos menos clientes y m&aacute;s utilidad.&raquo;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&laquo;Prioricen a los clientes grandes, ah&iacute; est&aacute; el negocio.&raquo;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&laquo;Reduzcan el capital de trabajo invertido en clientes.&raquo;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&laquo;Suban la utilidad neta sin perder ning&uacute;n cliente.&raquo;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Se pide (cinco pasos):</strong></p>
+
+<h4>Paso 1 &middot; Rankear con la IA &middot; 10 min</h4>
+<p><strong>Entregable:</strong> la respuesta de la IA, copiada.</p>
+<p>Usa el <strong>prompt 1</strong>. P&eacute;gale <strong>solo</strong> las columnas de cliente, ventas y margen bruto. <strong>No le des todav&iacute;a</strong> las columnas de pedidos, l&iacute;neas, entregas, visitas, devoluciones ni d&iacute;as de cr&eacute;dito.</p>
+<p>P&iacute;dele el ranking de clientes y un plan para cumplir el mandato de tu equipo.</p>
+
+<h4>Paso 2 &middot; Anotar la predicci&oacute;n &middot; 5 min</h4>
+<p><strong>Entregable:</strong> tres nombres, escritos antes de calcular.</p>
+<p>Antes de seguir, escriban en una hoja:</p>
+<ol>
+<li>&iquest;Cu&aacute;l creen que es el cliente <strong>m&aacute;s</strong> rentable de los doce?</li>
+<li>&iquest;Cu&aacute;l el <strong>menos</strong> rentable?</li>
+<li>&iquest;Cu&aacute;ntos creen que est&aacute;n <strong>perdiendo</strong> dinero?</li>
+</ol>
+<p>Guarden la hoja. Se compara al final.</p>
+
+<h4>Paso 3 &middot; Recibir el dato que faltaba &middot; 10 min</h4>
+<p><strong>Entregable:</strong> la tabla de margen neto, completa.</p>
+<p>El profesor entrega ahora las columnas de actividad y de cr&eacute;dito, y la tabla de costos unitarios. Usa el <strong>prompt 2</strong>.</p>
+<table class="data">
+<thead>
+<tr>
+<th>Cliente</th>
+<th>Margen bruto</th>
+<th>Costo de servir</th>
+<th>Costo financiero</th>
+<th>Margen neto</th>
+<th>Margen neto %</th>
+<th>Lugar en bruto</th>
+<th>Lugar en neto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responde por escrito:</strong> &iquest;cu&aacute;ntos lugares se movi&oacute; el cliente que m&aacute;s cambi&oacute; de posici&oacute;n? &iquest;Por qu&eacute; la IA no pidi&oacute; estos datos?</p>
+
+<h4>Paso 4 &middot; Construir el tablero &middot; 15 min</h4>
+<p><strong>Entregable:</strong> un archivo HTML que funcione.</p>
+<p>Usa el <strong>prompt 3</strong> para generar un tablero con la curva de ballena, el ranking doble y los controles editables. &Aacute;brelo y prueba:</p>
+<ol>
+<li>&iquest;En qu&eacute; cliente alcanza su m&aacute;ximo la utilidad acumulada?</li>
+<li>Sube el costo de una entrega de $1,250 a $1,900. &iquest;Cu&aacute;ntos clientes quedan en negativo?</li>
+<li>Baja el plazo de Cadena Hogar Express de 105 a 45 d&iacute;as. &iquest;Alcanza para volverlo rentable?</li>
+</ol>
+<div class="note">
+<p>Puedes comparar con <a href="materiales/tablero-rentabilidad-clientes.html"><code>materiales/tablero-rentabilidad-clientes.html</code></a>. No es &laquo;la respuesta correcta&raquo;: es una referencia.</p>
+</div>
+
+<h4>Paso 5 &middot; Decidir y presentar &middot; 10 min</h4>
+<p><strong>Entregable:</strong> 6&ndash;8 l&iacute;neas.</p>
+<p>Reformula el mandato de tu equipo en una propuesta que incluya: qu&eacute; clientes se renegocian y con qu&eacute; condici&oacute;n concreta (pedido m&iacute;nimo, frecuencia de entrega, plazo, precio), cu&aacute;les no se tocan, y qu&eacute; pasar&iacute;a con la utilidad total si la propuesta funciona.</p>
+<p><strong>Plenaria.</strong> Se comparan las predicciones del paso 2 contra el resultado. Pregunta de cierre: <strong>&iquest;por qu&eacute; la respuesta no es &laquo;dejar de venderle al cliente que pierde&raquo;?</strong></p>
+
+<h3 class="section">Soluci&oacute;n / gu&iacute;a de soluci&oacute;n</h3>
+<details class="solution"><summary><strong>Mostrar gu&iacute;a para el profesor</strong></summary><div class="inner">
+
+<div class="ai-note">
+<p>⚠️ <strong>Nota de transparencia:</strong> esta gu&iacute;a de soluci&oacute;n se redact&oacute; con apoyo de IA al integrar el ejercicio al repositorio; las cifras se verificaron con c&oacute;digo contra <code>materiales/datos.csv</code>. Costo financiero calculado con 365 d&iacute;as. Pendiente de revisi&oacute;n docente.</p>
+</div>
+<h4>Resultados correctos (paso 3)</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Cliente</th>
+<th style="text-align: right;">Margen bruto</th>
+<th style="text-align: right;">Costo de servir</th>
+<th style="text-align: right;">Costo financiero</th>
+<th style="text-align: right;"><strong>Margen neto</strong></th>
+<th style="text-align: right;">Margen neto %</th>
+<th style="text-align: center;">Lugar en bruto</th>
+<th style="text-align: center;">Lugar en neto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grupo Constructor Nazas</td>
+<td style="text-align: right;">$1,187,200</td>
+<td style="text-align: right;">$64,940</td>
+<td style="text-align: right;">$165,699</td>
+<td style="text-align: right;"><strong>$956,561</strong></td>
+<td style="text-align: right;">17.1 %</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><strong>1</strong></td>
+</tr>
+<tr>
+<td>Industrial Torre&oacute;n</td>
+<td style="text-align: right;">$1,036,300</td>
+<td style="text-align: right;">$89,940</td>
+<td style="text-align: right;">$95,425</td>
+<td style="text-align: right;"><strong>$850,935</strong></td>
+<td style="text-align: right;">19.8 %</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>2</strong></td>
+</tr>
+<tr>
+<td>Autoservicios del Norte</td>
+<td style="text-align: right;">$1,554,000</td>
+<td style="text-align: right;">$553,120</td>
+<td style="text-align: right;">$310,685</td>
+<td style="text-align: right;"><strong>$690,195</strong></td>
+<td style="text-align: right;">8.2 %</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>3</strong></td>
+</tr>
+<tr>
+<td>Ferretera La Laguna</td>
+<td style="text-align: right;">$857,600</td>
+<td style="text-align: right;">$107,740</td>
+<td style="text-align: right;">$71,014</td>
+<td style="text-align: right;"><strong>$678,846</strong></td>
+<td style="text-align: right;">21.2 %</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><strong>4</strong></td>
+</tr>
+<tr>
+<td>Materiales G&oacute;mez</td>
+<td style="text-align: right;">$619,500</td>
+<td style="text-align: right;">$87,450</td>
+<td style="text-align: right;">$31,068</td>
+<td style="text-align: right;"><strong>$500,982</strong></td>
+<td style="text-align: right;">23.9 %</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"><strong>5</strong></td>
+</tr>
+<tr>
+<td>Distribuidora Cerro</td>
+<td style="text-align: right;">$561,600</td>
+<td style="text-align: right;">$50,230</td>
+<td style="text-align: right;">$26,630</td>
+<td style="text-align: right;"><strong>$484,740</strong></td>
+<td style="text-align: right;">26.9 %</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"><strong>6</strong></td>
+</tr>
+<tr>
+<td>Mayoreo del Bravo</td>
+<td style="text-align: right;">$612,000</td>
+<td style="text-align: right;">$126,470</td>
+<td style="text-align: right;">$53,260</td>
+<td style="text-align: right;"><strong>$432,270</strong></td>
+<td style="text-align: right;">18.0 %</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"><strong>7</strong></td>
+</tr>
+<tr>
+<td>Comercial Matamoros</td>
+<td style="text-align: right;">$418,750</td>
+<td style="text-align: right;">$36,065</td>
+<td style="text-align: right;">$18,493</td>
+<td style="text-align: right;"><strong>$364,192</strong></td>
+<td style="text-align: right;">29.1 %</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;"><strong>8</strong></td>
+</tr>
+<tr>
+<td>Constructora Pe&ntilde;oles</td>
+<td style="text-align: right;">$432,000</td>
+<td style="text-align: right;">$45,480</td>
+<td style="text-align: right;">$44,384</td>
+<td style="text-align: right;"><strong>$342,136</strong></td>
+<td style="text-align: right;">22.8 %</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"><strong>9</strong></td>
+</tr>
+<tr>
+<td>Talleres Unidos</td>
+<td style="text-align: right;">$330,600</td>
+<td style="text-align: right;">$31,950</td>
+<td style="text-align: right;">$14,055</td>
+<td style="text-align: right;"><strong>$284,595</strong></td>
+<td style="text-align: right;">30.0 %</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;"><strong>10</strong></td>
+</tr>
+<tr>
+<td>S&uacute;per Abastos Lerdo</td>
+<td style="text-align: right;">$732,600</td>
+<td style="text-align: right;">$450,500</td>
+<td style="text-align: right;">$136,849</td>
+<td style="text-align: right;"><strong>$145,251</strong></td>
+<td style="text-align: right;">3.9 %</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><strong>11</strong></td>
+</tr>
+<tr>
+<td>Cadena Hogar Express</td>
+<td style="text-align: right;">$1,048,800</td>
+<td style="text-align: right;">$1,093,700</td>
+<td style="text-align: right;">$357,288</td>
+<td style="text-align: right;"><strong>&minus;$402,188</strong></td>
+<td style="text-align: right;">&minus;5.8 %</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><strong>12</strong></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>$9,390,950</strong></td>
+<td style="text-align: right;"><strong>$2,737,585</strong></td>
+<td style="text-align: right;"><strong>$1,324,849</strong></td>
+<td style="text-align: right;"><strong>$5,328,516</strong></td>
+<td style="text-align: right;"><strong>12.7 %</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lo que hay que ver en la tabla:</strong></p>
+<ul>
+<li><strong>Un solo cliente destruye valor:</strong> Cadena Hogar Express. Su costo de servir ($1,093,700) ya es mayor que todo su margen bruto, antes del costo financiero.</li>
+<li><strong>El que m&aacute;s se mueve:</strong> Cadena Hogar Express, del lugar 3 al 12 (<strong>nueve lugares</strong>). Le sigue S&uacute;per Abastos Lerdo, del 6 al 11.</li>
+<li><strong>El m&aacute;s rentable en pesos</strong> es Grupo Constructor Nazas ($956,561). <strong>El de mayor margen neto en porcentaje</strong> es Talleres Unidos (30.0 %), el m&aacute;s peque&ntilde;o de los doce.</li>
+<li>El componente que m&aacute;s pesa en el costo de servir de Cadena Hogar Express es el de <strong>l&iacute;neas</strong>: 186 pedidos &times; 44 l&iacute;neas = 8,184 l&iacute;neas &times; $65 = $531,960.</li>
+</ul>
+<h4>Paso 4 &middot; Respuestas del tablero</h4>
+<ol>
+<li><strong>Curva de ballena.</strong> La utilidad acumulada alcanza su m&aacute;ximo en el cliente 11 (S&uacute;per Abastos Lerdo): <strong>$5,730,703</strong>, el 107.5 % de la utilidad neta total. El &uacute;ltimo cliente se come $402,188.</li>
+<li><strong>Entrega a $1,900.</strong> Sigue habiendo <strong>un solo</strong> cliente en negativo: Cadena Hogar Express baja a &minus;$523,088. S&uacute;per Abastos Lerdo queda en $85,451, muy cerca de cero.</li>
+<li><strong>Plazo de 105 a 45 d&iacute;as.</strong> <strong>No alcanza</strong>: Cadena Hogar Express mejora a &minus;$198,023, pero sigue perdiendo. Tampoco alcanza solo con consolidar entregas: con un pedido semanal (52 al a&ntilde;o, mismas l&iacute;neas totales) y 105 d&iacute;as sigue en &minus;$122,128. <strong>Las dos medidas juntas</strong> (pedido semanal y 45 d&iacute;as) lo llevan a cerca de <strong>+$82,000</strong>.</li>
+</ol>
+<h4>Paso 5 &middot; Respuesta a la pregunta de cierre</h4>
+<p>Dejar de venderle a Cadena Hogar Express elimina $1,048,800 de margen bruto, y no todo el costo de servir desaparece con &eacute;l: parte es costo fijo de la fuerza de ventas, del almac&eacute;n y de la flotilla. La salida correcta es <strong>renegociar las condiciones que generan el costo</strong>: pedido m&iacute;nimo o entregas consolidadas, plazo de pago, un cargo o una pol&iacute;tica para devoluciones (41 al a&ntilde;o, $131,200) y, si nada de eso es posible, el precio. El resto de la cartera no se toca; los clientes peque&ntilde;os con margen alto se protegen.</p>
+<p><strong>Por mandato:</strong></p>
+<table class="data">
+<thead>
+<tr>
+<th>Equipo</th>
+<th>Trampa del mandato</th>
+<th>Reformulaci&oacute;n razonable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 &middot; Subir ventas 10 %</td>
+<td>Crecer con clientes como Cadena Hogar Express aumenta la p&eacute;rdida</td>
+<td>Crecer en clientes de margen neto alto y renegociar al que pierde</td>
+</tr>
+<tr>
+<td>2 &middot; Depurar la cartera</td>
+<td>Es probable que la IA proponga eliminar a los peque&ntilde;os, que son los de mejor margen neto %</td>
+<td>Depurar condiciones, no clientes</td>
+</tr>
+<tr>
+<td>3 &middot; Priorizar a los grandes</td>
+<td>Dos de los tres clientes m&aacute;s grandes est&aacute;n entre los tres &uacute;ltimos en margen neto %</td>
+<td>Priorizar por margen neto, no por ventas</td>
+</tr>
+<tr>
+<td>4 &middot; Reducir capital de trabajo</td>
+<td>Es el &uacute;nico mandato alineado con la causa: los plazos de 75 y 105 d&iacute;as</td>
+<td>Bajar plazos a Cadena Hogar Express, Autoservicios del Norte y S&uacute;per Abastos Lerdo</td>
+</tr>
+<tr>
+<td>5 &middot; M&aacute;s utilidad sin perder clientes</td>
+<td>Exige renegociar en lugar de despedir</td>
+<td>Es el mandato que lleva directo a la respuesta correcta</td>
+</tr>
+</tbody>
+</table>
+<h4>Errores frecuentes del asistente de IA</h4>
+<table class="data">
+<thead>
+<tr>
+<th>Lo que suele hacer la IA</th>
+<th>Por qu&eacute; est&aacute; mal</th>
+<th>Qu&eacute; debe responder el alumno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordena por margen bruto y recomienda priorizar a Autoservicios del Norte y Cadena Hogar Express</td>
+<td>Supone que atender a todos cuesta lo mismo</td>
+<td>Se&ntilde;alar que no pidi&oacute; los datos de actividad</td>
+</tr>
+<tr>
+<td>Multiplica las l&iacute;neas por pedido por $65 sin multiplicar por el n&uacute;mero de pedidos</td>
+<td>Subestima el costo de l&iacute;neas de Cadena Hogar Express en m&aacute;s de $500,000</td>
+<td>Calcular l&iacute;neas totales = pedidos &times; l&iacute;neas por pedido</td>
+</tr>
+<tr>
+<td>Calcula el costo financiero como 18 % de las ventas</td>
+<td>Olvida el plazo: el inter&eacute;s corre solo durante los d&iacute;as de cr&eacute;dito</td>
+<td>Ventas &times; d&iacute;as &times; 18 % / 365</td>
+</tr>
+<tr>
+<td>Recomienda &laquo;dejar de venderle&raquo; al cliente que pierde</td>
+<td>Ignora la parte fija del costo de servir y el margen bruto que se pierde</td>
+<td>Proponer condiciones concretas de renegociaci&oacute;n</td>
+</tr>
+<tr>
+<td>Califica a Talleres Unidos como &laquo;cliente marginal&raquo; por su tama&ntilde;o</td>
+<td>Confunde tama&ntilde;o con rentabilidad</td>
+<td>Es el de mayor margen neto en porcentaje</td>
+</tr>
+</tbody>
+</table>
+<h4>R&uacute;brica</h4>
+<p>Ver <a href="materiales/04-rubrica.md"><code>materiales/04-rubrica.md</code></a>.</p>
+</div></details>
+<h3 class="section">Prompt sugerido para hacerlo con Claude o ChatGPT</h3>
+<div class="note">
+<p>Copiar y pegar en Claude o ChatGPT, <strong>en orden</strong>. No adelantes el prompt 2.</p>
+</div>
+
+<div class="prompt-box"><span class="label">🤖 Prompt 1 &mdash; primera respuesta (paso 1)</span>Act&uacute;a como analista comercial.
+
+Distribuidora Industrial Laguna factura $42,100,000 al a&ntilde;o entre doce
+clientes. Tasa de financiamiento: 18 % anual.
+
+[pega aqu&iacute; SOLO las columnas: cliente, ventas, margen_bruto_pct]
+
+Mandato de la direcci&oacute;n: [el mandato de tu equipo]
+
+1. Calcula el margen bruto en pesos de cada cliente y ord&eacute;nalos.
+2. Identifica a los clientes m&aacute;s y menos rentables.
+3. Prop&oacute;n un plan para cumplir el mandato: a qu&eacute; clientes te enfocar&iacute;as
+   y a cu&aacute;les no.
+
+Usa &uacute;nicamente los datos que te entregu&eacute;. Si para responder bien
+necesitas informaci&oacute;n que no te di, dilo en lugar de suponerla.</div>
+
+<div class="prompt-box"><span class="label">🤖 Prompt 2 &mdash; confrontaci&oacute;n (paso 3)</span>Te entrego las columnas que antes no ten&iacute;as: pedidos, l&iacute;neas por pedido,
+entregas, visitas, devoluciones y d&iacute;as de cr&eacute;dito.
+
+[pega el archivo datos.csv completo]
+
+Costos unitarios:
+- Procesamiento de pedido: $840 por pedido
+- Captura y surtido: $65 por l&iacute;nea de pedido
+- Entrega: $1,250 por entrega
+- Visita del vendedor: $1,900 por visita
+- Gesti&oacute;n de devoluci&oacute;n: $3,200 por devoluci&oacute;n
+Tasa de financiamiento: 18 % anual
+
+1. Calcula para cada cliente: costo de servir, costo financiero
+   (ventas &times; d&iacute;as de cr&eacute;dito &times; 18 % / 365) y margen neto.
+2. Ordena a los clientes por margen bruto y por margen neto, lado a lado.
+3. Se&ntilde;ala cu&aacute;ntos lugares se movi&oacute; cada uno.
+4. Identifica a los clientes con margen neto negativo.
+
+Despu&eacute;s responde: &iquest;tu plan anterior se enfocaba en alg&uacute;n cliente que
+destruye valor? &iquest;Por qu&eacute; no lo detectaste?</div>
+
+<div class="prompt-box"><span class="label">🤖 Prompt 3 &mdash; construir el tablero (paso 4)</span>Genera un tablero en UN SOLO archivo HTML, autocontenido, sin librer&iacute;as
+externas ni conexi&oacute;n a internet. Debe abrirse en cualquier navegador y
+poderse imprimir.
+
+Datos:
+[pega aqu&iacute; el contenido de datos.csv]
+Costos unitarios: pedido $840, l&iacute;nea $65, entrega $1,250, visita $1,900, devoluci&oacute;n $3,200. Tasa 18 % anual.
+
+El tablero debe tener:
+1. CONTROLES EDITABLES para los cinco costos unitarios y la tasa.
+2. Cuatro indicadores: ventas totales, margen bruto total, margen neto
+   total y n&uacute;mero de clientes que destruyen valor.
+3. CURVA DE BALLENA: clientes ordenados de mayor a menor margen neto,
+   con la utilidad acumulada; marca d&oacute;nde alcanza su m&aacute;ximo.
+4. Ranking doble lado a lado: por margen bruto y por margen neto, con
+   l&iacute;neas que conecten al mismo cliente para ver cu&aacute;nto se movi&oacute;.
+5. Barras de descomposici&oacute;n por cliente: margen bruto, costo de servir,
+   costo financiero y margen neto.
+6. Tabla de los doce con todas las columnas, resaltando los negativos.
+
+Reglas:
+- No inventes ning&uacute;n dato: todos los n&uacute;meros salen de los datos que te di.
+- Dibuja los gr&aacute;ficos en SVG generado por ti. No uses librer&iacute;as ni im&aacute;genes.
+- Los controles deben recalcular TODO al instante, sin recargar la p&aacute;gina.</div>
+
+<p><strong>Nota para el alumno:</strong> si la IA te pide datos que no tienes, dilo en la hoja de trabajo. Que los pida es buena se&ntilde;al; que los invente, no.</p>
+<div class="doc-suggestion">📎 <strong>Documentos a adjuntar:</strong> Ninguno: los datos se pegan directamente. Si el equipo trabaja con una empresa real, se sugiere adjuntar el reporte de ventas por cliente del &uacute;ltimo ejercicio y, si existe, el registro de pedidos, entregas y devoluciones.</div>
+<h3 class="section">Recursos adicionales</h3>
+<ul>
+<li>Kaplan, R. S. y Narayanan, V. G. (2001). Measuring and Managing Customer Profitability. <em>Journal of Cost Management</em>, 15(5), 5&ndash;15.</li>
+<li>Kaplan, R. S. y Anderson, S. R. (2007). <em>Time-Driven Activity-Based Costing</em>. Harvard Business School Press.</li>
+<li>Cooper, R. y Kaplan, R. S. (1991). Profit Priorities from Activity-Based Costing. <em>Harvard Business Review</em>, 69(3), 130&ndash;135.</li>
+<li>Materiales del ejercicio (caso, hoja de trabajo, prompts, r&uacute;brica, datos y tablero de referencia): ver la tabla en <em>C&oacute;mo usar este ejercicio en clase</em>.</li>
+</ul>
+    <div class="doc-footer">
+      Autor: Norma P. Rodríguez-Cándido · Actualizado: 2026-10-13 · Asistencia de IA: construcción del caso de doce clientes, cálculo de costos de servir, prompts, tabla de errores típicos y rúbrica; guía de solución redactada con apoyo de IA al integrar el ejercicio al repositorio; pendiente de revisión docente.
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón
+</footer>
+
+</body>
+</html>
