@@ -2,6 +2,12 @@
 # Define el formulario con el que los profesores capturan y editan ejercicios.
 # Cada ejercicio es un README.md con su ficha en el encabezado YAML.
 
+settings:
+  commit:
+    # Registra en cada commit el nombre y correo del profesor que guardó
+    # (si no, todos los cambios aparecen a nombre de la app de Pages CMS).
+    identity: user
+
 media:
   - name: materiales
     label: Materiales
