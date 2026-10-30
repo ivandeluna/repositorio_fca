@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "carreras/**/materiales/*.html"
+    - "carreras/**/materiales/*.csv"
+    - "carreras/**/materiales/*.svg"
+    - "carreras/**/*.svg"
+
+lang: es
+website:
+  title: "Repositorio FCA"
+  site-url: "https://ivandeluna.github.io/repositorio_fca/"
+  description: "Ejercicios y métodos para enseñar con IA · FCA UAdeC Unidad Torreón"
+  search:
+    location: navbar
+    type: overlay
+  page-navigation: true
+  back-to-top-navigation: true
+  navbar:
+    logo: assets/img/uadec-logo.png
+    title: "Repositorio FCA"
+    left:
+      - href: index.qmd
+        text: Catálogo
+      - text: Carreras
+        menu:
+          #CARRERAS#
+      - href: contribuir.qmd
+        text: Contribuir
+    right:
+      - icon: github
+        href: https://github.com/ivandeluna/repositorio_fca
+  page-footer:
+    left: "Universidad Autónoma de Coahuila · Facultad de Contaduría y Administración, Unidad Torreón"
+    right: "Contenido en Markdown · generado con Quarto"
+
+format:
+  html:
+    theme:
+      light: [cosmo, estilos.scss]
+    toc: true
+    toc-title: "En esta página"
+    toc-depth: 2
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+    reference-location: margin
+    lightbox: true
+    link-external-newwindow: true

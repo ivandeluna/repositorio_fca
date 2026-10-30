@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Crea el esqueleto de un ejercicio nuevo (carpeta + README.md + metadata.yml +
-index.html) dentro de una carrera y materia — creando la carrera y/o la
+Crea el esqueleto de un ejercicio nuevo (carpeta + README.md con encabezado
+YAML + index.html) dentro de una carrera y materia — creando la carrera y/o la
 materia si todavía no existen.
 
 Uso interactivo:
@@ -27,6 +27,10 @@ import argparse
 import re
 import unicodedata
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ejercicio_io import escribir_ejercicio  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CARRERAS_DIR = ROOT / "carreras"
@@ -132,15 +136,7 @@ def ensure_materia(carrera_slug, nombre, descripcion=""):
     return slug
 
 
-README_TEMPLATE = """# {titulo}
-
-**Carrera:** {carrera}
-**Materia:** {materia}
-**Tema:** {tema}
-**Nivel:** {nivel}
-**Duración estimada:** {duracion}
-
-## Objetivo de aprendizaje
+README_TEMPLATE = """## Objetivo de aprendizaje
 
 [¿Qué debe poder hacer el alumno al terminar este ejercicio?]
 
@@ -173,18 +169,6 @@ README_TEMPLATE = """# {titulo}
 - [Plantillas, lecturas, datasets de apoyo]
 """
 
-METADATA_TEMPLATE = """titulo: "{titulo}"
-carrera: "{carrera}"
-materia: "{materia}"
-tema: "{tema}"
-nivel: "{nivel}"
-duracion_estimada: "{duracion}"
-tipo: "Ejercicio práctico"
-asistencia_ia: "[describir qué tanto se usó IA para redactar este ejercicio]"
-autor: "{autor}"
-fecha: "{fecha}"
-tags: []
-"""
 
 INDEX_HTML_TEMPLATE = """<!doctype html>
 <html lang="es">
@@ -312,8 +296,14 @@ def main():
     ctx = dict(titulo=titulo, carrera=carrera_nombre, materia=materia_nombre,
                tema=tema, nivel=nivel, duracion=duracion, autor=autor, fecha=fecha)
 
-    (ej_dir / "README.md").write_text(README_TEMPLATE.format(**ctx), encoding="utf-8")
-    (ej_dir / "metadata.yml").write_text(METADATA_TEMPLATE.format(**ctx), encoding="utf-8")
+    meta = {
+        "titulo": titulo, "carrera": carrera_nombre, "materia": materia_nombre, "tema": tema,
+        "nivel": nivel, "duracion_estimada": duracion, "tipo": "Ejercicio práctico",
+        "autor": autor, "fecha": fecha, "tags": [],
+        "asistencia_ia": "[describir qué tanto se usó IA para redactar este ejercicio]",
+        "revisado_por_docente": False,
+    }
+    escribir_ejercicio(ej_dir, meta, README_TEMPLATE.format(**ctx))
     (ej_dir / "index.html").write_text(INDEX_HTML_TEMPLATE.format(**ctx), encoding="utf-8")
 
     rel = ej_dir.relative_to(ROOT)

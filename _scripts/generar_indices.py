@@ -4,7 +4,7 @@ Regenera los índices del repositorio (README.md + index.html) en los niveles
 de raíz, carrera y materia, a partir de:
   - carreras/<carrera>/_info.yml
   - carreras/<carrera>/<materia>/_info.yml
-  - carreras/<carrera>/<materia>/<ejercicio>/metadata.yml
+  - carreras/<carrera>/<materia>/<ejercicio>/README.md (su encabezado YAML)
 
 NO toca el contenido de los ejercicios (README.md / index.html dentro de cada
 carpeta de ejercicio) — esos se siguen redactando a mano / con ayuda de IA.
@@ -21,6 +21,8 @@ except ImportError:
     sys.exit("Falta PyYAML. Instálalo con:  pip3 install pyyaml --break-system-packages")
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ejercicio_io import leer_ejercicio  # noqa: E402
 CARRERAS_DIR = ROOT / "carreras"
 
 
@@ -34,7 +36,7 @@ def slug_title(slug):
 
 
 def collect():
-    """Recorre carreras/*/*/*/metadata.yml y arma la estructura anidada."""
+    """Recorre carreras/*/*/*/README.md y arma la estructura anidada."""
     carreras = []
     if not CARRERAS_DIR.is_dir():
         sys.exit(f"No existe {CARRERAS_DIR}")
@@ -68,10 +70,10 @@ def collect():
             for ej_dir in sorted(materia_dir.iterdir()):
                 if not ej_dir.is_dir() or ej_dir.name.startswith("_"):
                     continue
-                meta_path = ej_dir / "metadata.yml"
-                if not meta_path.exists():
+                leido = leer_ejercicio(ej_dir)
+                if leido is None:
                     continue
-                meta = read_yaml(meta_path)
+                meta = leido[0]
                 materia["ejercicios"].append({
                     "slug": ej_dir.name,
                     "titulo": meta.get("titulo", slug_title(ej_dir.name)),
@@ -169,7 +171,7 @@ Catálogo de métodos, dinámicas y ejercicios de clase usados por profesores de
 
 Ver la guía en [`_docs/CONTRIBUIR.md`](./_docs/CONTRIBUIR.md) y usar la plantilla en [`_plantillas/plantilla-ejercicio.md`](./_plantillas/plantilla-ejercicio.md).
 
-> Este README y sus páginas HTML se generan automáticamente con `_scripts/generar_indices.py` — no los edites a mano, edita los `_info.yml` / `metadata.yml` correspondientes y vuelve a correr el script.
+> Este README y sus páginas HTML se generan automáticamente con `_scripts/generar_indices.py` — no los edites a mano, edita los `_info.yml` o el encabezado YAML del `README.md` de cada ejercicio y vuelve a correr el script.
 """
     write(ROOT / "README.md", readme)
 

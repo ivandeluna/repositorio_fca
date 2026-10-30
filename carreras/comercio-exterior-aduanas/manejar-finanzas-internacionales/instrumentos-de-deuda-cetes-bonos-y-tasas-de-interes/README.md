@@ -1,10 +1,16 @@
-# Instrumentos de deuda: Cetes, bonos y tasas de interés
-
-**Carrera:** Comercio Exterior y Aduanas
-**Materia:** Manejar Finanzas Internacionales
-**Tema:** Instrumentos de deuda
-**Nivel:** Introductorio
-**Duración estimada:** 40 min
+---
+titulo: 'Instrumentos de deuda: Cetes, bonos y tasas de interés'
+carrera: Comercio Exterior y Aduanas
+materia: Manejar Finanzas Internacionales
+tema: Instrumentos de deuda
+nivel: Introductorio
+duracion_estimada: 40 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-05'
+tags: [Cetes, bonos, tasas de interés, tipo de cambio, mercado de deuda]
+asistencia_ia: Temas y enfoque (tipo de cambio y tasas de interés, nivel sencillo) definidos por el profesor; teoría, caso con datos ilustrativos, guía de solución y prompt redactados con apoyo de IA; cálculos verificados con código. Pendiente de revisión docente.
+---
 
 ## Objetivo de aprendizaje
 

@@ -26,29 +26,23 @@ Repositorio/
     │   └── aplicar-administracion-finanzas/
     │       ├── README.md              ← índice de ejercicios de la materia
     │       ├── ciclo-conversion-efectivo/
-    │       │   ├── README.md          ← teoría + ejercicio (el contenido real)
-    │       │   └── metadata.yml       ← metadatos estructurados (para catalogar/filtrar después)
+    │       │   └── README.md          ← ficha (encabezado YAML) + teoría + ejercicio
     │       ├── administracion-de-cuentas-por-cobrar/
-    │       │   ├── README.md
-    │       │   └── metadata.yml
+    │       │   └── README.md
     │       └── administracion-de-inventario/
-    │           ├── README.md
-    │           └── metadata.yml
+    │           └── README.md
     ├── comercio-exterior-aduanas/
     │   ├── README.md
     │   ├── manejar-finanzas-internacionales/
     │   │   ├── README.md
     │   │   ├── arbitraje-tipo-cambio-tasas-interes/
-    │   │   │   ├── README.md
-    │   │   │   └── metadata.yml
+    │   │   │   └── README.md
     │   │   └── amortizacion-de-prestamos/
-    │   │       ├── README.md
-    │   │       └── metadata.yml
+    │   │       └── README.md
     │   └── econometria/
     │       ├── README.md
     │       └── regresion-lineal-simple/
-    │           ├── README.md
-    │           └── metadata.yml
+    │           └── README.md
     ├── administracion-empresas/
     │   └── README.md
     └── materias-comunes/
@@ -58,8 +52,7 @@ Repositorio/
             ├── README.md
             ├── _info.yml
             └── medidas-de-tendencia-central/
-                ├── README.md
-                └── metadata.yml
+                └── README.md
 ```
 
 > **Nota sobre materias compartidas:** cuando una materia (como Estadística Básica) la cursan las tres carreras por igual, no se duplica dentro de cada una — vive una sola vez bajo la "carrera" especial `materias-comunes`, que aparece como una cuarta tarjeta más en el catálogo raíz. El generador de índices la trata igual que cualquier otra carrera, así que no requirió cambios al script.
@@ -68,10 +61,9 @@ Jerarquía: **Carrera → Materia → Ejercicio/Método**. Cada nivel es una car
 
 ## 3. Anatomía de un ejercicio (la unidad mínima del repositorio)
 
-Cada ejercicio vive en su propia carpeta y contiene:
+Cada ejercicio vive en su propia carpeta y es **un solo archivo**, su `README.md` (desde 2026-10-30; antes la ficha vivía aparte en `metadata.yml`). Así lo puede editar Pages CMS. Tiene dos partes:
 
-1. **`README.md`** — el documento de contenido, con esta forma:
-   - Encabezado con metadatos rápidos (materia, carrera, nivel, duración estimada)
+1. **Contenido**, con esta forma:
    - **Objetivo de aprendizaje**
    - **Teoría** (la parte "a mano + IA": redactada por el profesor, pulida o ampliada con ayuda de IA cuando aplique — se marca explícitamente qué partes tuvieron asistencia de IA, por transparencia académica)
    - **Ejercicio / caso práctico**
@@ -79,8 +71,9 @@ Cada ejercicio vive en su propia carpeta y contiene:
    - **Prompt sugerido para hacerlo con Claude o ChatGPT** (un prompt listo para copiar/pegar que resuelva o explique el ejercicio, más una nota de qué documentos conviene adjuntar — p. ej. "se sugiere agregar el Estado de Resultados" — o "ninguno" si los datos caben en el prompt)
    - **Recursos adicionales** (lecturas, plantillas de Excel, datasets de apoyo)
 
-2. **`metadata.yml`** — ficha estructurada, pensada para que en el futuro se pueda generar un índice automático o un buscador:
+2. **Ficha** en el encabezado YAML, al inicio del archivo entre dos líneas `---`. De ahí salen los índices, los filtros del sitio y el formulario del CMS:
    ```yaml
+   ---
    titulo: "Ciclo de Conversión de Efectivo"
    carrera: "Contador Público"
    materia: "Aplicar Administración de las Finanzas"
@@ -92,7 +85,11 @@ Cada ejercicio vive en su propia carpeta y contiene:
    autor: "Iván de Luna-Aldape"
    fecha: "2026-09-10"
    tags: ["capital de trabajo", "liquidez", "finanzas corporativas"]
+   revisado_por_docente: false
+   ---
    ```
+
+   La carrera y la materia que se muestran en el sitio se toman de la carpeta, no de la ficha.
 
 Esto es opcional de llenar al 100% desde el día uno, pero tenerlo desde el ejemplo piloto evita tener que "retro-etiquetar" decenas de ejercicios después.
 
@@ -102,7 +99,7 @@ Esto es opcional de llenar al 100% desde el día uno, pero tenerlo desde el ejem
 2. **Fase 1 — Poblar Contador Público:** agregar 3–5 ejercicios más de "Aplicar Administración de las Finanzas" y abrir 1–2 materias adicionales de la misma carrera.
 3. **Fase 2 — Cubrir las otras dos carreras:** Comercio Exterior y Aduanas ya tiene dos materias con ejercicio piloto ✅ (Manejar Finanzas Internacionales → Arbitraje con Tipo de Cambio y Diferencial de Tasas de Interés; Econometría → Regresión Lineal Simple). Administración de Empresas sigue pendiente.
 4. **Fase 3 — Publicar en GitHub:** ✅ repositorio git inicializado localmente con el primer commit. Falta el paso final (crear el repo remoto en GitHub y hacer el primer `push`) — ver la sección 7 más abajo.
-5. **Fase 4 — Automatizar los índices:** ✅ `_scripts/generar_indices.py` regenera automáticamente el `README.md` y `index.html` de raíz, carrera y materia a partir de los `_info.yml` y `metadata.yml` — ya no se editan a mano.
+5. **Fase 4 — Automatizar los índices:** ✅ `_scripts/generar_indices.py` regenera automáticamente el `README.md` y `index.html` de raíz, carrera y materia a partir de los `_info.yml` y de la ficha de cada `README.md` — ya no se editan a mano.
 
 ## 5. Convenciones de nombres
 
@@ -116,7 +113,7 @@ El sitio incluye el logo de la **Universidad Autónoma de Coahuila (UAdeC)** en 
 
 ## 7. Qué se construyó ya como prototipo
 
-- Estructura completa de carpetas, con `README.md` de teoría + ejercicio y `metadata.yml` para:
+- Estructura completa de carpetas, con `README.md` de ficha + teoría + ejercicio para:
   - Contador Público → Aplicar Administración de las Finanzas → **Ciclo de Conversión de Efectivo**
   - Contador Público → Aplicar Administración de las Finanzas → **Administración de Cuentas por Cobrar** (evaluación de una propuesta de descuento por pronto pago vs. costo de oportunidad de CxC)
   - Contador Público → Aplicar Administración de las Finanzas → **Administración de Inventario** (EOQ, punto de reorden con/sin inventario de seguridad, y su relación con JIT)
@@ -144,8 +141,29 @@ Revísalo directamente en tu carpeta `FCA/Repositorio` (abre `index.html` para l
 **Flujo para agregar un ejercicio nuevo (carrera, materia o ejercicio) de aquí en adelante:**
 
 1. `python3 _scripts/nuevo_ejercicio.py` (con argumentos o interactivo) — crea las carpetas y archivos con la estructura estándar, incluyendo carrera/materia nuevas si hace falta.
-2. Editar el `README.md` (y opcionalmente el `index.html`) del ejercicio con el contenido real.
+2. Editar el `README.md` (y opcionalmente el `index.html`) del ejercicio con el contenido real, o hacerlo desde Pages CMS (sección 9).
 3. `python3 _scripts/generar_indices.py` — regenera automáticamente todos los índices (raíz, carrera, materia).
-4. `git add -A && git commit -m "Agrega ejercicio: <nombre>" && git push`
+4. `git add -A && git commit -m "Agrega ejercicio: <nombre>" && git push` — al hacer push, GitHub Actions publica el sitio.
 
 Los únicos archivos que se editan a mano son los de contenido de cada ejercicio (`README.md` / `index.html` dentro de su carpeta) y los `_info.yml` de carrera/materia si se quiere ajustar su descripción u orden. Todo lo demás (índices) se regenera solo.
+
+## 9. Sitio en Quarto y captura con Pages CMS
+
+**Sitio.** `_scripts/construir_sitio_quarto.py` arma un proyecto Quarto en `sitio/` (ignorado por git) con catálogo, buscador, filtros por materia y nivel, página por carrera y materia, solución y guía docente plegadas, y los materiales de cada ejercicio. La configuración, los estilos y la plantilla de tarjetas viven en `_scripts/quarto/`. Para verlo en local:
+
+```
+python3 _scripts/construir_sitio_quarto.py
+cd sitio && quarto preview
+```
+
+**Publicación.** `.github/workflows/publicar-sitio.yml` corre en cada push a `main`: genera el proyecto, lo renderiza con Quarto y lo publica en GitHub Pages (`https://ivandeluna.github.io/repositorio_fca/`).
+
+**Captura.** `.pages.yml` define el formulario de [Pages CMS](https://pagescms.org): los profesores entran a app.pagescms.org con una invitación por correo, navegan carreras y materias como carpetas, llenan la ficha y el contenido, y al guardar se hace un commit que dispara la publicación. El coordinador marca `revisado_por_docente` cuando revisa un ejercicio; mientras no, el sitio lo muestra como «Pendiente de revisión docente». Las carreras y materias nuevas (con su `_info.yml`) se siguen creando con `nuevo_ejercicio.py`.
+
+**Activación (una sola vez, con la cuenta del dueño del repo):**
+
+1. En GitHub → *Settings* → *Pages*, elegir **GitHub Actions** como fuente.
+2. Entrar a app.pagescms.org con GitHub, instalar la GitHub App en la cuenta `ivandeluna` y darle acceso a `repositorio_fca`.
+3. Abrir el repositorio en Pages CMS y probar: editar un ejercicio, guardar y revisar que la acción publique.
+4. Invitar a los profesores por correo desde la configuración de colaboradores de Pages CMS.
+

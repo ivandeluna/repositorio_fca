@@ -1,10 +1,16 @@
-# Amortización de Préstamos
-
-**Carrera:** Comercio Exterior y Aduanas
-**Materia:** Manejar Finanzas Internacionales
-**Tema:** Amortización
-**Nivel:** Intermedio
-**Duración estimada:** 55 min
+---
+titulo: Amortización de Préstamos
+carrera: Comercio Exterior y Aduanas
+materia: Manejar Finanzas Internacionales
+tema: Amortización
+nivel: Intermedio
+duracion_estimada: 55 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-01'
+tags: [amortización, sistema francés, pago anticipado, finanzas internacionales]
+asistencia_ia: Redacción de teoría y caso práctico con apoyo de IA a partir del lineamiento temático del profesor; cálculos verificados numéricamente.
+---
 
 ## Objetivo de aprendizaje
 

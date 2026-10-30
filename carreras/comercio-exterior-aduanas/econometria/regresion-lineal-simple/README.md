@@ -1,10 +1,16 @@
-# Regresión Lineal Simple
-
-**Carrera:** Comercio Exterior y Aduanas
-**Materia:** Econometría
-**Tema:** Modelos de regresión — estimación por Mínimos Cuadrados Ordinarios (MCO)
-**Nivel:** Introductorio
-**Duración estimada:** 50 min
+---
+titulo: Regresión Lineal Simple
+carrera: Comercio Exterior y Aduanas
+materia: Econometría
+tema: Modelos de regresión — estimación por Mínimos Cuadrados Ordinarios (MCO)
+nivel: Introductorio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+autor: Carmen Borrego-Salcido
+fecha: '2026-09-10'
+tags: [econometría, regresión lineal, mínimos cuadrados ordinarios, tipo de cambio, exportaciones]
+asistencia_ia: Redacción de teoría y caso práctico generados con apoyo de IA a partir del lineamiento del profesor; pendiente de revisión y ajuste por el profesor antes de usarse en clase.
+---
 
 ## Objetivo de aprendizaje
 

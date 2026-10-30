@@ -1,0 +1,19 @@
+```{=html}
+<div class="list grid quarto-listing-cols-3 tarjetas">
+<% for (const item of items) { %>
+<div class="g-col-1 tarjeta-wrap" <%= metadataAttrs(item) %>>
+  <a href="<%- item.path %>" class="tarjeta car-<%= item.carrera_slug %>">
+    <span class="t-carrera"><%= item.carrera %></span>
+    <span class="t-materia"><%= item.materia %></span>
+    <h3 class="listing-title"><%= item.title %></h3>
+    <% if (item.description) { %><p class="t-desc listing-description"><%= item.description %></p><% } %>
+    <span class="t-pie">
+      <% if (item.nivel) { %><span class="t-nivel"><%= item.nivel %></span><% } %>
+      <% if (item.duracion) { %><span><%= item.duracion %></span><% } %>
+      <% if (item.author) { %><span class="t-autor listing-author"><%= item.author %></span><% } %>
+    </span>
+  </a>
+</div>
+<% } %>
+</div>
+```

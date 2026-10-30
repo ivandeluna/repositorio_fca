@@ -1,10 +1,19 @@
-# El mejor cliente de la empresa está perdiendo dinero
-
-**Carrera:** Administración de Empresas
-**Materia:** Administración de Ventas
-**Tema:** Rentabilidad por cliente y costo de servir
-**Nivel:** Intermedio
-**Duración estimada:** 50 min
+---
+titulo: El mejor cliente de la empresa está perdiendo dinero
+carrera: Administración de Empresas
+materia: Administración de Ventas
+tema: Rentabilidad por cliente y costo de servir
+nivel: Intermedio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+modalidad: Equipos
+entregable_alumno: Tablero HTML funcional + propuesta escrita
+autor: Norma P. Rodríguez-Cándido
+fecha: '2026-10-13'
+tags: [rentabilidad por cliente, costo de servir, curva de ballena, costeo por actividades, administración de ventas, pensamiento crítico con IA]
+asistencia_ia: Construcción del caso, cálculos verificados con código, prompts, tabla de errores típicos del asistente y rúbrica. Guía de solución del README redactada con apoyo de IA al integrar al repositorio (2026-10-18), con cifras verificadas con código. Pendiente de revisión docente.
+revisado_por_docente: false
+---
 
 > ### 🎯 El gancho
 > **El segundo cliente en ventas y tercero en margen bruto resulta ser el último en margen neto: pierde $402,188 al año.** Y el cliente más pequeño de los doce es el de mayor margen neto en porcentaje.

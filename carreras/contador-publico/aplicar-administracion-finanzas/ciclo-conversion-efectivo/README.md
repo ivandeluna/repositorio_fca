@@ -1,10 +1,16 @@
-# Ciclo de Conversión de Efectivo
-
-**Carrera:** Contador Público
-**Materia:** Aplicar Administración de las Finanzas
-**Tema:** Administración del capital de trabajo
-**Nivel:** Intermedio
-**Duración estimada:** 50 min
+---
+titulo: Ciclo de Conversión de Efectivo
+carrera: Contador Público
+materia: Aplicar Administración de las Finanzas
+tema: Administración del capital de trabajo
+nivel: Intermedio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-09-10'
+tags: [capital de trabajo, liquidez, finanzas corporativas, gestión de inventarios, cuentas por cobrar, cuentas por pagar]
+asistencia_ia: Redacción de teoría y caso práctico generados con apoyo de IA a partir del lineamiento del profesor; pendiente de revisión y ajuste por el profesor antes de usarse en clase.
+---
 
 ## Objetivo de aprendizaje
 

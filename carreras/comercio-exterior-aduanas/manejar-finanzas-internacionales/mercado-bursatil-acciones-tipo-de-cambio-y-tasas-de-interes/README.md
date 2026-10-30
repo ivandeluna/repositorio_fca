@@ -1,10 +1,16 @@
-# Mercado bursátil: acciones, tipo de cambio y tasas de interés
-
-**Carrera:** Comercio Exterior y Aduanas
-**Materia:** Manejar Finanzas Internacionales
-**Tema:** Acciones y mercado bursátil
-**Nivel:** Introductorio
-**Duración estimada:** 40 min
+---
+titulo: 'Mercado bursátil: acciones, tipo de cambio y tasas de interés'
+carrera: Comercio Exterior y Aduanas
+materia: Manejar Finanzas Internacionales
+tema: Acciones y mercado bursátil
+nivel: Introductorio
+duracion_estimada: 40 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-05'
+tags: [acciones, BMV, SIC, tipo de cambio, tasas de interés, modelo de Gordon]
+asistencia_ia: Temas y enfoque (tipo de cambio y tasas de interés, nivel sencillo) definidos por el profesor; teoría, caso con datos ilustrativos, guía de solución y prompt redactados con apoyo de IA; cálculos verificados con código. Pendiente de revisión docente.
+---
 
 ## Objetivo de aprendizaje
 

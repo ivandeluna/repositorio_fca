@@ -1,0 +1,97 @@
+# Configuración de Pages CMS (https://pagescms.org)
+# Define el formulario con el que los profesores capturan y editan ejercicios.
+# Cada ejercicio es un README.md con su ficha en el encabezado YAML.
+
+media:
+  - name: materiales
+    label: Materiales
+    input: carreras
+    output: carreras
+
+content:
+  - name: ejercicios
+    label: Ejercicios
+    type: collection
+    path: carreras
+    format: yaml-frontmatter
+    subfolders: true
+    filename: "{primary}/README.md"
+    exclude: [_info.yml, index.html]
+    view:
+      layout: tree
+      node:
+        filename: README.md
+        hideDirs: others
+      primary: titulo
+      fields: [titulo, nivel, autor, revisado_por_docente]
+      search: [titulo, tema, autor, tags]
+      sort: [titulo, fecha]
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+        required: true
+      - name: carrera
+        label: Carrera
+        type: string
+        readonly: true
+        description: Se toma de la carpeta donde está el ejercicio.
+      - name: materia
+        label: Materia
+        type: string
+        readonly: true
+        description: Se toma de la carpeta donde está el ejercicio.
+      - name: tema
+        label: Tema
+        type: string
+        description: Tema específico dentro de la materia.
+      - name: nivel
+        label: Nivel
+        type: select
+        options:
+          values: [Introductorio, Intermedio, Avanzado]
+      - name: duracion_estimada
+        label: Duración estimada
+        type: string
+        description: "Por ejemplo: 50 min"
+      - name: tipo
+        label: Tipo
+        type: select
+        options:
+          values: [Ejercicio práctico, Estudio de caso, Dinámica de clase, Método de enseñanza]
+      - name: modalidad
+        label: Modalidad
+        type: select
+        options:
+          values: [Individual, Equipos, Grupal]
+      - name: entregable_alumno
+        label: Entregable del alumno
+        type: string
+      - name: autor
+        label: Autor(a)
+        type: string
+        required: true
+      - name: fecha
+        label: Fecha
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: tags
+        label: Etiquetas
+        type: string
+        list: true
+      - name: asistencia_ia
+        label: Uso de IA en este material
+        type: text
+        description: Qué partes se redactaron o verificaron con apoyo de IA.
+      - name: revisado_por_docente
+        label: Revisado por el coordinador
+        type: boolean
+        default: false
+        description: Lo marca el coordinador después de revisar el ejercicio.
+      - name: body
+        label: Contenido
+        type: code
+        options:
+          format: markdown
+        description: "Usa los encabezados de la plantilla: ## Objetivo de aprendizaje, ## Teoría, ## Ejercicio / caso práctico, ## Solución / guía de solución, ## Prompt sugerido..., ## Recursos adicionales."

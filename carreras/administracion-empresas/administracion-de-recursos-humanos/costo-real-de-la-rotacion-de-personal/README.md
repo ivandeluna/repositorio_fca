@@ -1,10 +1,19 @@
-# Costo real de la rotación de personal
-
-**Carrera:** Administración de Empresas
-**Materia:** Administración de Recursos Humanos
-**Tema:** Rotación de personal y su impacto financiero
-**Nivel:** Intermedio
-**Duración estimada:** 50 min
+---
+titulo: Costo real de la rotación de personal
+carrera: Administración de Empresas
+materia: Administración de Recursos Humanos
+tema: Rotación de personal y su impacto financiero
+nivel: Intermedio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+modalidad: Equipos
+entregable_alumno: Tablero HTML funcional + propuesta escrita
+autor: Norma P. Rodríguez-Cándido
+fecha: '2026-10-13'
+tags: [rotación de personal, curva de aprendizaje, costo de oportunidad, recursos humanos, pensamiento crítico con IA]
+asistencia_ia: Construcción del caso, cálculos verificados con código, prompts, tabla de errores típicos del asistente y rúbrica. Pendiente de revisión docente.
+revisado_por_docente: false
+---
 
 > ### 🎯 El gancho
 > **La productividad perdida durante la curva de aprendizaje pesa entre 30 % y 49 % del costo total de la rotación. No aparece en ninguna cuenta contable, y el asistente de IA casi nunca la calcula.**

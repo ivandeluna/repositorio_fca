@@ -1,10 +1,16 @@
-# Medidas de Tendencia Central
-
-**Carrera:** Materias Comunes (Contador Público, Comercio Exterior y Aduanas, Administración de Empresas)
-**Materia:** Estadística Básica
-**Tema:** Medidas de tendencia central: media, mediana y moda
-**Nivel:** Introductorio
-**Duración estimada:** 30 min
+---
+titulo: Medidas de Tendencia Central
+carrera: Materias Comunes (Contador Público, Comercio Exterior y Aduanas, Administración de Empresas)
+materia: Estadística Básica
+tema: 'Medidas de tendencia central: media, mediana y moda'
+nivel: Introductorio
+duracion_estimada: 30 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-01'
+tags: [estadística descriptiva, media, mediana, moda, medidas de tendencia central, distribución normal]
+asistencia_ia: Teoría, ejercicio y prompts redactados con apoyo de IA a partir del lineamiento temático del profesor; el caso práctico y su solución fueron agregados por IA (el borrador original no incluía un ejercicio numérico) — revisar antes de usar en clase.
+---
 
 ## Objetivo de aprendizaje
 

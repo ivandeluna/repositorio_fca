@@ -1,10 +1,16 @@
-# Derivados III: swaps de tasa de interés y de divisas
-
-**Carrera:** Comercio Exterior y Aduanas
-**Materia:** Manejar Finanzas Internacionales
-**Tema:** Derivados: swaps
-**Nivel:** Introductorio
-**Duración estimada:** 40 min
+---
+titulo: 'Derivados III: swaps de tasa de interés y de divisas'
+carrera: Comercio Exterior y Aduanas
+materia: Manejar Finanzas Internacionales
+tema: 'Derivados: swaps'
+nivel: Introductorio
+duracion_estimada: 40 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-05'
+tags: [derivados, swaps, TIIE de Fondeo, swap de divisas, tasas de interés]
+asistencia_ia: Temas y enfoque (tipo de cambio y tasas de interés, nivel sencillo) definidos por el profesor; teoría, caso con datos ilustrativos, guía de solución y prompt redactados con apoyo de IA; cálculos verificados con código. Pendiente de revisión docente.
+---
 
 ## Objetivo de aprendizaje
 

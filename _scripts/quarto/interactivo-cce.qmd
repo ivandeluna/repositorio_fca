@@ -1,0 +1,63 @@
+
+### Calculadora interactiva (para explorar en clase)
+
+Mueve los valores para ver cómo cambia el ciclo. Los valores iniciales son los de Comercial Laguna; úsala **después** de que el grupo haya hecho el cálculo a mano.
+
+```{=html}
+<div class="interactivo calc-cce">
+  <div class="calc-inputs">
+    <label for="cce-costo">Costo de ventas anual <output id="o-costo"></output></label>
+    <input type="range" id="cce-costo" min="5000000" max="40000000" step="250000" value="18250000">
+    <label for="cce-ventas">Ventas a crédito <output id="o-ventas"></output></label>
+    <input type="range" id="cce-ventas" min="5000000" max="50000000" step="250000" value="24000000">
+    <label for="cce-inv">Inventario promedio <output id="o-inv"></output></label>
+    <input type="range" id="cce-inv" min="0" max="8000000" step="50000" value="2500000">
+    <label for="cce-cxc">Cuentas por cobrar promedio <output id="o-cxc"></output></label>
+    <input type="range" id="cce-cxc" min="0" max="8000000" step="50000" value="2300000">
+    <label for="cce-cxp">Cuentas por pagar promedio <output id="o-cxp"></output></label>
+    <input type="range" id="cce-cxp" min="0" max="8000000" step="50000" value="1900000">
+    <button type="button" id="cce-reset">Volver a los datos del caso</button>
+  </div>
+  <div class="calc-out">
+    <div class="calc-row"><span>DIO</span><div class="calc-track"><i id="b-dio"></i></div><b id="v-dio"></b></div>
+    <div class="calc-row"><span>DSO</span><div class="calc-track"><i id="b-dso"></i></div><b id="v-dso"></b></div>
+    <div class="calc-row neg"><span>− DPO</span><div class="calc-track"><i id="b-dpo"></i></div><b id="v-dpo"></b></div>
+    <div class="calc-row total"><span>CCE</span><div class="calc-track"><i id="b-cce"></i></div><b id="v-cce"></b></div>
+    <p class="calc-msg" id="cce-msg"></p>
+  </div>
+</div>
+<script>
+(function () {
+  var ids = ["costo", "ventas", "inv", "cxc", "cxp"];
+  var ini = {};
+  var el = function (id) { return document.getElementById(id); };
+  var mxn = function (x) { return "$" + Number(x).toLocaleString("es-MX"); };
+  ids.forEach(function (k) { ini[k] = el("cce-" + k).value; });
+  function calc() {
+    var v = {};
+    ids.forEach(function (k) { v[k] = +el("cce-" + k).value; el("o-" + k).textContent = mxn(v[k]); });
+    var dio = v.costo ? v.inv / v.costo * 365 : 0;
+    var dso = v.ventas ? v.cxc / v.ventas * 365 : 0;
+    var dpo = v.costo ? v.cxp / v.costo * 365 : 0;
+    var cce = dio + dso - dpo;
+    var max = Math.max(dio, dso, dpo, Math.abs(cce), 1);
+    [["dio", dio], ["dso", dso], ["dpo", dpo], ["cce", cce]].forEach(function (p) {
+      el("b-" + p[0]).style.width = (Math.abs(p[1]) / max * 100) + "%";
+      el("v-" + p[0]).textContent = p[1].toFixed(1) + " días";
+    });
+    el("b-cce").classList.toggle("negativo", cce < 0);
+    el("cce-msg").innerHTML = "<strong>CCE = " + dio.toFixed(1) + " + " + dso.toFixed(1) + " − " + dpo.toFixed(1) +
+      " = " + cce.toFixed(1) + " días.</strong> " +
+      (cce > 60 ? "El efectivo queda atrapado más de dos meses en la operación."
+        : cce > 0 ? "Ciclo moderado: la empresa financia parte de la operación con capital propio."
+        : "Ciclo negativo: los proveedores financian la operación.");
+  }
+  ids.forEach(function (k) { el("cce-" + k).addEventListener("input", calc); });
+  el("cce-reset").addEventListener("click", function () {
+    ids.forEach(function (k) { el("cce-" + k).value = ini[k]; }); calc();
+  });
+  calc();
+})();
+</script>
+```
+

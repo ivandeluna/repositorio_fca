@@ -1,10 +1,16 @@
-# Cálculo de nómina con impuestos y seguridad social
-
-**Carrera:** Contador Público
-**Materia:** Fiscal
-**Tema:** Cálculo de nómina con impuestos
-**Nivel:** Intermedio
-**Duración estimada:** 50 min
+---
+titulo: Cálculo de nómina con impuestos y seguridad social
+carrera: Contador Público
+materia: Fiscal
+tema: Cálculo de nómina con impuestos
+nivel: Intermedio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+autor: C.P. Roberto Domínguez
+fecha: '2026-10-04'
+tags: [nómina, ISR, IMSS, INFONAVIT, impuesto sobre nóminas, tiempo extra, subsidio para el empleo, UMA]
+asistencia_ia: Caso práctico y prompt base del profesor; redacción teórica, ajustes al caso, guía de solución (calculada con código) y prompt de verificación con apoyo de IA, verificados contra fuentes oficiales 2026 (LFT reformada DOF 01-05-2026, Anexo 8 RMF 2026, decreto de subsidio para el empleo, LSS, Ley de Hacienda de Coahuila). Pendiente de revisión docente.
+---
 
 ## Objetivo de aprendizaje
 

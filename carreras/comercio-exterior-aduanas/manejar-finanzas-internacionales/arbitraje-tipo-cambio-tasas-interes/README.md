@@ -1,10 +1,16 @@
-# Arbitraje con Tipo de Cambio y Diferencial de Tasas de Interés
-
-**Carrera:** Comercio Exterior y Aduanas
-**Materia:** Manejar Finanzas Internacionales
-**Tema:** Paridad de tasas de interés cubierta (arbitraje de interés cubierto)
-**Nivel:** Introductorio
-**Duración estimada:** 40 min
+---
+titulo: Arbitraje con Tipo de Cambio y Diferencial de Tasas de Interés
+carrera: Comercio Exterior y Aduanas
+materia: Manejar Finanzas Internacionales
+tema: Paridad de tasas de interés cubierta (arbitraje de interés cubierto)
+nivel: Introductorio
+duracion_estimada: 40 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-09-10'
+tags: [tipo de cambio, paridad de tasas de interés, arbitraje, mercados internacionales, contratos forward]
+asistencia_ia: Redacción de teoría y caso práctico generados con apoyo de IA a partir del lineamiento del profesor; pendiente de revisión y ajuste por el profesor antes de usarse en clase.
+---
 
 ## Objetivo de aprendizaje
 

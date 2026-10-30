@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Genera el index.html de un ejercicio a partir de su README.md y metadata.yml,
+Genera el index.html de un ejercicio a partir de su README.md (con encabezado YAML),
 con el mismo estilo del sitio (encabezado UAdeC, migas de pan, insignias,
 secciones, cajas de prompt, solución plegable, nota de transparencia).
 
@@ -22,6 +22,8 @@ import markdown, yaml
 from bs4 import BeautifulSoup, NavigableString
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ejercicio_io import leer_ejercicio  # noqa: E402
 TPL_HEAD = """<!doctype html>
 <html lang="es">
 <head>
@@ -88,8 +90,7 @@ def latex_to_text(s):
     return H.escape(re.sub(r'\s+',' ',s))
 
 def convert(ej):
-    meta = yaml.safe_load((ej/"metadata.yml").read_text(encoding='utf-8'))
-    md = (ej/"README.md").read_text(encoding='utf-8')
+    meta, md = leer_ejercicio(ej)
     md = re.sub(r'^# .*\n', '', md, count=1)
     md = re.sub(r'^(\*\*(Carrera|Materia|Tema|Nivel|Duración estimada):\*\*.*\n)+', '', md.lstrip('\n'))
     # fórmulas $$...$$ -> marcador

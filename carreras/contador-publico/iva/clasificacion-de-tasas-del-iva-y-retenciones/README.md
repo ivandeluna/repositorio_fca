@@ -1,10 +1,16 @@
-# Clasificación de tasas del IVA y retenciones: bienes y operaciones entre contribuyentes
-
-**Carrera:** Contador Público
-**Materia:** IVA
-**Tema:** Ley del IVA: tasa del 16 %, tasa del 0 %, exención y retenciones
-**Nivel:** Intermedio
-**Duración estimada:** 90 min
+---
+titulo: 'Clasificación de tasas del IVA y retenciones: bienes y operaciones entre contribuyentes'
+carrera: Contador Público
+materia: IVA
+tema: 'Ley del IVA: tasa del 16 %, tasa del 0 %, exención y retenciones'
+nivel: Intermedio
+duracion_estimada: 90 min
+tipo: Ejercicio práctico
+autor: C.P. Roberto Domínguez
+fecha: '2026-10-05'
+tags: [IVA, tasa 0%, exención, retenciones, LIVA, acreditamiento]
+asistencia_ia: Lista de productos y casos del profesor; teoría con apoyo de IA (Claude), revisada y corregida contra la LIVA vigente en octubre de 2026 (alimento para mascotas, libros, tasa fronteriza, retención a residentes en el extranjero); Parte C, prompt de verificación y solución (solucion.md) con apoyo de IA. Pendiente de revisión docente.
+---
 
 ## Objetivo de aprendizaje
 

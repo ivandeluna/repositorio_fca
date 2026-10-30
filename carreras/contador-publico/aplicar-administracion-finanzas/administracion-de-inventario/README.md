@@ -1,10 +1,16 @@
-# Administración de Inventario
-
-**Carrera:** Contador Público
-**Materia:** Aplicar Administración de las Finanzas
-**Tema:** Administración de Inventario
-**Nivel:** Intermedio
-**Duración estimada:** 50 min
+---
+titulo: Administración de Inventario
+carrera: Contador Público
+materia: Aplicar Administración de las Finanzas
+tema: Administración de Inventario
+nivel: Intermedio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-01'
+tags: [inventario, EOQ, JIT, punto de reorden]
+asistencia_ia: Redacción de teoría y caso práctico con apoyo de IA a partir del lineamiento temático del profesor; cálculos verificados numéricamente.
+---
 
 ## Objetivo de aprendizaje
 

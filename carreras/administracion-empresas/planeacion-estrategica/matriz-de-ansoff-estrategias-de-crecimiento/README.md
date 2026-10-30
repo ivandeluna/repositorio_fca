@@ -1,10 +1,16 @@
-# Matriz de Ansoff: estrategias de crecimiento
-
-**Carrera:** Administración de Empresas
-**Materia:** Planeación Estratégica
-**Tema:** Estrategias de crecimiento
-**Nivel:** Introductorio
-**Duración estimada:** 30 min
+---
+titulo: 'Matriz de Ansoff: estrategias de crecimiento'
+carrera: Administración de Empresas
+materia: Planeación Estratégica
+tema: Estrategias de crecimiento
+nivel: Introductorio
+duracion_estimada: 30 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-04'
+tags: [matriz de Ansoff, estrategias de crecimiento, planeación estratégica, diversificación, desarrollo de mercado, pensamiento crítico con IA]
+asistencia_ia: Teoría y prompts por sector redactados por el profesor; revisión de estilo, casos por sector, prompt integrado, prompt de verificación, guía de solución y rúbrica con apoyo de IA. Pendiente de revisión docente antes de usarse en clase.
+---
 
 ## Objetivo de aprendizaje
 

@@ -1,10 +1,19 @@
-# El margen cae y nadie sabe por qué
-
-**Carrera:** Administración de Empresas
-**Materia:** Administración Estratégica
-**Tema:** Balanced Scorecard, indicadores de resultado e inductores de actuación
-**Nivel:** Intermedio
-**Duración estimada:** 50 min
+---
+titulo: El margen cae y nadie sabe por qué
+carrera: Administración de Empresas
+materia: Administración Estratégica
+tema: Balanced Scorecard e inductores de actuación
+nivel: Intermedio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+modalidad: Equipos
+entregable_alumno: Tablero HTML funcional + propuesta escrita
+autor: Norma P. Rodríguez-Cándido
+fecha: '2026-10-13'
+tags: [Balanced Scorecard, cadena causa-efecto, indicadores de resultado, inductores de actuación, administración estratégica, pensamiento crítico con IA]
+asistencia_ia: Construcción del caso, cálculos verificados con código, prompts, tabla de errores típicos del asistente y rúbrica. Guía de solución del README redactada con apoyo de IA al integrar al repositorio (2026-10-18), con cifras verificadas con código. Pendiente de revisión docente.
+revisado_por_docente: false
+---
 
 > ### 🎯 El gancho
 > **Las ventas crecieron 11.2 % y el margen operativo cayó de 11.4 % a 9.8 %.** La dirección reforzó cobranza, negoció el precio de la lámina y recortó capacitación. Nada funcionó, porque el problema nace tres eslabones antes de donde lo estaban buscando.

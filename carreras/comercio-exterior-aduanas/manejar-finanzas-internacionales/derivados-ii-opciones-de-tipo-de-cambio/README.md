@@ -1,10 +1,16 @@
-# Derivados II: opciones de tipo de cambio
-
-**Carrera:** Comercio Exterior y Aduanas
-**Materia:** Manejar Finanzas Internacionales
-**Tema:** Derivados: opciones
-**Nivel:** Introductorio
-**Duración estimada:** 40 min
+---
+titulo: 'Derivados II: opciones de tipo de cambio'
+carrera: Comercio Exterior y Aduanas
+materia: Manejar Finanzas Internacionales
+tema: 'Derivados: opciones'
+nivel: Introductorio
+duracion_estimada: 40 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-05'
+tags: [derivados, opciones, call, put, cobertura cambiaria, cobertura natural]
+asistencia_ia: Temas y enfoque (tipo de cambio y tasas de interés, nivel sencillo) definidos por el profesor; teoría, caso con datos ilustrativos, guía de solución y prompt redactados con apoyo de IA; cálculos verificados con código. Pendiente de revisión docente.
+---
 
 ## Objetivo de aprendizaje
 

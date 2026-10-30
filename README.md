@@ -15,4 +15,4 @@ Catálogo de métodos, dinámicas y ejercicios de clase usados por profesores de
 
 Ver la guía en [`_docs/CONTRIBUIR.md`](./_docs/CONTRIBUIR.md) y usar la plantilla en [`_plantillas/plantilla-ejercicio.md`](./_plantillas/plantilla-ejercicio.md).
 
-> Este README y sus páginas HTML se generan automáticamente con `_scripts/generar_indices.py` — no los edites a mano, edita los `_info.yml` / `metadata.yml` correspondientes y vuelve a correr el script.
+> Este README y sus páginas HTML se generan automáticamente con `_scripts/generar_indices.py` — no los edites a mano, edita los `_info.yml` o el encabezado YAML del `README.md` de cada ejercicio y vuelve a correr el script.

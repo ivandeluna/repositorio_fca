@@ -1,10 +1,16 @@
-# Derivados IV: opciones y llamadas de margen
-
-**Carrera:** Comercio Exterior y Aduanas
-**Materia:** Manejar Finanzas Internacionales
-**Tema:** Derivados: opciones y llamadas de margen
-**Nivel:** Intermedio
-**Duración estimada:** 45 min
+---
+titulo: 'Derivados IV: opciones y llamadas de margen'
+carrera: Comercio Exterior y Aduanas
+materia: Manejar Finanzas Internacionales
+tema: 'Derivados: opciones y llamadas de margen'
+nivel: Intermedio
+duracion_estimada: 45 min
+tipo: Ejercicio práctico
+autor: Iván de Luna-Aldape
+fecha: '2026-10-05'
+tags: [derivados, opciones, collar, llamada de margen, cámara de compensación, riesgo de liquidez]
+asistencia_ia: Tema solicitado por el profesor (opciones con llamadas de margen, caso Nogalera); teoría, caso con datos ilustrativos, guía de solución y prompt redactados con apoyo de IA; cálculos verificados con código. Pendiente de revisión docente.
+---
 
 ## Objetivo de aprendizaje
 

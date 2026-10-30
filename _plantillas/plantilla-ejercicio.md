@@ -1,10 +1,17 @@
-# [Nombre del ejercicio/método]
-
-**Carrera:** [Contador Público / Comercio Exterior y Aduanas / Administración de Empresas]
-**Materia:** [nombre de la materia]
-**Tema:** [tema específico dentro de la materia]
-**Nivel:** [Introductorio / Intermedio / Avanzado]
-**Duración estimada:** [ej. 50 min]
+---
+titulo: "[Nombre del ejercicio/método]"
+carrera: "[Contador Público / Comercio Exterior y Aduanas / Administración de Empresas / Materias Comunes]"
+materia: "[nombre de la materia]"
+tema: "[tema específico dentro de la materia]"
+nivel: "[Introductorio / Intermedio / Avanzado]"
+duracion_estimada: "[ej. 50 min]"
+tipo: "Ejercicio práctico"
+autor: "[nombre]"
+fecha: "[AAAA-MM-DD]"
+tags: []
+asistencia_ia: "[qué partes se redactaron con apoyo de IA]"
+revisado_por_docente: false
+---
 
 ## Objetivo de aprendizaje
 
@@ -39,4 +46,4 @@
 - [Plantillas, lecturas, datasets de apoyo, enlaces]
 
 ---
-*Al terminar, crea también un `metadata.yml` en la misma carpeta (ver ejemplo en `carreras/contador-publico/aplicar-administracion-finanzas/ciclo-conversion-efectivo/metadata.yml`) y agrega este ejercicio a la tabla del README.md de su materia.*
+*Guarda este archivo como `README.md` dentro de la carpeta del ejercicio (`carreras/<carrera>/<materia>/<ejercicio>/`). Los datos de la ficha van en el encabezado entre las dos líneas `---`; no hace falta un `metadata.yml` aparte. Después corre `python3 _scripts/generar_indices.py`.*

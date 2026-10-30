@@ -1,10 +1,19 @@
-# El proveedor más barato que puede parar la planta
-
-**Carrera:** Administración de Empresas
-**Materia:** Administración de Compras y Abastecimiento
-**Tema:** Clasificación de proveedores, concentración del gasto y riesgo de suministro
-**Nivel:** Intermedio
-**Duración estimada:** 50 min
+---
+titulo: El proveedor más barato que puede parar la planta
+carrera: Administración de Empresas
+materia: Administración de Compras y Abastecimiento
+tema: Clasificación de proveedores y riesgo de suministro
+nivel: Intermedio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+modalidad: Equipos
+entregable_alumno: Tablero HTML funcional + propuesta escrita
+autor: Norma P. Rodríguez-Cándido
+fecha: '2026-10-13'
+tags: [análisis ABC, matriz de Kraljic, riesgo de suministro, compras, abastecimiento, pensamiento crítico con IA]
+asistencia_ia: Construcción del caso, cálculos verificados con código, prompts, tabla de errores típicos del asistente y rúbrica. Pendiente de revisión docente.
+revisado_por_docente: false
+---
 
 > ### 🎯 El gancho
 > **El proveedor que ocupa el lugar 16 de 18 en la clasificación ABC —0.8 % del gasto, $185,000 al año— tiene una exposición de $9,840,000 si falla.** Cincuenta y tres veces lo que se le compra. Es fuente única y tarda veinticuatro semanas en sustituirse.
