@@ -1,3 +1,16 @@
+---
+titulo: Prueba Inventarios
+tema: Administración de Inventarios
+nivel: Introductorio
+duracion_estimada: 50 min
+tipo: Ejercicio práctico
+modalidad: Individual
+autor: Juan Pruebas
+fecha: 2026-10-30
+tags:
+  - Administracion
+revisado_por_docente: false
+---
 # Administración de Compras y Abastecimiento
 
 Materia de la carrera de Administración de Empresas.
