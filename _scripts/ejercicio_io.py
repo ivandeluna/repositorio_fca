@@ -49,8 +49,8 @@ def leer_ejercicio(dir_ej: Path):
     viejo = dir_ej / "metadata.yml"
     if not meta and viejo.exists():
         meta = yaml.safe_load(viejo.read_text(encoding="utf-8")) or {}
-    if not meta.get("titulo"):
-        return None
+    if not meta.get("titulo") or meta.get("indice"):
+        return None  # sin ficha, o es el índice de una carrera/materia
     if meta.get("fecha") is not None:
         meta["fecha"] = str(meta["fecha"])
     return meta, cuerpo

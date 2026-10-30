@@ -1,3 +1,8 @@
+---
+titulo: Comercio Exterior y Aduanas
+indice: carrera
+---
+
 # Comercio Exterior y Aduanas
 
 Materias con ejercicios/métodos registrados en este repositorio.

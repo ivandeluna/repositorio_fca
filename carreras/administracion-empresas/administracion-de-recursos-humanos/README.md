@@ -1,3 +1,8 @@
+---
+titulo: Administración de Recursos Humanos
+indice: materia
+---
+
 # Administración de Recursos Humanos
 
 Materia de la carrera de Administración de Empresas.

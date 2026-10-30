@@ -1,3 +1,8 @@
+---
+titulo: Administración de Compras y Abastecimiento
+indice: materia
+---
+
 # Administración de Compras y Abastecimiento
 
 Materia de la carrera de Administración de Empresas.

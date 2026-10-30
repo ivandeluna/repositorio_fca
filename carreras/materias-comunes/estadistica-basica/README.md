@@ -1,3 +1,8 @@
+---
+titulo: Estadística Básica
+indice: materia
+---
+
 # Estadística Básica
 
 Materia de la carrera de Materias Comunes.

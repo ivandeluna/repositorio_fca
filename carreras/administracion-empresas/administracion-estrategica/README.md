@@ -1,3 +1,8 @@
+---
+titulo: Administración Estratégica
+indice: materia
+---
+
 # Administración Estratégica
 
 Materia de la carrera de Administración de Empresas.

@@ -1,3 +1,8 @@
+---
+titulo: Contador Público
+indice: carrera
+---
+
 # Contador Público
 
 Materias con ejercicios/métodos registrados en este repositorio.

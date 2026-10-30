@@ -1,3 +1,8 @@
+---
+titulo: Administración de Empresas
+indice: carrera
+---
+
 # Administración de Empresas
 
 Materias con ejercicios/métodos registrados en este repositorio.

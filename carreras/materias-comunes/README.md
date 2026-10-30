@@ -1,3 +1,8 @@
+---
+titulo: Materias Comunes
+indice: carrera
+---
+
 # Materias Comunes
 
 Materias con ejercicios/métodos registrados en este repositorio.

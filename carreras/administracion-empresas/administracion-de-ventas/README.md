@@ -1,3 +1,8 @@
+---
+titulo: Administración de Ventas
+indice: materia
+---
+
 # Administración de Ventas
 
 Materia de la carrera de Administración de Empresas.

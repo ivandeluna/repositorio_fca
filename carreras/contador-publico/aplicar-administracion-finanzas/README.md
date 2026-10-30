@@ -1,3 +1,8 @@
+---
+titulo: Aplicar Administración de las Finanzas
+indice: materia
+---
+
 # Aplicar Administración de las Finanzas
 
 Materia de la carrera de Contador Público.

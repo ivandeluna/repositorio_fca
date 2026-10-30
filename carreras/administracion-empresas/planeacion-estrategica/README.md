@@ -1,3 +1,8 @@
+---
+titulo: Planeación Estratégica
+indice: materia
+---
+
 # Planeación Estratégica
 
 Materia de la carrera de Administración de Empresas.

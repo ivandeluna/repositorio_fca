@@ -1,3 +1,8 @@
+---
+titulo: Econometría
+indice: materia
+---
+
 # Econometría
 
 Materia de la carrera de Comercio Exterior y Aduanas.

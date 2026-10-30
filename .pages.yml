@@ -21,7 +21,7 @@ content:
       layout: tree
       node:
         filename: README.md
-        hideDirs: others
+        hideDirs: nodes
       primary: titulo
       fields: [titulo, nivel, autor, revisado_por_docente]
       search: [titulo, tema, autor, tags]

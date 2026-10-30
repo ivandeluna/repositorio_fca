@@ -1,3 +1,8 @@
+---
+titulo: Manejar Finanzas Internacionales
+indice: materia
+---
+
 # Manejar Finanzas Internacionales
 
 Materia de la carrera de Comercio Exterior y Aduanas.
