@@ -29,6 +29,20 @@ jobs:
       - name: Instalar dependencias de Python
         run: pip install pyyaml
 
+      - name: Regenerar índices y subirlos si cambiaron
+        run: |
+          python3 _scripts/generar_indices.py
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Actualiza índices automáticamente"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "Los índices ya estaban al día."
+          fi
+
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: 1.6.42
