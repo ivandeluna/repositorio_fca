@@ -1,6 +1,7 @@
 ---
 titulo: Administración de Empresas
 indice: carrera
+descripcion: Gestión estratégica, operaciones y liderazgo organizacional.
 ---
 
 # Administración de Empresas

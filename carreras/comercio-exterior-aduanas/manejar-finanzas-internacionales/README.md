@@ -1,6 +1,7 @@
 ---
 titulo: Manejar Finanzas Internacionales
 indice: materia
+descripcion: Tipo de cambio, tasas de interés, arbitraje, instrumentos de deuda, acciones y derivados en mercados internacionales.
 ---
 
 # Manejar Finanzas Internacionales

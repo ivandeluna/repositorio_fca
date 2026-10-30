@@ -1,6 +1,7 @@
 ---
 titulo: Administración Estratégica
 indice: materia
+descripcion: Balanced Scorecard, indicadores de desempeño y control de la estrategia.
 ---
 
 # Administración Estratégica

@@ -137,14 +137,17 @@ HTML_FOOT = """</main>
 """
 
 
-def encabezado_indice(nombre, nivel):
+def encabezado_indice(nombre, nivel, descripcion=""):
     """Encabezado YAML de los índices de carrera y materia.
 
     Pages CMS muestra los README.md como nodos del árbol; con `titulo` se ven
     con su nombre. `indice` los distingue de los ejercicios (y avisa que se
     regeneran: no se editan desde el CMS).
     """
-    return yaml.safe_dump({"titulo": nombre, "indice": nivel}, allow_unicode=True,
+    datos = {"titulo": nombre, "indice": nivel}
+    if descripcion:
+        datos["descripcion"] = descripcion
+    return yaml.safe_dump(datos, allow_unicode=True, width=1000,
                           sort_keys=False).join(["---\n", "---\n\n"])
 
 
@@ -271,7 +274,7 @@ Materias con ejercicios/métodos registrados en este repositorio.
 
 ⬅ [Volver al catálogo general](../../README.md)
 """
-    write(base / "README.md", encabezado_indice(c["nombre"], "carrera") + readme)
+    write(base / "README.md", encabezado_indice(c["nombre"], "carrera", c["descripcion"]) + readme)
 
     body = HTML_HEAD.format(
         title=f"{c['nombre']} — Repositorio FCA",
@@ -341,7 +344,7 @@ Materia de la carrera de {c['nombre']}.
 
 ⬅ [Volver a {c['nombre']}](../README.md)
 """
-    write(base / "README.md", encabezado_indice(m["nombre"], "materia") + readme)
+    write(base / "README.md", encabezado_indice(m["nombre"], "materia", m["descripcion"]) + readme)
 
     body = HTML_HEAD.format(
         title=f"{m['nombre']} — Repositorio FCA",

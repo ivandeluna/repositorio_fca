@@ -1,6 +1,7 @@
 ---
 titulo: Administración de Compras y Abastecimiento
 indice: materia
+descripcion: Clasificación de proveedores, concentración del gasto y riesgo de suministro.
 ---
 
 # Administración de Compras y Abastecimiento

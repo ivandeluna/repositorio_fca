@@ -1,6 +1,7 @@
 ---
 titulo: Estadística Básica
 indice: materia
+descripcion: 'Estadística descriptiva aplicada a negocios: medidas de tendencia central, dispersión y su interpretación para la toma de decisiones.'
 ---
 
 # Estadística Básica

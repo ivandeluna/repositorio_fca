@@ -1,6 +1,7 @@
 ---
 titulo: Comercio Exterior y Aduanas
 indice: carrera
+descripcion: Logística internacional, aduanas y tratados comerciales.
 ---
 
 # Comercio Exterior y Aduanas

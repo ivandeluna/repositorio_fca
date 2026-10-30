@@ -1,6 +1,7 @@
 ---
 titulo: Materias Comunes
 indice: carrera
+descripcion: 'Materias que comparten las tres licenciaturas de la FCA: Contador Público, Comercio Exterior y Aduanas, y Administración de Empresas.'
 ---
 
 # Materias Comunes

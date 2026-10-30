@@ -1,6 +1,7 @@
 ---
 titulo: Econometría
 indice: materia
+descripcion: Modelos de regresión aplicados a datos de comercio internacional.
 ---
 
 # Econometría

@@ -1,6 +1,7 @@
 ---
 titulo: Fiscal
 indice: materia
+descripcion: Impuestos federales y estatales, retenciones y cumplimiento de obligaciones fiscales.
 ---
 
 # Fiscal

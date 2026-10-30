@@ -1,6 +1,7 @@
 ---
 titulo: IVA
 indice: materia
+descripcion: 'Ley del Impuesto al Valor Agregado: objeto, tasas, exenciones, acreditamiento y retenciones.'
 ---
 
 # IVA

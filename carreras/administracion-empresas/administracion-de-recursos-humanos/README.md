@@ -1,6 +1,7 @@
 ---
 titulo: Administración de Recursos Humanos
 indice: materia
+descripcion: Rotación de personal, costos de capital humano y evaluación financiera de programas de RH.
 ---
 
 # Administración de Recursos Humanos

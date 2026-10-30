@@ -1,6 +1,7 @@
 ---
 titulo: Administración de Ventas
 indice: materia
+descripcion: Rentabilidad por cliente, costo de servir y gestión de la cartera comercial.
 ---
 
 # Administración de Ventas

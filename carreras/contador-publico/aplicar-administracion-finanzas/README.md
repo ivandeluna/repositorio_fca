@@ -1,6 +1,7 @@
 ---
 titulo: Aplicar Administración de las Finanzas
 indice: materia
+descripcion: Capital de trabajo, estructura financiera y decisiones de inversión.
 ---
 
 # Aplicar Administración de las Finanzas

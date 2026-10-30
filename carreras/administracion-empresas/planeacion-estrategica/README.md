@@ -1,6 +1,7 @@
 ---
 titulo: Planeación Estratégica
 indice: materia
+descripcion: Análisis del entorno, formulación y evaluación de estrategias de crecimiento y competitivas.
 ---
 
 # Planeación Estratégica

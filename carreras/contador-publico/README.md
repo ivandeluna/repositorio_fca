@@ -1,6 +1,7 @@
 ---
 titulo: Contador Público
 indice: carrera
+descripcion: Administración financiera, costos, auditoría y más.
 ---
 
 # Contador Público
