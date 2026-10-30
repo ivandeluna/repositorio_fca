@@ -10,7 +10,7 @@ Materias con ejercicios/métodos registrados en este repositorio.
 
 | Materia | Ejercicios |
 |---|---|
-| [Aplicar Administración de las Finanzas](./aplicar-administracion-finanzas/README.md) | 3 |
+| [Aplicar Administración de las Finanzas](./aplicar-administracion-finanzas/README.md) | 4 |
 | [Fiscal](./fiscal/README.md) | 1 |
 | [IVA](./iva/README.md) | 1 |
 
