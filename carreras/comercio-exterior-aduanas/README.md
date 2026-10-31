@@ -1,9 +1,9 @@
 ---
 titulo: Comercio Exterior y Aduanas
-autor: Carmen Borrego-Salcido
-fecha: 2026-10-31
-revisado_por_docente: false
+indice: carrera
+descripcion: Logística internacional, aduanas y tratados comerciales.
 ---
+
 # Comercio Exterior y Aduanas
 
 Materias con ejercicios/métodos registrados en este repositorio.
@@ -12,6 +12,6 @@ Materias con ejercicios/métodos registrados en este repositorio.
 |---|---|
 | [Manejar Finanzas Internacionales](./manejar-finanzas-internacionales/README.md) | 8 |
 | [Econometría](./econometria/README.md) | 1 |
-
+| [Regresion Lineal Multiple](./regresion-lineal-multiple/README.md) | 0 |
 
 ⬅ [Volver al catálogo general](../../README.md)
