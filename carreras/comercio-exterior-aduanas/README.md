@@ -12,5 +12,6 @@ Materias con ejercicios/métodos registrados en este repositorio.
 |---|---|
 | [Manejar Finanzas Internacionales](./manejar-finanzas-internacionales/README.md) | 8 |
 | [Econometría](./econometria/README.md) | 1 |
+| [Regresion Lineal Multiple](./regresion-lineal-multiple/README.md) | 0 |
 
 ⬅ [Volver al catálogo general](../../README.md)
