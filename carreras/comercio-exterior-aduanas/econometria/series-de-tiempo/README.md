@@ -1,5 +1,5 @@
 ---
-titulo: SERIES DE TIEMPO
+titulo: Series de tiempo
 tema: "Introducción a series temporales "
 nivel: Introductorio
 duracion_estimada: 50 min
@@ -21,7 +21,6 @@ largo del tiempo, como base para el análisis y el pronóstico
 
 ## Teoría
 
-> Nota de transparencia: "redacción base del profesor, ampliada y pulida con IA").
 
 1. ¿Qué es una serie temporal?
 
