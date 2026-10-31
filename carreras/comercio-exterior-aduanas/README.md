@@ -11,6 +11,6 @@ Materias con ejercicios/métodos registrados en este repositorio.
 | Materia | Ejercicios |
 |---|---|
 | [Manejar Finanzas Internacionales](./manejar-finanzas-internacionales/README.md) | 8 |
-| [Econometría](./econometria/README.md) | 2 |
+| [Econometría](./econometria/README.md) | 3 |
 
 ⬅ [Volver al catálogo general](../../README.md)
