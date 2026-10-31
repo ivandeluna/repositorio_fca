@@ -13,5 +13,6 @@ Materia de la carrera de Comercio Exterior y Aduanas.
 | Ejercicio | Tema | Nivel |
 |---|---|---|
 | [Regresión Lineal Simple](./regresion-lineal-simple/README.md) | Modelos de regresión — estimación por Mínimos Cuadrados Ordinarios (MCO) | Introductorio |
+| [Regresión lineal múltiple](./regresion-lineal-multiple/README.md) | Regresión lineal múltiple | Intermedio |
 
 ⬅ [Volver a Comercio Exterior y Aduanas](../README.md)
