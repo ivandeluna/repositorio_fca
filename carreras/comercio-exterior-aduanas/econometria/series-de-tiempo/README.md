@@ -20,8 +20,6 @@ interpretar el comportamiento de una variable económica o empresarial a lo
 largo del tiempo, como base para el análisis y el pronóstico
 
 ## Teoría
-
-
 1. ¿Qué es una serie temporal?
 
 Es un conjunto de observaciones de una variable, registradas en momentos sucesivos y ordenadas cronológicamente, por lo general a intervalos regulares. Se denota:
