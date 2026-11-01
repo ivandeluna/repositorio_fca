@@ -10,6 +10,6 @@ Materias con ejercicios/métodos registrados en este repositorio.
 
 | Materia | Ejercicios |
 |---|---|
-| [Estadística Básica](./estadistica-basica/README.md) | 1 |
+| [Estadística Básica](./estadistica-basica/README.md) | 2 |
 
 ⬅ [Volver al catálogo general](../../README.md)

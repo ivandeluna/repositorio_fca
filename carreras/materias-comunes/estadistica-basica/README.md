@@ -13,5 +13,6 @@ Materia de la carrera de Materias Comunes.
 | Ejercicio | Tema | Nivel |
 |---|---|---|
 | [Medidas de Tendencia Central](./medidas-de-tendencia-central/README.md) | Medidas de tendencia central: media, mediana y moda | Introductorio |
+| [Medidas de dispersión](./medidas-de-dispersion/README.md) | Medidas de dispersión | Introductorio |
 
 ⬅ [Volver a Materias Comunes](../README.md)
