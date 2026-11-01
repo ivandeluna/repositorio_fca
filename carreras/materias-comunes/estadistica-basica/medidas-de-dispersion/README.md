@@ -319,7 +319,7 @@ Copia y pega el prompt que corresponda en Claude o ChatGPT, sustituyendo los dat
 
 > “Actúa como profesor de estadística descriptiva. Hazme 5 preguntas de opción múltiple sobre medidas de dispersión (rango, rango intercuartílico, varianza, desviación estándar y coeficiente de variación), con situaciones aplicadas al comercio internacional. Espera mis respuestas y, al final, retroalimenta cada una explicando por qué es correcta o incorrecta.”
 
-**Documentos a adjuntar:** opcional — puedes adjuntar un archivo de Excel con tus propios datos para que la IA calcule las tres medidas directamente sobre ellos. No es indispensable, ya que los datos del caso caben en el prompt.
+**Documentos a adjuntar:** opcional — puedes adjuntar un archivo de Excel con tus propios datos para que la IA calcule las tres medidas directamente sobre ellos. No es indispensable, ya que los datos del caso caben en el prompt. Puedes cambiar los datos del ejemplo y subir en Excel los tuyos
 
 ## Recursos adicionales
 - Lectura sugerida: _Introducción a la probabilidad y estadística_, Mendenhall, Beaver y Beaver, 14ª edición, 2015, Cengage Learning.
