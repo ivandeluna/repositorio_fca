@@ -12,7 +12,7 @@ fecha: 2026-11-01
 asistencia_ia: Material elaborado con IA y verificado por el profesor
 revisado_por_docente: false
 ---
-#### Objetivo de aprendizaje
+## Objetivo de aprendizaje
 Que el estudiante aplique el análisis horizontal (absoluto y relativo) a los estados financieros de una empresa de dos o más periodos, para identificar variaciones y tendencias en sus cuentas, interpretar su significado y fundamentar conclusiones que apoyen la toma de decisiones financieras.
 
 #### Teoría
