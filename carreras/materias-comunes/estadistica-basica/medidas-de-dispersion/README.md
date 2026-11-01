@@ -10,6 +10,8 @@ entregable_alumno: El prompt que usó, ya adaptado. La respuesta de la IA. Un
   hubo diferencias, quién tenía razón y por qué.
 autor: Carmen Borrego-Salcido
 fecha: 2026-10-31
+tags:
+  - Estadística
 asistencia_ia: "Redacción elaborada con IA verificada por el profesor "
 revisado_por_docente: false
 ---
