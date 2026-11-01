@@ -35,6 +35,20 @@ def slug_title(slug):
     return slug.replace("-", " ").title()
 
 
+# Ejercicios guardados en un nivel equivocado (p. ej. directo en la carpeta de
+# una carrera, sin materia). Se dejan intactos y se reportan al final.
+MAL_UBICADOS = []
+
+
+def es_ejercicio_mal_ubicado(carpeta):
+    """True si el README.md de una carpeta de carrera/materia es en realidad un
+    ejercicio (tiene ficha y no es un índice). Así nunca se sobrescribe."""
+    if leer_ejercicio(carpeta) is None:
+        return False
+    MAL_UBICADOS.append(carpeta.relative_to(ROOT))
+    return True
+
+
 def collect():
     """Recorre carreras/*/*/*/README.md y arma la estructura anidada."""
     carreras = []
@@ -57,6 +71,8 @@ def collect():
         for materia_dir in sorted(carrera_dir.iterdir()):
             if not materia_dir.is_dir() or materia_dir.name.startswith("_"):
                 continue
+            if es_ejercicio_mal_ubicado(materia_dir):
+                continue  # un ejercicio sin materia: no se trata como materia
             minfo_path = materia_dir / "_info.yml"
             minfo = read_yaml(minfo_path) if minfo_path.exists() else {}
             materia = {
@@ -386,6 +402,8 @@ def main():
     carreras = collect()
     gen_root(carreras)
     for c in carreras:
+        if es_ejercicio_mal_ubicado(CARRERAS_DIR / c["slug"]):
+            continue  # alguien guardó un ejercicio como README de la carrera
         gen_carrera(c)
         for m in c["materias"]:
             gen_materia(c, m)
@@ -393,6 +411,13 @@ def main():
     n_mat = sum(len(c["materias"]) for c in carreras)
     n_ej = sum(len(m["ejercicios"]) for c in carreras for m in c["materias"])
     print(f"Índices regenerados: {len(carreras)} carreras, {n_mat} materias, {n_ej} ejercicios.")
+    if MAL_UBICADOS:
+        print("\nAVISO: estos ejercicios no están dentro de una materia y se dejaron intactos")
+        print("(muévelos a carreras/<carrera>/<materia>/<ejercicio>/README.md):")
+        for r in sorted(set(MAL_UBICADOS)):
+            print(f"  - {r}")
+            # anotación visible en el resumen de GitHub Actions
+            print(f"::warning file={r}/README.md::Ejercicio fuera de una materia; no se publica hasta moverlo.")
 
 
 if __name__ == "__main__":

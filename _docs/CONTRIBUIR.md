@@ -13,6 +13,8 @@ No necesitas instalar nada ni saber Git.
 
 La carrera y la materia se toman de la carpeta donde guardas el ejercicio. Si necesitas una materia que todavía no existe, pídesela al coordinador del repositorio.
 
+> **Importante:** crea el ejercicio siempre *dentro de la carpeta de una materia* (Carrera → Materia → tu ejercicio). No edites los archivos que ya aparecen con el nombre de una carrera o materia: son índices que se regeneran solos. Si guardas un ejercicio directo en la carpeta de una carrera, no se publica y aparece un aviso en GitHub Actions hasta que se mueva a una materia.
+
 ## Con el script (recomendado)
 
 Desde la raíz del repositorio:

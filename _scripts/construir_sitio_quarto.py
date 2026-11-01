@@ -255,7 +255,10 @@ def main():
     for dc in sorted(p for p in CARRERAS.iterdir() if p.is_dir()):
         info_c = leer_yaml(dc / "_info.yml")
         mats = []
-        for dm in sorted(p for p in dc.iterdir() if p.is_dir()):
+        for dm in sorted(p for p in dc.iterdir() if p.is_dir() and not p.name.startswith("_")):
+            if es_ejercicio(dm):
+                print(f"AVISO: {dm.relative_to(RAIZ)} es un ejercicio fuera de una materia; no se publica.")
+                continue
             info_m = leer_yaml(dm / "_info.yml")
             ejs = [p for p in sorted(dm.iterdir()) if es_ejercicio(p)]
             if not ejs:
