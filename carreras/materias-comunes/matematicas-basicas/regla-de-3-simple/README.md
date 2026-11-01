@@ -5,10 +5,10 @@ nivel: Introductorio
 duracion_estimada: 60 min
 tipo: Ejercicio práctico
 modalidad: Individual
-entregable_alumno: Los prompts que usaste, ya adaptados. - Las respuestas de la IA.
-  - Tu solución hecha a mano de al menos un problema. - Un párrafo breve que indique
-  si tus cálculos coinciden con los de la IA y, si hubo diferencias, quién tenía razón
-  y por qué.
+entregable_alumno: Los prompts que usaste, ya adaptados. - Las respuestas de la
+  IA. - Tu solución hecha a mano de al menos un problema. - Un párrafo breve que
+  indique si tus cálculos coinciden con los de la IA y, si hubo diferencias,
+  quién tenía razón y por qué.
 autor: Carmen Borrego-Salcido
 fecha: 2026-11-01
 asistencia_ia: Material generado con IA y verificado por el profesor
@@ -90,7 +90,7 @@ _Ejemplo 3._ Cuatro operarios terminan de etiquetar un embarque en 12 días. ¿C
 |4|12|
 |6|x|
 
-Más operarios implican menos días: es inversa.
+Más operarios implican menos días para completar la tarea: es inversa.
 
 x = (4 · 12) / 6 = 48 / 6 = **8 días**
 
