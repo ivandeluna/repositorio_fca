@@ -1,5 +1,6 @@
 ---
 titulo: Análisis de tendencias
+carrera: Contador Público
 materia: Herramientas en la función financiera
 tema: Análisis horizontal
 nivel: Introductorio
