@@ -1,10 +1,9 @@
 ---
 titulo: Regla De 3 Simple
-autor: Carmen Borrego-Salcido
-fecha: 2026-11-01
-revisado_por_docente: false
+indice: materia
 ---
-# Matemáticas básicas
+
+# Regla De 3 Simple
 
 Materia de la carrera de Materias Comunes.
 
