@@ -14,6 +14,6 @@ Materia de la carrera de Comercio Exterior y Aduanas.
 |---|---|---|
 | [Regresión Lineal Simple](./regresion-lineal-simple/README.md) | Modelos de regresión — estimación por Mínimos Cuadrados Ordinarios (MCO) | Introductorio |
 | [Regresión lineal múltiple](./regresion-lineal-multiple/README.md) | Regresión lineal múltiple | Intermedio |
-| [Series de tiempo](./series-de-tiempo/README.md) | Introducción a series temporales  | Introductorio |
+| [Series de tiempo](./series-de-tiempo/README.md) | Introducción a series temporales | Introductorio |
 
 ⬅ [Volver a Comercio Exterior y Aduanas](../README.md)
