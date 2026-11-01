@@ -15,11 +15,11 @@ tags:
 asistencia_ia: "Redacción elaborada con IA verificada por el profesor "
 revisado_por_docente: false
 ---
-### Objetivo de aprendizaje
+## Objetivo de aprendizaje
 
 Que el estudiante calcule e interprete el rango, el rango intercuartílico, la varianza, la desviación estándar y el coeficiente de variación de un conjunto de datos, y los utilice junto con las medidas de tendencia central para describir qué tan homogéneos o dispersos son los datos y comparar la variabilidad entre distintos conjuntos.
 
-#### Teoría
+## Teoría
 
 **1. ¿Qué son las medidas de dispersión?**
 
@@ -136,7 +136,7 @@ Indica a cuántas desviaciones estándar de la media se encuentra un dato. Un va
 
 
 
-#### Caso práctico
+## Caso práctico
 
 Una empresa exportadora de autopartes quiere evaluar qué tan estable es el tiempo de despacho aduanal de sus embarques. Se registró el tiempo de despacho, en horas, de 10 embarques enviados a Estados Unidos durante un mes (datos ficticios, para fines didácticos).
 
@@ -193,7 +193,7 @@ Calcula los límites Q1 − 1.5 · RIC y Q3 + 1.5 · RIC. Indica si algún embar
 
 **Qué debes entregar:** una tabla con los resultados de los pasos 2 a 7 (media, rango, RIC, varianza, desviación estándar y CV), la conclusión del paso 8 y las respuestas del paso 9.
 
-### Guía de solución: medidas de dispersión
+## Guía de solución: medidas de dispersión
 
 **Paso 1. Ordenar los datos**
 
@@ -273,7 +273,7 @@ CV = (6.91 / 17) × 100 = **40.66%**
 4. La desviación estándar **disminuiría** mucho, porque el dato atípico es el que aporta casi toda la variabilidad. Para que el docente pueda verificarlo: sin ese embarque, la media sería 14.89 horas, el rango 6 horas, la desviación estándar 1.90 horas y el CV 12.8%.
 5. Conviene reportar la **mediana (15 horas) con el rango intercuartílico (3 horas)**, porque ambas no se ven afectadas por el valor atípico y describen mejor el despacho típico. La media (17) queda arrastrada hacia arriba por el dato de 36 horas, y la desviación estándar se infla por el mismo motivo. Aun así, el embarque atípico no debe ignorarse: conviene investigar qué lo causó (inspección, falta de documentos, etc.), pues puede señalar un problema operativo.
 
-#### Errores frecuentes que conviene señalar
+## Errores frecuentes que conviene señalar
 
 - Dividir entre n en lugar de n − 1 al calcular la varianza de una muestra.
 - Olvidar que la varianza está en unidades al cuadrado, o reportar la desviación estándar sin unidades.
