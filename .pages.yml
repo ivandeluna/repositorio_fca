@@ -45,8 +45,11 @@ content:
       - name: materia
         label: Materia
         type: string
-        readonly: true
-        description: Se toma de la carpeta donde está el ejercicio.
+        description: >-
+          Normalmente se toma de la carpeta y no hay que llenarlo. Solo si tu
+          materia todavía no existe: crea el ejercicio dentro de la carpeta de
+          la carrera y escribe aquí el nombre de la materia. Al guardar, el
+          sistema crea la materia y mueve ahí tu ejercicio.
       - name: tema
         label: Tema
         type: string

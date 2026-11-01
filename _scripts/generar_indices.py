@@ -412,12 +412,12 @@ def main():
     n_ej = sum(len(m["ejercicios"]) for c in carreras for m in c["materias"])
     print(f"Índices regenerados: {len(carreras)} carreras, {n_mat} materias, {n_ej} ejercicios.")
     if MAL_UBICADOS:
-        print("\nAVISO: estos ejercicios no están dentro de una materia y se dejaron intactos")
-        print("(muévelos a carreras/<carrera>/<materia>/<ejercicio>/README.md):")
+        print("\nAVISO: estos ejercicios no están dentro de una materia y se dejaron intactos.")
+        print("Escribe la materia en su ficha (campo «Materia») o muévelos a carreras/<carrera>/<materia>/<ejercicio>/:")
         for r in sorted(set(MAL_UBICADOS)):
             print(f"  - {r}")
             # anotación visible en el resumen de GitHub Actions
-            print(f"::warning file={r}/README.md::Ejercicio fuera de una materia; no se publica hasta moverlo.")
+            print(f"::warning file={r}/README.md::Ejercicio fuera de una materia; no se publica hasta escribir su materia en la ficha.")
 
 
 if __name__ == "__main__":

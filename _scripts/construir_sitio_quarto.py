@@ -49,7 +49,9 @@ def leer_yaml(p: Path) -> dict:
 
 
 def fm(d: dict) -> str:
-    """Front matter YAML."""
+    """Front matter YAML. Omite los campos vacíos: Quarto rechaza, por ejemplo,
+    un `subtitle` nulo cuando un ejercicio no trae tema, y eso tiraba el sitio."""
+    d = {k: v for k, v in d.items() if v is not None and v != "" and v != "None"}
     return "---\n" + yaml.safe_dump(d, allow_unicode=True, sort_keys=False, width=1000) + "---\n\n"
 
 
@@ -190,7 +192,7 @@ def construir_ejercicio(dir_ej: Path, destino: Path, slug_carrera: str, carrera:
         "title": meta.get("titulo", dir_ej.name),
         "subtitle": meta.get("tema"),
         "author": meta.get("autor"),
-        "date": str(meta.get("fecha", "")),
+        "date": str(meta.get("fecha") or ""),
         "description": primer_parrafo(readme),
         "categories": [c for c in [meta.get("materia"), meta.get("nivel")] if c],
         "carrera": meta.get("carrera"),

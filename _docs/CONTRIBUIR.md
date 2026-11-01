@@ -11,9 +11,17 @@ No necesitas instalar nada ni saber Git.
 5. Sube tus archivos de apoyo (Excel, CSV, PDF) desde **Materiales**, dentro de la carpeta `materiales/` de tu ejercicio.
 6. Guarda. En unos minutos el ejercicio aparece en el sitio. Queda marcado como «Pendiente de revisión docente» hasta que el coordinador lo revise.
 
-La carrera y la materia se toman de la carpeta donde guardas el ejercicio. Si necesitas una materia que todavía no existe, pídesela al coordinador del repositorio.
+La carrera y la materia se toman de la carpeta donde guardas el ejercicio.
 
-> **Importante:** crea el ejercicio siempre *dentro de la carpeta de una materia* (Carrera → Materia → tu ejercicio). No edites los archivos que ya aparecen con el nombre de una carrera o materia: son índices que se regeneran solos. Si guardas un ejercicio directo en la carpeta de una carrera, no se publica y aparece un aviso en GitHub Actions hasta que se mueva a una materia.
+### Si tu materia todavía no existe
+
+1. Entra a la carpeta de la **carrera** (no a una materia) y crea ahí tu ejercicio.
+2. En el campo **Materia** de la ficha escribe el nombre completo de la materia, con acentos y mayúsculas como quieras que aparezca (por ejemplo, «Matemáticas Básicas»).
+3. Guarda. En unos minutos el sistema crea la materia, mueve tu ejercicio dentro de ella y lo publica. Si ya existía una materia con ese nombre (aunque la escribas sin acentos o en minúsculas), lo pone en esa en lugar de duplicarla.
+
+Después de guardar, tu ejercicio aparecerá en Pages CMS dentro de la carpeta de la materia; si quieres seguir editándolo, ábrelo desde ahí. Si la materia necesita una descripción, pídesela al coordinador.
+
+> **Importante:** crea el ejercicio *dentro de la carpeta de su materia*, (Carrera → Materia → tu ejercicio), o en la carpeta de la carrera solo si vas a abrir una materia nueva. No edites los archivos que ya aparecen con el nombre de una carrera o materia: son índices que se regeneran solos. Si guardas un ejercicio directo en la carpeta de una carrera *sin* escribir la materia en su ficha, no se publica y aparece un aviso en GitHub Actions hasta que la escribas.
 
 ## Con el script (recomendado)
 
