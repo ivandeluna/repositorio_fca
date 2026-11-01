@@ -15,7 +15,7 @@ tags:
 asistencia_ia: "Redacción elaborada con IA verificada por el profesor "
 revisado_por_docente: false
 ---
-#### Objetivo de aprendizaje
+## Objetivo de aprendizaje
 
 Que el estudiante calcule e interprete el rango, el rango intercuartílico, la varianza, la desviación estándar y el coeficiente de variación de un conjunto de datos, y los utilice junto con las medidas de tendencia central para describir qué tan homogéneos o dispersos son los datos y comparar la variabilidad entre distintos conjuntos.
 
