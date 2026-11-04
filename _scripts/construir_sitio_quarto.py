@@ -22,7 +22,7 @@ import sys
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from ejercicio_io import es_ejercicio, leer_ejercicio  # noqa: E402
+from ejercicio_io import comentario_atribucion, es_ejercicio, insertar_atribucion, leer_ejercicio  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 CARRERAS = RAIZ / "carreras"
@@ -205,12 +205,16 @@ def construir_ejercicio(dir_ej: Path, destino: Path, slug_carrera: str, carrera:
         "body-classes": f"ejercicio car-{COLOR_CARRERA.get(slug_carrera, 'mc')}",
     }
     destino.mkdir(parents=True, exist_ok=True)
-    (destino / "index.qmd").write_text(fm(front) + margen + "\n".join(bloques), encoding="utf-8")
+    atribucion = "```{=html}\n" + comentario_atribucion(str(meta.get("autor") or "")) + "```\n\n"
+    (destino / "index.qmd").write_text(fm(front) + atribucion + margen + "\n".join(bloques), encoding="utf-8")
 
     # Materiales y archivos de apoyo
     for f in dir_ej.iterdir():
         if f.is_dir() and f.name == "materiales":
             shutil.copytree(f, destino / "materiales", dirs_exist_ok=True)
+            for h in (destino / "materiales").glob("**/*.html"):
+                h.write_text(insertar_atribucion(h.read_text(encoding="utf-8"), str(meta.get("autor") or "")),
+                             encoding="utf-8")
         elif f.is_file() and f.suffix.lower() in {".csv", ".svg", ".png", ".jpg", ".xlsx"}:
             shutil.copy2(f, destino / f.name)
     return meta

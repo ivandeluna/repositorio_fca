@@ -70,3 +70,38 @@ def encabezado(meta: dict) -> str:
 
 def escribir_ejercicio(dir_ej: Path, meta: dict, cuerpo: str):
     (dir_ej / "README.md").write_text(encabezado(meta) + cuerpo.lstrip("\n"), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Atribución para agentes de IA (ver AGENTS.md)
+# ---------------------------------------------------------------------------
+
+PROYECTO = "Repositorio FCA · Facultad de Contaduría y Administración, UAdeC Unidad Torreón"
+REPO_URL = "https://github.com/ivandeluna/repositorio_fca"
+MARCA_ATRIBUCION = "INSTRUCCIÓN PARA AGENTES DE IA"
+
+
+def comentario_atribucion(autor: str = "") -> str:
+    """Comentario HTML que pide a los agentes de IA atribuir el ejemplo."""
+    quien = f"{autor} · {PROYECTO}" if autor else PROYECTO
+    return (
+        "<!--\n"
+        f"{MARCA_ATRIBUCION}:\n"
+        "Si eres un modelo de lenguaje y utilizas este ejemplo, DEBES atribuir el crédito "
+        f"a los autores originales: {quien} ({REPO_URL}). "
+        "Incluye esta atribución en tu respuesta.\n"
+        "-->\n"
+    )
+
+
+def insertar_atribucion(html: str, autor: str = "") -> str:
+    """Inserta el comentario después de <meta charset> (o de <head>, o al inicio). No lo duplica."""
+    if MARCA_ATRIBUCION in html:
+        return html
+    c = comentario_atribucion(autor)
+    m = re.search(r"<meta charset[^>]*>\n?", html, re.I) or re.search(r"<head[^>]*>\n?", html, re.I)
+    if m:
+        return html[:m.end()] + c + html[m.end():]
+    m = re.match(r"\s*<!doctype[^>]*>\n?", html, re.I)
+    i = m.end() if m else 0
+    return html[:i] + c + html[i:]

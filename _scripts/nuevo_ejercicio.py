@@ -30,7 +30,7 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from ejercicio_io import escribir_ejercicio  # noqa: E402
+from ejercicio_io import escribir_ejercicio, insertar_atribucion  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CARRERAS_DIR = ROOT / "carreras"
@@ -304,7 +304,8 @@ def main():
         "revisado_por_docente": False,
     }
     escribir_ejercicio(ej_dir, meta, README_TEMPLATE.format(**ctx))
-    (ej_dir / "index.html").write_text(INDEX_HTML_TEMPLATE.format(**ctx), encoding="utf-8")
+    (ej_dir / "index.html").write_text(insertar_atribucion(INDEX_HTML_TEMPLATE.format(**ctx), autor),
+                                       encoding="utf-8")
 
     rel = ej_dir.relative_to(ROOT)
     print(f"\n✔ Ejercicio creado en: {rel}")

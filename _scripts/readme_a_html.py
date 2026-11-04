@@ -23,7 +23,7 @@ from bs4 import BeautifulSoup, NavigableString
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from ejercicio_io import leer_ejercicio  # noqa: E402
+from ejercicio_io import insertar_atribucion, leer_ejercicio  # noqa: E402
 TPL_HEAD = """<!doctype html>
 <html lang="es">
 <head>
@@ -158,7 +158,8 @@ def convert(ej):
     foot_html = ""
     if foot:
         foot_html = '\n    <div class="doc-footer">\n      ' + markdown.markdown(foot)[3:-4].replace('<strong>','').replace('</strong>','') + '\n    </div>'
-    (ej/"index.html").write_text(head + inner_html + foot_html + TPL_FOOT, encoding='utf-8')
+    html = insertar_atribucion(head + inner_html + foot_html + TPL_FOOT, str(meta.get('autor') or ''))
+    (ej/"index.html").write_text(html, encoding='utf-8')
     print("html", ej.name)
 
 for p in sys.argv[1:]:

@@ -411,6 +411,12 @@ def main():
     n_mat = sum(len(c["materias"]) for c in carreras)
     n_ej = sum(len(m["ejercicios"]) for c in carreras for m in c["materias"])
     print(f"Índices regenerados: {len(carreras)} carreras, {n_mat} materias, {n_ej} ejercicios.")
+
+    # Comentario de atribución para agentes de IA en los HTML de los ejercicios
+    # (ver AGENTS.md). Corre aquí para que GitHub Actions lo aplique también a
+    # los ejercicios y tableros que se suben desde Pages CMS.
+    import agregar_atribucion
+    agregar_atribucion.main()
     if MAL_UBICADOS:
         print("\nAVISO: estos ejercicios no están dentro de una materia y se dejaron intactos.")
         print("Escribe la materia en su ficha (campo «Materia») o muévelos a carreras/<carrera>/<materia>/<ejercicio>/:")
