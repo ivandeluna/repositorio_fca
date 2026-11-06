@@ -1,19 +1,20 @@
 ---
 titulo: Investigación
+carrera: Materias Comunes
 materia: Elaborar Investigación Aplicada
 tema: Preguntas de Investigación, Definición del Problema  y Referencias APA
 nivel: Avanzado
 duracion_estimada: 40 minutos
 tipo: Ejercicio práctico
 modalidad: Equipos
-entregable_alumno: Reporte con trabajo escrito con ciertas partes ayudada por
-  agentes de Lenguaje Natural como Chat GPT , Gemine o Claude
+entregable_alumno: Reporte con trabajo escrito con ciertas partes ayudada por agentes
+  de Lenguaje Natural como Chat GPT , Gemine o Claude
 autor: Dra. Isela Carrera
 fecha: 2026-11-05
 tags:
-  - Investigación Aplicada
-  - Preguntas
-  - Definición del Problema
+- Investigación Aplicada
+- Preguntas
+- Definición del Problema
 asistencia_ia: Uso de Agente de Lenguaje Natural como Chat GPT, Gemini o Claude
 revisado_por_docente: false
 ---

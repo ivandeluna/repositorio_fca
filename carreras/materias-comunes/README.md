@@ -13,6 +13,6 @@ Materias con ejercicios/métodos registrados en este repositorio.
 | [Estadística Básica](./estadistica-basica/README.md) | 2 |
 | [Matemáticas Básicas](./matematicas-basicas/README.md) | 1 |
 | [Cultura de la Calidad y Control Estadístico](./cultura-de-la-calidad-y-control-estadistico/README.md) | 1 |
-| [Elaborar Investigación Aplicada](./elaborar-investigacion-aplicada/README.md) | 2 |
+| [Elaborar Investigación Aplicada](./elaborar-investigacion-aplicada/README.md) | 3 |
 
 ⬅ [Volver al catálogo general](../../README.md)
