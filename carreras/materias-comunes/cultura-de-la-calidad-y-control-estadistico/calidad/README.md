@@ -31,6 +31,7 @@ revisado_por_docente: false
 
 [El Despligue de La Función de Calidad es una herramienta que se usa en el Control Total de la Calidad para ayudar en los objetivos de la mejora continua. El QFD es una matriz cuyos renglones se pone principalmente las necesidades o requeriimientos del cliente, y en las columnas se pone de encabezado las especificaciones posibles a modificar. Se hace una relacion de ponderación entre que especificación y requerimiento tiene mayor relación, 9 muy fuerte, 3 mediana, 1 debil y 0 ninguna. La necesidad tiene tambén una ponderación, una vez teniendo esta ponderación se debe de multiplicar para sacar la de cada casilla y sumarla el total por cada fila. La suma total dirá que especificación es la más necesarios]
 
+Por otro lado el techo de la casa de la calidad, como también se le conoce, es hacer un cruce de como afecta cada especificación la una con la otra, si una especificación aumenta hay relación positiva (+), negativa (-) o ninguna.
 ## Ejercicio / caso práctico
 
 [Complete la casa de la calidad de un problema de Manufactura de  buje o rodamiento de bronce sinterizado autolubricado.] 
@@ -54,20 +55,13 @@ revisado_por_docente: false
 
 [Opcional — se puede omitir del README.md público y poner en un archivo `solucion.md` aparte si no se quiere exponer a los alumnos.]
 
-## Prompt sugerido para hacerlo con Claude o ChatGPT
+## Prompt1  sugerido para hacerlo con Claude o ChatGPT
 
 > Me puedes decir si existe relación entre la Rugosidad Superficial de un rodamiento y su ajuste preciso sin holgura ni vibración y que importancia tiene del 1 al 9
 
+## Prompt2  sugerido para hacerlo con Claude o ChatGPT
+
+> Me puedes decir si reduzco la rugosidad en la fabricación de un rodamiento como afectaria a cocenticidad, explicarlo si afecta de manera positiva, negativa o no afecta en nada.
+
 ```
-[Prompt sugerido — reemplazar con el prompt real del ejercicio]
-```¨¨
 
-
-**Documentos a adjuntar:** [indicar si se requiere adjuntar algún documento, p. ej. "se sugiere agregar el estado de resultados de la empresa" — o escribir "Ninguno: los datos del caso se pueden pegar directamente en el prompt" si no aplica]
-
-## Recursos adicionales
-
-- [Plantillas, lecturas, datasets de apoyo, enlaces]
-
----
-*Al terminar, crea también un `metadata.yml` en la misma carpeta (ver ejemplo en `carreras/contador-publico/aplicar-administracion-finanzas/ciclo-conversion-efectivo/metadata.yml`) y agrega este ejercicio a la tabla del README.md de su materia.*
