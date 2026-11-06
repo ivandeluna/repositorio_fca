@@ -11,6 +11,6 @@ Materia de la carrera de Materias Comunes.
 
 | Ejercicio | Tema | Nivel |
 |---|---|---|
-| [Herramientas de Calidad](./calidad/README.md) | Despliegue de la Función de calidad | Introductorio |
+| [Herramientas de Calidad](./calidad/README.md) | Despliegue de la Función de Calidad | Introductorio |
 
 ⬅ [Volver a Materias Comunes](../README.md)
