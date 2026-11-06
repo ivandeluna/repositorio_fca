@@ -2,7 +2,7 @@
 titulo: Herramientas de Calidad
 carrera: Materias Comunes
 materia: Cultura de la Calidad y Control Estadístico
-tema: Despliegue de la Función de calidad
+tema: Despliegue de la Función de Calidad
 nivel: Introductorio
 duracion_estimada: 50 minutos
 tipo: Ejercicio práctico
@@ -13,7 +13,7 @@ fecha: 2026-11-05
 asistencia_ia: "El ejemplo lo genera Gemini "
 revisado_por_docente: false
 ---
-# [Nombre del ejercicio/método]
+# [Despliegue de la Función de Calidad]
 
 **Carrera:** [Contador Público / Comercio Exterior y Aduanas / Administración de Empresas]
 **Materia:** [Cultura de la Calidad y Control estadístico]
