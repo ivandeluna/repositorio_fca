@@ -7,14 +7,14 @@ nivel: Avanzado
 duracion_estimada: 40 minutos
 tipo: Ejercicio práctico
 modalidad: Equipos
-entregable_alumno: Reporte con trabajo escrito con ciertas partes ayudada por agentes
-  de Lenguaje Natural como Chat GPT , Gemine o Claude
+entregable_alumno: Reporte con trabajo escrito con ciertas partes ayudada por
+  agentes de Lenguaje Natural como Chat GPT , Gemine o Claude
 autor: Dra. Isela Carrera
 fecha: 2026-11-05
 tags:
-- Investigación Aplicada
-- Preguntas
-- Definición del Problema
+  - Investigación Aplicada
+  - Preguntas
+  - Definición del Problema
 asistencia_ia: Uso de Agente de Lenguaje Natural como Chat GPT, Gemini o Claude
 revisado_por_docente: false
 ---
@@ -32,9 +32,34 @@ Realizar la definición de una problemática de investigación introductoria, a 
 
 ## Teoría
 
-> Nota de transparencia: indicar aquí qué partes de esta sección fueron redactadas por el profesor y cuáles se apoyaron en IA (ej. "redacción base del profesor, ampliada y pulida con IA").
+Definir el proyecto o problema:
+El propósito es describir correctamente el problema o área de oportunidad de mejora. Para ello debemos considerar las siguientes preguntas básicas para describir correctamente el problema:
 
-[Desarrollo teórico necesario para resolver el ejercicio: definiciones, fórmulas, contexto.]
+¿Qué?  
+¿Dónde? 
+¿Cuándo? 
+¿Cuánto? 
+¿Cómo lo sé?
+
+Para crear el enunciado del problema a resolver, la pregunta “¿Qué?” sirve para definir lo que se encuentra mal en el área de trabajo. 
+
+La pregunta “¿Cuánto?” o “¿Qué tanto?” se refiere a la magnitud del problema. La estructura sugerida para enunciado es la cantidad actual del indicador y el valor definido como meta o especificación.
+
+La pregunta “¿Dónde?” se refiere al lugar geográfico, producto, línea de producción, planta, región, zona, área, canal comercial, etc. en donde se localiza o ubica el problema. 
+
+La pregunta “¿Cuándo?” se refiere a la fecha representativa en la que el problema está ocurriendo o se detectó.
+
+La pregunta “¿Cómo lo sé?” es la referencia utilizada para ilustrar el gap de la oportunidad de mejora. Algunos ejemplos de referencias son: valores meta, objetivo, benchmark, capacidad de diseño, mejor desempeño histórico, desempeño de competidor, desempeño ideal, etc. 
+
+Ejemplo
+
+Una definición inicial sin preguntas de investigación puede ser: "La calidad de las lámparas es mala. Es necesario mejorarla."
+
+Al contestar las preguntas de investigación, se puede aumnetar la información y tener un parrafo con mucho mayor información que nos lleve a luego a profundizar en la problematica, el ejmplo quedaría ahora algo como esto:
+
+"La redefinición de la problemática, quedaría como:  “El porcentaje (promedio mensual) de quejas de mercado en las lámparas de la línea “luz natural” en el trimestre abril – julio del año 2018 fue del 15% cuando en líneas similares el máximo fue de 5%, de acuerdo a lo reportado en el Informe Mensual de Servicio al Cliente del Área Comercial.” 
+
+
 
 ## Ejercicio / caso práctico
 
